@@ -219,12 +219,13 @@ async function parseLos(page, soutezId, drustvoId) {
       if (cells.length < 4) return;
       const round = parseInt(cells[0]);
       if (!round || playedRounds.has(round)) return;
-      // Has a date-like value and team names
-      const dateMatch = cells[1]?.match(/(\d{1,2}\.\d{2}\.\d{4})/);
+      // Has a date-like value and team names; optionally followed by time "18:00"
+      const dateMatch = cells[1]?.match(/(\d{1,2}\.\d{2}\.\d{4})(?:\s+(\d{1,2}:\d{2}))?/);
       if (!dateMatch) return;
       future.push({
         round,
         date: dateMatch[1],
+        time: dateMatch[2] || '',
         home: cells[2] || '',
         away: cells[3] || '',
       });
@@ -539,6 +540,7 @@ async function main() {
         home:     weAreHome,
         round:    f.round,
         date:     isoDate(f.date),
+        time:     f.time || '',
         opponent,
         score:    null,
         result:   null,   // null = not played yet

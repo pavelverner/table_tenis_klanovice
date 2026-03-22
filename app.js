@@ -373,7 +373,7 @@ function renderUpcoming() {
 
     return `
     <div class="match-row upcoming-row">
-      <div class="match-date">${fmtDate(m.date)}</div>
+      <div class="match-date">${fmtDate(m.date)}${m.time ? `<div style="font-size:12px;font-weight:700;color:var(--c-text)">${m.time}</div>` : ''}</div>
       <div class="match-teams">
         <div class="upcoming-teams-line">
           <span class="${m.home ? 'our-side' : ''}">${homeTeam}</span>
@@ -435,7 +435,7 @@ function renderFutureCard(m) {
     <div class="match-card-header" style="cursor:default">
       <div class="mc-meta">
         <span>Kolo ${m.round}</span><span class="mc-sep">·</span>
-        <span>${fmtDate(m.date)}</span><span class="mc-sep">·</span>
+        <span>${fmtDate(m.date)}${m.time ? ' <strong>' + m.time + '</strong>' : ''}</span><span class="mc-sep">·</span>
         <span>${team.competition}</span><span class="mc-sep">·</span>
         <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
       </div>
