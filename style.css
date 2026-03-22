@@ -301,6 +301,16 @@ a:hover { text-decoration: underline; }
   color: var(--c-primary); font-size: 9px; margin-top: 5px; flex-shrink: 0;
 }
 
+/* MVP badge */
+.mvp-badge {
+  display: inline-block;
+  font-size: 11px; font-weight: 600;
+  color: var(--c-orange);
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.mvp-row { background: rgba(245,158,11,.08) !important; }
+
 /* player results in match */
 .match-players { display: flex; flex-direction: column; gap: 6px; }
 .match-player-row {
@@ -473,17 +483,26 @@ a:hover { text-decoration: underline; }
   .match-score { font-size: 15px; }
 
   /* Match detail cards */
-  .match-card-header {
-    flex-direction: column; align-items: flex-start;
-    gap: 8px; padding: 12px 14px;
-  }
-  .match-card-right { width: 100%; justify-content: space-between; align-items: center; }
-  .match-score-big { font-size: 22px; }
-  .match-card-body { padding: 14px; }
+  .match-card-header { flex-direction: column; align-items: stretch; gap: 6px; padding: 12px 14px; }
+  .match-card-left { width: 100%; }
+  .match-card-right { width: 100%; justify-content: space-between; align-items: center; flex-direction: row; }
+  .match-card-title { font-size: 13px; line-height: 1.4; word-break: break-word; }
+  .match-score-big { font-size: 24px; }
+  .match-round { font-size: 11px; }
+  .match-card-comp { font-size: 11px; }
+
+  /* Player rows: stack home player top, score middle, away bottom */
   .match-player-row {
-    grid-template-columns: 1fr auto 1fr;
-    font-size: 12px; padding: 5px 8px;
+    display: grid;
+    grid-template-columns: 1fr 44px 1fr;
+    font-size: 12px; padding: 5px 8px; gap: 4px;
   }
+  .player-name-left, .player-name-right { font-size: 11px; word-break: break-word; }
+  .match-card-body { padding: 12px; }
+  .match-players { gap: 2px; }
+
+  /* MVP badge – shorter on mobile */
+  .mvp-badge { font-size: 10px; }
 
   /* Top players – 2 columns */
   .top-players { grid-template-columns: 1fr 1fr; gap: 8px; }

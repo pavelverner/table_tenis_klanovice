@@ -323,18 +323,20 @@ function renderUpcoming() {
     const homeTeam = m.home ? team.name : m.opponent;
     const awayTeam = m.home ? m.opponent : team.name;
 
-    // H2H: last 3 past results vs same opponent – current + previous season
-    const prevH2H = window.CLUB_DATA_PREV
-      ? (window.CLUB_DATA_PREV.matches || []).filter(x => {
-          // Match by opponent name (team IDs may differ across seasons)
-          const prevTeam = (window.CLUB_DATA_PREV.teams || []).find(t => t.id === x.teamId);
-          const ourTeam  = CLUB_DATA.teams.find(t => t.id === m.teamId);
-          return prevTeam?.name === ourTeam?.name && x.opponent === m.opponent && x.result;
-        })
-      : [];
+    // H2H: last 3 past results vs same opponent – current + up to 2 previous seasons
+    function prevH2HMatches(src) {
+      if (!src) return [];
+      const prevTeamName = (src.teams || []).find(t => {
+        const ourTeam = CLUB_DATA.teams.find(ct => ct.id === m.teamId);
+        return t.name === ourTeam?.name;
+      });
+      if (!prevTeamName) return [];
+      return (src.matches || []).filter(x => x.teamId === prevTeamName.id && x.opponent === m.opponent && x.result);
+    }
     const h2h = [
       ...CLUB_DATA.matches.filter(x => x.teamId === m.teamId && x.opponent === m.opponent && x.result && x.date < today),
-      ...prevH2H,
+      ...prevH2HMatches(window.CLUB_DATA_PREV),
+      ...prevH2HMatches(window.CLUB_DATA_PREV2),
     ]
       .sort((a,b) => (b.date||'').localeCompare(a.date||''))
       .slice(0, 3);
@@ -434,6 +436,22 @@ function renderVysledky() {
   activateFilterTabs('match', tabs);
 }
 
+function calcMVP(playerResults) {
+  // MVP = our player with most wins; tiebreak by games won
+  const our = (playerResults || []).filter(pr => pr.won !== undefined);
+  const byPlayer = {};
+  for (const pr of our) {
+    if (!byPlayer[pr.player]) byPlayer[pr.player] = { wins: 0, gamesW: 0 };
+    if (pr.won) byPlayer[pr.player].wins++;
+    const [a] = (pr.result || '0:0').split(':').map(Number);
+    byPlayer[pr.player].gamesW += a || 0;
+  }
+  const winners = our.filter(pr => pr.won);
+  if (!winners.length) return null;
+  return Object.entries(byPlayer)
+    .sort((a, b) => b[1].wins - a[1].wins || b[1].gamesW - a[1].gamesW)[0]?.[0] || null;
+}
+
 function renderMatchCard(m) {
   const team      = getTeamById(m.teamId);
   const homeTeam  = m.home ? team.name : m.opponent;
@@ -441,18 +459,22 @@ function renderMatchCard(m) {
   const scoreHome = m.home ? m.score.home : m.score.away;
   const scoreAway = m.home ? m.score.away : m.score.home;
 
+  const mvp = calcMVP(m.playerResults);
+
   const playerRows = (m.playerResults || []).map(pr => {
     const [a, b] = pr.result.split(':').map(Number);
     const weWin = a > b;
+    const isMvp = pr.player === mvp && pr.won;
     return `
-    <div class="match-player-row">
-      <div class="player-name-left">${pr.player}</div>
+    <div class="match-player-row${isMvp ? ' mvp-row' : ''}">
+      <div class="player-name-left">${isMvp ? '⭐ ' : ''}${pr.player}</div>
       <div class="match-player-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</div>
       <div class="player-name-right">${pr.opponent}</div>
     </div>`;
   }).join('');
 
   const keyPts = (m.keyPoints || []).map(k => `<li>${k}</li>`).join('');
+  const mvpBadge = mvp ? `<span class="mvp-badge">⭐ ${mvp.split(' ')[0]}</span>` : '';
 
   return `
   <div class="match-card" id="match-${m.id}">
@@ -464,6 +486,7 @@ function renderMatchCard(m) {
           <span class="match-venue ${m.home ? 'venue-home' : 'venue-away'}">
             · ${m.home ? '🏠 doma' : '✈️ venku'}
           </span>
+          ${mvpBadge}
         </div>
       </div>
       <div class="match-card-right">
@@ -1012,9 +1035,8 @@ function openPlayerModal(playerId) {
   }
 
   collectHistory(CLUB_DATA, CLUB_DATA.season || '');
-  if (window.CLUB_DATA_PREV) {
-    collectHistory(window.CLUB_DATA_PREV, window.CLUB_DATA_PREV.season || 'předchozí sezóna');
-  }
+  if (window.CLUB_DATA_PREV)  collectHistory(window.CLUB_DATA_PREV,  window.CLUB_DATA_PREV.season  || '2024/25');
+  if (window.CLUB_DATA_PREV2) collectHistory(window.CLUB_DATA_PREV2, window.CLUB_DATA_PREV2.season || '2023/24');
   matchHistory.sort((a,b) => (b.date||'').localeCompare(a.date||''));
 
   const wins   = matchHistory.filter(x => x.won).length;

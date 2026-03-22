@@ -128,9 +128,10 @@
 
   <script src="data.js"></script>
   <script src="data_prev.js" onerror="void 0"></script>
+  <script src="data_prev2.js" onerror="void 0"></script>
   <script>
-    // const in script scope doesn't attach to window — expose it explicitly
-    window.CLUB_DATA_PREV = (typeof CLUB_DATA_PREV !== 'undefined') ? CLUB_DATA_PREV : null;
+    window.CLUB_DATA_PREV  = (typeof CLUB_DATA_PREV  !== 'undefined') ? CLUB_DATA_PREV  : null;
+    window.CLUB_DATA_PREV2 = (typeof CLUB_DATA_PREV2 !== 'undefined') ? CLUB_DATA_PREV2 : null;
   </script>
   <script src="app.js"></script>
 </body>

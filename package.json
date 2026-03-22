@@ -6,6 +6,7 @@
   "scripts": {
     "scrape": "node scrape.js",
     "scrape:prev": "node scrape.js 2024 data_prev.js",
+    "scrape:prev2": "node scrape.js 2023 data_prev2.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
