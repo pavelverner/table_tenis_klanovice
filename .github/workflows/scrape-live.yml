@@ -1,0 +1,62 @@
+name: Scrape Live (zápasový den)
+
+on:
+  schedule:
+    # Každých 5 minut v 16:00–23:59 UTC = 18:00–01:59 CEST
+    - cron: '*/5 16-23 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-live:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Je dnes zápas?
+        id: check
+        run: |
+          HAS=$(node -e "
+            const fs = require('fs');
+            try {
+              const raw = fs.readFileSync('data.js', 'utf8');
+              const json = raw.replace(/^[\s\S]*?CLUB_DATA\s*=\s*/, '').replace(/;\s*$/, '');
+              const data = JSON.parse(json);
+              const today = new Date().toISOString().split('T')[0];
+              const has = (data.matches||[]).some(m => m.date === today);
+              process.stdout.write(has ? 'true' : 'false');
+            } catch(e) { process.stdout.write('false'); }
+          ")
+          echo "has_match=$HAS" >> $GITHUB_OUTPUT
+          echo "Zápas dnes: $HAS"
+
+      - name: Nainstaluj závislosti
+        if: steps.check.outputs.has_match == 'true'
+        run: npm ci
+
+      - name: Nainstaluj Playwright (Chromium)
+        if: steps.check.outputs.has_match == 'true'
+        run: npx playwright install --with-deps chromium
+
+      - name: Scrape
+        if: steps.check.outputs.has_match == 'true'
+        run: node scrape.js
+
+      - name: Commitni data
+        if: steps.check.outputs.has_match == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.js
+          git diff --cached --quiet \
+            && echo "Žádné změny." \
+            || (git commit -m "data: live update $(date -u +'%H:%M UTC') [skip ci]" && git push)
