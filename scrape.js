@@ -402,7 +402,7 @@ function parseUspesnostRow(row) {
 
 function buildPlayerResults(matchData, weAreHome, uspMap) {
   return matchData.matchResults
-    .filter(r => !r.isDoubles && r.sadyH !== null && r.sadyA !== null)
+    .filter(r => r.sadyH !== null && r.sadyA !== null)
     .map(r => {
       const ourPlayers   = weAreHome ? r.homePlayers : r.awayPlayers;
       const theirPlayers = weAreHome ? r.awayPlayers : r.homePlayers;
@@ -411,10 +411,11 @@ function buildPlayerResults(matchData, weAreHome, uspMap) {
       const ourStr  = ourPlayers.length === 1  ? ((uspMap || {})[ourPlayers[0]]?.str  || 0) : 0;
       const oppStr  = theirPlayers.length === 1 ? ((uspMap || {})[theirPlayers[0]]?.str || 0) : 0;
       return {
-        player:   ourPlayers.join(' / '),
-        opponent: theirPlayers.join(' / '),
-        result:   `${ourSady}:${theirSady}`,
-        won:      ourSady > theirSady,
+        player:    ourPlayers.join(' / '),
+        opponent:  theirPlayers.join(' / '),
+        result:    `${ourSady}:${theirSady}`,
+        won:       ourSady > theirSady,
+        isDoubles: r.isDoubles || false,
         ourStr,
         oppStr,
       };

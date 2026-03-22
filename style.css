@@ -274,17 +274,19 @@ a:hover { text-decoration: underline; }
 .mc-season { color: var(--c-accent); font-weight: 600; }
 .mc-mvp { font-size: 11px; color: var(--c-orange); font-weight: 600; }
 .mc-h2h { display: inline-flex; gap: 4px; align-items: center; }
+.mc-h2h-row { padding: 4px 0 2px; }
 
 /* Main line: teams + score */
 .mc-main {
   display: flex; align-items: center; justify-content: space-between; gap: 8px;
 }
-/* Wrapper: team names row + MVP badge below */
-.mc-teams-block {
-  display: flex; flex-direction: column; flex: 1; min-width: 0; gap: 2px;
+/* Per-side column wrapper: team name + optional MVP badge below */
+.mc-team-side {
+  display: flex; flex-direction: column; flex: 1; min-width: 0; gap: 1px;
 }
+.mc-team-side .mc-team { flex: none; }
 .mc-teams {
-  display: flex; align-items: center; gap: 0;
+  display: flex; align-items: flex-start; gap: 0;
   flex: 1; min-width: 0; overflow: hidden;
   font-size: 14px; font-weight: 600;
 }
@@ -301,7 +303,7 @@ a:hover { text-decoration: underline; }
 .mc-our { color: var(--c-primary); }
 .mc-vs {
   color: var(--c-muted); font-weight: 400; font-size: 11px;
-  flex-shrink: 0; margin: 0 6px;
+  flex-shrink: 0; margin: 0 6px; align-self: flex-start; padding-top: 2px;
 }
 .mc-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 
@@ -367,6 +369,8 @@ a:hover { text-decoration: underline; }
   vertical-align: middle;
 }
 .mvp-row { background: rgba(245,158,11,.08) !important; }
+.doubles-row { background: rgba(167,139,250,.06) !important; }
+.doubles-label { font-style: italic; }
 
 /* player results in match */
 .match-players { display: flex; flex-direction: column; gap: 6px; }

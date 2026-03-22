@@ -464,27 +464,29 @@ function renderFutureCard(m) {
   const homeTeam = m.home ? team.name : m.opponent;
   const awayTeam = m.home ? m.opponent : team.name;
   const h2h = getH2H(m);
+  const h2hInline = h2h.length ? `<span class="h2h-inline">${h2h.map(x => {
+    const s = x.home ? x.score.home : x.score.away;
+    const o = x.home ? x.score.away : x.score.home;
+    const yr = (x.date || '').slice(2, 4);
+    return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${s}:${o}<span class="h2h-yr">'${yr}</span></span>`;
+  }).join('')}</span>` : '';
   return `
-  <div class="match-card match-card-future">
-    <div class="match-card-header" style="cursor:default">
-      <div class="mc-meta">
-        <span>Kolo ${m.round}</span><span class="mc-sep">·</span>
-        <span>${fmtDate(m.date)}${m.time ? ' <strong>' + m.time + '</strong>' : ''}</span><span class="mc-sep">·</span>
-        <span>${team.competition}</span><span class="mc-sep">·</span>
-        <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
+  <div class="match-row upcoming-row">
+    <div class="match-date">${fmtDate(m.date)}${m.time ? `<div style="font-size:12px;font-weight:700;color:var(--c-text)">${m.time}</div>` : ''}</div>
+    <div class="match-teams">
+      <div class="upcoming-teams-line">
+        <span class="team-name${m.home ? ' our-side' : ''}">${homeTeam}</span>
+        <span class="upcoming-vs">vs</span>
+        <span class="team-name${!m.home ? ' our-side' : ''}">${awayTeam}</span>
       </div>
-      <div class="mc-main">
-        <div class="mc-teams">
-          <span class="mc-team${m.home ? ' mc-our' : ''}">${homeTeam}</span>
-          <span class="mc-vs">vs</span>
-          <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
-        </div>
-        <div class="mc-right">
-          ${h2hHtml(h2h)}
-          <div class="match-badge badge-upcoming">→</div>
-        </div>
+      <div style="font-size:11px;color:var(--c-muted);margin-top:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <span>Kolo ${m.round}</span>
+        <span>${team.competition}</span>
+        <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
+        ${h2hInline}
       </div>
     </div>
+    <div class="match-badge badge-upcoming">→</div>
   </div>`;
 }
 
@@ -604,6 +606,16 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
   );
 
   const playerRows = (m.playerResults || []).map(pr => {
+    if (pr.isDoubles) {
+      const [a, b] = pr.result.split(':').map(Number);
+      const weWin = a > b;
+      return `
+      <div class="match-player-row doubles-row">
+        <div class="player-name-left doubles-label">🤝 ${pr.player}</div>
+        <div class="match-player-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</div>
+        <div class="player-name-right">${pr.opponent}</div>
+      </div>`;
+    }
     const [a, b] = pr.result.split(':').map(Number);
     const weWin = a > b;
     const isMvp = pr.player === mvp && pr.won;
@@ -631,13 +643,16 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
         <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
       </div>
       <div class="mc-main">
-        <div class="mc-teams-block">
-          <div class="mc-teams">
+        <div class="mc-teams">
+          <div class="mc-team-side">
             <span class="mc-team${m.home ? ' mc-our' : ''}">${homeTeam}</span>
-            <span class="mc-vs">vs</span>
-            <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
+            ${m.home && mvp ? `<div class="mc-mvp">${mvpBadge}</div>` : ''}
           </div>
-          ${mvp ? `<div class="mc-mvp">${mvpBadge}</div>` : ''}
+          <span class="mc-vs">vs</span>
+          <div class="mc-team-side">
+            <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
+            ${!m.home && mvp ? `<div class="mc-mvp">${mvpBadge}</div>` : ''}
+          </div>
         </div>
         <div class="mc-right">
           <div class="match-score-big">${scoreHome}<span class="score-separator">:</span>${scoreAway}</div>
