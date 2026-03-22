@@ -8,6 +8,8 @@ let activeMatchTeam = 'all';
 let activeStatsTeam = 'all';
 let activeTableTeam = 0;
 let activeSeason   = null;   // STIS rocnik number (e.g. 2025)
+let statsSortCol   = 'str';
+let statsSortDir   = 'desc';
 
 // ── Available seasons ──────────────────────────────────────
 // STIS rocnik = rok zahájení sezóny: rocnik-2025 = sezóna 2025/26
@@ -203,16 +205,36 @@ function renderTeamCards() {
   grid.innerHTML = CLUB_DATA.teams.map(team => {
     const s    = team.standing;
     const diff = s.setsFor - s.setsAgainst;
-    const played = s.wins + s.losses + s.draws;
-    const pct  = played > 0 ? Math.round(s.wins / played * 100) : 0;
+
+    // Zone from league table
+    const ourRow = CLUB_DATA.tables[team.id]?.find(r => r.highlight);
+    const zone   = ourRow?.zone || 'neutral';
+    const zoneClass = zone === 'promotion' ? 'card-promotion'
+                    : zone === 'relegation' ? 'card-relegation' : '';
+    const zoneBadge = zone === 'promotion'
+      ? `<span class="card-zone-badge badge-promo">↑ Postup</span>`
+      : zone === 'relegation'
+      ? `<span class="card-zone-badge badge-relg">↓ Sestup</span>`
+      : '';
+
+    // Last 5 match result dots
+    const lastFive = CLUB_DATA.matches
+      .filter(m => m.teamId === team.id && m.result)
+      .sort((a,b) => (b.date||'').localeCompare(a.date||''))
+      .slice(0, 5)
+      .reverse();
+    const dots = lastFive.map(m =>
+      `<span class="result-dot dot-${m.result}" title="${m.result==='W'?'Výhra':m.result==='L'?'Prohra':'Remíza'} (${fmtDate(m.date)})"></span>`
+    ).join('');
+
     return `
-    <div class="team-card" onclick="goToMatchesForTeam(${team.id})">
+    <div class="team-card ${zoneClass}" onclick="goToMatchesForTeam(${team.id})">
       <div class="team-card-header">
         <div>
-          <div class="team-name">${team.name}</div>
+          <div class="team-name">${team.name} ${zoneBadge}</div>
           <div class="team-division">${team.competition}</div>
         </div>
-        <div>
+        <div style="text-align:right">
           <div class="team-pos">${s.pos}.</div>
           <div class="team-pos-label">místo</div>
         </div>
@@ -239,6 +261,7 @@ function renderTeamCards() {
           <span class="team-stat-lbl">Sety ±</span>
         </div>
       </div>
+      ${dots ? `<div class="result-dots" title="Posledních ${lastFive.length} zápasů">${dots}</div>` : ''}
     </div>`;
   }).join('');
 }
@@ -390,21 +413,63 @@ function renderStatistiky() {
   renderStatsTable();
 }
 
+const STATS_COLS = [
+  { key: null,       label: '#' },
+  { key: 'name',     label: 'Hráč' },
+  { key: 'team',     label: 'Tým' },
+  { key: 'str',      label: 'STR' },
+  { key: 'strDelta', label: 'STR±' },
+  { key: 'matches',  label: 'Zápasy' },
+  { key: 'wins',     label: 'Výhry' },
+  { key: 'losses',   label: 'Prohry' },
+  { key: 'winPct',   label: 'Úspěšnost' },
+];
+
+function sortPlayers(players) {
+  return [...players].sort((a, b) => {
+    let av, bv;
+    switch (statsSortCol) {
+      case 'name':     av = a.name;           bv = b.name; break;
+      case 'team':     av = a.team;           bv = b.team; break;
+      case 'str':      av = a.str || 0;       bv = b.str || 0; break;
+      case 'strDelta': av = a.strDelta || 0;  bv = b.strDelta || 0; break;
+      case 'matches':  av = a.stats.matches;  bv = b.stats.matches; break;
+      case 'wins':     av = a.stats.wins;     bv = b.stats.wins; break;
+      case 'losses':   av = a.stats.losses;   bv = b.stats.losses; break;
+      case 'winPct':   av = a.stats.winPct;   bv = b.stats.winPct; break;
+      default:         av = a.str || 0;       bv = b.str || 0;
+    }
+    if (typeof av === 'string') return statsSortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
+    return statsSortDir === 'asc' ? av - bv : bv - av;
+  });
+}
+
+function setStatsSort(col) {
+  if (statsSortCol === col) statsSortDir = statsSortDir === 'desc' ? 'asc' : 'desc';
+  else { statsSortCol = col; statsSortDir = (col === 'name' || col === 'team') ? 'asc' : 'desc'; }
+  renderStatsTable();
+}
+
 function renderStatsTable() {
   const players = activeStatsTeam === 'all'
     ? CLUB_DATA.players
     : CLUB_DATA.players.filter(p => p.team === activeStatsTeam);
 
-  const sorted = [...players].sort((a,b) => b.stats.winPct - a.stats.winPct);
+  const sorted = sortPlayers(players);
 
-  const rows = sorted.map((p, i) => `
-    <tr>
+  const rows = sorted.map((p, i) => {
+    const delta = p.strDelta || 0;
+    const deltaColor = delta > 0 ? 'var(--c-green)' : delta < 0 ? 'var(--c-red)' : 'var(--c-muted)';
+    const deltaStr   = delta > 0 ? `+${delta}` : String(delta);
+    return `
+    <tr class="player-row" onclick="openPlayerModal(${p.id})" style="cursor:pointer">
       <td class="player-rank">${i+1}</td>
       <td class="player-name-cell">
         ${p.name}${p.isRegular === false ? ' <span class="sub-badge">náhr.</span>' : ''}
       </td>
       <td><span class="player-team-pill">Tým ${p.team}</span></td>
       <td class="rating-val">${p.str || '–'}</td>
+      <td style="color:${deltaColor};font-weight:600;font-size:13px">${p.str ? deltaStr : '–'}</td>
       <td>${p.stats.matches}</td>
       <td style="color:var(--c-green);font-weight:600">${p.stats.wins}</td>
       <td style="color:var(--c-red);font-weight:600">${p.stats.losses}</td>
@@ -416,21 +481,17 @@ function renderStatsTable() {
           <span class="win-pct-cell">${p.stats.winPct}%</span>
         </div>
       </td>
-    </tr>
-  `).join('');
+    </tr>`;
+  }).join('');
+
+  const arrow = key => statsSortCol === key ? (statsSortDir === 'asc' ? ' ↑' : ' ↓') : '';
 
   document.getElementById('statsTable').innerHTML = `
     <table class="stats-table">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Hráč</th>
-          <th>Tým</th>
-          <th>STR</th>
-          <th>Zápasy</th>
-          <th>Výhry</th>
-          <th>Prohry</th>
-          <th>Úspěšnost</th>
+          ${STATS_COLS.map(c => `<th class="${c.key ? 'sortable' : ''} ${statsSortCol === c.key ? 'sort-active' : ''}"
+              ${c.key ? `onclick="setStatsSort('${c.key}')"` : ''}>${c.label}${arrow(c.key)}</th>`).join('')}
         </tr>
       </thead>
       <tbody>${rows}</tbody>
@@ -574,6 +635,83 @@ function startLiveRefresh() {
   }, 5 * 60 * 1000);  // every 5 minutes
 }
 
+// ── Player Modal ────────────────────────────────────────────
+function openPlayerModal(playerId) {
+  const p = CLUB_DATA.players.find(x => x.id === playerId);
+  if (!p) return;
+
+  // Collect all individual match results for this player
+  const matchHistory = [];
+  for (const m of CLUB_DATA.matches) {
+    if (m.teamId !== p.teamId) continue;
+    for (const pr of (m.playerResults || [])) {
+      if (pr.player !== p.name) continue;
+      matchHistory.push({
+        date:        m.date,
+        opponent:    pr.opponent,
+        result:      pr.result,
+        won:         pr.won,
+        competition: CLUB_DATA.teams.find(t => t.id === m.teamId)?.competition || '',
+      });
+    }
+  }
+  matchHistory.sort((a,b) => (b.date||'').localeCompare(a.date||''));
+
+  const wins   = matchHistory.filter(x => x.won).length;
+  const losses = matchHistory.filter(x => !x.won).length;
+  const total  = wins + losses;
+  const pct    = total > 0 ? Math.round(wins / total * 100) : 0;
+  const delta  = p.strDelta || 0;
+  const deltaColor = delta > 0 ? 'var(--c-green)' : delta < 0 ? 'var(--c-red)' : 'var(--c-muted)';
+  const rocnik = CLUB_DATA.rocnik || 2025;
+  const stisUrl = p.stisId
+    ? `https://stis.ping-pong.cz/hrac-${p.stisId}/svaz-420101/rocnik-${rocnik}/soutez-${p.soutezId}`
+    : null;
+
+  const historyRows = matchHistory.map(h => `
+    <tr>
+      <td class="modal-match-date">${fmtDate(h.date)}</td>
+      <td><span class="result-dot dot-${h.won?'W':'L'}" style="display:inline-block;vertical-align:middle"></span>
+          <span style="margin-left:6px;font-weight:600;color:${h.won?'var(--c-green)':'var(--c-red)'}">${h.result}</span></td>
+      <td class="modal-opp">${h.opponent}</td>
+      <td style="color:var(--c-muted);font-size:12px">${h.competition}</td>
+    </tr>`).join('');
+
+  document.getElementById('playerModalContent').innerHTML = `
+    <div class="modal-player-header">
+      <div>
+        <div class="modal-player-name">${p.name}</div>
+        <div class="modal-player-meta">Tým ${p.team} · nar. ${p.born || '–'}${p.isRegular === false ? ' · <span class="sub-badge">náhradník</span>' : ''}</div>
+      </div>
+      ${stisUrl ? `<a href="${stisUrl}" target="_blank" class="modal-stis-link">↗ STIS</a>` : ''}
+    </div>
+    <div class="modal-stats-row">
+      <div class="modal-stat"><div class="modal-stat-val rating-val">${p.str || '–'}</div><div class="modal-stat-lbl">STR</div></div>
+      <div class="modal-stat"><div class="modal-stat-val" style="color:${deltaColor}">${p.str ? (delta >= 0 ? '+' : '') + delta : '–'}</div><div class="modal-stat-lbl">STR±</div></div>
+      <div class="modal-stat"><div class="modal-stat-val stat-w">${wins}</div><div class="modal-stat-lbl">Výhry</div></div>
+      <div class="modal-stat"><div class="modal-stat-val stat-l">${losses}</div><div class="modal-stat-lbl">Prohry</div></div>
+      <div class="modal-stat"><div class="modal-stat-val" style="color:var(--c-primary)">${pct}%</div><div class="modal-stat-lbl">Úspěšnost</div></div>
+    </div>
+    <div style="margin:12px 0 20px"><div class="win-pct-bar-bg" style="height:8px"><div class="win-pct-bar-fill" style="width:${pct}%;height:8px"></div></div></div>
+    ${matchHistory.length ? `
+    <div class="modal-history-title">Zápasy v sezóně (${total})</div>
+    <div class="modal-history-wrap">
+      <table class="modal-history-table">
+        <thead><tr><th>Datum</th><th>Výsledek</th><th>Soupeř</th><th>Soutěž</th></tr></thead>
+        <tbody>${historyRows}</tbody>
+      </table>
+    </div>` : '<p style="color:var(--c-muted);text-align:center;padding:20px">Žádné zápasy nenalezeny</p>'}
+  `;
+
+  document.getElementById('playerModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePlayerModal() {
+  document.getElementById('playerModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 // ── Server polling (fetches fresh data from /api/data) ─────
 let _pollInterval = null;
 
@@ -629,6 +767,7 @@ function init() {
   renderTabulky();
   startLiveRefresh();
   startPolling();
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePlayerModal(); });
 
   // Show only prehled initially
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));

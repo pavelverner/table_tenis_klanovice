@@ -313,19 +313,22 @@ async function parseOddil(page, soutezId, drustvoId) {
     }
 
     // Parse table.soupisky for full player details
+    // Cols: (empty), P.č., Hráč(link), Nar., Žebříček, STR, STRstab, STR+-, Bilance, Zápasy, Utkání
     const table = document.querySelector('table.soupisky');
     if (table) {
       Array.from(table.querySelectorAll('tbody tr')).forEach(tr => {
         const cells = Array.from(tr.querySelectorAll('td')).map(c => c.textContent.trim());
-        // Cols: (empty), P.č., Hráč, Nar., Žebříček, STR, STRstab, STR+-, Bilance, Zápasy, Utkání
         if (cells.length < 5) return;
-        const name = cells[2];
+        const nameLink = tr.querySelector('td:nth-child(3) a[href*="hrac"]');
+        const name = nameLink?.textContent.trim() || cells[2];
         if (!name || name.length < 3 || name === 'Hráč') return;
-        const str  = parseFloat((cells[5] || '0').replace(',', '.').replace(/[^\d.]/g, '')) || 0;
+        const stisHref = nameLink?.getAttribute('href') || '';
+        const stisId   = parseInt(stisHref.match(/hrac-(\d+)/)?.[1] || '0') || null;
+        const str      = parseFloat((cells[5] || '0').replace(',', '.').replace(/[^\d.]/g, '')) || 0;
+        const strStab  = parseFloat((cells[6] || '0').replace(',', '.').replace(/[^\d.]/g, '')) || 0;
+        const strDelta = parseInt((cells[7] || '0').replace(/[^\d-]/g, '')) || 0;
         players.push({
-          name,
-          born:      cells[3] || '',
-          str,
+          name, born: cells[3] || '', str, strStab, strDelta, stisId,
           isRegular: regularNames.size > 0 ? regularNames.has(name) : true,
         });
       });
@@ -644,9 +647,13 @@ async function main() {
         team:      teamCfg.name.replace('TTC Klánovice ', ''),
         teamId:    teamCfg.id,
         isRegular: oddilPlayer?.isRegular ?? true,
+        stisId:    oddilPlayer?.stisId   || null,
+        soutezId:  teamCfg.soutezId,
         born:      oddilPlayer?.born    || '',
         ranking:   oddilPlayer?.ranking || '',
         str:       oddilPlayer?.str     || 0,
+        strStab:   oddilPlayer?.strStab  || 0,
+        strDelta:  oddilPlayer?.strDelta ?? 0,
         stats: {
           matches: m,
           wins: w,

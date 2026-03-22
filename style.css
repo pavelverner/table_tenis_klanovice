@@ -651,6 +651,120 @@ a:hover { text-decoration: underline; }
 /* ── Table: team name cell width ── */
 .league-table td:nth-child(2) { min-width: 160px; }
 
+/* ── Team card – zone indicator ── */
+.team-card.card-promotion { border-color: rgba(34,197,94,.35); }
+.team-card.card-promotion:hover { border-color: var(--c-green); }
+.team-card.card-relegation { border-color: rgba(239,68,68,.35); }
+.team-card.card-relegation:hover { border-color: var(--c-red); }
+.team-card.card-promotion { border-left: 3px solid var(--c-green); }
+.team-card.card-relegation { border-left: 3px solid var(--c-red); }
+
+.card-zone-badge {
+  display: inline-block;
+  font-size: 10px; font-weight: 700;
+  padding: 2px 7px; border-radius: 4px;
+  vertical-align: middle; margin-left: 6px;
+  letter-spacing: .3px;
+}
+.badge-promo { background: rgba(34,197,94,.15); color: var(--c-green); }
+.badge-relg  { background: rgba(239,68,68,.15); color: var(--c-red); }
+
+/* ── Result dots (last matches) ── */
+.result-dots {
+  display: flex; gap: 5px; align-items: center;
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid var(--c-border);
+}
+.result-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+  display: inline-block;
+}
+.dot-W { background: var(--c-green); }
+.dot-L { background: var(--c-red); }
+.dot-D { background: var(--c-orange); }
+
+/* ── Sortable stats header ── */
+.stats-table th.sortable { cursor: pointer; user-select: none; }
+.stats-table th.sortable:hover { color: var(--c-text); }
+.stats-table th.sort-active { color: var(--c-primary); }
+.stats-table tr.player-row:hover td { background: var(--c-surface2); }
+
+/* ── Player Modal ── */
+.modal {
+  display: none; position: fixed; inset: 0; z-index: 500;
+  background: rgba(0,0,0,.6); backdrop-filter: blur(4px);
+  align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal.open { display: flex; }
+
+.modal-box {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  width: 100%; max-width: 620px;
+  max-height: 90vh; overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  padding: 28px;
+}
+.modal-close {
+  position: sticky; top: 0; float: right;
+  background: var(--c-surface2); border: 1px solid var(--c-border);
+  color: var(--c-muted); border-radius: 6px;
+  width: 28px; height: 28px; cursor: pointer;
+  font-size: 13px; line-height: 1; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-close:hover { color: var(--c-text); }
+
+.modal-player-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 20px;
+}
+.modal-player-name { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+.modal-player-meta { font-size: 13px; color: var(--c-muted); }
+.modal-stis-link {
+  font-size: 12px; color: var(--c-primary); font-weight: 600;
+  background: rgba(79,142,247,.1); border: 1px solid rgba(79,142,247,.2);
+  padding: 5px 10px; border-radius: 6px; text-decoration: none; white-space: nowrap;
+}
+.modal-stis-link:hover { background: rgba(79,142,247,.2); text-decoration: none; }
+
+.modal-stats-row {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px;
+}
+.modal-stat {
+  flex: 1; min-width: 70px;
+  background: var(--c-surface2); border-radius: var(--radius-sm);
+  padding: 12px; text-align: center;
+}
+.modal-stat-val { font-size: 22px; font-weight: 800; line-height: 1; }
+.modal-stat-lbl { font-size: 11px; color: var(--c-muted); margin-top: 4px; }
+
+.modal-history-title {
+  font-size: 12px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .5px; color: var(--c-muted);
+  margin-bottom: 10px;
+}
+.modal-history-wrap { overflow-x: auto; }
+.modal-history-table {
+  width: 100%; border-collapse: collapse; font-size: 13px;
+}
+.modal-history-table th {
+  text-align: left; padding: 6px 10px;
+  font-size: 11px; text-transform: uppercase; letter-spacing: .4px;
+  color: var(--c-muted); border-bottom: 1px solid var(--c-border);
+}
+.modal-history-table td {
+  padding: 8px 10px; border-bottom: 1px solid var(--c-border);
+  vertical-align: middle;
+}
+.modal-history-table tr:last-child td { border-bottom: none; }
+.modal-history-table tr:hover td { background: var(--c-surface2); }
+.modal-match-date { color: var(--c-muted); font-size: 12px; white-space: nowrap; }
+.modal-opp { font-weight: 500; }
+
 /* ── Footer ── */
 .footer {
   margin-top: 40px;
