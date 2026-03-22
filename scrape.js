@@ -195,15 +195,38 @@ async function parseLos(page, soutezId, drustvoId) {
 
   return page.evaluate(() => {
     const table = document.querySelector('table');
-    if (!table) return { rows: [], links: [] };
+    if (!table) return { rows: [], links: [], future: [] };
+
     const rows = Array.from(table.querySelectorAll('tr')).map(tr =>
       Array.from(tr.querySelectorAll('td,th')).map(c => c.textContent.trim())
     ).filter(r => r.some(c => c));
+
+    // Played matches (have utkani link)
     const links = Array.from(table.querySelectorAll('a[href*="utkani"]')).map(a => ({
       href: a.href,
       round: parseInt(a.closest('tr')?.querySelector('td')?.textContent.trim()) || 0
     }));
-    return { rows, links };
+
+    // Future matches: rows that have a date but NO utkani link
+    const playedRounds = new Set(links.map(l => l.round));
+    const future = [];
+    Array.from(table.querySelectorAll('tr')).forEach(tr => {
+      const cells = Array.from(tr.querySelectorAll('td')).map(c => c.textContent.trim());
+      if (cells.length < 4) return;
+      const round = parseInt(cells[0]);
+      if (!round || playedRounds.has(round)) return;
+      // Has a date-like value and team names
+      const dateMatch = cells[1]?.match(/(\d{1,2}\.\d{2}\.\d{4})/);
+      if (!dateMatch) return;
+      future.push({
+        round,
+        date: dateMatch[1],
+        home: cells[2] || '',
+        away: cells[3] || '',
+      });
+    });
+
+    return { rows, links, future };
   });
 }
 
@@ -215,10 +238,12 @@ async function parseTabulka(page, soutezId) {
     { timeout: 8000 }
   ).catch(() => {});
 
-  // Extract real promotion/relegation counts from embedded JSON in page HTML
+  // Extract real promotion/relegation counts from embedded JSON in page HTML.
+  // The data is in a <head> <script> tag with backslash-escaped quotes: \"postup\":\"1\"
   const zones = await page.evaluate(() => {
-    const html = document.body.innerHTML;
-    const m = html.match(/"postupy"\s*:\s*\{[^}]*"postup"\s*:\s*"(\d+)"[^}]*"sestup"\s*:\s*"(\d+)"/);
+    const html = document.documentElement.outerHTML;
+    // Match both "postup":"1" and \"postup\":\"1\" forms
+    const m = html.match(/\\?"postup\\?"\s*:\s*\\?"(\d+)\\?"[^{}]*\\?"sestup\\?"\s*:\s*\\?"(\d+)/);
     if (m) return { promotionCount: parseInt(m[1]), relegationCount: parseInt(m[2]) };
     return { promotionCount: null, relegationCount: null };
   });
@@ -500,6 +525,25 @@ async function main() {
       }
     }
 
+    // Future matches
+    for (const f of (los.future || [])) {
+      const weAreHome = f.home.includes('Klánovice');
+      const opponent  = weAreHome ? f.away : f.home;
+      clubData.matches.push({
+        id:       teamCfg.id * 1000 + f.round,  // synthetic id
+        teamId:   teamCfg.id,
+        home:     weAreHome,
+        round:    f.round,
+        date:     isoDate(f.date),
+        opponent,
+        score:    null,
+        result:   null,   // null = not played yet
+        playerResults: [],
+        keyPoints: [],
+        future:   true,
+      });
+    }
+
     // 2. Match records
     console.log('  Match records:');
     const rawMatches = [];
@@ -637,8 +681,10 @@ async function main() {
       const oddilPlayer = oddil.players.find(p => p.name === playerName);
       const usp = uspMap[playerName] || null;
       const agg = aggregated[playerName] || { wins: 0, losses: 0 };
-      const w   = usp?.wins    ?? agg.wins   ?? 0;
-      const l   = usp?.losses  ?? agg.losses ?? 0;
+      // Use aggregated (from actual match records = current season only) as primary source.
+      // Fall back to uspMap only when aggregated has nothing (player in roster but no matches scraped yet).
+      const w   = (agg.wins  > 0 || agg.losses > 0) ? agg.wins   : (usp?.wins   ?? 0);
+      const l   = (agg.wins  > 0 || agg.losses > 0) ? agg.losses : (usp?.losses ?? 0);
       const m   = w + l;
       if (m === 0 && !oddilPlayer) continue;  // skip ghost names
       clubData.players.push({
