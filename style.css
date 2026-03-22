@@ -270,7 +270,8 @@ a:hover { text-decoration: underline; }
 }
 .mc-sep { margin: 0 4px; opacity: .5; }
 .mc-season { color: var(--c-accent); font-weight: 600; }
-.mc-mvp { font-size: 11px; color: var(--c-orange); font-weight: 600; padding-top: 1px; }
+.mc-mvp { font-size: 11px; color: var(--c-orange); font-weight: 600; }
+.mc-h2h { display: inline-flex; gap: 4px; align-items: center; }
 
 /* Main line: teams + score */
 .mc-main {
@@ -281,10 +282,16 @@ a:hover { text-decoration: underline; }
   flex: 1; min-width: 0; overflow: hidden;
   font-size: 14px; font-weight: 600;
 }
+.mc-team-col {
+  display: flex; flex-direction: column; gap: 1px;
+  flex: 1; min-width: 0; overflow: hidden;
+}
 .mc-team {
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  flex: 1; min-width: 0;
+  min-width: 0;
 }
+.mc-team-col .mc-team { flex: none; }
+.mc-teams > .mc-team { flex: 1; }
 .mc-our { color: var(--c-primary); }
 .mc-vs {
   color: var(--c-muted); font-weight: 400; font-size: 11px;

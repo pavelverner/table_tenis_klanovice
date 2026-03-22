@@ -427,11 +427,41 @@ function renderTopPlayers() {
   `).join('');
 }
 
+// ── Shared H2H helper ──────────────────────────────────────
+function getH2H(m) {
+  const today = new Date().toISOString().split('T')[0];
+  function prevMatches(src) {
+    if (!src) return [];
+    const t = (src.teams || []).find(t => {
+      const our = CLUB_DATA.teams.find(ct => ct.id === m.teamId);
+      return t.name === our?.name;
+    });
+    if (!t) return [];
+    return (src.matches || []).filter(x => x.teamId === t.id && x.opponent === m.opponent && x.result && x.score);
+  }
+  return [
+    ...CLUB_DATA.matches.filter(x => x.teamId === m.teamId && x.opponent === m.opponent && x.result && x.score && x.date < today),
+    ...prevMatches(window.CLUB_DATA_PREV),
+    ...prevMatches(window.CLUB_DATA_PREV2),
+  ].sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 3);
+}
+
+function h2hHtml(h2h) {
+  if (!h2h.length) return '';
+  return `<div class="mc-h2h">${h2h.map(x => {
+    const s = x.home ? x.score.home : x.score.away;
+    const o = x.home ? x.score.away : x.score.home;
+    const yr = (x.date || '').slice(2, 4);
+    return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${s}:${o}<span class="h2h-yr">'${yr}</span></span>`;
+  }).join('')}</div>`;
+}
+
 // ── 2. ZÁPASY ──────────────────────────────────────────────
 function renderFutureCard(m) {
   const team = getTeamById(m.teamId);
   const homeTeam = m.home ? team.name : m.opponent;
   const awayTeam = m.home ? m.opponent : team.name;
+  const h2h = getH2H(m);
   return `
   <div class="match-card match-card-future">
     <div class="match-card-header" style="cursor:default">
@@ -448,6 +478,7 @@ function renderFutureCard(m) {
           <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
         </div>
         <div class="mc-right">
+          ${h2hHtml(h2h)}
           <div class="match-badge badge-upcoming">→</div>
         </div>
       </div>
@@ -581,7 +612,10 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
       </div>
       <div class="mc-main">
         <div class="mc-teams">
-          <span class="mc-team${m.home ? ' mc-our' : ''}">${homeTeam}</span>
+          <div class="mc-team-col">
+            <span class="mc-team${m.home ? ' mc-our' : ''}">${homeTeam}</span>
+            ${mvp ? `<span class="mc-mvp">${mvpBadge}</span>` : ''}
+          </div>
           <span class="mc-vs">vs</span>
           <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
         </div>
@@ -591,7 +625,6 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
           <div class="expand-icon">▾</div>
         </div>
       </div>
-      ${mvp ? `<div class="mc-mvp">${mvpBadge}</div>` : ''}
     </div>
     <div class="match-card-body">
       ${keyPts ? `
