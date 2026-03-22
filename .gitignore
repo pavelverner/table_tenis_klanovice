@@ -1,0 +1,4 @@
+node_modules/
+scraped_full.json
+scraped_raw.json
+*.log

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TTC Klánovice – Stolní tenis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-icon">🏓</div>
+        <div>
+          <div class="logo-name">TTC Klánovice</div>
+          <div class="logo-sub">Stolní tenis · Praha</div>
+        </div>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="#prehled" class="nav-link active" data-section="prehled">Přehled</a>
+        <a href="#vysledky" class="nav-link" data-section="vysledky">Výsledky</a>
+        <a href="#statistiky" class="nav-link" data-section="statistiky">Statistiky</a>
+        <a href="#tabulky" class="nav-link" data-section="tabulky">Tabulky</a>
+      </nav>
+      <div class="header-right">
+        <div class="season-select-wrap">
+          <select id="seasonSelect" class="season-select"></select>
+        </div>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main container">
+
+    <!-- ===== PŘEHLED ===== -->
+    <section id="prehled" class="section active">
+      <div class="section-header">
+        <h1 id="prehledTitle">Přehled sezóny</h1>
+        <p class="section-desc">Aktuální stav všech týmů TTC Klánovice v pražské lize</p>
+      </div>
+
+      <!-- Live / Today's matches -->
+      <div id="liveBlock" style="display:none" class="section-block">
+        <h2 class="block-title live-title">
+          <span class="live-dot"></span> Právě se hraje
+        </h2>
+        <div id="liveMatches"></div>
+      </div>
+
+      <!-- Team Cards -->
+      <div class="teams-grid" id="teamsGrid"></div>
+
+      <!-- Latest Matches -->
+      <div class="section-block">
+        <h2 class="block-title">Poslední výsledky</h2>
+        <div class="matches-list" id="latestMatches"></div>
+      </div>
+
+      <!-- Top Players -->
+      <div class="section-block">
+        <h2 class="block-title">Top hráči sezóny</h2>
+        <div class="top-players" id="topPlayers"></div>
+      </div>
+    </section>
+
+    <!-- ===== VÝSLEDKY ===== -->
+    <section id="vysledky" class="section">
+      <div class="section-header">
+        <h1>Výsledky zápasů</h1>
+        <div class="filter-tabs" id="matchFilterTabs"></div>
+      </div>
+      <div class="matches-detail" id="matchesDetail"></div>
+    </section>
+
+    <!-- ===== STATISTIKY ===== -->
+    <section id="statistiky" class="section">
+      <div class="section-header">
+        <h1>Statistiky hráčů</h1>
+        <div class="filter-tabs" id="statsFilterTabs"></div>
+      </div>
+      <div class="stats-table-wrap" id="statsTable"></div>
+    </section>
+
+    <!-- ===== TABULKY ===== -->
+    <section id="tabulky" class="section">
+      <div class="section-header">
+        <h1>Ligové tabulky</h1>
+        <div class="filter-tabs" id="tableFilterTabs"></div>
+      </div>
+      <div id="tableZoneLegend" class="zone-legend">
+        <span class="zone-dot promotion"></span> Postup
+        <span class="zone-dot relegation" style="margin-left:14px"></span> Sestup
+      </div>
+      <div id="leagueTables"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>TTC Klánovice © 2025</span>
+      <span>Aktualizováno: <span id="lastUpdate">–</span></span>
+      <span>Data: <a href="https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025" target="_blank">stis.ping-pong.cz</a></span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
