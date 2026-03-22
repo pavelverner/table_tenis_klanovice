@@ -491,14 +491,24 @@ a:hover { text-decoration: underline; }
   .team-stat { padding: 6px 8px; }
   .team-stat-val { font-size: 15px; }
 
-  /* Match list rows */
+  /* Match list rows – score + badge stacked on right */
   .match-row {
-    grid-template-columns: 1fr auto auto;
-    gap: 10px;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
     padding: 10px 12px;
+    align-items: center;
   }
   .match-date { display: none; }
-  .match-score { font-size: 15px; }
+  .match-score { display: none; }  /* hidden – score shown inside badge area */
+  .match-row .match-badge {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 2px; min-width: 44px;
+  }
+  .match-row .match-badge::before {
+    content: attr(data-score);
+    font-size: 14px; font-weight: 700; color: var(--c-text);
+    letter-spacing: -0.5px; font-variant-numeric: tabular-nums;
+  }
 
   /* Match detail cards */
   .match-card-header { flex-direction: column; align-items: stretch; gap: 6px; padding: 12px 14px; }
