@@ -403,7 +403,7 @@ function parseUspesnostRow(row) {
 
 function buildPlayerResults(matchData, weAreHome, uspMap) {
   return matchData.matchResults
-    .filter(r => r.sadyH !== null && r.sadyA !== null)
+    .filter(r => r.sadyH !== null && r.sadyA !== null && r.sadyH <= 4 && r.sadyA <= 4)
     .map(r => {
       const ourPlayers   = weAreHome ? r.homePlayers : r.awayPlayers;
       const theirPlayers = weAreHome ? r.awayPlayers : r.homePlayers;

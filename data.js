@@ -1,6 +1,4 @@
 // TTC Klánovice – data.js (22. 3. 2026)
-// Zdroj: https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025
-
 const CLUB_DATA = {
   "name": "TTC Klánovice",
   "shortName": "Klánovice",
@@ -2937,15 +2935,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1750,
           "oppStr": 1712
-        },
-        {
-          "player": "Hudek Tomáš",
-          "opponent": "Orlowski Petr",
-          "result": "7:13",
-          "won": false,
-          "isDoubles": false,
-          "ourStr": 1698,
-          "oppStr": 1728
         }
       ],
       "keyPoints": [
@@ -3393,15 +3382,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1750,
           "oppStr": 1841
-        },
-        {
-          "player": "Hořejší Radim",
-          "opponent": "Ambrož Adam",
-          "result": "8:5",
-          "won": true,
-          "isDoubles": false,
-          "ourStr": 1843,
-          "oppStr": 1722
         }
       ],
       "keyPoints": [
@@ -3977,15 +3957,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1698,
           "oppStr": 1672
-        },
-        {
-          "player": "Verner Pavel",
-          "opponent": "Hlista Petr",
-          "result": "7:10",
-          "won": false,
-          "isDoubles": false,
-          "ourStr": 1659,
-          "oppStr": 1718
         }
       ],
       "keyPoints": [
@@ -5235,15 +5206,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1750,
           "oppStr": 1670
-        },
-        {
-          "player": "Hořejší Radim",
-          "opponent": "Tichý Květoslav",
-          "result": "8:7",
-          "won": true,
-          "isDoubles": false,
-          "ourStr": 1843,
-          "oppStr": 1581
         }
       ],
       "keyPoints": [
@@ -5408,15 +5370,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1843,
           "oppStr": 1771
-        },
-        {
-          "player": "Polák František",
-          "opponent": "Lorenc David",
-          "result": "-8:8",
-          "won": false,
-          "isDoubles": false,
-          "ourStr": 1715,
-          "oppStr": 1625
         }
       ],
       "keyPoints": [
@@ -5769,15 +5722,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1587,
           "oppStr": 1605
-        },
-        {
-          "player": "Verner Pavel",
-          "opponent": "Kraml Karel",
-          "result": "9:-8",
-          "won": true,
-          "isDoubles": false,
-          "ourStr": 1659,
-          "oppStr": 1608
         }
       ],
       "keyPoints": [
@@ -6553,15 +6497,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1659,
           "oppStr": 1596
-        },
-        {
-          "player": "Farský Karel",
-          "opponent": "Běhal Aleš",
-          "result": "-9:7",
-          "won": false,
-          "isDoubles": false,
-          "ourStr": 1651,
-          "oppStr": 1727
         }
       ],
       "keyPoints": [
@@ -7281,15 +7216,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1624,
           "oppStr": 1561
-        },
-        {
-          "player": "Horčák Martin",
-          "opponent": "Farář Petr",
-          "result": "7:3",
-          "won": true,
-          "isDoubles": false,
-          "ourStr": 1489,
-          "oppStr": 1470
         }
       ],
       "keyPoints": [
@@ -7427,15 +7353,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1587,
           "oppStr": 1683
-        },
-        {
-          "player": "Horčák Martin",
-          "opponent": "Botek Radomír",
-          "result": "5:1",
-          "won": true,
-          "isDoubles": false,
-          "ourStr": 1489,
-          "oppStr": 1428
         }
       ],
       "keyPoints": [
@@ -7582,15 +7499,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1624,
           "oppStr": 1477
-        },
-        {
-          "player": "Verner Pavel",
-          "opponent": "Zapletal Jan",
-          "result": "6:7",
-          "won": false,
-          "isDoubles": false,
-          "ourStr": 1659,
-          "oppStr": 1607
         }
       ],
       "keyPoints": [
@@ -9520,15 +9428,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1467,
           "oppStr": 1604
-        },
-        {
-          "player": "Pospíšil Jan st.",
-          "opponent": "Jiroušek Karel",
-          "result": "4:6",
-          "won": false,
-          "isDoubles": false,
-          "ourStr": 1410,
-          "oppStr": 1621
         }
       ],
       "keyPoints": [
@@ -10814,15 +10713,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1489,
           "oppStr": 1477
-        },
-        {
-          "player": "Hájek Luděk",
-          "opponent": "Vřešťál Milan",
-          "result": "-8:5",
-          "won": false,
-          "isDoubles": false,
-          "ourStr": 1467,
-          "oppStr": 1427
         }
       ],
       "keyPoints": [
@@ -13253,15 +13143,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1424,
           "oppStr": 1462
-        },
-        {
-          "player": "Jiroš Martin",
-          "opponent": "Táborský Michael",
-          "result": "5:7",
-          "won": false,
-          "isDoubles": false,
-          "ourStr": 1378,
-          "oppStr": 1441
         }
       ],
       "keyPoints": [
@@ -14446,15 +14327,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1396,
           "oppStr": 1497
-        },
-        {
-          "player": "Nový Pavel",
-          "opponent": "Espinoza Felix",
-          "result": "9:8",
-          "won": true,
-          "isDoubles": false,
-          "ourStr": 1424,
-          "oppStr": 1486
         }
       ],
       "keyPoints": [
@@ -15263,15 +15135,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1232,
           "oppStr": 1262
-        },
-        {
-          "player": "Horčák Vojtěch",
-          "opponent": "Mikyska Luboš",
-          "result": "7:5",
-          "won": true,
-          "isDoubles": false,
-          "ourStr": 1321,
-          "oppStr": 1395
         }
       ],
       "keyPoints": [
@@ -16721,15 +16584,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1321,
           "oppStr": 1351
-        },
-        {
-          "player": "Pravda Jakub",
-          "opponent": "Nemčík Martin",
-          "result": "-5:8",
-          "won": false,
-          "isDoubles": false,
-          "ourStr": 1250,
-          "oppStr": 1412
         }
       ],
       "keyPoints": [
@@ -17916,15 +17770,6 @@ const CLUB_DATA = {
           "isDoubles": false,
           "ourStr": 1166,
           "oppStr": 1268
-        },
-        {
-          "player": "Horčák Vojtěch",
-          "opponent": "Beňovič Marek (E)",
-          "result": "-8:11",
-          "won": false,
-          "isDoubles": false,
-          "ourStr": 1321,
-          "oppStr": 0
         }
       ],
       "keyPoints": [

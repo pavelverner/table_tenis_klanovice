@@ -901,9 +901,10 @@ function getMergedPlayers() {
       base.stats.matches += p.stats.matches;
       const tot = base.stats.wins + base.stats.losses;
       base.stats.winPct = tot > 0 ? Math.round(base.stats.wins / tot * 100) : 0;
-      // Use highest STR
+      // Sum strDelta across all teams; use highest STR value
+      base.strDelta = (base.strDelta || 0) + (p.strDelta || 0);
       if ((p.str || 0) > (base.str || 0)) {
-        base.str = p.str; base.strStab = p.strStab; base.strDelta = p.strDelta;
+        base.str = p.str; base.strStab = p.strStab;
       }
       // Primary team = isRegular one
       if (p.isRegular && !base.isRegular) {
@@ -1336,11 +1337,11 @@ function openPlayerModal(playerId) {
         const tl = th.filter(h => !h.won).length;
         const tm = tw + tl;
         const tp = tm > 0 ? Math.round(tw / tm * 100) : 0;
-        const role = t.isRegular ? 'základní' : 'náhradník';
+        if (tm === 0) return '';  // hide teams with no matches played
         return `<div class="modal-team-row">
           <span class="modal-team-pill">Tým ${t.team}</span>
           <span class="modal-team-record">${tw}V / ${tl}P (${tm} zápasů)</span>
-          <span class="modal-team-pct">${tp}% · ${role}</span>
+          <span class="modal-team-pct">${tp}%${!t.isRegular ? ' · náhradník' : ''}</span>
         </div>`;
       }).join('')}
     </div>` : '';
