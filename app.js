@@ -313,7 +313,18 @@ function renderUpcoming() {
   if (!upcoming.length) { if(block) block.style.display='none'; return; }
   if(block) block.style.display='block';
 
-  el.innerHTML = upcoming.map(m => {
+  const isExpanded = el.dataset.expanded === '1';
+  const toggle = `
+    <button class="upcoming-toggle" onclick="toggleUpcoming(this)">
+      ${isExpanded ? '▲ Skrýt' : `▼ Zobrazit nadcházející zápasy (${upcoming.length})`}
+    </button>`;
+
+  if (!isExpanded) {
+    el.innerHTML = toggle;
+    return;
+  }
+
+  el.innerHTML = toggle + upcoming.map(m => {
     const team = getTeamById(m.teamId);
     const homeTeam = m.home ? team.name : m.opponent;
     const awayTeam = m.home ? m.opponent : team.name;
@@ -358,6 +369,12 @@ function renderUpcoming() {
       ${scorers}
     </div>`;
   }).join('');
+}
+
+function toggleUpcoming(btn) {
+  const el = document.getElementById('upcomingMatches');
+  el.dataset.expanded = el.dataset.expanded === '1' ? '0' : '1';
+  renderUpcoming();
 }
 
 function renderTopPlayers() {
@@ -482,64 +499,163 @@ function renderStatistiky() {
   const tabs = document.getElementById('statsFilterTabs');
   tabs.innerHTML = filterTabsHTML('stats');
   activateFilterTabs('stats', tabs);
-  renderStatsChart();
+  renderClubSummary();
+  renderSeasonProgressChart();
   renderStatsTable();
 }
 
-function renderStatsChart() {
-  let el = document.getElementById('statsChart');
+// Club-wide summary: total matches W/D/L, sets, individual games
+function renderClubSummary() {
+  let el = document.getElementById('clubSummary');
   if (!el) {
     el = document.createElement('div');
-    el.id = 'statsChart';
-    el.className = 'stats-chart-wrap section-block';
-    const statsTableWrap = document.getElementById('statsTable');
-    statsTableWrap.parentNode.insertBefore(el, statsTableWrap);
+    el.id = 'clubSummary';
+    el.className = 'section-block';
+    document.getElementById('statsTable').parentNode.insertBefore(el, document.getElementById('statsTable'));
   }
 
-  const merged = getMergedPlayers();
-  const players = activeStatsTeam === 'all'
-    ? merged
-    : merged.filter(p =>
-        p.team === activeStatsTeam ||
-        (p.teams || []).some(t => t.team === activeStatsTeam)
-      );
+  const played = CLUB_DATA.matches.filter(m => !m.future && m.result && m.score);
+  let mW=0, mD=0, mL=0, sFor=0, sAg=0, gW=0, gL=0;
+  for (const m of played) {
+    if (m.result==='W') mW++; else if (m.result==='D') mD++; else mL++;
+    const ourSets = m.home ? m.score.home : m.score.away;
+    const oppSets = m.home ? m.score.away : m.score.home;
+    sFor += ourSets; sAg += oppSets;
+    for (const pr of (m.playerResults || [])) {
+      if (pr.won) gW++; else gL++;
+    }
+  }
+  const total = mW + mD + mL;
+  const mPct  = total > 0 ? Math.round(mW / total * 100) : 0;
+  const sDiff = sFor - sAg;
+  const gDiff = gW - gL;
 
-  // Top 20 by STR, only those with a rating
-  const rated = players
-    .filter(p => p.str)
-    .sort((a,b) => (b.str||0) - (a.str||0))
-    .slice(0, 20);
-
-  if (!rated.length) { el.innerHTML = ''; return; }
-
-  const maxStr = rated[0].str;
-  const minStr = rated[rated.length - 1].str;
-  const range  = Math.max(maxStr - minStr, 1);
-
-  const bars = rated.map(p => {
-    const barPct = 40 + Math.round(((p.str - minStr) / range) * 55); // 40–95%
-    const delta  = p.strDelta || 0;
-    const dc     = delta > 0 ? 'var(--c-green)' : delta < 0 ? 'var(--c-red)' : 'var(--c-muted)';
-    const ds     = delta > 0 ? `+${delta}` : String(delta);
-    const tl     = (p.teams||[]).length > 1
-      ? (p.teams||[]).map(t=>`Tým ${t.team}`).join(', ')
-      : `Tým ${p.team}`;
-    return `
-    <div class="sc-row" onclick="openPlayerModal(${p.id})">
-      <div class="sc-name">${p.name}<span class="sc-team">${tl}</span></div>
-      <div class="sc-bar-wrap">
-        <div class="sc-bar" style="width:${barPct}%"></div>
-      </div>
-      <div class="sc-vals">
-        <span class="sc-str">${p.str}</span>
-        <span class="sc-delta" style="color:${dc}">${ds}</span>
-      </div>
+  // Average STR per team
+  const teamStrRows = CLUB_DATA.teams.map(t => {
+    const ps = CLUB_DATA.players.filter(p => p.teamId === t.id && p.str);
+    if (!ps.length) return '';
+    const avg = Math.round(ps.reduce((s,p) => s + p.str, 0) / ps.length);
+    const maxStr = Math.max(...CLUB_DATA.players.filter(p=>p.str).map(p=>p.str));
+    const minStr = Math.min(...CLUB_DATA.players.filter(p=>p.str).map(p=>p.str));
+    const pct = maxStr > minStr ? 30 + Math.round((avg - minStr) / (maxStr - minStr) * 60) : 50;
+    return `<div class="team-str-row">
+      <span class="team-str-name">${t.name.replace('TTC Klánovice ','Tým ')}</span>
+      <div class="team-str-bar-wrap"><div class="team-str-bar" style="width:${pct}%"></div></div>
+      <span class="team-str-val">${avg}</span>
     </div>`;
   }).join('');
 
   el.innerHTML = `
-    <h2 class="block-title">STR (Elo) žebříček</h2>
-    <div class="stats-chart">${bars}</div>`;
+    <h2 class="block-title">Celková bilance klubu</h2>
+    <div class="club-summary-grid">
+      <div class="cs-card">
+        <div class="cs-big stat-w">${mW}</div><div class="cs-lbl">Výher</div>
+        <div class="cs-sub">${mD} remíz · ${mL} proher · ${mPct}% úspěšnost</div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-big" style="color:var(--c-primary)">${sFor}</div><div class="cs-lbl">Setů vyhráno</div>
+        <div class="cs-sub">Rozdíl <span style="color:${sDiff>=0?'var(--c-green)':'var(--c-red)'}">${sDiff>=0?'+':''}${sDiff}</span> (soupeř ${sAg})</div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-big" style="color:var(--c-accent)">${gW}</div><div class="cs-lbl">Her vyhráno</div>
+        <div class="cs-sub">Rozdíl <span style="color:${gDiff>=0?'var(--c-green)':'var(--c-red)'}">${gDiff>=0?'+':''}${gDiff}</span> (soupeř ${gL})</div>
+      </div>
+    </div>
+    ${teamStrRows ? `
+    <div class="team-str-section">
+      <div class="modal-history-title" style="margin:16px 0 10px">Průměrné STR (Elo) týmů</div>
+      ${teamStrRows}
+    </div>` : ''}`;
+}
+
+// Season progress: cumulative wins per team as SVG polylines
+function renderSeasonProgressChart() {
+  let el = document.getElementById('seasonProgress');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'seasonProgress';
+    el.className = 'section-block';
+    const clubSummary = document.getElementById('clubSummary');
+    clubSummary.parentNode.insertBefore(el, clubSummary.nextSibling);
+  }
+
+  const played = CLUB_DATA.matches
+    .filter(m => !m.future && m.result && m.date)
+    .sort((a,b) => (a.date||'').localeCompare(b.date||''));
+
+  if (played.length < 2) { el.innerHTML = ''; return; }
+
+  // Build cumulative wins per team
+  const TEAM_COLORS = ['#4f8ef7','#22c55e','#f59e0b','#a78bfa','#ef4444','#06b6d4'];
+  const teams = CLUB_DATA.teams;
+
+  // Collect all unique dates
+  const allDates = [...new Set(played.map(m => m.date))].sort();
+
+  // For each team, running cumulative wins at each date
+  const teamLines = teams.map((team, ti) => {
+    let cumW = 0;
+    const points = [{ date: allDates[0], w: 0, before: true }]; // start at 0
+    for (const date of allDates) {
+      const ms = played.filter(m => m.teamId === team.id && m.date === date);
+      for (const m of ms) if (m.result === 'W') cumW++;
+      points.push({ date, w: cumW });
+    }
+    return { team, color: TEAM_COLORS[ti % TEAM_COLORS.length], points };
+  });
+
+  const maxW = Math.max(...teamLines.map(l => Math.max(...l.points.map(p => p.w))), 1);
+  const W = 560, H = 160, padL = 28, padR = 10, padT = 10, padB = 24;
+  const cW = W - padL - padR, cH = H - padT - padB;
+
+  const allPts = teamLines[0]?.points || [];
+  const n = allPts.length;
+  const xStep = n > 1 ? cW / (n - 1) : cW;
+
+  // X axis labels (only a few)
+  const labelEvery = Math.ceil(n / 5);
+  const xLabels = allPts.map((p, i) => {
+    if (i === 0 || i === n-1 || i % labelEvery === 0) {
+      const x = padL + i * xStep;
+      const d = fmtDate(p.date).replace(/\s/g,'');
+      return `<text x="${x}" y="${H - 4}" font-size="9" fill="var(--c-muted)" text-anchor="middle">${d}</text>`;
+    }
+    return '';
+  }).join('');
+
+  // Y axis lines
+  const yLines = Array.from({length: maxW+1}, (_,i) => {
+    const y = padT + cH - (i / maxW) * cH;
+    return `<line x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}" stroke="var(--c-border)" stroke-width="0.5"/>
+            <text x="${padL - 4}" y="${y+3}" font-size="9" fill="var(--c-muted)" text-anchor="end">${i}</text>`;
+  }).join('');
+
+  const lines = teamLines.map(({ team, color, points }) => {
+    const pts = points.map((p, i) => {
+      const x = padL + i * xStep;
+      const y = padT + cH - (p.w / maxW) * cH;
+      return `${x},${y}`;
+    }).join(' ');
+    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round"/>`;
+  }).join('');
+
+  const legend = teamLines.map(({ team, color }) =>
+    `<span style="display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--c-muted)">
+      <svg width="18" height="3"><line x1="0" y1="1.5" x2="18" y2="1.5" stroke="${color}" stroke-width="2.5"/></svg>
+      ${team.name.replace('TTC Klánovice ','')}
+    </span>`
+  ).join('');
+
+  el.innerHTML = `
+    <h2 class="block-title">Průběh sezóny – kumulativní výhry</h2>
+    <div style="overflow-x:auto">
+      <svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block;min-width:280px" xmlns="http://www.w3.org/2000/svg">
+        ${yLines}
+        ${lines}
+        ${xLabels}
+      </svg>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:8px">${legend}</div>`;
 }
 
 // ── Merge players who appear in multiple teams ──────────────
@@ -868,18 +984,34 @@ function openPlayerModal(playerId) {
   if (!playerTeamIds.includes(p.teamId)) playerTeamIds.push(p.teamId);
 
   const matchHistory = [];
-  for (const m of CLUB_DATA.matches) {
-    if (!playerTeamIds.includes(m.teamId)) continue;
-    for (const pr of (m.playerResults || [])) {
-      if (pr.player !== p.name) continue;
-      matchHistory.push({
-        date:        m.date,
-        opponent:    pr.opponent,
-        result:      pr.result,
-        won:         pr.won,
-        competition: CLUB_DATA.teams.find(t => t.id === m.teamId)?.competition || '',
-      });
+
+  // Helper: collect match results for a player from a data source
+  function collectHistory(dataSource, seasonLabel) {
+    for (const m of (dataSource.matches || [])) {
+      if (m.future) continue;
+      const teamMatch = (dataSource.teams || []).find(t => t.id === m.teamId);
+      // Accept any team if same name (for prev season: team IDs may differ)
+      const nameMatch = playerTeamIds.includes(m.teamId)
+        || (dataSource !== CLUB_DATA && (dataSource.teams || []).some(t =>
+            CLUB_DATA.teams.some(ct => ct.name === t.name) && t.id === m.teamId));
+      if (!nameMatch) continue;
+      for (const pr of (m.playerResults || [])) {
+        if (pr.player !== p.name) continue;
+        matchHistory.push({
+          date:        m.date,
+          opponent:    pr.opponent,
+          result:      pr.result,
+          won:         pr.won,
+          competition: teamMatch?.competition || '',
+          season:      seasonLabel,
+        });
+      }
     }
+  }
+
+  collectHistory(CLUB_DATA, CLUB_DATA.season || '');
+  if (window.CLUB_DATA_PREV) {
+    collectHistory(window.CLUB_DATA_PREV, window.CLUB_DATA_PREV.season || 'předchozí sezóna');
   }
   matchHistory.sort((a,b) => (b.date||'').localeCompare(a.date||''));
 
@@ -894,13 +1026,15 @@ function openPlayerModal(playerId) {
     ? `https://stis.ping-pong.cz/hrac-${p.stisId}/svaz-420101/rocnik-${rocnik}/soutez-${p.soutezId}`
     : null;
 
+  const hasPrevSeason = matchHistory.some(h => h.season && h.season !== (CLUB_DATA.season || ''));
+
   const historyRows = matchHistory.map(h => `
     <tr>
       <td class="modal-match-date">${fmtDate(h.date)}</td>
       <td><span class="result-dot dot-${h.won?'W':'L'}" style="display:inline-block;vertical-align:middle"></span>
           <span style="margin-left:6px;font-weight:600;color:${h.won?'var(--c-green)':'var(--c-red)'}">${h.result}</span></td>
       <td class="modal-opp">${h.opponent}</td>
-      <td style="color:var(--c-muted);font-size:12px">${h.competition}</td>
+      <td style="color:var(--c-muted);font-size:12px">${hasPrevSeason && h.season ? h.season : h.competition}</td>
     </tr>`).join('');
 
   // Per-team breakdown (only shown when player has multiple teams)
