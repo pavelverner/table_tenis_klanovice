@@ -94,6 +94,27 @@ function showToast(msg, duration = 3000) {
   t._timer = setTimeout(() => t.classList.remove('show'), duration);
 }
 
+// ── Chart tooltip ──────────────────────────────────────────
+function showChartTip(e, text) {
+  let tip = document.getElementById('chartTip');
+  if (!tip) {
+    tip = document.createElement('div');
+    tip.id = 'chartTip';
+    document.body.appendChild(tip);
+  }
+  tip.innerHTML = text.split('\n').map((l, i) => i === 0
+    ? `<strong>${l}</strong>`
+    : `<span>${l}</span>`
+  ).join('');
+  tip.style.display = 'flex';
+  tip.style.left = (e.clientX + 14) + 'px';
+  tip.style.top  = (e.clientY - 10) + 'px';
+}
+function hideChartTip() {
+  const tip = document.getElementById('chartTip');
+  if (tip) tip.style.display = 'none';
+}
+
 // ── Helpers ────────────────────────────────────────────────
 function fmt(n) { return n > 0 ? `+${n}` : String(n); }
 
@@ -819,11 +840,17 @@ function renderSeasonProgressChart() {
       .filter(m => m.teamId === team.id)
       .sort((a,b) => (a.date||'').localeCompare(b.date||''));
     let w = 0;
-    const points = [{ pct: 50, date: '', n: 0 }]; // neutral start
+    const points = [{ pct: 50, date: '', n: 0, tip: null }]; // neutral start
     for (const m of teamMatches) {
       if (m.result === 'W') w++;
       const n = points.length;
-      points.push({ pct: Math.round(w / n * 100), date: m.date, n });
+      const pct = Math.round(w / n * 100);
+      const scoreH = m.home ? m.score.home : m.score.away;
+      const scoreA = m.home ? m.score.away : m.score.home;
+      points.push({
+        pct, date: m.date, n,
+        tip: `${fmtDate(m.date)}\nvs ${m.opponent}\n${m.result === 'W' ? '✓' : m.result === 'D' ? '–' : '✗'} ${scoreH}:${scoreA}\n${w}/${n} = ${pct}%`,
+      });
     }
     return { team, color: TEAM_COLORS[ti % TEAM_COLORS.length], points };
   }).filter(l => l.points.length > 1);
@@ -846,17 +873,21 @@ function renderSeasonProgressChart() {
     const dim = activeStatsTeam !== 'all' && teamKey !== activeStatsTeam;
     const n = points.length;
     const xStep = n > 1 ? cW / (n - 1) : cW;
-    const pts = points.map((p, i) => {
-      const x = padL + i * xStep;
-      const y = padT + cH - (p.pct / 100) * cH;
-      return `${x},${y}`;
-    }).join(' ');
+    const coords = points.map((p, i) => ({
+      x: padL + i * xStep,
+      y: padT + cH - (p.pct / 100) * cH,
+      tip: p.tip,
+    }));
+    const pts = coords.map(c => `${c.x},${c.y}`).join(' ');
     // Endpoint label (only for active team)
-    const lastP = points[n-1];
-    const lx = padL + (n-1) * xStep + 4;
-    const ly = padT + cH - (lastP.pct / 100) * cH + 4;
-    const label = dim ? '' : `<text x="${Math.min(lx, W-padR-2)}" y="${ly}" font-size="9" fill="${color}" font-weight="600">${lastP.pct}%</text>`;
-    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="${dim ? 1.5 : 2.5}" stroke-linejoin="round" opacity="${dim ? 0.12 : 1}"/>${label}`;
+    const last = coords[n-1];
+    const label = dim ? '' : `<text x="${Math.min(last.x + 4, W-padR-2)}" y="${last.y + 4}" font-size="9" fill="${color}" font-weight="600">${points[n-1].pct}%</text>`;
+    // Hover circles (skip starting neutral point)
+    const circles = dim ? '' : coords.slice(1).map(c =>
+      `<circle cx="${c.x.toFixed(1)}" cy="${c.y.toFixed(1)}" r="5" fill="${color}" fill-opacity="0" stroke="none" style="cursor:pointer"
+        onmouseover="showChartTip(event,${JSON.stringify(c.tip || '')})" onmouseout="hideChartTip()"/>`
+    ).join('');
+    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="${dim ? 1.5 : 2.5}" stroke-linejoin="round" opacity="${dim ? 0.12 : 1}"/>${label}${circles}`;
   }).join('');
 
   const legend = teamLines.map(({ team, color }) => {
