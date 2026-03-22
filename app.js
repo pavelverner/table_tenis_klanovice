@@ -27,7 +27,13 @@ function initNav() {
     link.addEventListener('click', e => {
       e.preventDefault();
       switchSection(link.dataset.section);
-      document.getElementById('nav').classList.remove('open');
+    });
+  });
+  document.querySelectorAll('.bottom-nav-item').forEach(item => {
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      switchSection(item.dataset.section);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
   document.getElementById('hamburger').addEventListener('click', () => {
@@ -41,6 +47,9 @@ function switchSection(sec) {
   document.getElementById(sec).classList.add('active');
   document.querySelectorAll('.nav-link').forEach(l =>
     l.classList.toggle('active', l.dataset.section === sec)
+  );
+  document.querySelectorAll('.bottom-nav-item').forEach(item =>
+    item.classList.toggle('active', item.dataset.section === sec)
   );
   renderSection(sec);
 }

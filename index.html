@@ -31,7 +31,7 @@
         <div class="season-select-wrap">
           <select id="seasonSelect" class="season-select"></select>
         </div>
-        <button class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -125,6 +125,26 @@
       <div id="playerModalContent"></div>
     </div>
   </div>
+
+  <!-- Bottom navigation (mobile only) -->
+  <nav class="bottom-nav" id="bottomNav">
+    <a class="bottom-nav-item active" data-section="prehled" href="#prehled">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      <span>Přehled</span>
+    </a>
+    <a class="bottom-nav-item" data-section="vysledky" href="#vysledky">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      <span>Výsledky</span>
+    </a>
+    <a class="bottom-nav-item" data-section="statistiky" href="#statistiky">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      <span>Statistiky</span>
+    </a>
+    <a class="bottom-nav-item" data-section="tabulky" href="#tabulky">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3h18v4H3zM3 10h18v4H3zM3 17h18v4H3z"/></svg>
+      <span>Tabulky</span>
+    </a>
+  </nav>
 
   <script src="data.js"></script>
   <script src="data_prev.js" onerror="void 0"></script>
