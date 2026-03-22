@@ -301,10 +301,15 @@ function renderUpcoming() {
   const now = new Date();
   const today = now.toISOString().split('T')[0];
 
-  const upcoming = CLUB_DATA.matches
-    .filter(m => m.future && m.date && m.date >= today)
-    .sort((a,b) => (a.date||'').localeCompare(b.date||''))
-    .slice(0, 8);
+  // One next match per team
+  const upcoming = [];
+  for (const team of CLUB_DATA.teams) {
+    const next = CLUB_DATA.matches
+      .filter(m => m.teamId === team.id && m.future && m.date && m.date >= today)
+      .sort((a,b) => (a.date||'').localeCompare(b.date||''))[0];
+    if (next) upcoming.push(next);
+  }
+  upcoming.sort((a,b) => (a.date||'').localeCompare(b.date||''));
 
   const el = document.getElementById('upcomingMatches');
   const block = document.getElementById('upcomingBlock');
@@ -313,18 +318,7 @@ function renderUpcoming() {
   if (!upcoming.length) { if(block) block.style.display='none'; return; }
   if(block) block.style.display='block';
 
-  const isExpanded = el.dataset.expanded === '1';
-  const toggle = `
-    <button class="upcoming-toggle" onclick="toggleUpcoming(this)">
-      ${isExpanded ? '▲ Skrýt' : `▼ Zobrazit nadcházející zápasy (${upcoming.length})`}
-    </button>`;
-
-  if (!isExpanded) {
-    el.innerHTML = toggle;
-    return;
-  }
-
-  el.innerHTML = toggle + upcoming.map(m => {
+  el.innerHTML = upcoming.map(m => {
     const team = getTeamById(m.teamId);
     const homeTeam = m.home ? team.name : m.opponent;
     const awayTeam = m.home ? m.opponent : team.name;
@@ -365,27 +359,28 @@ function renderUpcoming() {
     }
 
     return `
-    <div class="upcoming-card">
-      <div class="upcoming-meta">
-        <span class="upcoming-date">${fmtDate(m.date)}</span>
-        <span class="upcoming-comp">${team.competition}</span>
-        <span class="upcoming-venue ${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
+    <div class="match-row upcoming-row">
+      <div class="match-date">${fmtDate(m.date)}</div>
+      <div class="match-teams">
+        <div class="upcoming-teams-line">
+          <span class="${m.home ? 'our-side' : ''}">${homeTeam}</span>
+          <span class="upcoming-vs">vs</span>
+          <span class="${!m.home ? 'our-side' : ''}">${awayTeam}</span>
+        </div>
+        <div style="font-size:11px;color:var(--c-muted);margin-top:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <span>${team.competition}</span>
+          <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
+          ${h2h.length ? `<span class="h2h-inline">${h2h.map(x => {
+            const hs = x.home ? x.score.home : x.score.away;
+            const as = x.home ? x.score.away : x.score.home;
+            const yr = x.date ? x.date.slice(2,4) : '';
+            return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${hs}:${as}<span class="h2h-yr">'${yr}</span></span>`;
+          }).join('')}</span>` : ''}
+        </div>
       </div>
-      <div class="upcoming-teams">
-        <span class="${m.home ? 'our-side' : ''}">${homeTeam}</span>
-        <span class="upcoming-vs">vs</span>
-        <span class="${!m.home ? 'our-side' : ''}">${awayTeam}</span>
-      </div>
-      ${h2hDots}
-      ${scorers}
+      <div class="match-badge badge-upcoming">→</div>
     </div>`;
   }).join('');
-}
-
-function toggleUpcoming(btn) {
-  const el = document.getElementById('upcomingMatches');
-  el.dataset.expanded = el.dataset.expanded === '1' ? '0' : '1';
-  renderUpcoming();
 }
 
 function renderTopPlayers() {
@@ -596,58 +591,51 @@ function renderSeasonProgressChart() {
 
   if (played.length < 2) { el.innerHTML = ''; return; }
 
-  // Build cumulative wins per team
+  // Build running win% per team (chronological, one point per match played)
   const TEAM_COLORS = ['#4f8ef7','#22c55e','#f59e0b','#a78bfa','#ef4444','#06b6d4'];
   const teams = CLUB_DATA.teams;
 
-  // Collect all unique dates
-  const allDates = [...new Set(played.map(m => m.date))].sort();
-
-  // For each team, running cumulative wins at each date
   const teamLines = teams.map((team, ti) => {
-    let cumW = 0;
-    const points = [{ date: allDates[0], w: 0, before: true }]; // start at 0
-    for (const date of allDates) {
-      const ms = played.filter(m => m.teamId === team.id && m.date === date);
-      for (const m of ms) if (m.result === 'W') cumW++;
-      points.push({ date, w: cumW });
+    const teamMatches = played
+      .filter(m => m.teamId === team.id)
+      .sort((a,b) => (a.date||'').localeCompare(b.date||''));
+    let w = 0;
+    const points = [{ pct: 50, date: '', n: 0 }]; // neutral start
+    for (const m of teamMatches) {
+      if (m.result === 'W') w++;
+      const n = points.length;
+      points.push({ pct: Math.round(w / n * 100), date: m.date, n });
     }
     return { team, color: TEAM_COLORS[ti % TEAM_COLORS.length], points };
-  });
+  }).filter(l => l.points.length > 1);
 
-  const maxW = Math.max(...teamLines.map(l => Math.max(...l.points.map(p => p.w))), 1);
-  const W = 560, H = 160, padL = 28, padR = 10, padT = 10, padB = 24;
+  if (!teamLines.length) { el.innerHTML = ''; return; }
+
+  const maxN = Math.max(...teamLines.map(l => l.points.length));
+  const W = 560, H = 150, padL = 30, padR = 10, padT = 10, padB = 24;
   const cW = W - padL - padR, cH = H - padT - padB;
 
-  const allPts = teamLines[0]?.points || [];
-  const n = allPts.length;
-  const xStep = n > 1 ? cW / (n - 1) : cW;
-
-  // X axis labels (only a few)
-  const labelEvery = Math.ceil(n / 5);
-  const xLabels = allPts.map((p, i) => {
-    if (i === 0 || i === n-1 || i % labelEvery === 0) {
-      const x = padL + i * xStep;
-      const d = fmtDate(p.date).replace(/\s/g,'');
-      return `<text x="${x}" y="${H - 4}" font-size="9" fill="var(--c-muted)" text-anchor="middle">${d}</text>`;
-    }
-    return '';
-  }).join('');
-
-  // Y axis lines
-  const yLines = Array.from({length: maxW+1}, (_,i) => {
-    const y = padT + cH - (i / maxW) * cH;
-    return `<line x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}" stroke="var(--c-border)" stroke-width="0.5"/>
-            <text x="${padL - 4}" y="${y+3}" font-size="9" fill="var(--c-muted)" text-anchor="end">${i}</text>`;
+  // Y axis: 0%, 25%, 50%, 75%, 100%
+  const yLines = [0, 25, 50, 75, 100].map(pct => {
+    const y = padT + cH - (pct / 100) * cH;
+    return `<line x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}" stroke="${pct===50?'var(--c-border)':'rgba(46,51,80,.4)'}" stroke-width="${pct===50?1:0.5}" stroke-dasharray="${pct===50?'':'3,3'}"/>
+            <text x="${padL-4}" y="${y+3}" font-size="9" fill="var(--c-muted)" text-anchor="end">${pct}%</text>`;
   }).join('');
 
   const lines = teamLines.map(({ team, color, points }) => {
+    const n = points.length;
+    const xStep = n > 1 ? cW / (n - 1) : cW;
     const pts = points.map((p, i) => {
       const x = padL + i * xStep;
-      const y = padT + cH - (p.w / maxW) * cH;
+      const y = padT + cH - (p.pct / 100) * cH;
       return `${x},${y}`;
     }).join(' ');
-    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round"/>`;
+    // Endpoint label
+    const lastP = points[n-1];
+    const lx = padL + (n-1) * xStep + 4;
+    const ly = padT + cH - (lastP.pct / 100) * cH + 4;
+    const label = `<text x="${Math.min(lx, W-padR-2)}" y="${ly}" font-size="9" fill="${color}" font-weight="600">${lastP.pct}%</text>`;
+    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" opacity="0.9"/>${label}`;
   }).join('');
 
   const legend = teamLines.map(({ team, color }) =>
@@ -658,15 +646,14 @@ function renderSeasonProgressChart() {
   ).join('');
 
   el.innerHTML = `
-    <h2 class="block-title">Průběh sezóny – kumulativní výhry</h2>
+    <h2 class="block-title">Průběh sezóny – úspěšnost týmů (%)</h2>
     <div style="overflow-x:auto">
-      <svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block;min-width:280px" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block;min-width:260px" xmlns="http://www.w3.org/2000/svg">
         ${yLines}
         ${lines}
-        ${xLabels}
       </svg>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:8px">${legend}</div>`;
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:6px">${legend}</div>`;
 }
 
 // ── Merge players who appear in multiple teams ──────────────
