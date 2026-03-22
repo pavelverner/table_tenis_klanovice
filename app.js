@@ -677,10 +677,15 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
         <ul class="keypoints-list">${keyPts}</ul>
       </div>` : ''}
       <div>
-        <div class="keypoints-title" style="margin-bottom:8px">Výsledky hráčů
-          ${avgOurStr && avgOppStr ? `<span class="match-avg-elo">Průměr ELO: <span class="mc-our-elo">${m.home ? homeTeam : awayTeam} ${avgOurStr}</span> vs <span class="mc-opp-elo">${m.home ? awayTeam : homeTeam} ${avgOppStr}</span></span>` : ''}
-        </div>
+        <div class="keypoints-title" style="margin-bottom:8px">Výsledky hráčů</div>
         <div class="match-players">${playerRows}</div>
+        ${avgOurStr && avgOppStr ? `
+        <div class="match-avg-elo">
+          Průměr ELO:
+          <span class="mc-our-elo">${m.home ? homeTeam : awayTeam} <strong>${avgOurStr}</strong></span>
+          <span class="mc-elo-sep">vs</span>
+          <span class="mc-opp-elo">${m.home ? awayTeam : homeTeam} <strong>${avgOppStr}</strong></span>
+        </div>` : ''}
       </div>
     </div>
   </div>`;
