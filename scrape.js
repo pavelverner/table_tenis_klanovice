@@ -16,7 +16,7 @@ const ODDIL = '420109007';
 // STIS používá rok ZAHÁJENÍ sezóny: rocnik-2025 = sezóna 2025/26 (podzim 2025 – jaro 2026)
 const ROCNIK   = process.argv[2] || String(new Date().getFullYear() - (new Date().getMonth() < 7 ? 1 : 0));
 const OUT_FILE = process.argv[3] || 'data.js';
-const VAR_NAME = OUT_FILE.includes('prev') ? 'CLUB_DATA_PREV' : 'CLUB_DATA';
+const VAR_NAME = OUT_FILE.includes('prev2') ? 'CLUB_DATA_PREV2' : OUT_FILE.includes('prev') ? 'CLUB_DATA_PREV' : 'CLUB_DATA';
 
 const TEAM_SUFFIX = { 63401: 'A', 63402: 'B', 63403: 'C', 63404: 'D', 63405: 'E' };
 const KNOWN_IDS   = new Set(Object.keys(TEAM_SUFFIX).map(Number));
@@ -387,8 +387,10 @@ function parseUspesnostRow(row) {
   const losses = parseInt((row[7] || '').replace(':', '')) || 0;
   const total  = wins + losses;
   if (total === 0) return null;
+  const str = parseInt(row[4]) || 0;
   return {
     name,
+    str,
     teamMatches,
     matches: total,   // individual games played
     wins,
@@ -398,19 +400,23 @@ function parseUspesnostRow(row) {
   };
 }
 
-function buildPlayerResults(matchData, weAreHome) {
+function buildPlayerResults(matchData, weAreHome, uspMap) {
   return matchData.matchResults
     .filter(r => !r.isDoubles && r.sadyH !== null && r.sadyA !== null)
     .map(r => {
-      const ourPlayers  = weAreHome ? r.homePlayers : r.awayPlayers;
+      const ourPlayers   = weAreHome ? r.homePlayers : r.awayPlayers;
       const theirPlayers = weAreHome ? r.awayPlayers : r.homePlayers;
       const ourSady  = weAreHome ? r.sadyH : r.sadyA;
       const theirSady = weAreHome ? r.sadyA : r.sadyH;
+      const ourStr  = ourPlayers.length === 1  ? ((uspMap || {})[ourPlayers[0]]?.str  || 0) : 0;
+      const oppStr  = theirPlayers.length === 1 ? ((uspMap || {})[theirPlayers[0]]?.str || 0) : 0;
       return {
         player:   ourPlayers.join(' / '),
         opponent: theirPlayers.join(' / '),
         result:   `${ourSady}:${theirSady}`,
         won:      ourSady > theirSady,
+        ourStr,
+        oppStr,
       };
     });
 }
@@ -578,7 +584,9 @@ async function main() {
       const parsed = parseUspesnostRow(row);
       if (parsed) uspMap[parsed.name] = parsed;
     }
-    console.log(`${Object.keys(uspMap).length} hráčů`);
+    const leagueStrs = Object.values(uspMap).map(u => u.str).filter(s => s > 0);
+    const leagueAvgStr = leagueStrs.length ? Math.round(leagueStrs.reduce((a,b)=>a+b,0)/leagueStrs.length) : 0;
+    console.log(`${Object.keys(uspMap).length} hráčů, liga avg STR: ${leagueAvgStr}`);
 
     // 5. Oddil (roster stránka konkrétního týmu)
     process.stdout.write('  Roster... ');
@@ -606,7 +614,7 @@ async function main() {
       const result    = ourScore > theirScore ? 'W' : ourScore < theirScore ? 'L' : 'D';
       const date      = isoDate(m.date) || m._scheduleDate || '';
 
-      const playerResults = buildPlayerResults(m, weAreHome);
+      const playerResults = buildPlayerResults(m, weAreHome, uspMap);
       const keyPoints     = genKeyPoints(m, weAreHome, m.playerStats || {});
 
       const matchObj = {
@@ -639,6 +647,7 @@ async function main() {
       name: teamCfg.name,
       competition,
       division: competition,
+      leagueAvgStr,
       standing: {
         pos: ourRow?.pos || '?',
         wins: ourRow?.w ?? wins,

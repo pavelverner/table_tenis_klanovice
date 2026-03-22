@@ -192,7 +192,7 @@ a:hover { text-decoration: underline; }
 .match-row:hover { border-color: var(--c-border); background: var(--c-surface2); }
 
 .match-date { font-size: 12px; color: var(--c-muted); }
-.match-teams { font-size: 14px; }
+.match-teams { font-size: 14px; min-width: 0; overflow: hidden; }
 .match-teams strong { font-weight: 600; }
 .match-result { display: contents; } /* desktop: children flow in grid as before */
 .match-score {
@@ -208,6 +208,8 @@ a:hover { text-decoration: underline; }
 .badge-W { background: rgba(34,197,94,.15); color: var(--c-green); }
 .badge-L { background: rgba(239,68,68,.15); color: var(--c-red); }
 .badge-D { background: rgba(245,158,11,.15); color: var(--c-orange); }
+.badge-upset { background: rgba(245,158,11,.15); color: var(--c-orange); padding: 3px 6px; cursor: default; }
+.upset-icon { font-size: 10px; margin-left: 3px; cursor: default; }
 
 /* ── Top players ── */
 .top-players { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
@@ -276,6 +278,10 @@ a:hover { text-decoration: underline; }
 /* Main line: teams + score */
 .mc-main {
   display: flex; align-items: center; justify-content: space-between; gap: 8px;
+}
+/* Wrapper: team names row + MVP badge below */
+.mc-teams-block {
+  display: flex; flex-direction: column; flex: 1; min-width: 0; gap: 2px;
 }
 .mc-teams {
   display: flex; align-items: center; gap: 0;
@@ -823,6 +829,7 @@ a:hover { text-decoration: underline; }
   font-size: 12px; color: var(--c-primary); font-weight: 600;
   background: rgba(79,142,247,.1); border: 1px solid rgba(79,142,247,.2);
   padding: 5px 10px; border-radius: 6px; text-decoration: none; white-space: nowrap;
+  margin-top: 10px;
 }
 .modal-stis-link:hover { background: rgba(79,142,247,.2); text-decoration: none; }
 
@@ -883,12 +890,18 @@ a:hover { text-decoration: underline; }
   padding: 5px 0;
 }
 .team-str-name { font-size: 13px; font-weight: 600; }
-.team-str-bar-wrap { background: var(--c-surface2); border-radius: 4px; height: 8px; overflow: hidden; }
+.team-str-bar-wrap { position: relative; background: var(--c-surface2); border-radius: 4px; height: 8px; overflow: visible; }
 .team-str-bar {
   height: 100%; border-radius: 4px;
   background: linear-gradient(90deg, var(--c-primary2), var(--c-primary));
+  overflow: hidden;
+}
+.team-str-league-mark {
+  position: absolute; top: -3px; width: 2px; height: 14px;
+  background: var(--c-orange); border-radius: 1px; transform: translateX(-50%);
 }
 .team-str-val { font-size: 13px; font-weight: 700; color: var(--c-text); text-align: right; }
+.team-str-league-lbl { font-size: 11px; font-weight: 400; color: var(--c-muted); }
 
 @media (max-width: 640px) {
   .club-summary-grid { gap: 8px; }
@@ -910,7 +923,7 @@ a:hover { text-decoration: underline; }
 }
 .upcoming-teams-line .team-name {
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  flex: 1; min-width: 0;
+  flex: 1; min-width: 0; font-size: 14px; font-weight: 600;
 }
 .upcoming-teams-line .our-side { color: var(--c-primary); }
 .upcoming-teams-line .upcoming-vs { margin: 0 6px; flex-shrink: 0; }
