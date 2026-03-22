@@ -569,7 +569,6 @@ a:hover { text-decoration: underline; }
   .mc-teams { font-size: 13px; }
   .match-score-big { font-size: 20px; }
   .mc-right { gap: 6px; align-items: center; }
-  .mc-score-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
 
   /* Player rows: stack home player top, score middle, away bottom */
   .match-player-row {
@@ -817,8 +816,11 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 20px 60px rgba(0,0,0,.6);
   padding: 28px;
 }
+.modal-top-bar {
+  display: flex; justify-content: flex-end; align-items: center;
+  gap: 8px; margin-bottom: 14px;
+}
 .modal-close {
-  position: sticky; top: 0; float: right;
   background: var(--c-surface2); border: 1px solid var(--c-border);
   color: var(--c-muted); border-radius: 6px;
   width: 28px; height: 28px; cursor: pointer;
@@ -828,7 +830,6 @@ a:hover { text-decoration: underline; }
 .modal-close:hover { color: var(--c-text); }
 
 .modal-player-header {
-  display: flex; justify-content: space-between; align-items: flex-start;
   margin-bottom: 20px;
 }
 .modal-player-name { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
@@ -837,7 +838,6 @@ a:hover { text-decoration: underline; }
   font-size: 12px; color: var(--c-primary); font-weight: 600;
   background: rgba(79,142,247,.1); border: 1px solid rgba(79,142,247,.2);
   padding: 5px 10px; border-radius: 6px; text-decoration: none; white-space: nowrap;
-  margin-top: 10px;
 }
 .modal-stis-link:hover { background: rgba(79,142,247,.2); text-decoration: none; }
 

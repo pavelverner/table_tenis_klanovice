@@ -1325,12 +1325,13 @@ function openPlayerModal(playerId) {
     : `Tým ${p.team}`;
 
   document.getElementById('playerModalContent').innerHTML = `
-    <div class="modal-player-header">
-      <div>
-        <div class="modal-player-name">${p.name}</div>
-        <div class="modal-player-meta">${teamLabel} · nar. ${p.born || '–'}${!multiTeams && p.isRegular === false ? ' · <span class="sub-badge">náhradník</span>' : ''}</div>
-      </div>
+    <div class="modal-top-bar">
       ${stisUrl ? `<a href="${stisUrl}" target="_blank" class="modal-stis-link">↗ STIS</a>` : ''}
+      <button class="modal-close" onclick="closePlayerModal()">✕</button>
+    </div>
+    <div class="modal-player-header">
+      <div class="modal-player-name">${p.name}</div>
+      <div class="modal-player-meta">${teamLabel} · nar. ${p.born || '–'}${!multiTeams && p.isRegular === false ? ' · <span class="sub-badge">náhradník</span>' : ''}</div>
     </div>
     <div class="modal-stats-row">
       <div class="modal-stat"><div class="modal-stat-val rating-val">${p.str || '–'}</div><div class="modal-stat-lbl">STR</div></div>

@@ -595,11 +595,16 @@ async function main() {
     const oddil = await parseOddil(page, teamCfg.soutezId, teamCfg.drustvoId);
     console.log(`${oddil.players.length} hráčů (${oddil.players.filter(p=>p.isRegular).length} základní)`);
 
-    // ── Aggregate player stats from match stats tables ──
+    // ── Aggregate player stats from match stats tables (OUR side only) ──
     const aggregated = {};
     for (const m of rawMatches) {
+      const weAreHome = m.homeTeam.includes('Klánovice');
+      const ourNames = new Set(
+        (m.matchResults || []).flatMap(r => weAreHome ? (r.homePlayers || []) : (r.awayPlayers || []))
+      );
       for (const [name, s] of Object.entries(m.playerStats || {})) {
         if (!name || name === 'čtyřhry') continue;
+        if (!ourNames.has(name)) continue;  // skip opponent players
         if (!aggregated[name]) aggregated[name] = { wins: 0, losses: 0 };
         aggregated[name].wins   += s.wins  || 0;
         aggregated[name].losses += s.losses || 0;
