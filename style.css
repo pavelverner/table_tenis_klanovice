@@ -270,6 +270,7 @@ a:hover { text-decoration: underline; }
 }
 .mc-sep { margin: 0 4px; opacity: .5; }
 .mc-season { color: var(--c-accent); font-weight: 600; }
+.mc-mvp { font-size: 11px; color: var(--c-orange); font-weight: 600; padding-top: 1px; }
 
 /* Main line: teams + score */
 .mc-main {

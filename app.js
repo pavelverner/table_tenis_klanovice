@@ -576,7 +576,6 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
         <span>${fmtDate(m.date)}</span><span class="mc-sep">·</span>
         <span>${team.competition}</span><span class="mc-sep">·</span>
         <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
-        ${mvpBadge}
       </div>
       <div class="mc-main">
         <div class="mc-teams">
@@ -590,6 +589,7 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
           <div class="expand-icon">▾</div>
         </div>
       </div>
+      ${mvp ? `<div class="mc-mvp">${mvpBadge}</div>` : ''}
     </div>
     <div class="match-card-body">
       ${keyPts ? `
