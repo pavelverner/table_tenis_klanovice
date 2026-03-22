@@ -723,7 +723,12 @@ function renderClubSummary() {
     document.getElementById('statsTable').parentNode.insertBefore(el, document.getElementById('statsTable'));
   }
 
-  const played = CLUB_DATA.matches.filter(m => !m.future && m.result && m.score);
+  const activeTeam = activeStatsTeam !== 'all'
+    ? CLUB_DATA.teams.find(t => t.name.replace('TTC Klánovice ', '') === activeStatsTeam)
+    : null;
+  const played = CLUB_DATA.matches.filter(m =>
+    !m.future && m.result && m.score && (!activeTeam || m.teamId === activeTeam.id)
+  );
   let mW=0, mD=0, mL=0, sFor=0, sAg=0, gW=0, gL=0;
   for (const m of played) {
     if (m.result==='W') mW++; else if (m.result==='D') mD++; else mL++;
@@ -766,7 +771,7 @@ function renderClubSummary() {
   }).join('');
 
   el.innerHTML = `
-    <h2 class="block-title">Celková bilance klubu</h2>
+    <h2 class="block-title">Celková bilance${activeTeam ? ` – Tým ${activeTeam.name.replace('TTC Klánovice ', '')}` : ''}</h2>
     <div class="club-summary-grid">
       <div class="cs-card">
         <div class="cs-big stat-w">${mW}</div><div class="cs-lbl">Výher</div>
