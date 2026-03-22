@@ -753,9 +753,13 @@ function renderStatsTable() {
     <tr class="player-row" onclick="openPlayerModal(${p.id})" style="cursor:pointer">
       <td class="player-rank">${i+1}</td>
       <td class="player-name-cell">
-        ${p.name}${p.isRegular === false ? ' <span class="sub-badge">náhr.</span>' : ''}
+        <span class="pnc-name">${p.name}${p.isRegular === false ? ' <span class="sub-badge">náhr.</span>' : ''}</span>
+        <span class="pnc-team">${(p.teams||[]).length > 1
+          ? (p.teams||[]).map(t => `Tým ${t.team}`).join(', ')
+          : `Tým ${p.team}`
+        }</span>
       </td>
-      <td>${(p.teams||[]).length > 1
+      <td class="col-team">${(p.teams||[]).length > 1
           ? (p.teams||[]).map(t => `<span class="player-team-pill">Tým ${t.team}</span>`).join(' ')
           : `<span class="player-team-pill">Tým ${p.team}</span>`
         }</td>

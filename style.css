@@ -359,6 +359,8 @@ a:hover { text-decoration: underline; }
 
 .player-rank { color: var(--c-muted); font-size: 13px; width: 30px; }
 .player-name-cell { font-weight: 600; }
+.pnc-name { display: block; }
+.pnc-team { display: none; font-size: 11px; color: var(--c-muted); font-weight: 400; margin-top: 2px; }
 .player-team-pill {
   display: inline-block;
   font-size: 11px; font-weight: 600;
@@ -492,9 +494,17 @@ a:hover { text-decoration: underline; }
   .filter-tabs { gap: 5px; }
   .filter-tab { font-size: 12px; padding: 5px 11px; }
 
-  /* Stats table – hide less important columns */
-  .stats-table th:nth-child(4),
-  .stats-table td:nth-child(4) { display: none; }   /* STR */
+  /* Stats table – mobile: keep only rank / name / STR / win% */
+  .stats-table th:nth-child(3), .stats-table td:nth-child(3) { display: none; } /* Tým (now in name cell) */
+  .stats-table th:nth-child(5), .stats-table td:nth-child(5) { display: none; } /* STR± */
+  .stats-table th:nth-child(6), .stats-table td:nth-child(6) { display: none; } /* Zápasy */
+  .stats-table th:nth-child(7), .stats-table td:nth-child(7) { display: none; } /* Výhry */
+  .stats-table th:nth-child(8), .stats-table td:nth-child(8) { display: none; } /* Prohry */
+  .stats-table th, .stats-table td { padding: 9px 8px; }
+  .pnc-team { display: block; }  /* show team below name */
+  .win-pct-bar-wrap { gap: 6px; }
+  .win-pct-bar-bg { min-width: 40px; }
+  .win-pct-cell { font-size: 12px; }
 
   /* League table – compact */
   .league-table { font-size: 12px; }
@@ -796,7 +806,14 @@ a:hover { text-decoration: underline; }
 .team-str-val { font-size: 13px; font-weight: 700; color: var(--c-text); text-align: right; }
 
 @media (max-width: 640px) {
-  .club-summary-grid { grid-template-columns: 1fr; }
+  .club-summary-grid { gap: 8px; }
+  .cs-card { padding: 10px 8px; }
+  .cs-big { font-size: 22px; }
+  .cs-lbl { font-size: 11px; }
+  .cs-sub { font-size: 10px; }
+  .team-str-row { grid-template-columns: 70px 1fr 40px; gap: 6px; }
+  .sc-row { grid-template-columns: 1fr 60px; }
+  .sc-bar-wrap { display: none; }
 }
 
 /* ── Upcoming rows (reuse match-row style) ── */
