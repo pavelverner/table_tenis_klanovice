@@ -425,23 +425,82 @@ function renderTopPlayers() {
   `).join('');
 }
 
-// ── 2. VÝSLEDKY ────────────────────────────────────────────
+// ── 2. ZÁPASY ──────────────────────────────────────────────
+function renderFutureCard(m) {
+  const team = getTeamById(m.teamId);
+  const homeTeam = m.home ? team.name : m.opponent;
+  const awayTeam = m.home ? m.opponent : team.name;
+  return `
+  <div class="match-card match-card-future">
+    <div class="match-card-header" style="cursor:default">
+      <div class="mc-meta">
+        <span>Kolo ${m.round}</span><span class="mc-sep">·</span>
+        <span>${fmtDate(m.date)}</span><span class="mc-sep">·</span>
+        <span>${team.competition}</span><span class="mc-sep">·</span>
+        <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
+      </div>
+      <div class="mc-main">
+        <div class="mc-teams">
+          <span class="mc-team${m.home ? ' mc-our' : ''}">${homeTeam}</span>
+          <span class="mc-vs">vs</span>
+          <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
+        </div>
+        <div class="mc-right">
+          <div class="match-badge badge-upcoming">→</div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
 function renderVysledky() {
   const tabs = document.getElementById('matchFilterTabs');
   tabs.innerHTML = filterTabsHTML('match');
 
-  const matches = (activeMatchTeam === 'all'
-    ? CLUB_DATA.matches
-    : CLUB_DATA.matches.filter(m => m.teamId === parseInt(activeMatchTeam))
-  ).filter(m => !m.future);
+  const teamFilter = activeMatchTeam !== 'all';
 
-  const sorted = [...matches].sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  // Upcoming
+  let upcoming;
+  if (teamFilter) {
+    upcoming = CLUB_DATA.matches
+      .filter(m => m.future && m.teamId === parseInt(activeMatchTeam))
+      .sort((a,b) => (a.date||'').localeCompare(b.date||''))
+      .slice(0, 3);
+  } else {
+    upcoming = [];
+    for (const team of CLUB_DATA.teams) {
+      const next = CLUB_DATA.matches
+        .filter(m => m.teamId === team.id && m.future)
+        .sort((a,b) => (a.date||'').localeCompare(b.date||''))[0];
+      if (next) upcoming.push(next);
+    }
+    upcoming.sort((a,b) => (a.date||'').localeCompare(b.date||''));
+  }
 
-  document.getElementById('matchesDetail').innerHTML =
-    sorted.map(m => renderMatchCard(m)).join('');
+  // Past
+  const past = (teamFilter
+    ? CLUB_DATA.matches.filter(m => m.teamId === parseInt(activeMatchTeam))
+    : CLUB_DATA.matches
+  ).filter(m => !m.future && m.result && m.score)
+   .sort((a,b) => (b.date||'').localeCompare(a.date||''));
+
+  let html = '';
+  if (upcoming.length) {
+    html += `<div class="matches-section-head">Nadcházející</div>`;
+    html += upcoming.map(m => renderFutureCard(m)).join('');
+  }
+  if (past.length) {
+    if (upcoming.length) html += `<div class="matches-section-head" style="margin-top:20px">Odehrané</div>`;
+    html += past.map(m => renderMatchCard(m)).join('');
+  }
+
+  document.getElementById('matchesDetail').innerHTML = html;
 
   document.querySelectorAll('.match-card-header').forEach(h => {
-    h.addEventListener('click', () => h.closest('.match-card').classList.toggle('open'));
+    h.addEventListener('click', () => {
+      if (h.closest('.match-card-future')) return;
+      h.closest('.match-card').classList.toggle('open');
+    });
   });
 
   activateFilterTabs('match', tabs);
@@ -490,22 +549,24 @@ function renderMatchCard(m) {
   return `
   <div class="match-card" id="match-${m.id}">
     <div class="match-card-header">
-      <div class="match-card-left">
-        <div class="match-round">Kolo ${m.round} · ${fmtDate(m.date)}</div>
-        <div class="match-card-title">${homeTeam} vs ${awayTeam}</div>
-        <div class="match-card-comp">${team.competition}
-          <span class="match-venue ${m.home ? 'venue-home' : 'venue-away'}">
-            · ${m.home ? '🏠 doma' : '✈️ venku'}
-          </span>
-          ${mvpBadge}
-        </div>
+      <div class="mc-meta">
+        <span>Kolo ${m.round}</span><span class="mc-sep">·</span>
+        <span>${fmtDate(m.date)}</span><span class="mc-sep">·</span>
+        <span>${team.competition}</span><span class="mc-sep">·</span>
+        <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
+        ${mvpBadge}
       </div>
-      <div class="match-card-right">
-        <div class="match-score-big">
-          ${scoreHome}<span class="score-separator">:</span>${scoreAway}
+      <div class="mc-main">
+        <div class="mc-teams">
+          <span class="mc-team${m.home ? ' mc-our' : ''}">${homeTeam}</span>
+          <span class="mc-vs">vs</span>
+          <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
         </div>
-        <div class="match-badge ${resultClass(m.result)}">${resultLabel(m.result)}</div>
-        <div class="expand-icon">▾</div>
+        <div class="mc-right">
+          <div class="match-score-big">${scoreHome}<span class="score-separator">:</span>${scoreAway}</div>
+          <div class="match-badge ${resultClass(m.result)}">${resultLabel(m.result)}</div>
+          <div class="expand-icon">▾</div>
+        </div>
       </div>
     </div>
     <div class="match-card-body">
