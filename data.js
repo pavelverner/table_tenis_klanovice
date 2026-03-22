@@ -941,8 +941,8 @@ const CLUB_DATA = {
       "strStab": 1843.6,
       "strDelta": -60,
       "stats": {
-        "matches": 63,
-        "wins": 50,
+        "matches": 61,
+        "wins": 48,
         "losses": 13,
         "sets": [
           0,
@@ -965,9 +965,9 @@ const CLUB_DATA = {
       "strStab": 1698.4,
       "strDelta": 24,
       "stats": {
-        "matches": 57,
-        "wins": 30,
-        "losses": 27,
+        "matches": 55,
+        "wins": 29,
+        "losses": 26,
         "sets": [
           0,
           0
@@ -1013,9 +1013,9 @@ const CLUB_DATA = {
       "strStab": 1659.4,
       "strDelta": -15,
       "stats": {
-        "matches": 3,
+        "matches": 2,
         "wins": 0,
-        "losses": 3,
+        "losses": 2,
         "sets": [
           0,
           0
@@ -1205,14 +1205,14 @@ const CLUB_DATA = {
       "strStab": 1659.4,
       "strDelta": 22,
       "stats": {
-        "matches": 62,
-        "wins": 41,
-        "losses": 21,
+        "matches": 60,
+        "wins": 40,
+        "losses": 20,
         "sets": [
           0,
           0
         ],
-        "winPct": 66
+        "winPct": 67
       }
     },
     {
@@ -1229,14 +1229,14 @@ const CLUB_DATA = {
       "strStab": 1489.2,
       "strDelta": -2,
       "stats": {
-        "matches": 25,
-        "wins": 5,
-        "losses": 20,
+        "matches": 23,
+        "wins": 4,
+        "losses": 19,
         "sets": [
           0,
           0
         ],
-        "winPct": 20
+        "winPct": 17
       }
     },
     {
@@ -1517,9 +1517,9 @@ const CLUB_DATA = {
       "strStab": 1467.8,
       "strDelta": -19,
       "stats": {
-        "matches": 53,
+        "matches": 52,
         "wins": 20,
-        "losses": 33,
+        "losses": 32,
         "sets": [
           0,
           0
@@ -1541,14 +1541,14 @@ const CLUB_DATA = {
       "strStab": 1410.6,
       "strDelta": -24,
       "stats": {
-        "matches": 36,
+        "matches": 35,
         "wins": 10,
-        "losses": 26,
+        "losses": 25,
         "sets": [
           0,
           0
         ],
-        "winPct": 28
+        "winPct": 29
       }
     },
     {
@@ -1589,14 +1589,14 @@ const CLUB_DATA = {
       "strStab": 1489.2,
       "strDelta": 22,
       "stats": {
-        "matches": 47,
-        "wins": 22,
+        "matches": 45,
+        "wins": 20,
         "losses": 25,
         "sets": [
           0,
           0
         ],
-        "winPct": 47
+        "winPct": 44
       }
     },
     {
@@ -1997,14 +1997,14 @@ const CLUB_DATA = {
       "strStab": 1424.3,
       "strDelta": -10,
       "stats": {
-        "matches": 63,
+        "matches": 62,
         "wins": 31,
-        "losses": 32,
+        "losses": 31,
         "sets": [
           0,
           0
         ],
-        "winPct": 49
+        "winPct": 50
       }
     },
     {
@@ -2285,9 +2285,9 @@ const CLUB_DATA = {
       "strStab": 1232,
       "strDelta": 152,
       "stats": {
-        "matches": 53,
+        "matches": 52,
         "wins": 22,
-        "losses": 31,
+        "losses": 30,
         "sets": [
           0,
           0
@@ -2309,9 +2309,9 @@ const CLUB_DATA = {
       "strStab": 1321,
       "strDelta": 54,
       "stats": {
-        "matches": 54,
-        "wins": 29,
-        "losses": 25,
+        "matches": 52,
+        "wins": 28,
+        "losses": 24,
         "sets": [
           0,
           0
@@ -2567,6 +2567,7 @@ const CLUB_DATA = {
       "home": true,
       "round": 20,
       "date": "2026-03-23",
+      "time": "18:30",
       "opponent": "TJ Sokol Běchovice II A",
       "score": null,
       "result": null,
@@ -2580,6 +2581,7 @@ const CLUB_DATA = {
       "home": false,
       "round": 21,
       "date": "2026-04-08",
+      "time": "19:00",
       "opponent": "TJ Slavoj Praha B",
       "score": null,
       "result": null,
@@ -2593,6 +2595,7 @@ const CLUB_DATA = {
       "home": true,
       "round": 22,
       "date": "2026-04-13",
+      "time": "18:30",
       "opponent": "TJ AVIA Čakovice C",
       "score": null,
       "result": null,
@@ -4480,6 +4483,7 @@ const CLUB_DATA = {
       "home": true,
       "round": 20,
       "date": "2026-03-25",
+      "time": "18:30",
       "opponent": "TJ Sokol Žižkov B",
       "score": null,
       "result": null,
@@ -4493,6 +4497,7 @@ const CLUB_DATA = {
       "home": true,
       "round": 21,
       "date": "2026-04-08",
+      "time": "18:30",
       "opponent": "TJ Sokol Běchovice II B",
       "score": null,
       "result": null,
@@ -4506,6 +4511,7 @@ const CLUB_DATA = {
       "home": false,
       "round": 22,
       "date": "2026-04-15",
+      "time": "18:30",
       "opponent": "SK Start Praha B",
       "score": null,
       "result": null,
@@ -6483,6 +6489,7 @@ const CLUB_DATA = {
       "home": false,
       "round": 20,
       "date": "2026-03-24",
+      "time": "19:00",
       "opponent": "TJ Sokol Petrovice B",
       "score": null,
       "result": null,
@@ -6496,6 +6503,7 @@ const CLUB_DATA = {
       "home": true,
       "round": 21,
       "date": "2026-03-30",
+      "time": "18:30",
       "opponent": "TTC Elizza Praha I",
       "score": null,
       "result": null,
@@ -6509,6 +6517,7 @@ const CLUB_DATA = {
       "home": false,
       "round": 22,
       "date": "2026-04-16",
+      "time": "19:00",
       "opponent": "TJ Pankrác D",
       "score": null,
       "result": null,
@@ -8390,6 +8399,7 @@ const CLUB_DATA = {
       "home": false,
       "round": 20,
       "date": "2026-03-26",
+      "time": "19:00",
       "opponent": "TJ Lokomotiva Vršovice E",
       "score": null,
       "result": null,
@@ -8403,6 +8413,7 @@ const CLUB_DATA = {
       "home": false,
       "round": 21,
       "date": "2026-03-31",
+      "time": "19:00",
       "opponent": "TJ Sokol Suchdol - Sedlec B",
       "score": null,
       "result": null,
@@ -8416,6 +8427,7 @@ const CLUB_DATA = {
       "home": true,
       "round": 22,
       "date": "2026-04-15",
+      "time": "18:30",
       "opponent": "AC Sparta Praha K",
       "score": null,
       "result": null,
@@ -10459,6 +10471,7 @@ const CLUB_DATA = {
       "home": false,
       "round": 20,
       "date": "2026-03-24",
+      "time": "19:00",
       "opponent": "TJ Lokomotiva Vršovice F",
       "score": null,
       "result": null,
@@ -10472,6 +10485,7 @@ const CLUB_DATA = {
       "home": false,
       "round": 21,
       "date": "2026-03-30",
+      "time": "19:00",
       "opponent": "TJ Sokol Běchovice II D",
       "score": null,
       "result": null,
@@ -10485,6 +10499,7 @@ const CLUB_DATA = {
       "home": true,
       "round": 22,
       "date": "2026-04-15",
+      "time": "18:30",
       "opponent": "TTC Elizza Praha K",
       "score": null,
       "result": null,
