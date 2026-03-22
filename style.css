@@ -765,6 +765,72 @@ a:hover { text-decoration: underline; }
 .modal-match-date { color: var(--c-muted); font-size: 12px; white-space: nowrap; }
 .modal-opp { font-weight: 500; }
 
+/* ── Upcoming match cards ── */
+.upcoming-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin-bottom: 10px;
+}
+.upcoming-card:hover { border-color: var(--c-primary); }
+
+.upcoming-meta {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 12px; color: var(--c-muted); margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.upcoming-date { font-weight: 600; color: var(--c-text); }
+.upcoming-comp { }
+.upcoming-venue { }
+
+.upcoming-teams {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 15px; font-weight: 600; margin-bottom: 8px;
+}
+.upcoming-teams .our-side { color: var(--c-primary); }
+.upcoming-vs { font-size: 12px; color: var(--c-muted); font-weight: 400; }
+
+.upcoming-h2h {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; flex-wrap: wrap;
+}
+.h2h-label { color: var(--c-muted); }
+.h2h-item {
+  padding: 2px 8px; border-radius: 4px; font-weight: 700;
+  font-size: 12px;
+}
+.h2h-w { background: rgba(34,197,94,.15); color: var(--c-green); }
+.h2h-l { background: rgba(239,68,68,.15); color: var(--c-red); }
+.h2h-d { background: rgba(245,158,11,.15); color: var(--c-orange); }
+.upcoming-scorers { font-size: 12px; color: var(--c-muted); margin-top: 4px; display: block; }
+
+/* ── Modal chart ── */
+.modal-chart-wrap {
+  background: var(--c-surface2);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+/* ── Modal per-team breakdown ── */
+.modal-teams-breakdown {
+  margin: 12px 0 20px;
+}
+.modal-team-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px; border-radius: var(--radius-sm);
+  background: var(--c-surface2); margin-bottom: 6px;
+  font-size: 13px;
+}
+.modal-team-pill {
+  font-weight: 700; font-size: 12px;
+  background: rgba(79,142,247,.15); color: var(--c-primary);
+  padding: 2px 8px; border-radius: 4px; white-space: nowrap;
+}
+.modal-team-record { flex: 1; }
+.modal-team-pct { color: var(--c-muted); font-size: 12px; }
+
 /* ── Footer ── */
 .footer {
   margin-top: 40px;

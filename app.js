@@ -148,6 +148,7 @@ function renderPrehled() {
   renderLiveBlock();
   renderTeamCards();
   renderLatestMatches();
+  renderUpcoming();
   renderTopPlayers();
 }
 
@@ -295,6 +296,69 @@ function renderLatestMatches() {
   }).join('');
 }
 
+function renderUpcoming() {
+  const now = new Date();
+  const today = now.toISOString().split('T')[0];
+
+  const upcoming = CLUB_DATA.matches
+    .filter(m => m.future && m.date && m.date >= today)
+    .sort((a,b) => (a.date||'').localeCompare(b.date||''))
+    .slice(0, 8);
+
+  const el = document.getElementById('upcomingMatches');
+  const block = document.getElementById('upcomingBlock');
+  if (!el) return;
+
+  if (!upcoming.length) { if(block) block.style.display='none'; return; }
+  if(block) block.style.display='block';
+
+  el.innerHTML = upcoming.map(m => {
+    const team = getTeamById(m.teamId);
+    const homeTeam = m.home ? team.name : m.opponent;
+    const awayTeam = m.home ? m.opponent : team.name;
+
+    // H2H: last 2-3 past results vs same opponent
+    const h2h = CLUB_DATA.matches
+      .filter(x => x.teamId === m.teamId && x.opponent === m.opponent && x.result && x.date < today)
+      .sort((a,b) => (b.date||'').localeCompare(a.date||''))
+      .slice(0, 3);
+
+    const h2hDots = h2h.length ? `
+      <div class="upcoming-h2h">
+        <span class="h2h-label">Předchozí vs ${m.opponent.replace('TTC ','').replace('TJ ','').split(' ').slice(0,2).join(' ')}:</span>
+        ${h2h.map(x => {
+          const hs = x.home ? x.score.home : x.score.away;
+          const as = x.home ? x.score.away : x.score.home;
+          return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${hs}:${as}</span>`;
+        }).join('')}
+      </div>` : '';
+
+    // Top scorers from last match vs this opponent
+    const lastVs = h2h[0];
+    let scorers = '';
+    if (lastVs?.playerResults?.length) {
+      const top = lastVs.playerResults.filter(pr => pr.won).slice(0, 2).map(pr => pr.player.split(' ')[0]).join(', ');
+      if (top) scorers = `<span class="upcoming-scorers">Bodovali: ${top}</span>`;
+    }
+
+    return `
+    <div class="upcoming-card">
+      <div class="upcoming-meta">
+        <span class="upcoming-date">${fmtDate(m.date)}</span>
+        <span class="upcoming-comp">${team.competition}</span>
+        <span class="upcoming-venue ${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
+      </div>
+      <div class="upcoming-teams">
+        <span class="${m.home ? 'our-side' : ''}">${homeTeam}</span>
+        <span class="upcoming-vs">vs</span>
+        <span class="${!m.home ? 'our-side' : ''}">${awayTeam}</span>
+      </div>
+      ${h2hDots}
+      ${scorers}
+    </div>`;
+  }).join('');
+}
+
 function renderTopPlayers() {
   const sorted = [...CLUB_DATA.players]
     .filter(p => p.stats.matches >= 8)
@@ -323,9 +387,10 @@ function renderVysledky() {
   const tabs = document.getElementById('matchFilterTabs');
   tabs.innerHTML = filterTabsHTML('match');
 
-  const matches = activeMatchTeam === 'all'
+  const matches = (activeMatchTeam === 'all'
     ? CLUB_DATA.matches
-    : CLUB_DATA.matches.filter(m => m.teamId === parseInt(activeMatchTeam));
+    : CLUB_DATA.matches.filter(m => m.teamId === parseInt(activeMatchTeam))
+  ).filter(m => !m.future);
 
   const sorted = [...matches].sort((a,b) => (b.date||'').localeCompare(a.date||''));
 
@@ -413,6 +478,47 @@ function renderStatistiky() {
   renderStatsTable();
 }
 
+// ── Merge players who appear in multiple teams ──────────────
+// Returns deduplicated list; each player has merged stats + `teams` array for detail.
+function getMergedPlayers() {
+  const byName = {};
+  for (const p of CLUB_DATA.players) {
+    if (!byName[p.name]) {
+      byName[p.name] = {
+        ...p,
+        teams: [{
+          team: p.team, teamId: p.teamId, isRegular: p.isRegular,
+          soutezId: p.soutezId, stisId: p.stisId,
+          stats: { ...p.stats },
+        }],
+      };
+    } else {
+      const base = byName[p.name];
+      // Merge stats
+      base.stats.wins    += p.stats.wins;
+      base.stats.losses  += p.stats.losses;
+      base.stats.matches += p.stats.matches;
+      const tot = base.stats.wins + base.stats.losses;
+      base.stats.winPct = tot > 0 ? Math.round(base.stats.wins / tot * 100) : 0;
+      // Use highest STR
+      if ((p.str || 0) > (base.str || 0)) {
+        base.str = p.str; base.strStab = p.strStab; base.strDelta = p.strDelta;
+      }
+      // Primary team = isRegular one
+      if (p.isRegular && !base.isRegular) {
+        base.team = p.team; base.teamId = p.teamId;
+        base.isRegular = true; base.stisId = p.stisId; base.soutezId = p.soutezId;
+      }
+      base.teams.push({
+        team: p.team, teamId: p.teamId, isRegular: p.isRegular,
+        soutezId: p.soutezId, stisId: p.stisId,
+        stats: { ...p.stats },
+      });
+    }
+  }
+  return Object.values(byName);
+}
+
 const STATS_COLS = [
   { key: null,       label: '#' },
   { key: 'name',     label: 'Hráč' },
@@ -451,9 +557,13 @@ function setStatsSort(col) {
 }
 
 function renderStatsTable() {
+  const merged = getMergedPlayers();
   const players = activeStatsTeam === 'all'
-    ? CLUB_DATA.players
-    : CLUB_DATA.players.filter(p => p.team === activeStatsTeam);
+    ? merged
+    : merged.filter(p =>
+        p.team === activeStatsTeam ||
+        (p.teams || []).some(t => t.team === activeStatsTeam)
+      );
 
   const sorted = sortPlayers(players);
 
@@ -467,7 +577,10 @@ function renderStatsTable() {
       <td class="player-name-cell">
         ${p.name}${p.isRegular === false ? ' <span class="sub-badge">náhr.</span>' : ''}
       </td>
-      <td><span class="player-team-pill">Tým ${p.team}</span></td>
+      <td>${(p.teams||[]).length > 1
+          ? (p.teams||[]).map(t => `<span class="player-team-pill">Tým ${t.team}</span>`).join(' ')
+          : `<span class="player-team-pill">Tým ${p.team}</span>`
+        }</td>
       <td class="rating-val">${p.str || '–'}</td>
       <td style="color:${deltaColor};font-weight:600;font-size:13px">${p.str ? deltaStr : '–'}</td>
       <td>${p.stats.matches}</td>
@@ -636,14 +749,63 @@ function startLiveRefresh() {
 }
 
 // ── Player Modal ────────────────────────────────────────────
+function buildWinChart(history) {
+  // Reverse to chronological order
+  const chron = [...history].reverse();
+  const W = 360, H = 60, pad = 4;
+  const n = chron.length;
+  const bw = Math.max(4, Math.floor((W - pad * (n + 1)) / n));
+  const totalW = (bw + pad) * n + pad;
+
+  const bars = chron.map((h, i) => {
+    const x = pad + i * (bw + pad);
+    const color = h.won ? 'var(--c-green)' : 'var(--c-red)';
+    const bh = h.won ? H - 10 : 20;
+    const y = H - bh;
+    return `<rect x="${x}" y="${y}" width="${bw}" height="${bh}" fill="${color}" rx="2" opacity="0.85">
+      <title>${fmtDate(h.date)} vs ${h.opponent}: ${h.result}</title>
+    </rect>`;
+  }).join('');
+
+  // Running win% line
+  let cumW = 0;
+  const points = chron.map((h, i) => {
+    if (h.won) cumW++;
+    const pct = cumW / (i + 1);
+    const x = pad + i * (bw + pad) + bw / 2;
+    const y = H - pct * (H - 10) - 5;
+    return `${x},${y}`;
+  }).join(' ');
+
+  return `
+  <div class="modal-chart-wrap">
+    <div class="modal-history-title" style="margin-bottom:6px">Průběh sezóny</div>
+    <svg viewBox="0 0 ${totalW} ${H}" width="100%" height="${H}" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+      ${bars}
+      <polyline points="${points}" fill="none" stroke="var(--c-primary)" stroke-width="1.5" stroke-linejoin="round" opacity="0.8"/>
+    </svg>
+    <div style="display:flex;gap:14px;margin-top:4px;font-size:11px;color:var(--c-muted)">
+      <span><span style="color:var(--c-green)">■</span> výhra</span>
+      <span><span style="color:var(--c-red)">■</span> prohra</span>
+      <span><span style="color:var(--c-primary)">—</span> průběžná úspěšnost</span>
+    </div>
+  </div>`;
+}
+
 function openPlayerModal(playerId) {
-  const p = CLUB_DATA.players.find(x => x.id === playerId);
+  // Use merged player (may span multiple teams)
+  const merged = getMergedPlayers();
+  const p = merged.find(x => x.id === playerId)
+         || CLUB_DATA.players.find(x => x.id === playerId);
   if (!p) return;
 
-  // Collect all individual match results for this player
+  // Collect all individual match results across ALL teams this player played for
+  const playerTeamIds = (p.teams || []).map(t => t.teamId);
+  if (!playerTeamIds.includes(p.teamId)) playerTeamIds.push(p.teamId);
+
   const matchHistory = [];
   for (const m of CLUB_DATA.matches) {
-    if (m.teamId !== p.teamId) continue;
+    if (!playerTeamIds.includes(m.teamId)) continue;
     for (const pr of (m.playerResults || [])) {
       if (pr.player !== p.name) continue;
       matchHistory.push({
@@ -677,11 +839,34 @@ function openPlayerModal(playerId) {
       <td style="color:var(--c-muted);font-size:12px">${h.competition}</td>
     </tr>`).join('');
 
+  // Per-team breakdown (only shown when player has multiple teams)
+  const multiTeams = (p.teams || []).length > 1;
+  const teamBreakdown = multiTeams ? `
+    <div class="modal-teams-breakdown">
+      <div class="modal-history-title" style="margin-bottom:8px">Statistiky po týmech</div>
+      ${(p.teams || []).map(t => {
+        const tw = t.stats.wins; const tl = t.stats.losses;
+        const tm = tw + tl;
+        const tp = tm > 0 ? Math.round(tw / tm * 100) : 0;
+        const role = t.isRegular ? 'základní' : 'náhradník';
+        return `<div class="modal-team-row">
+          <span class="modal-team-pill">Tým ${t.team}</span>
+          <span class="modal-team-record">${tw}V / ${tl}P (${tm} zápasů)</span>
+          <span class="modal-team-pct">${tp}% · ${role}</span>
+        </div>`;
+      }).join('')}
+    </div>` : '';
+
+  // Team label for header
+  const teamLabel = multiTeams
+    ? (p.teams || []).map(t => `Tým ${t.team}`).join(', ')
+    : `Tým ${p.team}`;
+
   document.getElementById('playerModalContent').innerHTML = `
     <div class="modal-player-header">
       <div>
         <div class="modal-player-name">${p.name}</div>
-        <div class="modal-player-meta">Tým ${p.team} · nar. ${p.born || '–'}${p.isRegular === false ? ' · <span class="sub-badge">náhradník</span>' : ''}</div>
+        <div class="modal-player-meta">${teamLabel} · nar. ${p.born || '–'}${!multiTeams && p.isRegular === false ? ' · <span class="sub-badge">náhradník</span>' : ''}</div>
       </div>
       ${stisUrl ? `<a href="${stisUrl}" target="_blank" class="modal-stis-link">↗ STIS</a>` : ''}
     </div>
@@ -693,6 +878,8 @@ function openPlayerModal(playerId) {
       <div class="modal-stat"><div class="modal-stat-val" style="color:var(--c-primary)">${pct}%</div><div class="modal-stat-lbl">Úspěšnost</div></div>
     </div>
     <div style="margin:12px 0 20px"><div class="win-pct-bar-bg" style="height:8px"><div class="win-pct-bar-fill" style="width:${pct}%;height:8px"></div></div></div>
+    ${teamBreakdown}
+    ${matchHistory.length >= 2 ? buildWinChart(matchHistory) : ''}
     ${matchHistory.length ? `
     <div class="modal-history-title">Zápasy v sezóně (${total})</div>
     <div class="modal-history-wrap">
