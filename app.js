@@ -871,7 +871,8 @@ function renderTabulky() {
           ? '<span class="zone-arrow down" title="Sestup">↓</span>'
           : '';
         return `
-        <tr class="${r.highlight ? 'our-team' : ''} ${zoneClass}">
+        <tr class="${r.highlight ? 'our-team' : ''} ${zoneClass}"
+            ${r.highlight ? `onclick="goToMatchesForTeam(${team.id})" style="cursor:pointer" title="Zobrazit výsledky"` : ''}>
           <td class="pos-cell ${posClass}">${r.pos}</td>
           <td class="team-name-cell">
             ${r.team}${r.highlight ? ' <span class="us-badge">MY</span>' : ''}
@@ -1008,6 +1009,55 @@ function buildWinChart(history) {
   </div>`;
 }
 
+function buildFunFact(matchHistory) {
+  if (matchHistory.length < 5) return '';
+  const facts = [];
+
+  // Longest winning/losing streak (chronological)
+  const chron = [...matchHistory].reverse();
+  let maxWS = 0, maxLS = 0, curW = 0, curL = 0;
+  for (const h of chron) {
+    if (h.won) { curW++; maxWS = Math.max(maxWS, curW); curL = 0; }
+    else        { curL++; maxLS = Math.max(maxLS, curL); curW = 0; }
+  }
+  if (maxWS >= 4) facts.push(`Nejdelší šňůra výher: ${maxWS} zápasů v řadě`);
+  if (maxLS >= 4) facts.push(`Nejdelší série proher: ${maxLS} zápasů v řadě`);
+
+  // Opponent win% (min 3 games)
+  const oppMap = {};
+  for (const h of matchHistory) {
+    if (!oppMap[h.opponent]) oppMap[h.opponent] = { w: 0, l: 0 };
+    if (h.won) oppMap[h.opponent].w++; else oppMap[h.opponent].l++;
+  }
+  let bestOpp = null, worstOpp = null;
+  for (const [name, s] of Object.entries(oppMap)) {
+    const n = s.w + s.l;
+    if (n < 3) continue;
+    const pct = s.w / n;
+    if (!bestOpp  || pct > bestOpp.pct)  bestOpp  = { name, pct, ...s, n };
+    if (!worstOpp || pct < worstOpp.pct) worstOpp = { name, pct, ...s, n };
+  }
+  if (bestOpp && bestOpp.pct >= 0.7)
+    facts.push(`Oblíbený soupeř: ${bestOpp.name} – ${bestOpp.w}/${bestOpp.n} výher (${Math.round(bestOpp.pct*100)}%)`);
+  if (worstOpp && worstOpp.pct <= 0.3 && worstOpp.name !== bestOpp?.name)
+    facts.push(`Nejtěžší soupeř: ${worstOpp.name} – ${worstOpp.w}/${worstOpp.n} výher (${Math.round(worstOpp.pct*100)}%)`);
+
+  // Deciding-set performance (3:2 or 2:3)
+  const dec = matchHistory.filter(h => { const [a,b] = (h.result||'').split(':').map(Number); return (a===3&&b===2)||(a===2&&b===3); });
+  if (dec.length >= 3) {
+    const dW = dec.filter(h => h.won).length;
+    const dPct = Math.round(dW / dec.length * 100);
+    if (dPct >= 65) facts.push(`V pětisetových bitvách: ${dW}/${dec.length} výher – bojovník! (${dPct}%)`);
+    else if (dPct <= 35) facts.push(`V pětisetových bitvách: ${dW}/${dec.length} výher (${dPct}%)`);
+  }
+
+  if (!facts.length) return '';
+  return `
+    <div class="modal-fun-facts">
+      ${facts.map(f => `<div class="modal-fun-fact"><span class="fun-fact-icon">💡</span> ${f}</div>`).join('')}
+    </div>`;
+}
+
 function openPlayerModal(playerId) {
   // Use merged player (may span multiple teams)
   const merged = getMergedPlayers();
@@ -1112,6 +1162,7 @@ function openPlayerModal(playerId) {
     </div>
     <div style="margin:12px 0 20px"><div class="win-pct-bar-bg" style="height:8px"><div class="win-pct-bar-fill" style="width:${pct}%;height:8px"></div></div></div>
     ${teamBreakdown}
+    ${buildFunFact(matchHistory)}
     ${matchHistory.length >= 2 ? buildWinChart(matchHistory) : ''}
     ${matchHistory.length ? `
     <div class="modal-history-title">Zápasy v sezóně (${total})</div>

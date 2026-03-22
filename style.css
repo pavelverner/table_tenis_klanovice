@@ -936,6 +936,21 @@ a:hover { text-decoration: underline; }
 .modal-team-record { flex: 1; }
 .modal-team-pct { color: var(--c-muted); font-size: 12px; }
 
+/* ── Modal fun facts ── */
+.modal-fun-facts {
+  margin: 0 0 18px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.modal-fun-fact {
+  background: rgba(167,139,250,.1);
+  border: 1px solid rgba(167,139,250,.25);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--c-text);
+}
+.fun-fact-icon { margin-right: 4px; }
+
 /* ── Footer ── */
 .footer {
   margin-top: 40px;

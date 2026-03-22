@@ -1,0 +1,42 @@
+name: Scrape & Deploy
+
+on:
+  schedule:
+    # 7:00, 11:00, 15:00, 19:00, 22:00 CEST (UTC+2) = 5,9,13,17,20 UTC
+    - cron: '0 5,9,13,17,20 * * *'
+  workflow_dispatch:   # možnost spustit ručně
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright (Chromium only)
+        run: npx playwright install --with-deps chromium
+
+      - name: Scrape current season
+        run: node scrape.js
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.js
+          git diff --cached --quiet \
+            && echo "Žádné změny v datech." \
+            || (git commit -m "data: aktualizace $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]" && git push)
