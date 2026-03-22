@@ -300,8 +300,10 @@ function renderLatestMatches() {
         <strong>${homeTeam}</strong> vs ${awayTeam}
         <div style="font-size:11px;color:var(--c-muted);margin-top:1px">${team.competition}</div>
       </div>
-      <div class="match-score">${scoreHome}<span style="color:var(--c-muted);font-weight:400">:</span>${scoreAway}</div>
-      <div class="match-badge ${resultClass(m.result)}" data-score="${scoreHome}:${scoreAway}">${resultLabel(m.result)}</div>
+      <div class="match-result">
+        <div class="match-score">${scoreHome}<span class="score-sep">:</span>${scoreAway}</div>
+        <div class="match-badge ${resultClass(m.result)}">${resultLabel(m.result)}</div>
+      </div>
     </div>`;
   }).join('');
 }
