@@ -611,7 +611,7 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
       const weWin = a > b;
       return `
       <div class="match-player-row doubles-row">
-        <div class="player-name-left doubles-label">🤝 ${pr.player}</div>
+        <div class="player-name-left doubles-label">${pr.player}</div>
         <div class="match-player-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</div>
         <div class="player-name-right">${pr.opponent}</div>
       </div>`;
@@ -655,9 +655,13 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
           </div>
         </div>
         <div class="mc-right">
-          <div class="match-score-big">${scoreHome}<span class="score-separator">:</span>${scoreAway}</div>
-          <div class="match-badge ${resultClass(m.result)}">${resultLabel(m.result)}</div>
-          ${isUpset ? `<div class="match-badge badge-upset" title="Překvapivý výsledek (ELO rozdíl: ${Math.abs(strDiff)})">⚡</div>` : ''}
+          <div class="mc-score-wrap">
+            <div class="match-score-big">${scoreHome}<span class="score-separator">:</span>${scoreAway}</div>
+            <div class="mc-badges">
+              <div class="match-badge ${resultClass(m.result)}">${resultLabel(m.result)}</div>
+              ${isUpset ? `<div class="match-badge badge-upset" title="Překvapivý výsledek (ELO rozdíl: ${Math.abs(strDiff)})">⚡</div>` : ''}
+            </div>
+          </div>
           <div class="expand-icon">▾</div>
         </div>
       </div>

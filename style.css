@@ -306,6 +306,8 @@ a:hover { text-decoration: underline; }
   flex-shrink: 0; margin: 0 6px; align-self: flex-start; padding-top: 2px;
 }
 .mc-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.mc-score-wrap { display: flex; align-items: center; gap: 8px; }
+.mc-badges { display: flex; align-items: center; gap: 6px; }
 
 .match-venue { font-size: 11px; }
 .venue-home { color: var(--c-primary); }
@@ -565,7 +567,8 @@ a:hover { text-decoration: underline; }
   .match-card-header { padding: 10px 12px; gap: 2px; }
   .mc-teams { font-size: 13px; }
   .match-score-big { font-size: 20px; }
-  .mc-right { gap: 4px; flex-direction: column; align-items: flex-end; }
+  .mc-right { gap: 6px; align-items: center; }
+  .mc-score-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
 
   /* Player rows: stack home player top, score middle, away bottom */
   .match-player-row {
