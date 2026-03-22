@@ -619,12 +619,16 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
     const [a, b] = pr.result.split(':').map(Number);
     const weWin = a > b;
     const isMvp = pr.player === mvp && pr.won;
-    const gameUpset = pr.ourStr > 0 && pr.oppStr > 0 && Math.abs(pr.ourStr - pr.oppStr) > 50
-      && ((pr.won && pr.ourStr < pr.oppStr) || (!pr.won && pr.ourStr > pr.oppStr));
+    const hasStrData = pr.ourStr > 0 && pr.oppStr > 0 && Math.abs(pr.ourStr - pr.oppStr) > 50;
+    const upsetWin  = hasStrData && pr.won  && pr.ourStr < pr.oppStr;  // nižší ELO vyhrál
+    const upsetLoss = hasStrData && !pr.won && pr.ourStr > pr.oppStr;  // vyšší ELO prohrál
+    const upsetIcon = upsetWin ? '<span class="upset-icon upset-win" title="Překvapivá výhra (nižší ELO)">⚡</span>'
+                    : upsetLoss ? '<span class="upset-icon upset-loss" title="Překvapivá prohra (vyšší ELO)">💔</span>'
+                    : '';
     return `
     <div class="match-player-row${isMvp ? ' mvp-row' : ''}">
-      <div class="player-name-left">${isMvp ? '⭐ ' : ''}${pr.player}</div>
-      <div class="match-player-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}${gameUpset ? '<span class="upset-icon" title="Překvapivý výsledek">⚡</span>' : ''}</div>
+      <div class="player-name-left">${isMvp ? '⭐ ' : ''}${pr.player}${upsetIcon}</div>
+      <div class="match-player-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</div>
       <div class="player-name-right">${pr.opponent}</div>
     </div>`;
   }).join('');

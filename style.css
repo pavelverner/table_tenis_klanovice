@@ -209,7 +209,8 @@ a:hover { text-decoration: underline; }
 .badge-L { background: rgba(239,68,68,.15); color: var(--c-red); }
 .badge-D { background: rgba(245,158,11,.15); color: var(--c-orange); }
 .badge-upset { background: rgba(245,158,11,.15); color: var(--c-orange); padding: 3px 6px; cursor: default; }
-.upset-icon { font-size: 10px; margin-left: 3px; cursor: default; }
+.upset-icon { font-size: 11px; margin-left: 3px; cursor: default; }
+.upset-loss { color: var(--c-red); }
 
 /* ── Top players ── */
 .top-players { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
