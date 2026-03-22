@@ -112,7 +112,7 @@ const CLUB_DATA = {
         "sa": 95,
         "pts": 48,
         "highlight": false,
-        "zone": "promotion"
+        "zone": "neutral"
       },
       {
         "pos": 3,
@@ -216,7 +216,7 @@ const CLUB_DATA = {
         "sa": 169,
         "pts": 15,
         "highlight": false,
-        "zone": "relegation"
+        "zone": "neutral"
       },
       {
         "pos": 11,
@@ -374,7 +374,7 @@ const CLUB_DATA = {
         "sa": 157,
         "pts": 15,
         "highlight": false,
-        "zone": "relegation"
+        "zone": "neutral"
       },
       {
         "pos": 11,
@@ -532,7 +532,7 @@ const CLUB_DATA = {
         "sa": 156,
         "pts": 18,
         "highlight": false,
-        "zone": "relegation"
+        "zone": "neutral"
       },
       {
         "pos": 11,
@@ -690,7 +690,7 @@ const CLUB_DATA = {
         "sa": 165,
         "pts": 16,
         "highlight": true,
-        "zone": "relegation"
+        "zone": "neutral"
       },
       {
         "pos": 11,
@@ -848,7 +848,7 @@ const CLUB_DATA = {
         "sa": 169,
         "pts": 18,
         "highlight": false,
-        "zone": "relegation"
+        "zone": "neutral"
       },
       {
         "pos": 11,
@@ -2561,6 +2561,45 @@ const CLUB_DATA = {
     }
   ],
   "matches": [
+    {
+      "id": 63401020,
+      "teamId": 63401,
+      "home": true,
+      "round": 20,
+      "date": "2026-03-23",
+      "opponent": "TJ Sokol Běchovice II A",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
+    {
+      "id": 63401021,
+      "teamId": 63401,
+      "home": false,
+      "round": 21,
+      "date": "2026-04-08",
+      "opponent": "TJ Slavoj Praha B",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
+    {
+      "id": 63401022,
+      "teamId": 63401,
+      "home": true,
+      "round": 22,
+      "date": "2026-04-13",
+      "opponent": "TJ AVIA Čakovice C",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
     {
       "id": 645355,
       "teamId": 63401,
@@ -4434,6 +4473,45 @@ const CLUB_DATA = {
         "Výjezdní výhra 10:3",
         "Čtyřhra Kárník Tomáš / Hořejší Radim: ✓ výhra"
       ]
+    },
+    {
+      "id": 63402020,
+      "teamId": 63402,
+      "home": true,
+      "round": 20,
+      "date": "2026-03-25",
+      "opponent": "TJ Sokol Žižkov B",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
+    {
+      "id": 63402021,
+      "teamId": 63402,
+      "home": true,
+      "round": 21,
+      "date": "2026-04-08",
+      "opponent": "TJ Sokol Běchovice II B",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
+    {
+      "id": 63402022,
+      "teamId": 63402,
+      "home": false,
+      "round": 22,
+      "date": "2026-04-15",
+      "opponent": "SK Start Praha B",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
     },
     {
       "id": 645089,
@@ -6400,6 +6478,45 @@ const CLUB_DATA = {
       ]
     },
     {
+      "id": 63403020,
+      "teamId": 63403,
+      "home": false,
+      "round": 20,
+      "date": "2026-03-24",
+      "opponent": "TJ Sokol Petrovice B",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
+    {
+      "id": 63403021,
+      "teamId": 63403,
+      "home": true,
+      "round": 21,
+      "date": "2026-03-30",
+      "opponent": "TTC Elizza Praha I",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
+    {
+      "id": 63403022,
+      "teamId": 63403,
+      "home": false,
+      "round": 22,
+      "date": "2026-04-16",
+      "opponent": "TJ Pankrác D",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
+    {
       "id": 644958,
       "teamId": 63403,
       "home": false,
@@ -8266,6 +8383,45 @@ const CLUB_DATA = {
         "Horčák pod formou – 0/3",
         "Domácí výhra 10:4"
       ]
+    },
+    {
+      "id": 63404020,
+      "teamId": 63404,
+      "home": false,
+      "round": 20,
+      "date": "2026-03-26",
+      "opponent": "TJ Lokomotiva Vršovice E",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
+    {
+      "id": 63404021,
+      "teamId": 63404,
+      "home": false,
+      "round": 21,
+      "date": "2026-03-31",
+      "opponent": "TJ Sokol Suchdol - Sedlec B",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
+    {
+      "id": 63404022,
+      "teamId": 63404,
+      "home": true,
+      "round": 22,
+      "date": "2026-04-15",
+      "opponent": "AC Sparta Praha K",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
     },
     {
       "id": 644828,
@@ -10296,6 +10452,45 @@ const CLUB_DATA = {
         "Drtivá výhra 10:2",
         "Čtyřhra Jiroš Martin / Nový Pavel: ✓ výhra"
       ]
+    },
+    {
+      "id": 63405020,
+      "teamId": 63405,
+      "home": false,
+      "round": 20,
+      "date": "2026-03-24",
+      "opponent": "TJ Lokomotiva Vršovice F",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
+    {
+      "id": 63405021,
+      "teamId": 63405,
+      "home": false,
+      "round": 21,
+      "date": "2026-03-30",
+      "opponent": "TJ Sokol Běchovice II D",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
+    },
+    {
+      "id": 63405022,
+      "teamId": 63405,
+      "home": true,
+      "round": 22,
+      "date": "2026-04-15",
+      "opponent": "TTC Elizza Praha K",
+      "score": null,
+      "result": null,
+      "playerResults": [],
+      "keyPoints": [],
+      "future": true
     },
     {
       "id": 643938,

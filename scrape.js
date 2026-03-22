@@ -50,7 +50,7 @@ async function discoverTeams(page, rocnik) {
   ).catch(() => {});
   await page.waitForTimeout(1000);
 
-  const teams = await page.evaluate((knownIds) => {
+  const teams = await page.evaluate(() => {
     const seen = {};
     document.querySelectorAll('a[href*="druzstvo"]').forEach(a => {
       // URL format: /druzstvo-63401/svaz-420101/rocnik-2025/soutez-6274
@@ -58,17 +58,19 @@ async function discoverTeams(page, rocnik) {
       if (!m) return;
       const drustvoId = m[1];
       const soutezId  = m[2];
-      if (!knownIds.includes(Number(drustvoId))) return;
+      // All teams listed on the club page belong to our club – no ID filter needed
       if (!seen[drustvoId]) seen[drustvoId] = { soutezId, drustvoId, label: a.textContent.trim() };
     });
     return Object.values(seen);
-  }, [...KNOWN_IDS]);
+  });
 
+  // Assign team letter: sort by druzstvoId, label A/B/C/D/E in order
+  const LETTERS = ['A','B','C','D','E','F'];
   return teams
     .sort((a, b) => Number(a.drustvoId) - Number(b.drustvoId))
-    .map(t => ({
+    .map((t, i) => ({
       id:        Number(t.drustvoId),
-      name:      `TTC Klánovice ${TEAM_SUFFIX[t.drustvoId]}`,
+      name:      `TTC Klánovice ${TEAM_SUFFIX[Number(t.drustvoId)] || LETTERS[i] || String(i+1)}`,
       soutezId:  t.soutezId,
       drustvoId: t.drustvoId,
     }));
