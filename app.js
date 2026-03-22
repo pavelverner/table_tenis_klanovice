@@ -1286,7 +1286,6 @@ function openPlayerModal(playerId) {
   const losses = p.stats.losses;
   const total  = p.stats.matches;
   const pct    = p.stats.winPct;
-  const historyTotal = matchHistory.length;
   const delta  = p.strDelta || 0;
   const deltaColor = delta > 0 ? 'var(--c-green)' : delta < 0 ? 'var(--c-red)' : 'var(--c-muted)';
   const rocnik = CLUB_DATA.rocnik || 2025;
@@ -1294,15 +1293,18 @@ function openPlayerModal(playerId) {
     ? `https://stis.ping-pong.cz/hrac-${p.stisId}/svaz-420101/rocnik-${rocnik}/soutez-${p.soutezId}`
     : null;
 
-  const hasPrevSeason = matchHistory.some(h => h.season && h.season !== (CLUB_DATA.season || ''));
+  // Show only current season in the history table (respects the season selector)
+  const curSeason = CLUB_DATA.season || '';
+  const curHistory = matchHistory.filter(h => !h.season || h.season === curSeason);
+  const historyTotal = curHistory.length;
 
-  const historyRows = matchHistory.map(h => `
+  const historyRows = curHistory.map(h => `
     <tr>
       <td class="modal-match-date">${fmtDate(h.date)}</td>
       <td><span class="result-dot dot-${h.won?'W':'L'}" style="display:inline-block;vertical-align:middle"></span>
           <span style="margin-left:6px;font-weight:600;color:${h.won?'var(--c-green)':'var(--c-red)'}">${h.result}</span></td>
       <td class="modal-opp">${h.opponent}</td>
-      <td style="color:var(--c-muted);font-size:12px">${hasPrevSeason && h.season ? h.season : h.competition}</td>
+      <td style="color:var(--c-muted);font-size:12px">${h.competition}</td>
     </tr>`).join('');
 
   // Per-team breakdown (only shown when player has multiple teams)
@@ -1346,8 +1348,8 @@ function openPlayerModal(playerId) {
     </div>
     <div style="margin:12px 0 20px"><div class="win-pct-bar-bg" style="height:8px"><div class="win-pct-bar-fill" style="width:${pct}%;height:8px"></div></div></div>
     ${teamBreakdown}
-    ${buildFunFact(matchHistory)}
-    ${(() => { const cur = matchHistory.filter(h => !h.season || h.season === (CLUB_DATA.season||'')); return cur.length >= 2 ? buildWinChart(cur) : ''; })()}
+    ${buildFunFact(curHistory)}
+    ${curHistory.length >= 2 ? buildWinChart(curHistory) : ''}
     ${historyTotal ? `
     <div class="modal-history-title">Zápasová historie (${historyTotal})</div>
     <div class="modal-history-wrap">
