@@ -274,6 +274,7 @@ function goToMatchesForTeam(teamId) {
 
 function renderLatestMatches() {
   const sorted = [...CLUB_DATA.matches]
+    .filter(m => !m.future && m.result && m.score)
     .sort((a,b) => (b.date || '').localeCompare(a.date || ''))
     .slice(0, 6);
 
@@ -360,15 +361,21 @@ function renderUpcoming() {
 }
 
 function renderTopPlayers() {
-  const sorted = [...CLUB_DATA.players]
-    .filter(p => p.stats.matches >= 8)
+  const merged = getMergedPlayers();
+  const minMatches = merged.some(p => p.stats.matches >= 8) ? 8 : 3;
+  const sorted = merged
+    .filter(p => p.stats.matches >= minMatches)
     .sort((a,b) => b.stats.winPct - a.stats.winPct)
     .slice(0, 6);
 
+  const teamLabel = p => (p.teams||[]).length > 1
+    ? (p.teams||[]).map(t => `Tým ${t.team}`).join(', ')
+    : `Tým ${p.team}`;
+
   document.getElementById('topPlayers').innerHTML = sorted.map(p => `
-    <div class="player-mini">
+    <div class="player-mini" onclick="openPlayerModal(${p.id})" style="cursor:pointer">
       <div class="player-mini-name">${p.name}</div>
-      <div class="player-mini-team">Tým ${p.team} · ${p.stats.matches} her</div>
+      <div class="player-mini-team">${teamLabel(p)} · ${p.stats.matches} her</div>
       <div class="player-mini-bar-wrap">
         <div class="player-mini-bar-bg">
           <div class="player-mini-bar" style="width:${p.stats.winPct}%"></div>
@@ -475,7 +482,64 @@ function renderStatistiky() {
   const tabs = document.getElementById('statsFilterTabs');
   tabs.innerHTML = filterTabsHTML('stats');
   activateFilterTabs('stats', tabs);
+  renderStatsChart();
   renderStatsTable();
+}
+
+function renderStatsChart() {
+  let el = document.getElementById('statsChart');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'statsChart';
+    el.className = 'stats-chart-wrap section-block';
+    const statsTableWrap = document.getElementById('statsTable');
+    statsTableWrap.parentNode.insertBefore(el, statsTableWrap);
+  }
+
+  const merged = getMergedPlayers();
+  const players = activeStatsTeam === 'all'
+    ? merged
+    : merged.filter(p =>
+        p.team === activeStatsTeam ||
+        (p.teams || []).some(t => t.team === activeStatsTeam)
+      );
+
+  // Top 20 by STR, only those with a rating
+  const rated = players
+    .filter(p => p.str)
+    .sort((a,b) => (b.str||0) - (a.str||0))
+    .slice(0, 20);
+
+  if (!rated.length) { el.innerHTML = ''; return; }
+
+  const maxStr = rated[0].str;
+  const minStr = rated[rated.length - 1].str;
+  const range  = Math.max(maxStr - minStr, 1);
+
+  const bars = rated.map(p => {
+    const barPct = 40 + Math.round(((p.str - minStr) / range) * 55); // 40–95%
+    const delta  = p.strDelta || 0;
+    const dc     = delta > 0 ? 'var(--c-green)' : delta < 0 ? 'var(--c-red)' : 'var(--c-muted)';
+    const ds     = delta > 0 ? `+${delta}` : String(delta);
+    const tl     = (p.teams||[]).length > 1
+      ? (p.teams||[]).map(t=>`Tým ${t.team}`).join(', ')
+      : `Tým ${p.team}`;
+    return `
+    <div class="sc-row" onclick="openPlayerModal(${p.id})">
+      <div class="sc-name">${p.name}<span class="sc-team">${tl}</span></div>
+      <div class="sc-bar-wrap">
+        <div class="sc-bar" style="width:${barPct}%"></div>
+      </div>
+      <div class="sc-vals">
+        <span class="sc-str">${p.str}</span>
+        <span class="sc-delta" style="color:${dc}">${ds}</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  el.innerHTML = `
+    <h2 class="block-title">STR (Elo) žebříček</h2>
+    <div class="stats-chart">${bars}</div>`;
 }
 
 // ── Merge players who appear in multiple teams ──────────────
