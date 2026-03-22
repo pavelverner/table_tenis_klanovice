@@ -192,6 +192,7 @@ a:hover { text-decoration: underline; }
 .match-row:hover { border-color: var(--c-border); background: var(--c-surface2); }
 
 .match-date { font-size: 12px; color: var(--c-muted); }
+.match-sub { font-size: 11px; color: var(--c-muted); margin-top: 1px; display: none; }
 .match-teams { font-size: 14px; min-width: 0; overflow: hidden; }
 .match-teams strong { font-weight: 600; }
 .match-result { display: contents; } /* desktop: children flow in grid as before */
@@ -561,6 +562,7 @@ a:hover { text-decoration: underline; }
     gap: 8px; padding: 10px 12px; align-items: center;
   }
   .match-date { display: none; }
+  .match-sub { display: block; }
   .match-result {
     display: flex; flex-direction: column; align-items: center; gap: 3px;
   }
