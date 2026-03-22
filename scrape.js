@@ -126,12 +126,13 @@ async function parseMatch(page, url, round) {
         const numText = cells[0]?.textContent.trim().replace('.', '');
         if (!/^\d+$/.test(numText)) return;
 
-        const isDoubles = cells[2]?.textContent.trim() === '..';
-
         // Extract player names from <a> tags within the cell
         const getPlayers = (cell) => Array.from(cell?.querySelectorAll('a') || []).map(a => a.textContent.trim()).filter(Boolean);
         const homePlayers = getPlayers(cells[1]);
         const awayPlayers = getPlayers(cells[3]);
+
+        // Detect doubles: either side has more than one player, or cell[2] is '..'
+        const isDoubles = homePlayers.length > 1 || awayPlayers.length > 1 || cells[2]?.textContent.trim() === '..';
         // Fallback: split textContent by known newlines
         const fallbackSplit = (cell) => {
           const t = cell?.textContent.trim() || '';

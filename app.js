@@ -479,10 +479,10 @@ function renderFutureCard(m) {
         <span class="upcoming-vs">vs</span>
         <span class="team-name${!m.home ? ' our-side' : ''}">${awayTeam}</span>
       </div>
-      <div style="font-size:11px;color:var(--c-muted);margin-top:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-        <span>Kolo ${m.round}</span>
-        <span>${team.competition}</span>
-        <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
+      <div style="font-size:11px;color:var(--c-muted);margin-top:2px;display:flex;align-items:center;gap:8px;flex-wrap:nowrap;overflow:hidden">
+        <span style="flex-shrink:0">Kolo ${m.round}</span>
+        <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${team.competition}</span>
+        <span class="${m.home ? 'venue-home' : 'venue-away'}" style="flex-shrink:0">${m.home ? '🏠 doma' : '✈️ venku'}</span>
         ${h2hInline}
       </div>
     </div>

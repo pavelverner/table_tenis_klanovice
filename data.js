@@ -8,13 +8,14 @@ const CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "22.03.26 21:06",
+  "lastUpdate": "22.03.26 21:50",
   "teams": [
     {
       "id": 63401,
       "name": "TTC Klánovice A",
       "competition": "1. třída A",
       "division": "1. třída A",
+      "leagueAvgStr": 1653,
       "standing": {
         "pos": 1,
         "wins": 17,
@@ -30,6 +31,7 @@ const CLUB_DATA = {
       "name": "TTC Klánovice B",
       "competition": "2. třída A",
       "division": "2. třída A",
+      "leagueAvgStr": 1542,
       "standing": {
         "pos": 7,
         "wins": 8,
@@ -45,6 +47,7 @@ const CLUB_DATA = {
       "name": "TTC Klánovice C",
       "competition": "3. třída A",
       "division": "3. třída A",
+      "leagueAvgStr": 1448,
       "standing": {
         "pos": 7,
         "wins": 7,
@@ -60,6 +63,7 @@ const CLUB_DATA = {
       "name": "TTC Klánovice D",
       "competition": "4. třída A",
       "division": "4. třída A",
+      "leagueAvgStr": 1375,
       "standing": {
         "pos": 10,
         "wins": 5,
@@ -75,6 +79,7 @@ const CLUB_DATA = {
       "name": "TTC Klánovice E",
       "competition": "5. třída B",
       "division": "5. třída B",
+      "leagueAvgStr": 1261,
       "standing": {
         "pos": 7,
         "wins": 7,
@@ -2617,94 +2622,157 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Kárník Tomáš / Brothánek Jan",
+          "opponent": "Hrstka Tomáš / Averin Timofei",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hořejší Radim / Hudek Tomáš",
+          "opponent": "Šanc Vojtěch / Boltík Martin",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Kárník Tomáš",
           "opponent": "Boltík Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1746
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Hrstka Tomáš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1693
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Averin Timofei (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 0
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Šanc Vojtěch",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1674
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Boltík Martin",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1746
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Hrstka Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1693
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Averin Timofei (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 0
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Šanc Vojtěch",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1674
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Boltík Martin",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1746
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Hrstka Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1693
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Averin Timofei (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 0
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Šanc Vojtěch",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1674
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Boltík Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1746
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Hrstka Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1693
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Averin Timofei (E)",
           "result": "-4:-4",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 0
         }
       ],
       "keyPoints": [
@@ -2727,94 +2795,157 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Branžovský Milan / Hořejší Radim",
+          "opponent": "Polcar Vojtěch / Kouba Jan",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hudek Tomáš / Kárník Tomáš",
+          "opponent": "Orlowski Petr / Hasman Michael",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Kouba Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1712
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Orlowski Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1728
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Hasman Michael",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1598
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Polcar Vojtěch",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1778
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Orlowski Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1728
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Hasman Michael",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1598
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Polcar Vojtěch",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1778
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Kouba Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1712
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Hasman Michael",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1598
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Polcar Vojtěch",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1778
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Kouba Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1712
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Orlowski Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1728
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Polcar Vojtěch",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1778
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Kouba Jan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1712
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Orlowski Petr",
           "result": "7:13",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1728
         }
       ],
       "keyPoints": [
@@ -2837,70 +2968,121 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Kárník Tomáš / Hudek Tomáš",
+          "opponent": "Řepík Jaroslav / Gruber Josef",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hořejší Radim / Branžovský Milan",
+          "opponent": "Liška Marek",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 1607
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Řepík Jaroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1756
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Gruber Josef",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1772
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Liška Marek",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1607
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 0
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Řepík Jaroslav",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1756
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Gruber Josef",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1772
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Liška Marek",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1607
         },
         {
           "player": "Hořejší Radim",
           "opponent": "",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 0
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Řepík Jaroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1756
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Gruber Josef",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1772
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Liška Marek",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1607
         }
       ],
       "keyPoints": [
@@ -2923,100 +3105,166 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Hořejší Radim / Branžovský Milan",
+          "opponent": "Škopková Věra / Botka Jan",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Kárník Tomáš / Hudek Tomáš",
+          "opponent": "Oplt Pavel / Dušek Zdeněk",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Dušek Zdeněk",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1654
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Škopková Věra",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1561
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Botka Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1675
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Oplt Pavel",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1876
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Škopková Věra",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1561
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Botka Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1675
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Oplt Pavel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1876
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Dušek Zdeněk",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1654
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Botka Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1675
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Oplt Pavel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1876
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Dušek Zdeněk",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1654
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Škopková Věra",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1561
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Oplt Pavel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1876
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Dušek Zdeněk",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1654
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Škopková Věra",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1561
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Botka Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1675
         }
       ],
       "keyPoints": [
@@ -3039,70 +3287,121 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Kárník Tomáš / Hudek Tomáš",
+          "opponent": "Tichý Jiří / Ambrož Adam",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hořejší Radim / Branžovský Milan",
+          "opponent": "Kucharčík Jan / Fialka Jindřich",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Fialka Jindřich",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1695
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Tichý Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1841
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Ambrož Adam",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1722
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Kucharčík Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1643
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Fialka Jindřich",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1695
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Tichý Jiří",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1841
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Ambrož Adam",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1722
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Kucharčík Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1643
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Fialka Jindřich",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1695
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Tichý Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1841
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Ambrož Adam",
           "result": "8:5",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1722
         }
       ],
       "keyPoints": [
@@ -3125,94 +3424,157 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Kárník Tomáš / Hudek Tomáš",
+          "opponent": "Hron Jiří / Plch Jiří",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hořejší Radim / Branžovský Milan",
+          "opponent": "Jelínek Šimon / Prokš Vladimír",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Jelínek Šimon",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1670
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Prokš Vladimír",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1648
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Tichý Květoslav",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1581
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Hron Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1605
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Prokš Vladimír",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1648
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Tichý Květoslav",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1581
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Hron Jiří",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1605
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Jelínek Šimon",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1670
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Tichý Květoslav",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1581
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Hron Jiří",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1605
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Jelínek Šimon",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1670
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Prokš Vladimír",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1648
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Hron Jiří",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1605
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Jelínek Šimon",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1670
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Prokš Vladimír",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1648
         }
       ],
       "keyPoints": [
@@ -3235,64 +3597,112 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Branžovský Milan / Hořejší Radim",
+          "opponent": "Zýková Petra / Břicháček David",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Kárník Tomáš / Hudek Tomáš",
+          "opponent": "Železný Daniel / Pospíšil Milan",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Zýková Petra",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1716
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Železný Daniel",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1816
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Břicháček David",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1731
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Pospíšil Milan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1771
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Zýková Petra",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1716
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Železný Daniel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1816
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Břicháček David",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1731
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Pospíšil Milan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1771
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Zýková Petra",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1716
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Železný Daniel",
           "result": "-9:-11",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1816
         }
       ],
       "keyPoints": [
@@ -3315,70 +3725,121 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Hořejší Radim / Branžovský Milan",
+          "opponent": "Chyba Jáchym / Kadlec Tomáš",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Kárník Tomáš / Hudek Tomáš",
+          "opponent": "Nemčík Marek / Běhal Aleš",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Chyba Jáchym",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1690
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Nemčík Marek",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1598
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Kadlec Tomáš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1677
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Běhal Aleš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1727
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Chyba Jáchym",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1690
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Nemčík Marek",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1598
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Kadlec Tomáš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1677
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Běhal Aleš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1727
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Chyba Jáchym",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1690
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Nemčík Marek",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1598
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Kadlec Tomáš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1677
         }
       ],
       "keyPoints": [
@@ -3401,76 +3862,130 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Hořejší Radim / Kárník Tomáš",
+          "opponent": "Červeňák Miroslav / Bartel Michal",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Verner Pavel / Hudek Tomáš",
+          "opponent": "Hlista Petr / Jírů Libor",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Bartel Michal",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1672
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Hlista Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1718
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Jírů Libor",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1584
         },
         {
           "player": "Verner Pavel",
           "opponent": "Červeňák Miroslav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1747
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Hlista Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1718
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Jírů Libor",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1584
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Červeňák Miroslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1747
         },
         {
           "player": "Verner Pavel",
           "opponent": "Bartel Michal",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1672
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Jírů Libor",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1584
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Červeňák Miroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1747
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Bartel Michal",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1672
         },
         {
           "player": "Verner Pavel",
           "opponent": "Hlista Petr",
           "result": "7:10",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1718
         }
       ],
       "keyPoints": [
@@ -3493,94 +4008,157 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Hořejší Radim / Kárník Tomáš",
+          "opponent": "Pospíšil David / Kaba Radka",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Branžovský Milan / Hudek Tomáš",
+          "opponent": "Šindelář Daniel / Šimůnek Ondřej",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Pospíšil David",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1737
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Šimůnek Ondřej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1525
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Kaba Radka",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1575
         },
         {
           "player": "Polák František",
           "opponent": "Šindelář Daniel",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1752
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Pospíšil David",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1737
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Šimůnek Ondřej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1525
         },
         {
           "player": "Polák František",
           "opponent": "Kaba Radka",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1575
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Šindelář Daniel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1752
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Pospíšil David",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1737
         },
         {
           "player": "Polák František",
           "opponent": "Šimůnek Ondřej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1525
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Kaba Radka",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1575
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Šindelář Daniel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1752
         },
         {
           "player": "Polák František",
           "opponent": "Pospíšil David",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1737
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Šimůnek Ondřej",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1525
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Kaba Radka",
           "result": "1:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1575
         }
       ],
       "keyPoints": [
@@ -3603,100 +4181,166 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Hořejší Radim / Kárník Tomáš",
+          "opponent": "Hrdý Martin / Přiklopil Jan",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Branžovský Milan / Hudek Tomáš",
+          "opponent": "Veselý Filip / Flekač Tomáš",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Kárník Tomáš",
           "opponent": "Přiklopil Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1773
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Hrdý Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1747
         },
         {
           "player": "Polák František",
           "opponent": "Flekač Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1693
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Veselý Filip",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1929
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Hrdý Martin",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1747
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Flekač Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1693
         },
         {
           "player": "Polák František",
           "opponent": "Veselý Filip",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1929
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Přiklopil Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1773
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Flekač Tomáš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1693
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Veselý Filip",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1929
         },
         {
           "player": "Polák František",
           "opponent": "Přiklopil Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1773
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Hrdý Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1747
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Veselý Filip",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1929
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Přiklopil Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1773
         },
         {
           "player": "Polák František",
           "opponent": "Hrdý Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1747
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Flekač Tomáš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1693
         }
       ],
       "keyPoints": [
@@ -3719,82 +4363,139 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Hořejší Radim / Branžovský Milan",
+          "opponent": "Boltík Martin / Celler Jiří",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hudek Tomáš / Polák František",
+          "opponent": "Vodal Petr / Merkl Roman",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Boltík Martin",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1746
         },
         {
           "player": "Polák František",
           "opponent": "Vodal Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1729
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Merkl Roman",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1687
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Celler Jiří",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1674
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Vodal Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1729
         },
         {
           "player": "Polák František",
           "opponent": "Merkl Roman",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1687
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Celler Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1674
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Boltík Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1746
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Merkl Roman",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1687
         },
         {
           "player": "Polák František",
           "opponent": "Baran Peter (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 0
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Boltík Martin",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1746
         },
         {
           "player": "Branžovský Milan",
           "opponent": "Vodal Petr",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1680,
+          "oppStr": 1729
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Baran Peter (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 0
         }
       ],
       "keyPoints": [
@@ -3817,100 +4518,166 @@ const CLUB_DATA = {
       "result": "D",
       "playerResults": [
         {
+          "player": "Hudek Tomáš / Polák František",
+          "opponent": "Polcar Vojtěch / Kouba Jan",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hořejší Radim / Kárník Tomáš",
+          "opponent": "Koscelanský Samuel / Hučko Tomáš",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Kouba Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1712
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Polcar Vojtěch",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1778
         },
         {
           "player": "Polák František",
           "opponent": "Koscelanský Samuel (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 0
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Hučko Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1765
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Kouba Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1712
         },
         {
           "player": "Polák František",
           "opponent": "Polcar Vojtěch",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1778
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Koscelanský Samuel (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 0
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Hučko Tomáš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1765
         },
         {
           "player": "Polák František",
           "opponent": "Kouba Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1712
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Polcar Vojtěch",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1778
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Koscelanský Samuel (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 0
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Hučko Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1765
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Kouba Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1712
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Polcar Vojtěch",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1778
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Koscelanský Samuel (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 0
         },
         {
           "player": "Polák František",
           "opponent": "Hučko Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1765
         }
       ],
       "keyPoints": [
@@ -3933,76 +4700,130 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Hudek Tomáš / Polák František",
+          "opponent": "Řepík Jaroslav / Kubera František",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Kárník Tomáš / Hořejší Radim",
+          "opponent": "Gruber Josef / Barcal Petr",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Řepík Jaroslav",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1756
         },
         {
           "player": "Polák František",
           "opponent": "Liška Marek",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1607
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Barcal Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1613
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Gruber Josef",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1772
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Liška Marek",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1607
         },
         {
           "player": "Polák František",
           "opponent": "Barcal Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1613
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Kubera František",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1535
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Řepík Jaroslav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1756
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Barcal Petr",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1613
         },
         {
           "player": "Polák František",
           "opponent": "Kubera František",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1535
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Řepík Jaroslav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1756
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Liška Marek",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1607
         }
       ],
       "keyPoints": [
@@ -4025,52 +4846,94 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Hořejší Radim / Kárník Tomáš",
+          "opponent": "Škopková Věra / Fojtl Matěj",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hudek Tomáš / Polák František",
+          "opponent": "Botka Jan / Nedělka Petr",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Botka Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1675
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Škopková Věra",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1561
         },
         {
           "player": "Polák František",
           "opponent": "Nedělka Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1409
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Fojtl Matěj",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1005
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Botka Jan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1675
         },
         {
           "player": "Polák František",
           "opponent": "Škopková Věra",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1561
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Nedělka Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1409
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Fojtl Matěj",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1005
         }
       ],
       "keyPoints": [
@@ -4093,94 +4956,157 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Kárník Tomáš / Hořejší Radim",
+          "opponent": "Tichý Jiří / Ambrož Adam",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Polák František / Hudek Tomáš",
+          "opponent": "Černoch Jan / Fialka Jindřich",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Černoch Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1650
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Ambrož Adam",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1722
         },
         {
           "player": "Polák František",
           "opponent": "Fialka Jindřich",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1695
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Tichý Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1841
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Ambrož Adam",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1722
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Fialka Jindřich",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1695
         },
         {
           "player": "Polák František",
           "opponent": "Tichý Jiří",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1841
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Černoch Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1650
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Fialka Jindřich",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1695
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Tichý Jiří",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1841
         },
         {
           "player": "Polák František",
           "opponent": "Černoch Jan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1650
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Ambrož Adam",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1722
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Tichý Jiří",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1841
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Černoch Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1650
         },
         {
           "player": "Polák František",
           "opponent": "Ambrož Adam",
           "result": "0:1",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1722
         }
       ],
       "keyPoints": [
@@ -4203,70 +5129,121 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Hudek Tomáš / Polák František",
+          "opponent": "Hron Jiří / Tichý Květoslav",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hořejší Radim / Kárník Tomáš",
+          "opponent": "Jelínek Šimon / Prokš Vladimír",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Hron Jiří",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1605
         },
         {
           "player": "Polák František",
           "opponent": "Jelínek Šimon",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1670
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Tichý Květoslav",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1581
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Prokš Vladimír",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1648
         },
         {
           "player": "Polák František",
           "opponent": "Hron Jiří",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1605
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Jelínek Šimon",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1670
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Tichý Květoslav",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1581
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Prokš Vladimír",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1648
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Hron Jiří",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1605
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Jelínek Šimon",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1670
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Tichý Květoslav",
           "result": "8:7",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1581
         }
       ],
       "keyPoints": [
@@ -4289,94 +5266,157 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Hořejší Radim / Kárník Tomáš",
+          "opponent": "Břicháček David / Zýková Petra",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Polák František / Hudek Tomáš",
+          "opponent": "Pospíšil Milan / Lorenc David",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Kárník Tomáš",
           "opponent": "Pospíšil Milan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1771
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Lorenc David",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1625
         },
         {
           "player": "Polák František",
           "opponent": "Zýková Petra",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1716
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Břicháček David",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1731
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Lorenc David",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1625
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Zýková Petra",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1716
         },
         {
           "player": "Polák František",
           "opponent": "Břicháček David",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1731
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Pospíšil Milan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1771
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Železný Daniel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1816
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Břicháček David",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1731
         },
         {
           "player": "Polák František",
           "opponent": "Pospíšil Milan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1771
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Lorenc David",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1625
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Břicháček David",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1731
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Pospíšil Milan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1771
         },
         {
           "player": "Polák František",
           "opponent": "Lorenc David",
           "result": "-8:8",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1625
         }
       ],
       "keyPoints": [
@@ -4399,76 +5439,130 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Kárník Tomáš / Hořejší Radim",
+          "opponent": "Krejčík Julius / Kadlec Tomáš",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hudek Tomáš / Polák František",
+          "opponent": "Nemčík Marek / Průša Martin",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hořejší Radim",
           "opponent": "Kadlec Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1677
         },
         {
           "player": "Polák František",
           "opponent": "Krejčík Julius",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1505
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Průša Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1675
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Nemčík Marek",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1598
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Krejčík Julius",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1505
         },
         {
           "player": "Polák František",
           "opponent": "Průša Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1675
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Nemčík Marek",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1598
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Kadlec Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1677
         },
         {
           "player": "Hořejší Radim",
           "opponent": "Průša Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1675
         },
         {
           "player": "Polák František",
           "opponent": "Nemčík Marek",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1598
         },
         {
           "player": "Kárník Tomáš",
           "opponent": "Kadlec Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1677
         },
         {
           "player": "Hudek Tomáš",
           "opponent": "Krejčík Julius",
           "result": "-3:-7",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1505
         }
       ],
       "keyPoints": [
@@ -4533,94 +5627,157 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Brothánek Jan / Verner Pavel",
+          "opponent": "Němec Michal / Pour Lukáš",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "",
+          "opponent": "Kraml Karel / Zapletal Jan",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Martin",
           "opponent": "Němec Michal",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1605
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Kraml Karel",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1608
         },
         {
           "player": "Verner Pavel",
           "opponent": "Pour Lukáš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1513
         },
         {
           "player": "",
           "opponent": "Zapletal Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1607
         },
         {
           "player": "Horčák Martin",
           "opponent": "Kraml Karel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1608
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Pour Lukáš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1513
         },
         {
           "player": "Verner Pavel",
           "opponent": "Zapletal Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1607
         },
         {
           "player": "",
           "opponent": "Němec Michal",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1605
         },
         {
           "player": "Horčák Martin",
           "opponent": "Pour Lukáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1513
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Zapletal Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1607
         },
         {
           "player": "Verner Pavel",
           "opponent": "Němec Michal",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1605
         },
         {
           "player": "",
           "opponent": "Kraml Karel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1608
         },
         {
           "player": "Horčák Martin",
           "opponent": "Zapletal Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1607
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Němec Michal",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1605
         },
         {
           "player": "Verner Pavel",
           "opponent": "Kraml Karel",
           "result": "9:-8",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1608
         }
       ],
       "keyPoints": [
@@ -4643,70 +5800,121 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Verner Pavel / Brothánek Jan",
+          "opponent": "Karpíšek Ondřej / Mach Jakub",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Raiser Dan / Horčák Martin",
+          "opponent": "Petřík Filip / Hušek Filip",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Brothánek Jan",
           "opponent": "Karpíšek Ondřej",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1705
         },
         {
           "player": "Raiser Dan",
           "opponent": "Petřík Filip",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1665
         },
         {
           "player": "Horčák Martin",
           "opponent": "Mach Jakub",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1658
         },
         {
           "player": "Verner Pavel",
           "opponent": "Hušek Filip",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1625
         },
         {
           "player": "Raiser Dan",
           "opponent": "Karpíšek Ondřej",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1705
         },
         {
           "player": "Horčák Martin",
           "opponent": "Petřík Filip",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1665
         },
         {
           "player": "Verner Pavel",
           "opponent": "Mach Jakub",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1658
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Hušek Filip",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1625
         },
         {
           "player": "Horčák Martin",
           "opponent": "Karpíšek Ondřej",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1705
         },
         {
           "player": "Verner Pavel",
           "opponent": "Petřík Filip",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1665
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Mach Jakub",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1658
         }
       ],
       "keyPoints": [
@@ -4729,82 +5937,139 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Brothánek Jan / Farský Karel",
+          "opponent": "Stejskal Marek / Rypar Teo",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Verner Pavel / Raiser Dan",
+          "opponent": "Kryštůfek Ondřej / Slavíčková Eliška",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Verner Pavel",
           "opponent": "Stejskal Marek",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1401
         },
         {
           "player": "Farský Karel",
           "opponent": "Kryštůfek Ondřej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1188
         },
         {
           "player": "Raiser Dan",
           "opponent": "Slavíčková Eliška",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1529
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Rypar Teo",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1558
         },
         {
           "player": "Verner Pavel",
           "opponent": "Kryštůfek Ondřej",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1188
         },
         {
           "player": "Farský Karel",
           "opponent": "Slavíčková Eliška",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1529
         },
         {
           "player": "Raiser Dan",
           "opponent": "Rypar Teo",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1558
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Stejskal Marek",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1401
         },
         {
           "player": "Verner Pavel",
           "opponent": "Slavíčková Eliška",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1529
         },
         {
           "player": "Farský Karel",
           "opponent": "Rypar Teo",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1558
         },
         {
           "player": "Raiser Dan",
           "opponent": "Stejskal Marek",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1401
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Kryštůfek Ondřej",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1188
         },
         {
           "player": "Verner Pavel",
           "opponent": "Rypar Teo",
           "result": "1:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1558
         }
       ],
       "keyPoints": [
@@ -4827,76 +6092,130 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Brothánek Jan / Verner Pavel",
+          "opponent": "Juppa Jáchym / Kolesnikov Nikita",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Raiser Dan / Hanzal Petr",
+          "opponent": "Brož Pavel / Orlowski Petr",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Brothánek Jan",
           "opponent": "Orlowski Petr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1728
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Kolesnikov Nikita (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 0
         },
         {
           "player": "Raiser Dan",
           "opponent": "Juppa Jáchym",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1712
         },
         {
           "player": "Verner Pavel",
           "opponent": "Brož Pavel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1666
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Orlowski Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1728
         },
         {
           "player": "Raiser Dan",
           "opponent": "Kolesnikov Nikita (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 0
         },
         {
           "player": "Verner Pavel",
           "opponent": "Juppa Jáchym",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1712
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Brož Pavel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1666
         },
         {
           "player": "Raiser Dan",
           "opponent": "Orlowski Petr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1728
         },
         {
           "player": "Verner Pavel",
           "opponent": "Kolesnikov Nikita (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 0
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Juppa Jáchym",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1712
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Brož Pavel",
           "result": "-6:-2",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1666
         }
       ],
       "keyPoints": [
@@ -4919,100 +6238,166 @@ const CLUB_DATA = {
       "result": "D",
       "playerResults": [
         {
+          "player": "Farský Karel / Brothánek Jan",
+          "opponent": "Kučala Viktor / Ducháček Josef",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Verner Pavel / Raiser Dan",
+          "opponent": "Prokopenko Oleg / Mihalachi Marek",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Farský Karel",
           "opponent": "Prokopenko Oleg (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 0
         },
         {
           "player": "Verner Pavel",
           "opponent": "Kučala Viktor",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1617
         },
         {
           "player": "Raiser Dan",
           "opponent": "Mihalachi Marek",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1724
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Ducháček Josef",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1537
         },
         {
           "player": "Farský Karel",
           "opponent": "Kučala Viktor",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1617
         },
         {
           "player": "Verner Pavel",
           "opponent": "Mihalachi Marek",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1724
         },
         {
           "player": "Raiser Dan",
           "opponent": "Ducháček Josef",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1537
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Prokopenko Oleg (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 0
         },
         {
           "player": "Farský Karel",
           "opponent": "Mihalachi Marek",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1724
         },
         {
           "player": "Verner Pavel",
           "opponent": "Ducháček Josef",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1537
         },
         {
           "player": "Raiser Dan",
           "opponent": "Prokopenko Oleg (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 0
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Kučala Viktor",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1617
         },
         {
           "player": "Farský Karel",
           "opponent": "Ducháček Josef",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1537
         },
         {
           "player": "Verner Pavel",
           "opponent": "Prokopenko Oleg (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 0
         },
         {
           "player": "Raiser Dan",
           "opponent": "Kučala Viktor",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1617
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Mihalachi Marek",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1724
         }
       ],
       "keyPoints": [
@@ -5035,88 +6420,148 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Verner Pavel / Hanzal Petr",
+          "opponent": "Bistřický David / Nemčík Martin",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Brothánek Jan / Horčák Martin",
+          "opponent": "Puk Jaroslav / Kalina Pavel",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Martin",
           "opponent": "Puk Jaroslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1596
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Nemčík Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1412
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Kalina Pavel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1504
         },
         {
           "player": "Verner Pavel",
           "opponent": "Bistřický David",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1513
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Puk Jaroslav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1596
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Běhal Aleš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1727
         },
         {
           "player": "Verner Pavel",
           "opponent": "Kalina Pavel",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1504
         },
         {
           "player": "Farský Karel",
           "opponent": "Bistřický David",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1513
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Puk Jaroslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1596
         },
         {
           "player": "Verner Pavel",
           "opponent": "Běhal Aleš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1727
         },
         {
           "player": "Farský Karel",
           "opponent": "Kalina Pavel",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1504
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Bistřický David",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1513
         },
         {
           "player": "Verner Pavel",
           "opponent": "Puk Jaroslav",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1596
         },
         {
           "player": "Farský Karel",
           "opponent": "Běhal Aleš",
           "result": "-9:7",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1727
         }
       ],
       "keyPoints": [
@@ -5139,100 +6584,166 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Farský Karel / Brothánek Jan",
+          "opponent": "Lipták Milan / Hondlík Josef",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Verner Pavel / Hanzal Petr",
+          "opponent": "Tůma Ladislav / Holub Martin",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Farský Karel",
           "opponent": "Holub Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1479
         },
         {
           "player": "Verner Pavel",
           "opponent": "Tůma Ladislav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1626
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Lipták Milan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1703
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Hondlík Josef",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1627
         },
         {
           "player": "Farský Karel",
           "opponent": "Tůma Ladislav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1626
         },
         {
           "player": "Verner Pavel",
           "opponent": "Lipták Milan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1703
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Hondlík Josef",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1627
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Holub Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1479
         },
         {
           "player": "Farský Karel",
           "opponent": "Lipták Milan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1703
         },
         {
           "player": "Verner Pavel",
           "opponent": "Hondlík Josef",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1627
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Holub Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1479
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Tůma Ladislav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1626
         },
         {
           "player": "Farský Karel",
           "opponent": "Hondlík Josef",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1627
         },
         {
           "player": "Verner Pavel",
           "opponent": "Holub Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1479
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Tůma Ladislav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1626
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Lipták Milan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1703
         }
       ],
       "keyPoints": [
@@ -5255,100 +6766,166 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Brothánek Jan / Horčák Martin",
+          "opponent": "Srnka Jan / Seeman Jan",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Farský Karel / Verner Pavel",
+          "opponent": "Hrbáček Milan / Blažek Jan",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Brothánek Jan",
           "opponent": "Srnka Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1720
         },
         {
           "player": "Verner Pavel",
           "opponent": "Seeman Jan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1634
         },
         {
           "player": "Horčák Martin",
           "opponent": "Hrbáček Milan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1630
         },
         {
           "player": "Farský Karel",
           "opponent": "Blažek Jan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1613
         },
         {
           "player": "Verner Pavel",
           "opponent": "Srnka Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1720
         },
         {
           "player": "Horčák Martin",
           "opponent": "Seeman Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1634
         },
         {
           "player": "Farský Karel",
           "opponent": "Hrbáček Milan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1630
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Blažek Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1613
         },
         {
           "player": "Horčák Martin",
           "opponent": "Srnka Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1720
         },
         {
           "player": "Farský Karel",
           "opponent": "Seeman Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1634
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Hrbáček Milan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1630
         },
         {
           "player": "Verner Pavel",
           "opponent": "Blažek Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1613
         },
         {
           "player": "Farský Karel",
           "opponent": "Srnka Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1720
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Seeman Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1634
         },
         {
           "player": "Verner Pavel",
           "opponent": "Hrbáček Milan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1630
         },
         {
           "player": "Horčák Martin",
           "opponent": "Blažek Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1613
         }
       ],
       "keyPoints": [
@@ -5371,100 +6948,166 @@ const CLUB_DATA = {
       "result": "D",
       "playerResults": [
         {
+          "player": "Farský Karel / Verner Pavel",
+          "opponent": "Ševčík Ivan / Čermák Jiří",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Brothánek Jan / Horčák Martin",
+          "opponent": "Ako David / Stejskal Tomáš",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Verner Pavel",
           "opponent": "Stejskal Tomáš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1607
         },
         {
           "player": "Farský Karel",
           "opponent": "Čermák Jiří",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1484
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Ševčík Ivan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1502
         },
         {
           "player": "Horčák Martin",
           "opponent": "Ako David",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1573
         },
         {
           "player": "Verner Pavel",
           "opponent": "Čermák Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1484
         },
         {
           "player": "Farský Karel",
           "opponent": "Ševčík Ivan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1502
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Ako David",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1573
         },
         {
           "player": "Horčák Martin",
           "opponent": "Stejskal Tomáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1607
         },
         {
           "player": "Verner Pavel",
           "opponent": "Ševčík Ivan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1502
         },
         {
           "player": "Farský Karel",
           "opponent": "Ako David",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1573
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Stejskal Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1607
         },
         {
           "player": "Horčák Martin",
           "opponent": "Čermák Jiří",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1484
         },
         {
           "player": "Verner Pavel",
           "opponent": "Ako David",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1573
         },
         {
           "player": "Farský Karel",
           "opponent": "Stejskal Tomáš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1607
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Čermák Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1484
         },
         {
           "player": "Horčák Martin",
           "opponent": "Ševčík Ivan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1502
         }
       ],
       "keyPoints": [
@@ -5487,100 +7130,166 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Verner Pavel / Hanzal Petr",
+          "opponent": "Šprongl Jaroslav / Farář Petr",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Brothánek Jan / Horčák Martin",
+          "opponent": "Kaděrka Rudolf / Vich Pavel",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Verner Pavel",
           "opponent": "Šprongl Jaroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1506
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Vich Pavel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1561
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Farář Petr",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1470
         },
         {
           "player": "Horčák Martin",
           "opponent": "Kaděrka Rudolf",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1579
         },
         {
           "player": "Verner Pavel",
           "opponent": "Vich Pavel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1561
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Farář Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1470
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Kaděrka Rudolf",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1579
         },
         {
           "player": "Horčák Martin",
           "opponent": "Šprongl Jaroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1506
         },
         {
           "player": "Verner Pavel",
           "opponent": "Farář Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1470
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Kaděrka Rudolf",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1579
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Šprongl Jaroslav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1506
         },
         {
           "player": "Horčák Martin",
           "opponent": "Vich Pavel",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1561
         },
         {
           "player": "Verner Pavel",
           "opponent": "Kaděrka Rudolf",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1579
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Šprongl Jaroslav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1506
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Vich Pavel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1561
         },
         {
           "player": "Horčák Martin",
           "opponent": "Farář Petr",
           "result": "7:3",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1470
         }
       ],
       "keyPoints": [
@@ -5603,76 +7312,130 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Raiser Dan / Horčák Martin",
+          "opponent": "Novotný Petr / Poledne Jan",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Farský Karel / Brothánek Jan",
+          "opponent": "Novotná Markéta / Botek Radomír",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Brothánek Jan",
           "opponent": "Novotný Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1712
         },
         {
           "player": "Horčák Martin",
           "opponent": "Poledne Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1673
         },
         {
           "player": "Raiser Dan",
           "opponent": "Novotná Markéta",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1683
         },
         {
           "player": "Farský Karel",
           "opponent": "Botek Radomír",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1428
         },
         {
           "player": "Horčák Martin",
           "opponent": "Novotný Petr",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1712
         },
         {
           "player": "Raiser Dan",
           "opponent": "Poledne Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1673
         },
         {
           "player": "Farský Karel",
           "opponent": "Novotná Markéta",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1683
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Botek Radomír",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1428
         },
         {
           "player": "Raiser Dan",
           "opponent": "Novotný Petr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1712
         },
         {
           "player": "Farský Karel",
           "opponent": "Poledne Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1673
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Novotná Markéta",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1683
         },
         {
           "player": "Horčák Martin",
           "opponent": "Botek Radomír",
           "result": "5:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1428
         }
       ],
       "keyPoints": [
@@ -5695,82 +7458,139 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Verner Pavel / Raiser Dan",
+          "opponent": "Zapletal Jan / Kraml Karel",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Brothánek Jan / Hanzal Petr",
+          "opponent": "Záboj Petr / Němec Michal",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Brothánek Jan",
           "opponent": "Zapletal Jan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1607
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Kraml Karel",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1608
         },
         {
           "player": "Raiser Dan",
           "opponent": "Němec Michal",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1605
         },
         {
           "player": "Verner Pavel",
           "opponent": "Záboj Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1477
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Zapletal Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1607
         },
         {
           "player": "Raiser Dan",
           "opponent": "Kraml Karel",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1608
         },
         {
           "player": "Verner Pavel",
           "opponent": "Němec Michal",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1605
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Záboj Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1477
         },
         {
           "player": "Raiser Dan",
           "opponent": "Zapletal Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1607
         },
         {
           "player": "Verner Pavel",
           "opponent": "Kraml Karel",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1608
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Němec Michal",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1605
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Záboj Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1477
         },
         {
           "player": "Verner Pavel",
           "opponent": "Zapletal Jan",
           "result": "6:7",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1607
         }
       ],
       "keyPoints": [
@@ -5793,64 +7613,112 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Verner Pavel / Horčák Martin",
+          "opponent": "Mach Jakub / Karpíšek Ondřej",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Brothánek Jan / Hájek Luděk",
+          "opponent": "Petřík Filip / Balák Pavel",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Verner Pavel",
           "opponent": "Petřík Filip",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1665
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Mach Jakub",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1658
         },
         {
           "player": "Horčák Martin",
           "opponent": "Balák Pavel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1588
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Karpíšek Ondřej",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1705
         },
         {
           "player": "Verner Pavel",
           "opponent": "Mach Jakub",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1658
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Balák Pavel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1588
         },
         {
           "player": "Horčák Martin",
           "opponent": "Karpíšek Ondřej",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1705
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Petřík Filip",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1665
         },
         {
           "player": "Verner Pavel",
           "opponent": "Balák Pavel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1588
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Karpíšek Ondřej",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1705
         }
       ],
       "keyPoints": [
@@ -5873,64 +7741,112 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Farský Karel / Verner Pavel",
+          "opponent": "Rypar Teo / Klimovič Filip",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Brothánek Jan / Hanzal Petr",
+          "opponent": "Slavíčková Eliška / Kryštůfek Ondřej",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Brothánek Jan",
           "opponent": "Rypar Teo",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1558
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Slavíčková Eliška",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1529
         },
         {
           "player": "Farský Karel",
           "opponent": "Klimovič Filip",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1431
         },
         {
           "player": "Verner Pavel",
           "opponent": "Kryštůfek Ondřej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1188
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Rypar Teo",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1558
         },
         {
           "player": "Farský Karel",
           "opponent": "Slavíčková Eliška",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1529
         },
         {
           "player": "Verner Pavel",
           "opponent": "Klimovič Filip",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1431
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Kryštůfek Ondřej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1188
         },
         {
           "player": "Farský Karel",
           "opponent": "Rypar Teo",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1558
         },
         {
           "player": "Verner Pavel",
           "opponent": "Slavíčková Eliška",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1529
         }
       ],
       "keyPoints": [
@@ -5953,82 +7869,139 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Verner Pavel / Brothánek Jan",
+          "opponent": "Brož Pavel / Juppa Jáchym",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "",
+          "opponent": "Orlowski Petr / Mirovský Ondřej",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Verner Pavel",
           "opponent": "Mirovský Ondřej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1589
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Rychlý Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1518
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Juppa Jáchym",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1712
         },
         {
           "player": "",
           "opponent": "Orlowski Petr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1728
         },
         {
           "player": "Verner Pavel",
           "opponent": "Rychlý Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1518
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Juppa Jáchym",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1712
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Orlowski Petr",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1728
         },
         {
           "player": "",
           "opponent": "Mirovský Ondřej",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1589
         },
         {
           "player": "Verner Pavel",
           "opponent": "Juppa Jáchym",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1712
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Orlowski Petr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1728
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Mirovský Ondřej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1589
         },
         {
           "player": "",
           "opponent": "Rychlý Tomáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1518
         },
         {
           "player": "",
           "opponent": "Juppa Jáchym",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1712
         }
       ],
       "keyPoints": [
@@ -6051,100 +8024,166 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Brothánek Jan / Zaplatílek Ctibor",
+          "opponent": "Remeš Zdeněk / Ducháček Josef",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Farský Karel / Verner Pavel",
+          "opponent": "Prokopenko Oleg / Počta Tomáš",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Verner Pavel",
           "opponent": "Prokopenko Oleg (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 0
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Počta Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1741
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Ducháček Josef",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1537
         },
         {
           "player": "Farský Karel",
           "opponent": "Remeš Zdeněk",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1601
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Prokopenko Oleg (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 0
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Počta Tomáš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1741
         },
         {
           "player": "Farský Karel",
           "opponent": "Ducháček Josef",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1537
         },
         {
           "player": "Verner Pavel",
           "opponent": "Remeš Zdeněk",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1601
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Prokopenko Oleg (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 0
         },
         {
           "player": "Farský Karel",
           "opponent": "Počta Tomáš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1741
         },
         {
           "player": "Verner Pavel",
           "opponent": "Ducháček Josef",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1537
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Remeš Zdeněk",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1601
         },
         {
           "player": "Farský Karel",
           "opponent": "Prokopenko Oleg (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 0
         },
         {
           "player": "Verner Pavel",
           "opponent": "Počta Tomáš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1741
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Ducháček Josef",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1537
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Remeš Zdeněk",
           "result": "0:1",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1601
         }
       ],
       "keyPoints": [
@@ -6167,88 +8206,148 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Verner Pavel / Raiser Dan",
+          "opponent": "Krejčík Julius",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 1505
+        },
+        {
+          "player": "Farský Karel / Zaplatílek Ctibor",
+          "opponent": "Běhal Aleš / Puk Jaroslav",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Zaplatílek Ctibor",
           "opponent": "",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 0
         },
         {
           "player": "Verner Pavel",
           "opponent": "Krejčík Julius",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1505
         },
         {
           "player": "Farský Karel",
           "opponent": "Puk Jaroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1596
         },
         {
           "player": "Raiser Dan",
           "opponent": "Běhal Aleš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1727
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Krejčík Julius",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1505
         },
         {
           "player": "Verner Pavel",
           "opponent": "Puk Jaroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1596
         },
         {
           "player": "Farský Karel",
           "opponent": "Běhal Aleš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1727
         },
         {
           "player": "Raiser Dan",
           "opponent": "Nemčík Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1412
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Puk Jaroslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1596
         },
         {
           "player": "Verner Pavel",
           "opponent": "Běhal Aleš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1727
         },
         {
           "player": "Farský Karel",
           "opponent": "Nemčík Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1412
         },
         {
           "player": "Raiser Dan",
           "opponent": "Krejčík Julius",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1505
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Běhal Aleš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1727
         },
         {
           "player": "Verner Pavel",
           "opponent": "Nemčík Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1412
         }
       ],
       "keyPoints": [
@@ -6271,100 +8370,166 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Polák František / Zaplatílek Ctibor",
+          "opponent": "Lipták Milan / Pavlas Petr",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Farský Karel / Hájek Luděk",
+          "opponent": "Holub Martin / Tůma Ladislav",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Polák František",
           "opponent": "Lipták Milan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1703
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Tůma Ladislav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1626
         },
         {
           "player": "Farský Karel",
           "opponent": "Pavlas Petr",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1632
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Holub Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1479
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Lipták Milan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1703
         },
         {
           "player": "Farský Karel",
           "opponent": "Tůma Ladislav",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1626
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Pavlas Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1632
         },
         {
           "player": "Polák František",
           "opponent": "Holub Martin",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1479
         },
         {
           "player": "Farský Karel",
           "opponent": "Lipták Milan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1703
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Tůma Ladislav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1626
         },
         {
           "player": "Polák František",
           "opponent": "Pavlas Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1632
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Holub Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1479
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Lipták Milan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1703
         },
         {
           "player": "Polák František",
           "opponent": "Tůma Ladislav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1626
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Pavlas Petr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1632
         },
         {
           "player": "Farský Karel",
           "opponent": "Holub Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1479
         }
       ],
       "keyPoints": [
@@ -6387,94 +8552,157 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Verner Pavel / Zaplatílek Ctibor",
+          "opponent": "Blažek Jan / Hrbáček Milan",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Farský Karel / Brothánek Jan",
+          "opponent": "Srnka Jan / Lorenc David",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Verner Pavel",
           "opponent": "Blažek Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1613
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Hrbáček Milan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1630
         },
         {
           "player": "Farský Karel",
           "opponent": "Lorenc David",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1625
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Srnka Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1720
         },
         {
           "player": "Verner Pavel",
           "opponent": "Hrbáček Milan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1630
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Lorenc David",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1625
         },
         {
           "player": "Farský Karel",
           "opponent": "Srnka Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1720
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Blažek Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1613
         },
         {
           "player": "Verner Pavel",
           "opponent": "Lorenc David",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1625
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Srnka Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1720
         },
         {
           "player": "Farský Karel",
           "opponent": "Blažek Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1613
         },
         {
           "player": "Brothánek Jan",
           "opponent": "Hrbáček Milan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1630
         },
         {
           "player": "Verner Pavel",
           "opponent": "Srnka Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1720
         },
         {
           "player": "Zaplatílek Ctibor",
           "opponent": "Blažek Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1613
         },
         {
           "player": "Farský Karel",
           "opponent": "Hrbáček Milan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1651,
+          "oppStr": 1630
         }
       ],
       "keyPoints": [
@@ -6539,94 +8767,157 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Fexa Martin / Hájek Luděk",
+          "opponent": "Horák Michal / Klápa Vladislav",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pospíšil Jan st. / Raiser Dan",
+          "opponent": "Peller Marek / Smrkovský Petr",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Fexa Martin",
           "opponent": "Vatrt Michal (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 0
         },
         {
           "player": "Raiser Dan",
           "opponent": "Horák Michal",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1456
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Klápa Vladislav",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1512
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Smrkovský Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1583
         },
         {
           "player": "Fexa Martin",
           "opponent": "Horák Michal",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1456
         },
         {
           "player": "Raiser Dan",
           "opponent": "Klápa Vladislav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1512
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Smrkovský Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1583
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Vatrt Michal (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 0
         },
         {
           "player": "Fexa Martin",
           "opponent": "Klápa Vladislav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1512
         },
         {
           "player": "Raiser Dan",
           "opponent": "Smrkovský Petr",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1583
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Vatrt Michal (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 0
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Horák Michal",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1456
         },
         {
           "player": "Fexa Martin",
           "opponent": "Smrkovský Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1583
         },
         {
           "player": "Raiser Dan",
           "opponent": "Vatrt Michal (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Horák Michal",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1456
         }
       ],
       "keyPoints": [
@@ -6649,100 +8940,166 @@ const CLUB_DATA = {
       "result": "D",
       "playerResults": [
         {
+          "player": "Fexa Martin / Horčák Martin",
+          "opponent": "Kanzelsberger Martin / Vřešťál Milan",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Raiser Dan / Hájek Luděk",
+          "opponent": "Čermáková Anna / Růžička Vojtěch",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Raiser Dan",
           "opponent": "Čermáková Anna",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1553
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Vřešťál Milan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1427
         },
         {
           "player": "Horčák Martin",
           "opponent": "Růžička Vojtěch",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1477
         },
         {
           "player": "Fexa Martin",
           "opponent": "Kanzelsberger Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1382
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Čermáková Anna",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1553
         },
         {
           "player": "Horčák Martin",
           "opponent": "Vřešťál Milan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1427
         },
         {
           "player": "Fexa Martin",
           "opponent": "Růžička Vojtěch",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1477
         },
         {
           "player": "Raiser Dan",
           "opponent": "Kanzelsberger Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1382
         },
         {
           "player": "Horčák Martin",
           "opponent": "Čermáková Anna",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1553
         },
         {
           "player": "Fexa Martin",
           "opponent": "Vřešťál Milan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1427
         },
         {
           "player": "Raiser Dan",
           "opponent": "Růžička Vojtěch",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1477
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Kanzelsberger Martin",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1382
         },
         {
           "player": "Fexa Martin",
           "opponent": "Čermáková Anna",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1553
         },
         {
           "player": "Raiser Dan",
           "opponent": "Vřešťál Milan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1427
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Růžička Vojtěch",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1477
         },
         {
           "player": "Horčák Martin",
           "opponent": "Kanzelsberger Martin",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1382
         }
       ],
       "keyPoints": [
@@ -6765,82 +9122,139 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Pospíšil Jan st. / Raiser Dan",
+          "opponent": "Jankovec Jiří / Telitsyn Vladimir",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Horčák Martin / Hájek Luděk",
+          "opponent": "Benák Daniel / Duda Tadeáš",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Martin",
           "opponent": "Duda Tadeáš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1289
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Jankovec Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1496
         },
         {
           "player": "Raiser Dan",
           "opponent": "Benák Daniel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1451
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Telitsyn Vladimir (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 0
         },
         {
           "player": "Horčák Martin",
           "opponent": "Jankovec Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1496
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Benák Daniel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1451
         },
         {
           "player": "Raiser Dan",
           "opponent": "Telitsyn Vladimir (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Duda Tadeáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1289
         },
         {
           "player": "Horčák Martin",
           "opponent": "Benák Daniel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1451
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Telitsyn Vladimir (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 0
         },
         {
           "player": "Raiser Dan",
           "opponent": "Duda Tadeáš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1289
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Jankovec Jiří",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1496
         },
         {
           "player": "Horčák Martin",
           "opponent": "Telitsyn Vladimir (E)",
           "result": "-13:-9",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 0
         }
       ],
       "keyPoints": [
@@ -6863,70 +9277,121 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Raiser Dan / Horčák Martin",
+          "opponent": "Horká Radka / Zunt Zdeněk",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Fexa Martin / Hájek Luděk",
+          "opponent": "Železný Miroslav / Mejzlík Jakub",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Fexa Martin",
           "opponent": "Železný Miroslav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1597
         },
         {
           "player": "Horčák Martin",
           "opponent": "Mejzlík Jakub",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1582
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Horká Radka",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1534
         },
         {
           "player": "Raiser Dan",
           "opponent": "Zunt Zdeněk",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1573
         },
         {
           "player": "Horčák Martin",
           "opponent": "Železný Miroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1597
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Mejzlík Jakub",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1582
         },
         {
           "player": "Raiser Dan",
           "opponent": "Horká Radka",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1534
         },
         {
           "player": "Fexa Martin",
           "opponent": "Zunt Zdeněk",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1573
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Železný Miroslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1597
         },
         {
           "player": "Raiser Dan",
           "opponent": "Mejzlík Jakub",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1582
         },
         {
           "player": "Fexa Martin",
           "opponent": "Horká Radka",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1534
         }
       ],
       "keyPoints": [
@@ -6949,70 +9414,121 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Pospíšil Jan st. / Raiser Dan",
+          "opponent": "Jiroušek Karel / Holomek Tomáš",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hájek Luděk / Horčák Martin",
+          "opponent": "Zika Jan / Satrapa Jan",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Martin",
           "opponent": "Jiroušek Karel",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1621
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Holomek Tomáš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1516
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Satrapa Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1558
         },
         {
           "player": "Raiser Dan",
           "opponent": "Zika Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1604
         },
         {
           "player": "Horčák Martin",
           "opponent": "Holomek Tomáš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1516
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Satrapa Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1558
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Zika Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1604
         },
         {
           "player": "Raiser Dan",
           "opponent": "Jiroušek Karel",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1621
         },
         {
           "player": "Horčák Martin",
           "opponent": "Satrapa Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1558
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Zika Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1604
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Jiroušek Karel",
           "result": "4:6",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1621
         }
       ],
       "keyPoints": [
@@ -7035,100 +9551,166 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Raiser Dan / Horčák Martin",
+          "opponent": "Dunder Jiří / Chalupa Jaroslav",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hájek Luděk / Pospíšil Jan st.",
+          "opponent": "Bečvář Pavel / Popelka Antonín",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hájek Luděk",
           "opponent": "Chalupa Jaroslav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1570
         },
         {
           "player": "Fexa Martin",
           "opponent": "Dunder Jiří",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1513
         },
         {
           "player": "Raiser Dan",
           "opponent": "Popelka Antonín",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1443
         },
         {
           "player": "Horčák Martin",
           "opponent": "Bečvář Pavel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1392
         },
         {
           "player": "Fexa Martin",
           "opponent": "Chalupa Jaroslav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1570
         },
         {
           "player": "Raiser Dan",
           "opponent": "Dunder Jiří",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1513
         },
         {
           "player": "Horčák Martin",
           "opponent": "Popelka Antonín",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1443
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Bečvář Pavel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1392
         },
         {
           "player": "Raiser Dan",
           "opponent": "Chalupa Jaroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1570
         },
         {
           "player": "Horčák Martin",
           "opponent": "Dunder Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1513
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Popelka Antonín",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1443
         },
         {
           "player": "Fexa Martin",
           "opponent": "Bečvář Pavel",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1392
         },
         {
           "player": "Horčák Martin",
           "opponent": "Chalupa Jaroslav",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1570
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Dunder Jiří",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1513
         },
         {
           "player": "Fexa Martin",
           "opponent": "Popelka Antonín",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1443
         },
         {
           "player": "Raiser Dan",
           "opponent": "Bečvář Pavel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1392
         }
       ],
       "keyPoints": [
@@ -7151,94 +9733,157 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Raiser Dan / Horčák Martin",
+          "opponent": "Baran Peter / Šťovíček Petr",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hájek Luděk / Pospíšil Jan st.",
+          "opponent": "Averina Sergeevna Aleksandra / Nechaev Vasily",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Martin",
           "opponent": "Baran Peter (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 0
         },
         {
           "player": "Raiser Dan",
           "opponent": "Averina Sergeevna Aleksandra (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Nechaev Vasily (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 0
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Šťovíček Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1550
         },
         {
           "player": "Horčák Martin",
           "opponent": "Averina Sergeevna Aleksandra (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 0
         },
         {
           "player": "Raiser Dan",
           "opponent": "Nechaev Vasily (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Šťovíček Petr",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1550
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Baran Peter (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 0
         },
         {
           "player": "Horčák Martin",
           "opponent": "Nechaev Vasily (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 0
         },
         {
           "player": "Raiser Dan",
           "opponent": "Šťovíček Petr",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1550
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Baran Peter (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 0
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Averina Sergeevna Aleksandra (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 0
         },
         {
           "player": "Horčák Martin",
           "opponent": "Šťovíček Petr",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1550
         },
         {
           "player": "Raiser Dan",
           "opponent": "Baran Peter (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Averina Sergeevna Aleksandra (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 0
         }
       ],
       "keyPoints": [
@@ -7261,76 +9906,130 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Hájek Luděk / Fexa Martin",
+          "opponent": "Pernikář Tomáš / Dvořák Petr",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Raiser Dan / Horčák Martin",
+          "opponent": "Farář Petr / Brill Filip",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Fexa Martin",
           "opponent": "Farář Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1470
         },
         {
           "player": "Horčák Martin",
           "opponent": "Pernikář Tomáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1454
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Brill Filip",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1465
         },
         {
           "player": "Raiser Dan",
           "opponent": "Dvořák Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1421
         },
         {
           "player": "Fexa Martin",
           "opponent": "Pernikář Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1454
         },
         {
           "player": "Horčák Martin",
           "opponent": "Brill Filip",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1465
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Dvořák Petr",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1421
         },
         {
           "player": "Raiser Dan",
           "opponent": "Farář Petr",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1470
         },
         {
           "player": "Fexa Martin",
           "opponent": "Brill Filip",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1465
         },
         {
           "player": "Horčák Martin",
           "opponent": "Dvořák Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1421
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Farář Petr",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1470
         },
         {
           "player": "Raiser Dan",
           "opponent": "Pernikář Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1454
         }
       ],
       "keyPoints": [
@@ -7353,76 +10052,130 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Raiser Dan / Horčák Martin",
+          "opponent": "Dymau Aliaksei / Shnaider Valentyn",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pospíšil Jan st. / Hájek Luděk",
+          "opponent": "Matoušek Jan / Pecka Zdeněk",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Raiser Dan",
           "opponent": "Matoušek Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1553
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Shnaider Valentyn (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 0
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Pecka Zdeněk",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1535
         },
         {
           "player": "Horčák Martin",
           "opponent": "Dymau Aliaksei (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Matoušek Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1553
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Shnaider Valentyn (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 0
         },
         {
           "player": "Horčák Martin",
           "opponent": "Pecka Zdeněk",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1535
         },
         {
           "player": "Raiser Dan",
           "opponent": "Dymau Aliaksei (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 0
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Matoušek Jan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1553
         },
         {
           "player": "Horčák Martin",
           "opponent": "Shnaider Valentyn (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 0
         },
         {
           "player": "Raiser Dan",
           "opponent": "Pecka Zdeněk",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1535
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Dymau Aliaksei (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 0
         }
       ],
       "keyPoints": [
@@ -7445,94 +10198,157 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Pospíšil Jan st. / Hájek Luděk",
+          "opponent": "Simandl Patrik / Krejčík Julius",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Fexa Martin / Horčák Martin",
+          "opponent": "Novák Roman / Fausek Jiří",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Martin",
           "opponent": "Simandl Patrik",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1494
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Krejčík Julius",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1505
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Fausek Jiří",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1351
         },
         {
           "player": "Fexa Martin",
           "opponent": "Novák Roman",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1383
         },
         {
           "player": "Horčák Martin",
           "opponent": "Krejčík Julius",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1505
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Fausek Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1351
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Novák Roman",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1383
         },
         {
           "player": "Fexa Martin",
           "opponent": "Simandl Patrik",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1494
         },
         {
           "player": "Horčák Martin",
           "opponent": "Fausek Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1351
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Novák Roman",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1383
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Simandl Patrik",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1494
         },
         {
           "player": "Fexa Martin",
           "opponent": "Krejčík Julius",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1505
         },
         {
           "player": "Horčák Martin",
           "opponent": "Novák Roman",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1383
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Simandl Patrik",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1494
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Krejčík Julius",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1505
         }
       ],
       "keyPoints": [
@@ -7555,88 +10371,148 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Raiser Dan / Hájek Luděk",
+          "opponent": "Korbel Matyáš / Holub Martin",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pospíšil Jan st. / Fexa Martin",
+          "opponent": "Satorie Michal / Nosál Petr",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Pospíšil Jan st.",
           "opponent": "Satorie Michal",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1565
         },
         {
           "player": "Fexa Martin",
           "opponent": "Nosál Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1507
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Korbel Matyáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1330
         },
         {
           "player": "Raiser Dan",
           "opponent": "Holub Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1479
         },
         {
           "player": "Fexa Martin",
           "opponent": "Satorie Michal",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1565
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Nosál Petr",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1507
         },
         {
           "player": "Raiser Dan",
           "opponent": "Korbel Matyáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1330
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Holub Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1479
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Satorie Michal",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1565
         },
         {
           "player": "Raiser Dan",
           "opponent": "Nosál Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1507
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Korbel Matyáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1330
         },
         {
           "player": "Fexa Martin",
           "opponent": "Holub Martin",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1479
         },
         {
           "player": "Raiser Dan",
           "opponent": "Satorie Michal",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1565
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Nosál Petr",
           "result": "0:1",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1507
         }
       ],
       "keyPoints": [
@@ -7659,88 +10535,148 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Fexa Martin / Pospíšil Jan st.",
+          "opponent": "Stejskal Adam / Klápa Vladislav",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Horčák Martin / Raiser Dan",
+          "opponent": "Bačík Jakub / Smrkovský Petr",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Martin",
           "opponent": "Smrkovský Petr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1583
         },
         {
           "player": "Fexa Martin",
           "opponent": "Stejskal Adam",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1473
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Klápa Vladislav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1512
         },
         {
           "player": "Raiser Dan",
           "opponent": "Bačík Jakub (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 0
         },
         {
           "player": "Fexa Martin",
           "opponent": "Smrkovský Petr",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1583
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Stejskal Adam",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1473
         },
         {
           "player": "Raiser Dan",
           "opponent": "Klápa Vladislav",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1512
         },
         {
           "player": "Horčák Martin",
           "opponent": "Bačík Jakub (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Smrkovský Petr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1583
         },
         {
           "player": "Raiser Dan",
           "opponent": "Stejskal Adam",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1473
         },
         {
           "player": "Horčák Martin",
           "opponent": "Klápa Vladislav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1512
         },
         {
           "player": "Fexa Martin",
           "opponent": "Bačík Jakub (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 0
         },
         {
           "player": "Raiser Dan",
           "opponent": "Smrkovský Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1583
         },
         {
           "player": "Horčák Martin",
           "opponent": "Stejskal Adam",
           "result": "4:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1473
         }
       ],
       "keyPoints": [
@@ -7763,76 +10699,130 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Hájek Luděk / Horčák Vojtěch",
+          "opponent": "Meline Jéróme / Vřešťál Milan",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Horčák Martin / Raiser Dan",
+          "opponent": "Růžička Vojtěch / Čermák Jiří",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Raiser Dan",
           "opponent": "Růžička Vojtěch",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1477
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Vřešťál Milan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1427
         },
         {
           "player": "Horčák Martin",
           "opponent": "Čermák Jiří",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1484
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Meline Jéróme (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 0
         },
         {
           "player": "Raiser Dan",
           "opponent": "Vřešťál Milan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1427
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Čermák Jiří",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1484
         },
         {
           "player": "Horčák Martin",
           "opponent": "Meline Jéróme (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 0
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Růžička Vojtěch",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1477
         },
         {
           "player": "Raiser Dan",
           "opponent": "Čermák Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1484
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Meline Jéróme (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 0
         },
         {
           "player": "Horčák Martin",
           "opponent": "Růžička Vojtěch",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1477
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Vřešťál Milan",
           "result": "-8:5",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1427
         }
       ],
       "keyPoints": [
@@ -7855,76 +10845,130 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Raiser Dan / Horčák Martin",
+          "opponent": "Bozděch Jan / Telitsyn Vladimir",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Fexa Martin / Hájek Luděk",
+          "opponent": "Bartošek Jan / Jankovec Jiří",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Raiser Dan",
           "opponent": "Bartošek Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1524
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Telitsyn Vladimir (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 0
         },
         {
           "player": "Horčák Martin",
           "opponent": "Jankovec Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1496
         },
         {
           "player": "Fexa Martin",
           "opponent": "Bozděch Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1486
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Bartošek Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1524
         },
         {
           "player": "Horčák Martin",
           "opponent": "Telitsyn Vladimir (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 0
         },
         {
           "player": "Fexa Martin",
           "opponent": "Jankovec Jiří",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1496
         },
         {
           "player": "Raiser Dan",
           "opponent": "Bozděch Jan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1486
         },
         {
           "player": "Horčák Martin",
           "opponent": "Bartošek Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1524
         },
         {
           "player": "Fexa Martin",
           "opponent": "Telitsyn Vladimir (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 0
         },
         {
           "player": "Raiser Dan",
           "opponent": "Jankovec Jiří",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1496
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Bozděch Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1486
         }
       ],
       "keyPoints": [
@@ -7947,76 +10991,130 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Raiser Dan / Hájek Luděk",
+          "opponent": "Horká Radka / Zunt Zdeněk",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "",
+          "opponent": "Železný Miroslav / Šobáň Radek",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Hájek Luděk",
           "opponent": "Horká Radka",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1534
         },
         {
           "player": "Raiser Dan",
           "opponent": "Táborský Michael",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1441
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Šobáň Radek",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1469
         },
         {
           "player": "",
           "opponent": "Železný Miroslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1597
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Zunt Zdeněk",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1573
         },
         {
           "player": "Raiser Dan",
           "opponent": "Šobáň Radek",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1469
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Železný Miroslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1597
         },
         {
           "player": "",
           "opponent": "Horká Radka",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1534
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Šobáň Radek",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1469
         },
         {
           "player": "Raiser Dan",
           "opponent": "Železný Miroslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1597
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Horká Radka",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1534
         },
         {
           "player": "",
           "opponent": "Zunt Zdeněk",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1573
         }
       ],
       "keyPoints": [
@@ -8039,70 +11137,121 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Raiser Dan / Hájek Luděk",
+          "opponent": "Zika Jan / Satrapa Jan",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pospíšil Jan st. / Fexa Martin",
+          "opponent": "Jiroušek Karel / Ruml Jiří",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Raiser Dan",
           "opponent": "Jiroušek Karel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1621
         },
         {
           "player": "Fexa Martin",
           "opponent": "Zika Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1604
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Satrapa Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1558
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Ruml Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1430
         },
         {
           "player": "Fexa Martin",
           "opponent": "Jiroušek Karel",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1621
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Zika Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1604
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Satrapa Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1558
         },
         {
           "player": "Raiser Dan",
           "opponent": "Ruml Jiří",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1430
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Jiroušek Karel",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1621
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Zika Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1604
         },
         {
           "player": "Raiser Dan",
           "opponent": "Satrapa Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1558
         }
       ],
       "keyPoints": [
@@ -8125,82 +11274,139 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Raiser Dan / Hájek Luděk",
+          "opponent": "Chalupa Jaroslav / Bečvář Pavel",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pospíšil Jan st. / Hanzal Petr",
+          "opponent": "Ptáček Jan / Červenka Boris",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Raiser Dan",
           "opponent": "Ptáček Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1277
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Červenka Boris",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1234
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Chalupa Jaroslav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1570
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Bečvář Pavel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1392
         },
         {
           "player": "Raiser Dan",
           "opponent": "Červenka Boris",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1234
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Chalupa Jaroslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1570
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Bečvář Pavel",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1392
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Ptáček Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1277
         },
         {
           "player": "Raiser Dan",
           "opponent": "Chalupa Jaroslav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1570
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Bečvář Pavel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1392
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Ptáček Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1277
         },
         {
           "player": "Hanzal Petr",
           "opponent": "Červenka Boris",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1624,
+          "oppStr": 1234
         },
         {
           "player": "Raiser Dan",
           "opponent": "Bečvář Pavel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1392
         }
       ],
       "keyPoints": [
@@ -8223,76 +11429,130 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Hrdlic Roman / Fexa Martin",
+          "opponent": "Celler Jiří / Averina Sergeevna Aleksandra",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hájek Luděk / Horčák Martin",
+          "opponent": "Baran Peter / Šťovíček Petr",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Fexa Martin",
           "opponent": "Celler Jiří",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1674
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Baran Peter (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 0
         },
         {
           "player": "Horčák Martin",
           "opponent": "Šťovíček Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1550
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Averina Sergeevna Aleksandra (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 0
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Celler Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1674
         },
         {
           "player": "Horčák Martin",
           "opponent": "Baran Peter (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 0
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Šťovíček Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1550
         },
         {
           "player": "Fexa Martin",
           "opponent": "Averina Sergeevna Aleksandra (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 0
         },
         {
           "player": "Horčák Martin",
           "opponent": "Celler Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1674
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Baran Peter (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 0
         },
         {
           "player": "Fexa Martin",
           "opponent": "Šťovíček Petr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1550
         },
         {
           "player": "Hájek Luděk",
           "opponent": "Averina Sergeevna Aleksandra (E)",
           "result": "-6:-11",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 0
         }
       ],
       "keyPoints": [
@@ -8315,76 +11575,130 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Horčák Martin / Fexa Martin",
+          "opponent": "Richter Jan / Brill Filip",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Raiser Dan / Nový Pavel",
+          "opponent": "Šindelář Michal / Pernikář Tomáš",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Raiser Dan",
           "opponent": "Pernikář Tomáš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1454
         },
         {
           "player": "Nový Pavel",
           "opponent": "Brill Filip",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1465
         },
         {
           "player": "Horčák Martin",
           "opponent": "Richter Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1385
         },
         {
           "player": "Fexa Martin",
           "opponent": "Šindelář Michal",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1223
         },
         {
           "player": "Nový Pavel",
           "opponent": "Pernikář Tomáš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1454
         },
         {
           "player": "Horčák Martin",
           "opponent": "Brill Filip",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1465
         },
         {
           "player": "Fexa Martin",
           "opponent": "Richter Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1385
         },
         {
           "player": "Raiser Dan",
           "opponent": "Šindelář Michal",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1223
         },
         {
           "player": "Horčák Martin",
           "opponent": "Pernikář Tomáš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1454
         },
         {
           "player": "Fexa Martin",
           "opponent": "Brill Filip",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1566,
+          "oppStr": 1465
         },
         {
           "player": "Raiser Dan",
           "opponent": "Richter Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1385
         },
         {
           "player": "Nový Pavel",
           "opponent": "Šindelář Michal",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1223
         }
       ],
       "keyPoints": [
@@ -8449,100 +11763,166 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Michálek David / Hrdlic Roman",
+          "opponent": "Chadt Jiří / Viktora Kryštof",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Jiroš Martin / Nový Pavel",
+          "opponent": "Nesvačilová Petra / Šebek Ondřej",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Nový Pavel",
           "opponent": "Chadt Jiří",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1379
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Šebek Ondřej",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1528
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Nesvačilová Petra",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1430
         },
         {
           "player": "Michálek David",
           "opponent": "Viktora Kryštof",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1252
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Chadt Jiří",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1379
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Šebek Ondřej",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1528
         },
         {
           "player": "Michálek David",
           "opponent": "Nesvačilová Petra",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1430
         },
         {
           "player": "Nový Pavel",
           "opponent": "Viktora Kryštof",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1252
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Chadt Jiří",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1379
         },
         {
           "player": "Michálek David",
           "opponent": "Šebek Ondřej",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1528
         },
         {
           "player": "Nový Pavel",
           "opponent": "Nesvačilová Petra",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1430
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Viktora Kryštof",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1252
         },
         {
           "player": "Michálek David",
           "opponent": "Chadt Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1379
         },
         {
           "player": "Nový Pavel",
           "opponent": "Šebek Ondřej",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1528
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Nesvačilová Petra",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1430
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Viktora Kryštof",
           "result": "-6:-10",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1252
         }
       ],
       "keyPoints": [
@@ -8565,88 +11945,148 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Michálek David / Hrdlic Roman",
+          "opponent": "Petr Bohumír / Nechvátalová Jana",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Nový Pavel / Jiroš Martin",
+          "opponent": "Brýna Karel / Písecký Luboš",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Michálek David",
           "opponent": "Brýna Karel",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1350
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Nechvátalová Jana",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1306
         },
         {
           "player": "Nový Pavel",
           "opponent": "Písecký Luboš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1484
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Petr Bohumír",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1541
         },
         {
           "player": "Michálek David",
           "opponent": "Nechvátalová Jana",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1306
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Písecký Luboš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1484
         },
         {
           "player": "Nový Pavel",
           "opponent": "Petr Bohumír",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1541
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Brýna Karel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1350
         },
         {
           "player": "Michálek David",
           "opponent": "Písecký Luboš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1484
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Petr Bohumír",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1541
         },
         {
           "player": "Nový Pavel",
           "opponent": "Brýna Karel",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1350
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Nechvátalová Jana",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1306
         },
         {
           "player": "Michálek David",
           "opponent": "Petr Bohumír",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1541
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Brýna Karel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1350
         }
       ],
       "keyPoints": [
@@ -8669,100 +12109,166 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Jiroš Martin / Nový Pavel",
+          "opponent": "Domnosil Tomáš / Bartoňová Anna",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Michálek David / Hrdlic Roman",
+          "opponent": "Cankař Radek / Pinkas Jan",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Jiroš Martin",
           "opponent": "Bartoňová Anna",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1512
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Pinkas Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1425
         },
         {
           "player": "Nový Pavel",
           "opponent": "Cankař Radek",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1449
         },
         {
           "player": "Michálek David",
           "opponent": "Domnosil Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1441
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Bartoňová Anna",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1512
         },
         {
           "player": "Nový Pavel",
           "opponent": "Pinkas Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1425
         },
         {
           "player": "Michálek David",
           "opponent": "Cankař Radek",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1449
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Domnosil Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1441
         },
         {
           "player": "Nový Pavel",
           "opponent": "Bartoňová Anna",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1512
         },
         {
           "player": "Michálek David",
           "opponent": "Pinkas Jan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1425
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Cankař Radek",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1449
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Domnosil Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1441
         },
         {
           "player": "Michálek David",
           "opponent": "Bartoňová Anna",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1512
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Pinkas Jan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1425
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Cankař Radek",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1449
         },
         {
           "player": "Nový Pavel",
           "opponent": "Domnosil Tomáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1441
         }
       ],
       "keyPoints": [
@@ -8785,100 +12291,166 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Jiroš Martin / Nový Pavel",
+          "opponent": "Novák Roman / Fausek Jiří",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Michálek David / Hrdlic Roman",
+          "opponent": "Vránová Helena / Nemčík Martin",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Michálek David",
           "opponent": "Novák Roman",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1383
         },
         {
           "player": "Nový Pavel",
           "opponent": "Nemčík Martin",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1412
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Fausek Jiří",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1351
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Vránová Helena",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1361
         },
         {
           "player": "Michálek David",
           "opponent": "Nemčík Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1412
         },
         {
           "player": "Nový Pavel",
           "opponent": "Fausek Jiří",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1351
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Vránová Helena",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1361
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Novák Roman",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1383
         },
         {
           "player": "Michálek David",
           "opponent": "Fausek Jiří",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1351
         },
         {
           "player": "Nový Pavel",
           "opponent": "Vránová Helena",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1361
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Novák Roman",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1383
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Nemčík Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1412
         },
         {
           "player": "Michálek David",
           "opponent": "Vránová Helena",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1361
         },
         {
           "player": "Nový Pavel",
           "opponent": "Novák Roman",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1383
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Nemčík Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1412
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Fausek Jiří",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1351
         }
       ],
       "keyPoints": [
@@ -8901,82 +12473,139 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Hrdlic Roman / Michálek David",
+          "opponent": "Espinoza Felix / Krenk Tomáš",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Jiroš Martin / Horčák Vojtěch",
+          "opponent": "Ruml Jiří / Zimmel Václav",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Jiroš Martin",
           "opponent": "Espinoza Felix",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1486
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Zimmel Václav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1497
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Krenk Tomáš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1422
         },
         {
           "player": "Michálek David",
           "opponent": "Ruml Jiří",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1430
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Espinoza Felix",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1486
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Zimmel Václav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1497
         },
         {
           "player": "Michálek David",
           "opponent": "Krenk Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1422
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Ruml Jiří",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1430
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Espinoza Felix",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1486
         },
         {
           "player": "Michálek David",
           "opponent": "Zimmel Václav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1497
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Krenk Tomáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1422
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Ruml Jiří",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1430
         },
         {
           "player": "Michálek David",
           "opponent": "Espinoza Felix",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1486
         }
       ],
       "keyPoints": [
@@ -8999,76 +12628,130 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Michálek David / Hrdlic Roman",
+          "opponent": "Rattay Gustav / Rattay Martin",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Jiroš Martin / Nový Pavel",
+          "opponent": "Veselý Milan / Radil Milan",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Michálek David",
           "opponent": "Rattay Gustav",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1191
         },
         {
           "player": "Nový Pavel",
           "opponent": "Veselý Milan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1247
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Rattay Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1018
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Radil Milan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1433
         },
         {
           "player": "Michálek David",
           "opponent": "Veselý Milan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1247
         },
         {
           "player": "Nový Pavel",
           "opponent": "Rattay Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1018
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Radil Milan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1433
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Rattay Gustav",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1191
         },
         {
           "player": "Michálek David",
           "opponent": "Rattay Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1018
         },
         {
           "player": "Nový Pavel",
           "opponent": "Radil Milan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1433
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Rattay Gustav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1191
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Veselý Milan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1247
         }
       ],
       "keyPoints": [
@@ -9091,94 +12774,157 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Michálek David / Hrdlic Roman",
+          "opponent": "Stejskal Pavel / Trnka Vítězslav",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Jiroš Martin / Nový Pavel",
+          "opponent": "Ledr Aleš / Pavlenko Dmytro",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Nový Pavel",
           "opponent": "Ledr Aleš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1462
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Pavlenko Dmytro (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 0
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Trnka Vítězslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1372
         },
         {
           "player": "Michálek David",
           "opponent": "Malá Petra",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1365
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Ledr Aleš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1462
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Pavlenko Dmytro (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 0
         },
         {
           "player": "Michálek David",
           "opponent": "Stejskal Pavel",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1400
         },
         {
           "player": "Nový Pavel",
           "opponent": "Malá Petra",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1365
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Ledr Aleš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1462
         },
         {
           "player": "Michálek David",
           "opponent": "Pavlenko Dmytro (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 0
         },
         {
           "player": "Nový Pavel",
           "opponent": "Stejskal Pavel",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1400
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Malá Petra",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1365
         },
         {
           "player": "Michálek David",
           "opponent": "Ledr Aleš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1462
         },
         {
           "player": "Nový Pavel",
           "opponent": "Pavlenko Dmytro (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 0
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Stejskal Pavel",
           "result": "-5:-7",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1400
         }
       ],
       "keyPoints": [
@@ -9201,88 +12947,148 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Jiroš Martin / Nový Pavel",
+          "opponent": "Hůla Jaromír / Heinz Petr",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pospíšil Jan st. / Hrdlic Roman",
+          "opponent": "Wawrečka Ronald / Hedervári Robert",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Pospíšil Jan st.",
           "opponent": "Heinz Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1297
         },
         {
           "player": "Nový Pavel",
           "opponent": "Hedervári Robert",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1280
         },
         {
           "player": "Michálek David",
           "opponent": "Wawrečka Ronald",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1485
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Hůla Jaromír",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1329
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Hedervári Robert",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1280
         },
         {
           "player": "Nový Pavel",
           "opponent": "Wawrečka Ronald",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1485
         },
         {
           "player": "Michálek David",
           "opponent": "Hůla Jaromír",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1329
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Boloňský Andrej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1389
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Wawrečka Ronald",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1485
         },
         {
           "player": "Nový Pavel",
           "opponent": "Hůla Jaromír",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1329
         },
         {
           "player": "Michálek David",
           "opponent": "Boloňský Andrej",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1389
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Hedervári Robert",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1280
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Hůla Jaromír",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1329
         },
         {
           "player": "Nový Pavel",
           "opponent": "Boloňský Andrej",
           "result": "-5:-9",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1389
         }
       ],
       "keyPoints": [
@@ -9305,94 +13111,157 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Nový Pavel / Jiroš Martin",
+          "opponent": "Mejzlík Jakub / Krutina Lukáš",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Michálek David / Hrdlic Roman",
+          "opponent": "Knob Petr / Táborský Michael",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Nový Pavel",
           "opponent": "Mejzlík Jakub",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1582
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Krutina Lukáš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1462
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Táborský Michael",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1441
         },
         {
           "player": "Michálek David",
           "opponent": "Knob Petr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1394
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Mejzlík Jakub",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1582
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Krutina Lukáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1462
         },
         {
           "player": "Michálek David",
           "opponent": "Táborský Michael",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1441
         },
         {
           "player": "Nový Pavel",
           "opponent": "Knob Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1394
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Mejzlík Jakub",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1582
         },
         {
           "player": "Michálek David",
           "opponent": "Krutina Lukáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1462
         },
         {
           "player": "Nový Pavel",
           "opponent": "Táborský Michael",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1441
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Knob Petr",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1394
         },
         {
           "player": "Michálek David",
           "opponent": "Mejzlík Jakub",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1582
         },
         {
           "player": "Nový Pavel",
           "opponent": "Krutina Lukáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1462
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Táborský Michael",
           "result": "5:7",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1441
         }
       ],
       "keyPoints": [
@@ -9415,82 +13284,139 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Pospíšil Jan st. / Michálek David",
+          "opponent": "Kopřiva Radek / Ploc Marek",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Jiroš Martin / Nový Pavel",
+          "opponent": "Turek Tomáš / Zúbrik Mário",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Pospíšil Jan st.",
           "opponent": "Ploc Marek",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1466
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Zúbrik Mário",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1452
         },
         {
           "player": "Nový Pavel",
           "opponent": "Kopřiva Radek",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1475
         },
         {
           "player": "Michálek David",
           "opponent": "Turek Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1443
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Ploc Marek",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1466
         },
         {
           "player": "Nový Pavel",
           "opponent": "Zúbrik Mário",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1452
         },
         {
           "player": "Michálek David",
           "opponent": "Kopřiva Radek",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1475
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Turek Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1443
         },
         {
           "player": "Nový Pavel",
           "opponent": "Ploc Marek",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1466
         },
         {
           "player": "Michálek David",
           "opponent": "Zúbrik Mário",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1452
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Kopřiva Radek",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1475
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Turek Tomáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1443
         },
         {
           "player": "Michálek David",
           "opponent": "Ploc Marek",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1466
         }
       ],
       "keyPoints": [
@@ -9513,100 +13439,166 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Michálek David / Hrdlic Roman",
+          "opponent": "",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Nový Pavel / Jiroš Martin",
+          "opponent": "Rukavička Tomáš / Benák Daniel",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Michálek David",
           "opponent": "",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 0
         },
         {
           "player": "Nový Pavel",
           "opponent": "Mészáros Bence",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1331
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Benák Daniel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1451
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Rukavička Tomáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1511
         },
         {
           "player": "Michálek David",
           "opponent": "Mészáros Bence",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1331
         },
         {
           "player": "Nový Pavel",
           "opponent": "Benák Daniel",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1451
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Rukavička Tomáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1511
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 0
         },
         {
           "player": "Michálek David",
           "opponent": "Benák Daniel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1451
         },
         {
           "player": "Nový Pavel",
           "opponent": "Rukavička Tomáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1511
         },
         {
           "player": "Jiroš Martin",
           "opponent": "",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 0
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Mészáros Bence",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1331
         },
         {
           "player": "Michálek David",
           "opponent": "Rukavička Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1511
         },
         {
           "player": "Nový Pavel",
           "opponent": "",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 0
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Mészáros Bence",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1331
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Benák Daniel",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1451
         }
       ],
       "keyPoints": [
@@ -9629,100 +13621,166 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Nový Pavel / Jiroš Martin",
+          "opponent": "Svoboda Igor / Nesvačilová Petra",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Hrdlic Roman / Pospíšil Jan st.",
+          "opponent": "Chadt Jiří / Prokeš Jan",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Pospíšil Jan st.",
           "opponent": "Svoboda Igor",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1375
         },
         {
           "player": "Nový Pavel",
           "opponent": "Prokeš Jan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1384
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Chadt Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1379
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Šebek Ondřej",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1528
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Prokeš Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1384
         },
         {
           "player": "Nový Pavel",
           "opponent": "Chadt Jiří",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1379
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Šebek Ondřej",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1528
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Svoboda Igor",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1375
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Chadt Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1379
         },
         {
           "player": "Nový Pavel",
           "opponent": "Šebek Ondřej",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1528
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Svoboda Igor",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1375
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Prokeš Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1384
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Šebek Ondřej",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1528
         },
         {
           "player": "Nový Pavel",
           "opponent": "Svoboda Igor",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1375
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Prokeš Jan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1384
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Chadt Jiří",
           "result": "1:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1379
         }
       ],
       "keyPoints": [
@@ -9745,100 +13803,166 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Hrdlic Roman / Michálek David",
+          "opponent": "Mocanu Iulian Radu / Matsko Vasyl",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Jiroš Martin / Nový Pavel",
+          "opponent": "Petr Bohumír / Husák Martin",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Nový Pavel",
           "opponent": "Mocanu Iulian Radu (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 0
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Husák Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1309
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Petr Bohumír",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1541
         },
         {
           "player": "Michálek David",
           "opponent": "Matsko Vasyl (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 0
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Mocanu Iulian Radu (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 0
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Husák Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1309
         },
         {
           "player": "Michálek David",
           "opponent": "Petr Bohumír",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1541
         },
         {
           "player": "Nový Pavel",
           "opponent": "Matsko Vasyl (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 0
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Mocanu Iulian Radu (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 0
         },
         {
           "player": "Michálek David",
           "opponent": "Husák Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1309
         },
         {
           "player": "Nový Pavel",
           "opponent": "Petr Bohumír",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1541
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Matsko Vasyl (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 0
         },
         {
           "player": "Michálek David",
           "opponent": "Mocanu Iulian Radu (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 0
         },
         {
           "player": "Nový Pavel",
           "opponent": "Písecký Luboš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1484
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Petr Bohumír",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1541
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Matsko Vasyl (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 0
         }
       ],
       "keyPoints": [
@@ -9861,76 +13985,130 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Hrdlic Roman / Michálek David",
+          "opponent": "Cankař Radek / Pinkas Jan",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Jiroš Martin / Nový Pavel",
+          "opponent": "Bartoňová Anna / Domnosil Tomáš",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Michálek David",
           "opponent": "Cankař Radek",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1449
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Domnosil Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1441
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Pinkas Jan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1425
         },
         {
           "player": "Nový Pavel",
           "opponent": "Bartoňová Anna",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1512
         },
         {
           "player": "Michálek David",
           "opponent": "Domnosil Tomáš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1441
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Pinkas Jan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1425
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Bartoňová Anna",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1512
         },
         {
           "player": "Nový Pavel",
           "opponent": "Cankař Radek",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1449
         },
         {
           "player": "Michálek David",
           "opponent": "Pinkas Jan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1425
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Bartoňová Anna",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1512
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Cankař Radek",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1449
         },
         {
           "player": "Nový Pavel",
           "opponent": "Domnosil Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1441
         }
       ],
       "keyPoints": [
@@ -9953,100 +14131,166 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Pospíšil Jan st. / Michálek David",
+          "opponent": "Kalina Pavel / Novák Roman",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Nový Pavel / Jiroš Martin",
+          "opponent": "Nemčík Martin / Fausek Jiří",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Pospíšil Jan st.",
           "opponent": "Kalina Pavel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1504
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Novák Roman",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1383
         },
         {
           "player": "Nový Pavel",
           "opponent": "Nemčík Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1412
         },
         {
           "player": "Michálek David",
           "opponent": "Fausek Jiří",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1351
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Kalina Pavel",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1504
         },
         {
           "player": "Nový Pavel",
           "opponent": "Novák Roman",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1383
         },
         {
           "player": "Michálek David",
           "opponent": "Nemčík Martin",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1412
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Fausek Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1351
         },
         {
           "player": "Nový Pavel",
           "opponent": "Kalina Pavel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1504
         },
         {
           "player": "Michálek David",
           "opponent": "Novák Roman",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1383
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Nemčík Martin",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1412
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Fausek Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1351
         },
         {
           "player": "Michálek David",
           "opponent": "Kalina Pavel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1504
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Novák Roman",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1383
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Nemčík Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1412
         },
         {
           "player": "Nový Pavel",
           "opponent": "Fausek Jiří",
           "result": "1:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1351
         }
       ],
       "keyPoints": [
@@ -10069,88 +14313,148 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Hrdlic Roman / Michálek David",
+          "opponent": "Espinoza Felix / Krenk Tomáš",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Nový Pavel / Jiroš Martin",
+          "opponent": "Skoumal Adam / Zimmel Václav",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Michálek David",
           "opponent": "Espinoza Felix",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1486
         },
         {
           "player": "Nový Pavel",
           "opponent": "Skoumal Adam",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1484
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Krenk Tomáš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1422
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Zimmel Václav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1497
         },
         {
           "player": "Michálek David",
           "opponent": "Skoumal Adam",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1484
         },
         {
           "player": "Nový Pavel",
           "opponent": "Krenk Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1422
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Zimmel Václav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1497
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Espinoza Felix",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1486
         },
         {
           "player": "Michálek David",
           "opponent": "Krenk Tomáš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1422
         },
         {
           "player": "Nový Pavel",
           "opponent": "Zimmel Václav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1497
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Espinoza Felix",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1486
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Skoumal Adam",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1484
         },
         {
           "player": "Michálek David",
           "opponent": "Zimmel Václav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1497
         },
         {
           "player": "Nový Pavel",
           "opponent": "Espinoza Felix",
           "result": "9:8",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1486
         }
       ],
       "keyPoints": [
@@ -10173,100 +14477,166 @@ const CLUB_DATA = {
       "result": "D",
       "playerResults": [
         {
+          "player": "Michálek David / Hrdlic Roman",
+          "opponent": "Radil Milan / Votípka Emanuel",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Nový Pavel / Jiroš Martin",
+          "opponent": "Rattay Gustav / Štěpánek Petr",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Nový Pavel",
           "opponent": "Radil Milan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1433
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Votípka Emanuel",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1475
         },
         {
           "player": "Horčák Martin",
           "opponent": "Motyčka Oldřich",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1456
         },
         {
           "player": "Michálek David",
           "opponent": "Štěpánek Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1431
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Radil Milan",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1433
         },
         {
           "player": "Horčák Martin",
           "opponent": "Votípka Emanuel",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1475
         },
         {
           "player": "Michálek David",
           "opponent": "Motyčka Oldřich",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1456
         },
         {
           "player": "Nový Pavel",
           "opponent": "Štěpánek Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1431
         },
         {
           "player": "Horčák Martin",
           "opponent": "Radil Milan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1433
         },
         {
           "player": "Michálek David",
           "opponent": "Votípka Emanuel",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1475
         },
         {
           "player": "Nový Pavel",
           "opponent": "Motyčka Oldřich",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1456
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Štěpánek Petr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1431
         },
         {
           "player": "Michálek David",
           "opponent": "Radil Milan",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1433
         },
         {
           "player": "Nový Pavel",
           "opponent": "Votípka Emanuel",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1475
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Motyčka Oldřich",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1456
         },
         {
           "player": "Horčák Martin",
           "opponent": "Štěpánek Petr",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1489,
+          "oppStr": 1431
         }
       ],
       "keyPoints": [
@@ -10289,94 +14659,157 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Michálek David / Hrdlic Roman",
+          "opponent": "Ledr Aleš / Pavlenko Dmytro",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Jiroš Martin / Nový Pavel",
+          "opponent": "Malá Petra / Trnka Vítězslav",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Nový Pavel",
           "opponent": "Pavlenko Dmytro (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Malá Petra",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1365
         },
         {
           "player": "Michálek David",
           "opponent": "Trnka Vítězslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1372
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Ledr Aleš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1462
         },
         {
           "player": "Nový Pavel",
           "opponent": "Malá Petra",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1365
         },
         {
           "player": "Pospíšil Jan st.",
           "opponent": "Trnka Vítězslav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1372
         },
         {
           "player": "Michálek David",
           "opponent": "Ledr Aleš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1462
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Pavlenko Dmytro (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 0
         },
         {
           "player": "Nový Pavel",
           "opponent": "Trnka Vítězslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1372
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Ledr Aleš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1462
         },
         {
           "player": "Michálek David",
           "opponent": "Pavlenko Dmytro (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 0
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Malá Petra",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1365
         },
         {
           "player": "Nový Pavel",
           "opponent": "Ledr Aleš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1462
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Pavlenko Dmytro (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 0
         },
         {
           "player": "Michálek David",
           "opponent": "Malá Petra",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1365
         }
       ],
       "keyPoints": [
@@ -10399,64 +14832,112 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Jiroš Martin / Nový Pavel",
+          "opponent": "Wawrečka Ronald / Boloňský Andrej",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Michálek David / Hrdlic Roman",
+          "opponent": "Hůla Jaromír / Antonenko Yevhenii",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Jiroš Martin",
           "opponent": "Wawrečka Ronald",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1485
         },
         {
           "player": "Nový Pavel",
           "opponent": "Boloňský Andrej",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1389
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Hůla Jaromír",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1329
         },
         {
           "player": "Michálek David",
           "opponent": "Antonenko Yevhenii (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 0
         },
         {
           "player": "Nový Pavel",
           "opponent": "Wawrečka Ronald",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1485
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Boloňský Andrej",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1389
         },
         {
           "player": "Michálek David",
           "opponent": "Hůla Jaromír",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1329
         },
         {
           "player": "Jiroš Martin",
           "opponent": "Antonenko Yevhenii (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 0
         },
         {
           "player": "Hrdlic Roman",
           "opponent": "Wawrečka Ronald",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1485
         },
         {
           "player": "Michálek David",
           "opponent": "Boloňský Andrej",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1389
         }
       ],
       "keyPoints": [
@@ -10521,70 +15002,121 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Pospíšil Jan ml. / Horčák Vojtěch",
+          "opponent": "Hájek Alexandr / Bežuch Jakub",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Horčák Zdeněk / Pravda Jakub",
+          "opponent": "Lomský Gustav / Zigo Roman",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Vojtěch",
           "opponent": "Bežuch Jakub (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 0
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Hájek Alexandr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1498
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Lomský Gustav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1351
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Zigo Roman",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1293
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Bežuch Jakub (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 0
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Hájek Alexandr",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1498
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Lomský Gustav",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1351
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Zigo Roman",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1293
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Bežuch Jakub (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Hájek Alexandr",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1498
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Lomský Gustav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1351
         }
       ],
       "keyPoints": [
@@ -10607,82 +15139,139 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Horčák Vojtěch / Pospíšil Jan ml.",
+          "opponent": "Novotný Robert / Mikyska Luboš",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pravda Sebastián / Horčák Zdeněk",
+          "opponent": "Jung René / Petránek Ivan",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Vojtěch",
           "opponent": "Novotný Robert",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1272
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Petránek Ivan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1262
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Jung René",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1287
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Mikyska Luboš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1395
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Petránek Ivan",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1262
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Jung René",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1287
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Mikyska Luboš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1395
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Novotný Robert",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1272
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Jung René",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1287
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Mikyska Luboš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1395
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Novotný Robert",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1272
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Petránek Ivan",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1262
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Mikyska Luboš",
           "result": "7:5",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1395
         }
       ],
       "keyPoints": [
@@ -10705,100 +15294,166 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Horčák Vojtěch / Pospíšil Jan ml.",
+          "opponent": "Svojtka Václav / Hrádocký Erik",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Rybář Milan / Horčák Zdeněk",
+          "opponent": "Ayzenberg Andrey / Vlček Adam",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Vojtěch",
           "opponent": "Svojtka Václav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1359
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Vlček Adam",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1244
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Ayzenberg Andrey (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 0
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Hrádocký Erik",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1239
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Svojtka Václav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1359
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Vlček Adam",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1244
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Ayzenberg Andrey (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 0
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Hrádocký Erik",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1239
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Svojtka Václav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1359
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Vlček Adam",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1244
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Ayzenberg Andrey (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 0
         },
         {
           "player": "Rybář Milan",
           "opponent": "Hrádocký Erik",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1239
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Svojtka Václav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1359
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Vlček Adam",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1244
         },
         {
           "player": "Rybář Milan",
           "opponent": "Ayzenberg Andrey (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 0
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Hrádocký Erik",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1239
         }
       ],
       "keyPoints": [
@@ -10821,70 +15476,121 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Rybář Milan / Pravda Jakub",
+          "opponent": "Blaho Martin / Schützner Vladimír",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pospíšil Jan ml. / Horčák Vojtěch",
+          "opponent": "Hájek Karel / Lukáč Michal",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Vojtěch",
           "opponent": "Hájek Karel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1233
         },
         {
           "player": "Rybář Milan",
           "opponent": "Blaho Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1114
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Lukáč Michal",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1210
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Schützner Vladimír",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1378
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Blaho Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1114
         },
         {
           "player": "Rybář Milan",
           "opponent": "Lukáč Michal",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1210
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Schützner Vladimír",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1378
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Hájek Karel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1233
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Lukáč Michal",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1210
         },
         {
           "player": "Rybář Milan",
           "opponent": "Schützner Vladimír",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1378
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Hájek Karel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1233
         }
       ],
       "keyPoints": [
@@ -10907,76 +15613,130 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Pospíšil Jan ml. / Pravda Sebastián",
+          "opponent": "Babický Lukáš / Stránský Zdeněk",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pravda Jakub / Rybář Milan",
+          "opponent": "Zobal Jakub / Friedrich Lukáš",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Pravda Jakub",
           "opponent": "Babický Lukáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1358
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Stránský Zdeněk",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1333
         },
         {
           "player": "Rybář Milan",
           "opponent": "Zobal Jakub",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1327
         },
         {
           "player": "Pravda Sebastián",
           "opponent": "Friedrich Lukáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 951,
+          "oppStr": 1250
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Babický Lukáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1358
         },
         {
           "player": "Rybář Milan",
           "opponent": "Stránský Zdeněk",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1333
         },
         {
           "player": "Pravda Sebastián",
           "opponent": "Zobal Jakub",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 951,
+          "oppStr": 1327
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Friedrich Lukáš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1250
         },
         {
           "player": "Rybář Milan",
           "opponent": "Babický Lukáš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1358
         },
         {
           "player": "Pravda Sebastián",
           "opponent": "Stránský Zdeněk",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 951,
+          "oppStr": 1333
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Zobal Jakub",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1327
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Friedrich Lukáš",
           "result": "-7:-9",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1250
         }
       ],
       "keyPoints": [
@@ -10999,100 +15759,166 @@ const CLUB_DATA = {
       "result": "D",
       "playerResults": [
         {
+          "player": "Pospíšil Jan ml. / Horčák Vojtěch",
+          "opponent": "Pouč Roman / Couf Alfréd",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Horčák Zdeněk / Rybář Milan",
+          "opponent": "Holštein Jaroslav / Krieger Karel",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Vojtěch",
           "opponent": "Pouč Roman",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1293
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Krieger Karel",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1105
         },
         {
           "player": "Rybář Milan",
           "opponent": "Couf Alfréd",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1280
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Holštein Jaroslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1302
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Krieger Karel",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1105
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Couf Alfréd",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1280
         },
         {
           "player": "Rybář Milan",
           "opponent": "Holštein Jaroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1302
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Pouč Roman",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1293
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Couf Alfréd",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1280
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Holštein Jaroslav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1302
         },
         {
           "player": "Rybář Milan",
           "opponent": "Pouč Roman",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1293
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Krieger Karel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1105
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Holštein Jaroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1302
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Pouč Roman",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1293
         },
         {
           "player": "Rybář Milan",
           "opponent": "Krieger Karel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1105
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Couf Alfréd",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1280
         }
       ],
       "keyPoints": [
@@ -11115,82 +15941,139 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Rybář Milan / Pravda Jakub",
+          "opponent": "Svoboda Vladimír / Hrdý Jiří",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Horčák Vojtěch / Pospíšil Jan ml.",
+          "opponent": "Dolníček Marek / Klouček Martin",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Pravda Jakub",
           "opponent": "Svoboda Vladimír",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1485
         },
         {
           "player": "Rybář Milan",
           "opponent": "Hrdý Jiří",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1357
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Klouček Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1268
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Dolníček Marek",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1320
         },
         {
           "player": "Rybář Milan",
           "opponent": "Svoboda Vladimír",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1485
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Hrdý Jiří",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1357
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Klouček Martin",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1268
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Dolníček Marek",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1320
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Svoboda Vladimír",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1485
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Hrdý Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1357
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Klouček Martin",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1268
         },
         {
           "player": "Rybář Milan",
           "opponent": "Dolníček Marek",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1320
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Svoboda Vladimír",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1485
         }
       ],
       "keyPoints": [
@@ -11213,94 +16096,157 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Rybář Milan / Pravda Jakub",
+          "opponent": "Engel Martin / Jareš Jakub",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pospíšil Jan ml. / Horčák Vojtěch",
+          "opponent": "Tranová Haiduong / Beňovič Marek",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Vojtěch",
           "opponent": "Engel Martin",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1418
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Beňovič Marek (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 0
         },
         {
           "player": "Rybář Milan",
           "opponent": "Tranová Haiduong",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1235
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Jareš Jakub",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1424
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Beňovič Marek (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 0
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Tranová Haiduong",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1235
         },
         {
           "player": "Rybář Milan",
           "opponent": "Jareš Jakub",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1424
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Engel Martin",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1418
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Patho Gabriel (E)",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 0
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Jareš Jakub",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1424
         },
         {
           "player": "Rybář Milan",
           "opponent": "Engel Martin",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1418
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Beňovič Marek (E)",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 0
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Jareš Jakub",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1424
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Engel Martin",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1418
         },
         {
           "player": "Rybář Milan",
           "opponent": "Beňovič Marek (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 0
         }
       ],
       "keyPoints": [
@@ -11323,76 +16269,130 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Horčák Vojtěch / Pospíšil Jan ml.",
+          "opponent": "Sork Viktor / Huleš Kryštof",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pravda Jakub / Rybář Milan",
+          "opponent": "Dušek Martin / Kobras Ludvík",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Pravda Jakub",
           "opponent": "Huleš Kryštof",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1428
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Sork Viktor",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1361
         },
         {
           "player": "Pravda Sebastián",
           "opponent": "Kobras Ludvík",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 951,
+          "oppStr": 1319
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Dušek Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1235
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Huleš Kryštof",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1428
         },
         {
           "player": "Rybář Milan",
           "opponent": "Sork Viktor",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1361
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Kobras Ludvík",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1319
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Dušek Martin",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1235
         },
         {
           "player": "Rybář Milan",
           "opponent": "Huleš Kryštof",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1428
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Sork Viktor",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1361
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Kobras Ludvík",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1319
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Dušek Martin",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1235
         }
       ],
       "keyPoints": [
@@ -11415,94 +16415,157 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Pospíšil Jan ml. / Horčák Vojtěch",
+          "opponent": "Nagy Ondrej / Šindelář Michal",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Rybář Milan / Pravda Jakub",
+          "opponent": "Brůčková Marie / Brůček František",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Pravda Jakub",
           "opponent": "Brůčková Marie",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1397
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Šindelář Michal",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1223
         },
         {
           "player": "Rybář Milan",
           "opponent": "Nagy Ondrej",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1231
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Brůček František",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1167
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Brůčková Marie",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1397
         },
         {
           "player": "Rybář Milan",
           "opponent": "Šindelář Michal",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1223
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Nagy Ondrej",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1231
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Brůček František",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1167
         },
         {
           "player": "Rybář Milan",
           "opponent": "Brůčková Marie",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1397
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Šindelář Michal",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1223
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Nagy Ondrej",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1231
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Brůček František",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1167
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Brůčková Marie",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1397
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Šindelář Michal",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1223
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Nagy Ondrej",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1231
         }
       ],
       "keyPoints": [
@@ -11525,88 +16588,148 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Pospíšil Jan ml. / Horčák Vojtěch",
+          "opponent": "Rosa Vladimír / Šedivý Ondřej",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Rybář Milan / Pravda Jakub",
+          "opponent": "Fausek Jiří / Nemčík Martin",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Vojtěch",
           "opponent": "Nemčík Martin",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1412
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Šedivý Ondřej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1087
         },
         {
           "player": "Rybář Milan",
           "opponent": "Rosa Vladimír",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1046
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Fausek Jiří",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1351
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Šedivý Ondřej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1087
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Rosa Vladimír",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1046
         },
         {
           "player": "Rybář Milan",
           "opponent": "Fausek Jiří",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1351
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Nemčík Martin",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1412
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Rosa Vladimír",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1046
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Fausek Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1351
         },
         {
           "player": "Rybář Milan",
           "opponent": "Nemčík Martin",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1412
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Šedivý Ondřej",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1087
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Fausek Jiří",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1351
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Nemčík Martin",
           "result": "-5:8",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1412
         }
       ],
       "keyPoints": [
@@ -11629,64 +16752,112 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Pospíšil Jan ml. / Horčák Vojtěch",
+          "opponent": "Bežuch Jakub / Herčík Lubomír",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Rybář Milan / Pravda Jakub",
+          "opponent": "Kašpar Ladislav / Nokeo Viengngeun",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Pravda Jakub",
           "opponent": "Herčík Lubomír",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1131
         },
         {
           "player": "Rybář Milan",
           "opponent": "Kašpar Ladislav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1313
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Nokeo Viengngeun",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1389
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Bežuch Jakub (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 0
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Kašpar Ladislav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1313
         },
         {
           "player": "Rybář Milan",
           "opponent": "Nokeo Viengngeun",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1389
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Bežuch Jakub (E)",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Herčík Lubomír",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1131
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Nokeo Viengngeun",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1389
         },
         {
           "player": "Rybář Milan",
           "opponent": "Bežuch Jakub (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 0
         }
       ],
       "keyPoints": [
@@ -11709,70 +16880,121 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Horčák Vojtěch / Pospíšil Jan ml.",
+          "opponent": "Novotný Robert / Filip Miroslav",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pravda Jakub / Rybář Milan",
+          "opponent": "Jung René / Petránek Ivan",
+          "result": "1:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Pravda Jakub",
           "opponent": "Jung René",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1287
         },
         {
           "player": "Rybář Milan",
           "opponent": "Filip Miroslav",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1305
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Novotný Robert",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1272
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Petránek Ivan",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1262
         },
         {
           "player": "Rybář Milan",
           "opponent": "Jung René",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1287
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Filip Miroslav",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1305
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Novotný Robert",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1272
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Petránek Ivan",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1262
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Jung René",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1287
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Filip Miroslav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1305
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Novotný Robert",
           "result": "4:-9",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1272
         }
       ],
       "keyPoints": [
@@ -11795,100 +17017,166 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Rybář Milan / Horčák Zdeněk",
+          "opponent": "Hronek Matouš / Svojtka Václav",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pravda Jakub / Horčák Vojtěch",
+          "opponent": "Luxemburk Jaroslav / Kézr Antonín",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Rybář Milan",
           "opponent": "Luxemburk Jaroslav",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1331
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Hronek Matouš",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1311
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Svojtka Václav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1359
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Pecka Tomáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1341
         },
         {
           "player": "Rybář Milan",
           "opponent": "Hronek Matouš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1311
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Svojtka Václav",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1359
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Pecka Tomáš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1341
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Luxemburk Jaroslav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1331
         },
         {
           "player": "Rybář Milan",
           "opponent": "Svojtka Václav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1359
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Pecka Tomáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1341
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Kézr Antonín",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1320
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Hronek Matouš",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1311
         },
         {
           "player": "Rybář Milan",
           "opponent": "Pecka Tomáš",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1341
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Kézr Antonín",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1320
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Hronek Matouš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1311
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Svojtka Václav",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1359
         }
       ],
       "keyPoints": [
@@ -11911,64 +17199,112 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Horčák Vojtěch / Pospíšil Jan ml.",
+          "opponent": "Zajíček Luděk / Schützner Vladimír",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Horčák Zdeněk / Rybář Milan",
+          "opponent": "Hájek Karel / Lukáč Michal",
+          "result": "3:2",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Horčák Vojtěch",
           "opponent": "Schützner Vladimír",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1378
         },
         {
           "player": "Rybář Milan",
           "opponent": "Hájek Karel",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1233
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Zajíček Luděk",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1280
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Lukáč Michal",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1210
         },
         {
           "player": "Rybář Milan",
           "opponent": "Schützner Vladimír",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1378
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Hájek Karel",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1233
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Zajíček Luděk",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1280
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Lukáč Michal",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1210
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Schützner Vladimír",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1378
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Hájek Karel",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1233
         }
       ],
       "keyPoints": [
@@ -11991,82 +17327,139 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Horčák Vojtěch / Pospíšil Jan ml.",
+          "opponent": "Nevmeržický Vadim / Babický Lukáš",
+          "result": "2:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Horčák Zdeněk / Rybář Milan",
+          "opponent": "Stránský Zdeněk / Jonák Přemysl",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Rybář Milan",
           "opponent": "Nevmeržický Vadim",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1417
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Stránský Zdeněk",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1333
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Babický Lukáš",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1358
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Jonák Přemysl",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1223
         },
         {
           "player": "Rybář Milan",
           "opponent": "Stránský Zdeněk",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1333
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Babický Lukáš",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1358
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Jonák Přemysl",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1223
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Nevmeržický Vadim",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1417
         },
         {
           "player": "Rybář Milan",
           "opponent": "Babický Lukáš",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1358
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Jonák Přemysl",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1223
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Nevmeržický Vadim",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1417
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Stránský Zdeněk",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1333
         },
         {
           "player": "Rybář Milan",
           "opponent": "Jonák Přemysl",
           "result": "0:1",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1223
         }
       ],
       "keyPoints": [
@@ -12089,82 +17482,139 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Rybář Milan / Horčák Zdeněk",
+          "opponent": "",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pospíšil Jan ml.",
+          "opponent": "Pouč Roman / Holštein Jaroslav",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 1232,
+          "oppStr": 0
+        },
+        {
           "player": "Pravda Jakub",
           "opponent": "Pouč Roman",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1293
         },
         {
           "player": "Rybář Milan",
           "opponent": "Holštein Jaroslav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1302
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Lhoták Petr",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1208
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 0
         },
         {
           "player": "Rybář Milan",
           "opponent": "Pouč Roman",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1293
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Holštein Jaroslav",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1302
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Lhoták Petr",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1208
         },
         {
           "player": "Pravda Jakub",
           "opponent": "",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 0
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Pouč Roman",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1293
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Holštein Jaroslav",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1302
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Lhoták Petr",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1208
         },
         {
           "player": "Rybář Milan",
           "opponent": "",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Pouč Roman",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1293
         }
       ],
       "keyPoints": [
@@ -12187,70 +17637,121 @@ const CLUB_DATA = {
       "result": "L",
       "playerResults": [
         {
+          "player": "Pravda Jakub / Rybář Milan",
+          "opponent": "Dolníček Marek / Klouček Martin",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pospíšil Jan ml. / Horčák Zdeněk",
+          "opponent": "Svoboda Vladimír / Hrdý Jiří",
+          "result": "0:3",
+          "won": false,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Rybář Milan",
           "opponent": "Hrdý Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1357
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Dolníček Marek",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1320
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Klouček Martin",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1268
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Svoboda Vladimír",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1485
         },
         {
           "player": "Rybář Milan",
           "opponent": "Dolníček Marek",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1320
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Klouček Martin",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1268
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Svoboda Vladimír",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1485
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Hrdý Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1357
         },
         {
           "player": "Rybář Milan",
           "opponent": "Klouček Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1268
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Svoboda Vladimír",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 1485
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Hrdý Jiří",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1357
         }
       ],
       "keyPoints": [
@@ -12273,94 +17774,157 @@ const CLUB_DATA = {
       "result": "W",
       "playerResults": [
         {
+          "player": "Rybář Milan / Horčák Zdeněk",
+          "opponent": "Engel Martin / Jareš Jakub",
+          "result": "3:0",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
+          "player": "Pospíšil Jan ml. / Horčák Vojtěch",
+          "opponent": "Beňovič Marek / Mészáros Vojtěch",
+          "result": "3:1",
+          "won": true,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0
+        },
+        {
           "player": "Rybář Milan",
           "opponent": "Jareš Jakub",
           "result": "0:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1424
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Mészáros Vojtěch",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1268
         },
         {
           "player": "Horčák Zdeněk",
           "opponent": "Beňovič Marek (E)",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1233,
+          "oppStr": 0
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Engel Martin",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1418
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Jareš Jakub",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1424
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Mészáros Vojtěch",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1268
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Beňovič Marek (E)",
           "result": "2:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 0
         },
         {
           "player": "Rybář Milan",
           "opponent": "Engel Martin",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1418
         },
         {
           "player": "Pravda Jakub",
           "opponent": "Jareš Jakub",
           "result": "1:3",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1424
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Mészáros Vojtěch",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1268
         },
         {
           "player": "Rybář Milan",
           "opponent": "Beňovič Marek (E)",
           "result": "3:0",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 0
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Engel Martin",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1418
         },
         {
           "player": "Pospíšil Jan ml.",
           "opponent": "Jareš Jakub",
           "result": "3:2",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1424
         },
         {
           "player": "Rybář Milan",
           "opponent": "Mészáros Vojtěch",
           "result": "3:1",
-          "won": true
+          "won": true,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1268
         },
         {
           "player": "Horčák Vojtěch",
           "opponent": "Beňovič Marek (E)",
           "result": "-8:11",
-          "won": false
+          "won": false,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 0
         }
       ],
       "keyPoints": [

@@ -565,7 +565,7 @@ a:hover { text-decoration: underline; }
   .match-card-header { padding: 10px 12px; gap: 2px; }
   .mc-teams { font-size: 13px; }
   .match-score-big { font-size: 20px; }
-  .mc-right { gap: 7px; }
+  .mc-right { gap: 4px; flex-direction: column; align-items: flex-end; }
 
   /* Player rows: stack home player top, score middle, away bottom */
   .match-player-row {
