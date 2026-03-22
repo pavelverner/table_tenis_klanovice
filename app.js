@@ -295,14 +295,13 @@ function renderLatestMatches() {
     const scoreAway = m.home ? m.score.away : m.score.home;
     return `
     <div class="match-row" onclick="goToMatch(${m.id})" style="cursor:pointer">
-      <div class="match-date">${fmtDate(m.date)}</div>
       <div class="match-teams">
         <div class="mc-teams">
           <span class="mc-team${m.home ? ' mc-our' : ''}">${homeTeam}</span>
           <span class="mc-vs">vs</span>
           <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
         </div>
-        <div style="font-size:11px;color:var(--c-muted);margin-top:1px">${team.competition}</div>
+        <div style="font-size:11px;color:var(--c-muted);margin-top:1px">${fmtDate(m.date)} · ${team.competition}</div>
       </div>
       <div class="match-result">
         <div class="match-score">${scoreHome}<span class="score-sep">:</span>${scoreAway}</div>
