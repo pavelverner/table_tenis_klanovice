@@ -1,9 +1,9 @@
 // TTC Klánovice – STIS full scraper v5
-// node scrape.js [rocnik]  →  generuje data.js
+// node scrape.js [rocnik] [outfile]  →  generuje data.js (nebo jiný soubor)
 // Příklady:
-//   node scrape.js        (auto-detekce nejnovějšího ročníku)
-//   node scrape.js 2026   (ročník 2025/26)
-//   node scrape.js 2025   (ročník 2024/25)
+//   node scrape.js                       (auto-detekce nejnovějšího ročníku → data.js)
+//   node scrape.js 2025                  (ročník 2024/25 → data.js)
+//   node scrape.js 2024 data_prev.js     (předchozí sezóna → data_prev.js)
 
 const { chromium } = require('playwright');
 const fs = require('fs');
@@ -14,7 +14,9 @@ const ODDIL = '420109007';
 
 // Ročník z argumentu nebo auto-detekce.
 // STIS používá rok ZAHÁJENÍ sezóny: rocnik-2025 = sezóna 2025/26 (podzim 2025 – jaro 2026)
-const ROCNIK = process.argv[2] || String(new Date().getFullYear() - (new Date().getMonth() < 7 ? 1 : 0));
+const ROCNIK   = process.argv[2] || String(new Date().getFullYear() - (new Date().getMonth() < 7 ? 1 : 0));
+const OUT_FILE = process.argv[3] || 'data.js';
+const VAR_NAME = OUT_FILE.includes('prev') ? 'CLUB_DATA_PREV' : 'CLUB_DATA';
 
 const TEAM_SUFFIX = { 63401: 'A', 63402: 'B', 63403: 'C', 63404: 'D', 63405: 'E' };
 const KNOWN_IDS   = new Set(Object.keys(TEAM_SUFFIX).map(Number));
@@ -722,9 +724,9 @@ async function main() {
   fs.writeFileSync('scraped_full.json', JSON.stringify(clubData, null, 2));
   console.log('\n✅ scraped_full.json');
 
-  const dataJs = `// TTC Klánovice – data.js (${new Date().toLocaleDateString('cs-CZ')})\n// Zdroj: ${clubData.stisUrl}\n\nconst CLUB_DATA = ${JSON.stringify(clubData, null, 2)};\n`;
-  fs.writeFileSync('data.js', dataJs);
-  console.log('✅ data.js\n');
+  const dataJs = `// TTC Klánovice – ${OUT_FILE} (${new Date().toLocaleDateString('cs-CZ')})\n// Zdroj: ${clubData.stisUrl}\n\nconst ${VAR_NAME} = ${JSON.stringify(clubData, null, 2)};\n`;
+  fs.writeFileSync(OUT_FILE, dataJs);
+  console.log(`✅ ${OUT_FILE}\n`);
 
   console.log('─── SUMMARY ───');
   clubData.teams.forEach(t => {

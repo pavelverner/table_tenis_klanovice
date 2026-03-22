@@ -329,9 +329,19 @@ function renderUpcoming() {
     const homeTeam = m.home ? team.name : m.opponent;
     const awayTeam = m.home ? m.opponent : team.name;
 
-    // H2H: last 2-3 past results vs same opponent
-    const h2h = CLUB_DATA.matches
-      .filter(x => x.teamId === m.teamId && x.opponent === m.opponent && x.result && x.date < today)
+    // H2H: last 3 past results vs same opponent – current + previous season
+    const prevH2H = window.CLUB_DATA_PREV
+      ? (window.CLUB_DATA_PREV.matches || []).filter(x => {
+          // Match by opponent name (team IDs may differ across seasons)
+          const prevTeam = (window.CLUB_DATA_PREV.teams || []).find(t => t.id === x.teamId);
+          const ourTeam  = CLUB_DATA.teams.find(t => t.id === m.teamId);
+          return prevTeam?.name === ourTeam?.name && x.opponent === m.opponent && x.result;
+        })
+      : [];
+    const h2h = [
+      ...CLUB_DATA.matches.filter(x => x.teamId === m.teamId && x.opponent === m.opponent && x.result && x.date < today),
+      ...prevH2H,
+    ]
       .sort((a,b) => (b.date||'').localeCompare(a.date||''))
       .slice(0, 3);
 
@@ -341,7 +351,8 @@ function renderUpcoming() {
         ${h2h.map(x => {
           const hs = x.home ? x.score.home : x.score.away;
           const as = x.home ? x.score.away : x.score.home;
-          return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${hs}:${as}</span>`;
+          const yr = x.date ? x.date.slice(0,4) : '';
+          return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${hs}:${as}<span class="h2h-yr">${yr}</span></span>`;
         }).join('')}
       </div>` : '';
 

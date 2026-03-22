@@ -127,11 +127,8 @@
   </div>
 
   <script src="data.js"></script>
-  <script>
-    // Previous season data – optional, silently skipped if not present
-    if (typeof CLUB_DATA_PREV === 'undefined') window.CLUB_DATA_PREV = null;
-  </script>
-  <script src="data_prev.js" onerror="window.CLUB_DATA_PREV=null"></script>
+  <script src="data_prev.js" onerror="void 0"></script>
+  <script>if (typeof CLUB_DATA_PREV === 'undefined') window.CLUB_DATA_PREV = null;</script>
   <script src="app.js"></script>
 </body>
 </html>
