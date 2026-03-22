@@ -600,7 +600,6 @@ a:hover { text-decoration: underline; }
   /* Stats table – mobile: keep only rank / name / STR / win% */
   .stats-table th:nth-child(3), .stats-table td:nth-child(3) { display: none; } /* Tým (now in name cell) */
   .stats-table th:nth-child(5), .stats-table td:nth-child(5) { display: none; } /* STR± */
-  .stats-table th:nth-child(6), .stats-table td:nth-child(6) { display: none; } /* Zápasy */
   .stats-table th:nth-child(7), .stats-table td:nth-child(7) { display: none; } /* Výhry */
   .stats-table th:nth-child(8), .stats-table td:nth-child(8) { display: none; } /* Prohry */
   .stats-table th, .stats-table td { padding: 9px 8px; }
@@ -903,6 +902,7 @@ a:hover { text-decoration: underline; }
   padding: 5px 0;
 }
 .team-str-name { font-size: 13px; font-weight: 600; }
+.team-str-row--dim { opacity: 0.18; transition: opacity .2s; }
 .team-str-bar-wrap { position: relative; background: var(--c-surface2); border-radius: 4px; height: 8px; overflow: visible; }
 .team-str-bar {
   height: 100%; border-radius: 4px;

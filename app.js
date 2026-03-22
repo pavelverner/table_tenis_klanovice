@@ -748,7 +748,9 @@ function renderClubSummary() {
     const range = rangeMax - rangeMin || 1;
     const pct      = 5 + Math.round((avg        - rangeMin) / range * 85);
     const leaguePct = leagueAvg ? 5 + Math.round((leagueAvg - rangeMin) / range * 85) : 0;
-    return `<div class="team-str-row">
+    const teamKey = t.name.replace('TTC Klánovice ', '');
+    const dim = activeStatsTeam !== 'all' && teamKey !== activeStatsTeam;
+    return `<div class="team-str-row${dim ? ' team-str-row--dim' : ''}">
       <span class="team-str-name">${t.name.replace('TTC Klánovice ','Tým ')}</span>
       <div class="team-str-bar-wrap">
         <div class="team-str-bar" style="width:${pct}%"></div>
