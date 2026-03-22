@@ -837,6 +837,8 @@ function renderSeasonProgressChart() {
   }).join('');
 
   const lines = teamLines.map(({ team, color, points }) => {
+    const teamKey = team.name.replace('TTC Klánovice ', '');
+    const dim = activeStatsTeam !== 'all' && teamKey !== activeStatsTeam;
     const n = points.length;
     const xStep = n > 1 ? cW / (n - 1) : cW;
     const pts = points.map((p, i) => {
@@ -844,20 +846,22 @@ function renderSeasonProgressChart() {
       const y = padT + cH - (p.pct / 100) * cH;
       return `${x},${y}`;
     }).join(' ');
-    // Endpoint label
+    // Endpoint label (only for active team)
     const lastP = points[n-1];
     const lx = padL + (n-1) * xStep + 4;
     const ly = padT + cH - (lastP.pct / 100) * cH + 4;
-    const label = `<text x="${Math.min(lx, W-padR-2)}" y="${ly}" font-size="9" fill="${color}" font-weight="600">${lastP.pct}%</text>`;
-    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" opacity="0.9"/>${label}`;
+    const label = dim ? '' : `<text x="${Math.min(lx, W-padR-2)}" y="${ly}" font-size="9" fill="${color}" font-weight="600">${lastP.pct}%</text>`;
+    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="${dim ? 1.5 : 2.5}" stroke-linejoin="round" opacity="${dim ? 0.12 : 1}"/>${label}`;
   }).join('');
 
-  const legend = teamLines.map(({ team, color }) =>
-    `<span style="display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--c-muted)">
+  const legend = teamLines.map(({ team, color }) => {
+    const teamKey = team.name.replace('TTC Klánovice ', '');
+    const dim = activeStatsTeam !== 'all' && teamKey !== activeStatsTeam;
+    return `<span style="display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--c-muted);opacity:${dim ? 0.3 : 1}">
       <svg width="18" height="3"><line x1="0" y1="1.5" x2="18" y2="1.5" stroke="${color}" stroke-width="2.5"/></svg>
-      ${team.name.replace('TTC Klánovice ','')}
-    </span>`
-  ).join('');
+      ${teamKey}
+    </span>`;
+  }).join('');
 
   el.innerHTML = `
     <h2 class="block-title">Průběh sezóny – úspěšnost týmů (%)</h2>
@@ -1272,6 +1276,7 @@ function openPlayerModal(playerId) {
           won:         pr.won,
           competition: teamMatch?.competition || '',
           season:      seasonLabel,
+          teamId:      m.teamId,
         });
       });
     }
@@ -1315,12 +1320,15 @@ function openPlayerModal(playerId) {
     </tr>`).join('');
 
   // Per-team breakdown (only shown when player has multiple teams)
+  // Derived from curHistory so it matches the current-season filter
   const multiTeams = (p.teams || []).length > 1;
   const teamBreakdown = multiTeams ? `
     <div class="modal-teams-breakdown">
       <div class="modal-history-title" style="margin-bottom:8px">Statistiky po týmech</div>
       ${(p.teams || []).map(t => {
-        const tw = t.stats.wins; const tl = t.stats.losses;
+        const th = curHistory.filter(h => h.teamId === t.teamId);
+        const tw = th.filter(h => h.won).length;
+        const tl = th.filter(h => !h.won).length;
         const tm = tw + tl;
         const tp = tm > 0 ? Math.round(tw / tm * 100) : 0;
         const role = t.isRegular ? 'základní' : 'náhradník';
