@@ -897,10 +897,17 @@ a:hover { text-decoration: underline; }
 /* ── Upcoming rows (reuse match-row style) ── */
 .upcoming-row { cursor: default; }
 .upcoming-teams-line {
-  display: flex; align-items: center; gap: 6px;
-  flex-wrap: wrap; font-size: 14px; font-weight: 600;
+  display: flex; align-items: center; gap: 0;
+  flex-wrap: nowrap; font-size: 14px; font-weight: 600;
+  overflow: hidden;
+}
+.upcoming-teams-line .team-name {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  flex: 1; min-width: 0;
 }
 .upcoming-teams-line .our-side { color: var(--c-primary); }
+.upcoming-teams-line .upcoming-vs { margin: 0 6px; flex-shrink: 0; }
+.match-teams .our-side { color: var(--c-primary); font-weight: 600; }
 .badge-upcoming {
   color: var(--c-muted); font-size: 18px; min-width: 28px; text-align: center;
 }

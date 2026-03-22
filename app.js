@@ -297,7 +297,9 @@ function renderLatestMatches() {
     <div class="match-row" onclick="goToMatch(${m.id})" style="cursor:pointer">
       <div class="match-date">${fmtDate(m.date)}</div>
       <div class="match-teams">
-        <strong>${homeTeam}</strong> vs ${awayTeam}
+        <span class="${m.home ? 'our-side' : ''}">${homeTeam}</span>
+        <span style="color:var(--c-muted);font-size:12px;font-weight:400"> vs </span>
+        <span class="${!m.home ? 'our-side' : ''}">${awayTeam}</span>
         <div style="font-size:11px;color:var(--c-muted);margin-top:1px">${team.competition}</div>
       </div>
       <div class="match-result">
@@ -376,9 +378,9 @@ function renderUpcoming() {
       <div class="match-date">${fmtDate(m.date)}${m.time ? `<div style="font-size:12px;font-weight:700;color:var(--c-text)">${m.time}</div>` : ''}</div>
       <div class="match-teams">
         <div class="upcoming-teams-line">
-          <span class="${m.home ? 'our-side' : ''}">${homeTeam}</span>
+          <span class="team-name${m.home ? ' our-side' : ''}">${homeTeam}</span>
           <span class="upcoming-vs">vs</span>
-          <span class="${!m.home ? 'our-side' : ''}">${awayTeam}</span>
+          <span class="team-name${!m.home ? ' our-side' : ''}">${awayTeam}</span>
         </div>
         <div style="font-size:11px;color:var(--c-muted);margin-top:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
           <span>${team.competition}</span>

@@ -505,7 +505,7 @@ async function main() {
     stisUrl: `${BASE}/oddil-${ODDIL}/svaz-${SVAZ}/rocnik-${ROCNIK}`,
     rocnik: parseInt(ROCNIK),
     season: seasonLabel(ROCNIK),
-    lastUpdate: new Date().toLocaleDateString('cs-CZ'),
+    lastUpdate: new Date().toLocaleString('cs-CZ', { dateStyle: 'short', timeStyle: 'short' }),
     teams: [],
     tables: {},
     players: [],
