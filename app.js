@@ -453,13 +453,34 @@ function renderFutureCard(m) {
   </div>`;
 }
 
+// Collect past matches from one data source, resolved with team object + season label
+function collectPastMatches(src, teamNameFilter) {
+  if (!src) return [];
+  const result = [];
+  for (const m of (src.matches || [])) {
+    if (m.future || !m.result || !m.score) continue;
+    const team = (src.teams || []).find(t => t.id === m.teamId);
+    if (!team) continue;
+    // Only our club's teams (match by name across seasons)
+    const ourTeam = CLUB_DATA.teams.find(ct => ct.name === team.name);
+    if (!ourTeam) continue;
+    // Apply team filter
+    if (teamNameFilter && team.name !== teamNameFilter) continue;
+    result.push({ ...m, _team: team, _season: src.season || '' });
+  }
+  return result;
+}
+
 function renderVysledky() {
   const tabs = document.getElementById('matchFilterTabs');
   tabs.innerHTML = filterTabsHTML('match');
 
   const teamFilter = activeMatchTeam !== 'all';
+  const filterTeamName = teamFilter
+    ? CLUB_DATA.teams.find(t => t.id === parseInt(activeMatchTeam))?.name
+    : null;
 
-  // Upcoming
+  // Upcoming (current season only)
   let upcoming;
   if (teamFilter) {
     upcoming = CLUB_DATA.matches
@@ -477,12 +498,12 @@ function renderVysledky() {
     upcoming.sort((a,b) => (a.date||'').localeCompare(b.date||''));
   }
 
-  // Past
-  const past = (teamFilter
-    ? CLUB_DATA.matches.filter(m => m.teamId === parseInt(activeMatchTeam))
-    : CLUB_DATA.matches
-  ).filter(m => !m.future && m.result && m.score)
-   .sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  // Past – current + previous seasons
+  const past = [
+    ...collectPastMatches(CLUB_DATA,               filterTeamName),
+    ...collectPastMatches(window.CLUB_DATA_PREV,   filterTeamName),
+    ...collectPastMatches(window.CLUB_DATA_PREV2,  filterTeamName),
+  ].sort((a,b) => (b.date||'').localeCompare(a.date||''));
 
   let html = '';
   if (upcoming.length) {
@@ -491,7 +512,7 @@ function renderVysledky() {
   }
   if (past.length) {
     if (upcoming.length) html += `<div class="matches-section-head" style="margin-top:20px">Odehrané</div>`;
-    html += past.map(m => renderMatchCard(m)).join('');
+    html += past.map(m => renderMatchCard(m, m._team, m._season)).join('');
   }
 
   document.getElementById('matchesDetail').innerHTML = html;
@@ -522,8 +543,8 @@ function calcMVP(playerResults) {
     .sort((a, b) => b[1].wins - a[1].wins || b[1].gamesW - a[1].gamesW)[0]?.[0] || null;
 }
 
-function renderMatchCard(m) {
-  const team      = getTeamById(m.teamId);
+function renderMatchCard(m, teamOverride, seasonLabel) {
+  const team      = teamOverride || getTeamById(m.teamId);
   const homeTeam  = m.home ? team.name : m.opponent;
   const awayTeam  = m.home ? m.opponent : team.name;
   const scoreHome = m.home ? m.score.home : m.score.away;
@@ -550,6 +571,7 @@ function renderMatchCard(m) {
   <div class="match-card" id="match-${m.id}">
     <div class="match-card-header">
       <div class="mc-meta">
+        ${seasonLabel ? `<span class="mc-season">${seasonLabel}</span><span class="mc-sep">·</span>` : ''}
         <span>Kolo ${m.round}</span><span class="mc-sep">·</span>
         <span>${fmtDate(m.date)}</span><span class="mc-sep">·</span>
         <span>${team.competition}</span><span class="mc-sep">·</span>
