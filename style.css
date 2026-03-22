@@ -352,7 +352,10 @@ a:hover { text-decoration: underline; }
 
 /* key points */
 .keypoints {}
-.keypoints-title { font-size: 12px; text-transform: uppercase; letter-spacing: .5px; color: var(--c-muted); margin-bottom: 8px; }
+.keypoints-title { font-size: 12px; text-transform: uppercase; letter-spacing: .5px; color: var(--c-muted); margin-bottom: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.match-avg-elo { font-size: 11px; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--c-muted); }
+.mc-our-elo { color: var(--c-primary); font-weight: 600; }
+.mc-opp-elo { font-weight: 500; }
 .keypoints-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .keypoints-list li {
   display: flex; align-items: flex-start; gap: 8px;

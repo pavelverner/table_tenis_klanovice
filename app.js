@@ -677,7 +677,9 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
         <ul class="keypoints-list">${keyPts}</ul>
       </div>` : ''}
       <div>
-        <div class="keypoints-title" style="margin-bottom:8px">Výsledky hráčů</div>
+        <div class="keypoints-title" style="margin-bottom:8px">Výsledky hráčů
+          ${avgOurStr && avgOppStr ? `<span class="match-avg-elo">Průměr ELO: <span class="mc-our-elo">${m.home ? homeTeam : awayTeam} ${avgOurStr}</span> vs <span class="mc-opp-elo">${m.home ? awayTeam : homeTeam} ${avgOppStr}</span></span>` : ''}
+        </div>
         <div class="match-players">${playerRows}</div>
       </div>
     </div>
@@ -1279,10 +1281,12 @@ function openPlayerModal(playerId) {
     return (a.rowIdx||0) - (b.rowIdx||0);
   });
 
-  const wins   = matchHistory.filter(x => x.won).length;
-  const losses = matchHistory.filter(x => !x.won).length;
-  const total  = wins + losses;
-  const pct    = total > 0 ? Math.round(wins / total * 100) : 0;
+  // Header stats: current season only (from p.stats, which is aggregated per season)
+  const wins   = p.stats.wins;
+  const losses = p.stats.losses;
+  const total  = p.stats.matches;
+  const pct    = p.stats.winPct;
+  const historyTotal = matchHistory.length;
   const delta  = p.strDelta || 0;
   const deltaColor = delta > 0 ? 'var(--c-green)' : delta < 0 ? 'var(--c-red)' : 'var(--c-muted)';
   const rocnik = CLUB_DATA.rocnik || 2025;
@@ -1344,8 +1348,8 @@ function openPlayerModal(playerId) {
     ${teamBreakdown}
     ${buildFunFact(matchHistory)}
     ${(() => { const cur = matchHistory.filter(h => !h.season || h.season === (CLUB_DATA.season||'')); return cur.length >= 2 ? buildWinChart(cur) : ''; })()}
-    ${matchHistory.length ? `
-    <div class="modal-history-title">Zápasy v sezóně (${total})</div>
+    ${historyTotal ? `
+    <div class="modal-history-title">Zápasová historie (${historyTotal})</div>
     <div class="modal-history-wrap">
       <table class="modal-history-table">
         <thead><tr><th>Datum</th><th>Výsledek</th><th>Soupeř</th><th>Soutěž</th></tr></thead>
