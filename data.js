@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "23.03.26 19:38",
+  "lastUpdate": "23.03.26 20:02",
   "teams": [
     {
       "id": 63401,
@@ -18,12 +18,12 @@ var CLUB_DATA = {
       "leagueAvgStr": 1734,
       "standing": {
         "pos": 1,
-        "wins": 17,
+        "wins": 18,
         "losses": 1,
         "draws": 1,
-        "points": 52,
-        "setsFor": 180,
-        "setsAgainst": 97
+        "points": 55,
+        "setsFor": 190,
+        "setsAgainst": 99
       }
     },
     {
@@ -96,13 +96,13 @@ var CLUB_DATA = {
       {
         "pos": 1,
         "team": "TTC Klánovice A",
-        "z": 19,
-        "w": 17,
+        "z": 20,
+        "w": 18,
         "d": 1,
         "l": 1,
-        "sf": 180,
-        "sa": 97,
-        "pts": 52,
+        "sf": 190,
+        "sa": 99,
+        "pts": 55,
         "highlight": true,
         "zone": "promotion"
       },
@@ -187,12 +187,12 @@ var CLUB_DATA = {
       {
         "pos": 8,
         "team": "TJ Sokol Běchovice II A",
-        "z": 19,
+        "z": 20,
         "w": 6,
         "d": 3,
-        "l": 10,
-        "sf": 134,
-        "sa": 156,
+        "l": 11,
+        "sf": 136,
+        "sa": 166,
         "pts": 21,
         "highlight": false,
         "zone": "neutral"
@@ -898,8 +898,8 @@ var CLUB_DATA = {
       "strStab": 1750.9,
       "strDelta": 45,
       "stats": {
-        "matches": 60,
-        "wins": 42,
+        "matches": 61,
+        "wins": 43,
         "losses": 18,
         "sets": [
           0,
@@ -11097,7 +11097,7 @@ var CLUB_DATA = {
       "date": "2026-03-23",
       "opponent": "TJ Sokol Běchovice II A",
       "score": {
-        "home": 9,
+        "home": 10,
         "away": 2
       },
       "result": "W",
@@ -11432,9 +11432,9 @@ var CLUB_DATA = {
           "rubberNum": 12,
           "player": "Kárník Tomáš",
           "opponent": "Hlista Petr",
-          "result": "2:0",
+          "result": "3:0",
           "won": true,
-          "setsWon": 2,
+          "setsWon": 3,
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1750,
@@ -11447,14 +11447,31 @@ var CLUB_DATA = {
             [
               11,
               5
+            ],
+            [
+              11,
+              9
             ]
           ]
+        },
+        {
+          "rubberNum": 13,
+          "player": "Hořejší Radim",
+          "opponent": "Bartel Michal",
+          "result": "1:0",
+          "won": true,
+          "setsWon": 1,
+          "setsLost": 0,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1672,
+          "setScores": null
         }
       ],
       "keyPoints": [
-        "Hořejší – perfektní výkon 2/2",
+        "Kárník – perfektní výkon 3/3",
         "Hudek pod formou – 1/3",
-        "Domácí výhra 9:2"
+        "Drtivá výhra 10:2"
       ]
     },
     {
