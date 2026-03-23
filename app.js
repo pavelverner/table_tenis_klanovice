@@ -384,11 +384,14 @@ function renderUpcoming() {
   const now = new Date();
   const today = now.toISOString().split('T')[0];
 
+  // If live block shows today's matches, skip today in upcoming to avoid duplication
+  const liveActive = document.getElementById('liveBlock')?.style.display !== 'none';
+
   // One next match per team
   const upcoming = [];
   for (const team of CLUB_DATA.teams) {
     const next = CLUB_DATA.matches
-      .filter(m => m.teamId === team.id && m.future && m.date && m.date >= today)
+      .filter(m => m.teamId === team.id && m.future && m.date && (liveActive ? m.date > today : m.date >= today))
       .sort((a,b) => (a.date||'').localeCompare(b.date||''))[0];
     if (next) upcoming.push(next);
   }
