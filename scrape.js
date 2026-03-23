@@ -709,8 +709,7 @@ async function main() {
       // Fall back to uspMap only when aggregated has nothing (player in roster but no matches scraped yet).
       const w   = (agg.wins  > 0 || agg.losses > 0) ? agg.wins   : (usp?.wins   ?? 0);
       const l   = (agg.wins  > 0 || agg.losses > 0) ? agg.losses : (usp?.losses ?? 0);
-      // matches = team matches (utkání) the player appeared in — NOT individual singles games
-      const m   = agg.matchCount > 0 ? agg.matchCount : (usp?.teamMatches ?? 0);
+      const m   = w + l;  // individual singles games (dvouhry) played this season
       if (m === 0 && !oddilPlayer) continue;  // skip ghost names
       clubData.players.push({
         id:        clubData.players.length + 1,

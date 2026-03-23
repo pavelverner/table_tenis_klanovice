@@ -8,7 +8,7 @@ const CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "23.03.26 8:09",
+  "lastUpdate": "23.03.26 9:31",
   "teams": [
     {
       "id": 63401,
@@ -898,14 +898,14 @@ const CLUB_DATA = {
       "strStab": 1750.9,
       "strDelta": 45,
       "stats": {
-        "matches": 18,
+        "matches": 58,
         "wins": 40,
         "losses": 18,
         "sets": [
           0,
           0
         ],
-        "winPct": 222
+        "winPct": 69
       }
     },
     {
@@ -922,7 +922,7 @@ const CLUB_DATA = {
       "strStab": 1587.2,
       "strDelta": -11,
       "stats": {
-        "matches": 1,
+        "matches": 3,
         "wins": 0,
         "losses": 3,
         "sets": [
@@ -946,14 +946,14 @@ const CLUB_DATA = {
       "strStab": 1843.6,
       "strDelta": -60,
       "stats": {
-        "matches": 19,
+        "matches": 61,
         "wins": 48,
         "losses": 13,
         "sets": [
           0,
           0
         ],
-        "winPct": 253
+        "winPct": 79
       }
     },
     {
@@ -970,14 +970,14 @@ const CLUB_DATA = {
       "strStab": 1698.4,
       "strDelta": 24,
       "stats": {
-        "matches": 19,
+        "matches": 55,
         "wins": 29,
         "losses": 26,
         "sets": [
           0,
           0
         ],
-        "winPct": 153
+        "winPct": 53
       }
     },
     {
@@ -994,14 +994,14 @@ const CLUB_DATA = {
       "strStab": 1680.8,
       "strDelta": -27,
       "stats": {
-        "matches": 8,
+        "matches": 23,
         "wins": 8,
         "losses": 15,
         "sets": [
           0,
           0
         ],
-        "winPct": 100
+        "winPct": 35
       }
     },
     {
@@ -1018,7 +1018,7 @@ const CLUB_DATA = {
       "strStab": 1659.4,
       "strDelta": -15,
       "stats": {
-        "matches": 1,
+        "matches": 2,
         "wins": 0,
         "losses": 2,
         "sets": [
@@ -1042,14 +1042,14 @@ const CLUB_DATA = {
       "strStab": 1715.2,
       "strDelta": 65,
       "stats": {
-        "matches": 10,
+        "matches": 30,
         "wins": 21,
         "losses": 9,
         "sets": [
           0,
           0
         ],
-        "winPct": 210
+        "winPct": 70
       }
     },
     {
@@ -1186,14 +1186,14 @@ const CLUB_DATA = {
       "strStab": 1587.2,
       "strDelta": -61,
       "stats": {
-        "matches": 17,
+        "matches": 56,
         "wins": 22,
         "losses": 34,
         "sets": [
           0,
           0
         ],
-        "winPct": 129
+        "winPct": 39
       }
     },
     {
@@ -1210,14 +1210,14 @@ const CLUB_DATA = {
       "strStab": 1659.4,
       "strDelta": 22,
       "stats": {
-        "matches": 17,
+        "matches": 60,
         "wins": 40,
         "losses": 20,
         "sets": [
           0,
           0
         ],
-        "winPct": 235
+        "winPct": 67
       }
     },
     {
@@ -1234,14 +1234,14 @@ const CLUB_DATA = {
       "strStab": 1489.2,
       "strDelta": -2,
       "stats": {
-        "matches": 8,
+        "matches": 23,
         "wins": 4,
         "losses": 19,
         "sets": [
           0,
           0
         ],
-        "winPct": 50
+        "winPct": 17
       }
     },
     {
@@ -1258,14 +1258,14 @@ const CLUB_DATA = {
       "strStab": 1514.3,
       "strDelta": -9,
       "stats": {
-        "matches": 7,
+        "matches": 21,
         "wins": 6,
         "losses": 15,
         "sets": [
           0,
           0
         ],
-        "winPct": 86
+        "winPct": 29
       }
     },
     {
@@ -1282,14 +1282,14 @@ const CLUB_DATA = {
       "strStab": 1651,
       "strDelta": -7,
       "stats": {
-        "matches": 12,
+        "matches": 42,
         "wins": 25,
         "losses": 17,
         "sets": [
           0,
           0
         ],
-        "winPct": 208
+        "winPct": 60
       }
     },
     {
@@ -1306,14 +1306,14 @@ const CLUB_DATA = {
       "strStab": 1624.3,
       "strDelta": -26,
       "stats": {
-        "matches": 7,
+        "matches": 21,
         "wins": 10,
         "losses": 11,
         "sets": [
           0,
           0
         ],
-        "winPct": 143
+        "winPct": 48
       }
     },
     {
@@ -1330,14 +1330,14 @@ const CLUB_DATA = {
       "strStab": 1467.8,
       "strDelta": 4,
       "stats": {
-        "matches": 2,
+        "matches": 6,
         "wins": 1,
         "losses": 5,
         "sets": [
           0,
           0
         ],
-        "winPct": 50
+        "winPct": 17
       }
     },
     {
@@ -1354,14 +1354,14 @@ const CLUB_DATA = {
       "strStab": 1773.1,
       "strDelta": -34,
       "stats": {
-        "matches": 4,
+        "matches": 15,
         "wins": 10,
         "losses": 5,
         "sets": [
           0,
           0
         ],
-        "winPct": 250
+        "winPct": 67
       }
     },
     {
@@ -1378,14 +1378,14 @@ const CLUB_DATA = {
       "strStab": 1715.2,
       "strDelta": -13,
       "stats": {
-        "matches": 1,
+        "matches": 4,
         "wins": 2,
         "losses": 2,
         "sets": [
           0,
           0
         ],
-        "winPct": 200
+        "winPct": 50
       }
     },
     {
@@ -1498,14 +1498,14 @@ const CLUB_DATA = {
       "strStab": 1566.6,
       "strDelta": -23,
       "stats": {
-        "matches": 12,
+        "matches": 38,
         "wins": 23,
         "losses": 15,
         "sets": [
           0,
           0
         ],
-        "winPct": 192
+        "winPct": 61
       }
     },
     {
@@ -1522,14 +1522,14 @@ const CLUB_DATA = {
       "strStab": 1467.8,
       "strDelta": -19,
       "stats": {
-        "matches": 17,
+        "matches": 52,
         "wins": 20,
         "losses": 32,
         "sets": [
           0,
           0
         ],
-        "winPct": 118
+        "winPct": 38
       }
     },
     {
@@ -1546,14 +1546,14 @@ const CLUB_DATA = {
       "strStab": 1410.6,
       "strDelta": -24,
       "stats": {
-        "matches": 11,
+        "matches": 35,
         "wins": 10,
         "losses": 25,
         "sets": [
           0,
           0
         ],
-        "winPct": 91
+        "winPct": 29
       }
     },
     {
@@ -1570,14 +1570,14 @@ const CLUB_DATA = {
       "strStab": 1514.3,
       "strDelta": -47,
       "stats": {
-        "matches": 17,
+        "matches": 56,
         "wins": 30,
         "losses": 26,
         "sets": [
           0,
           0
         ],
-        "winPct": 176
+        "winPct": 54
       }
     },
     {
@@ -1594,14 +1594,14 @@ const CLUB_DATA = {
       "strStab": 1489.2,
       "strDelta": 22,
       "stats": {
-        "matches": 14,
+        "matches": 45,
         "wins": 20,
         "losses": 25,
         "sets": [
           0,
           0
         ],
-        "winPct": 143
+        "winPct": 44
       }
     },
     {
@@ -1618,14 +1618,14 @@ const CLUB_DATA = {
       "strStab": 1321,
       "strDelta": 10,
       "stats": {
-        "matches": 1,
+        "matches": 3,
         "wins": 1,
         "losses": 2,
         "sets": [
           0,
           0
         ],
-        "winPct": 100
+        "winPct": 33
       }
     },
     {
@@ -1642,14 +1642,14 @@ const CLUB_DATA = {
       "strStab": 1624.3,
       "strDelta": 1,
       "stats": {
-        "matches": 1,
+        "matches": 3,
         "wins": 3,
         "losses": 0,
         "sets": [
           0,
           0
         ],
-        "winPct": 300
+        "winPct": 100
       }
     },
     {
@@ -1666,7 +1666,7 @@ const CLUB_DATA = {
       "strStab": 1352.5,
       "strDelta": -2,
       "stats": {
-        "matches": 1,
+        "matches": 3,
         "wins": 0,
         "losses": 3,
         "sets": [
@@ -1690,14 +1690,14 @@ const CLUB_DATA = {
       "strStab": 1424.3,
       "strDelta": 3,
       "stats": {
-        "matches": 1,
+        "matches": 3,
         "wins": 2,
         "losses": 1,
         "sets": [
           0,
           0
         ],
-        "winPct": 200
+        "winPct": 67
       }
     },
     {
@@ -1930,14 +1930,14 @@ const CLUB_DATA = {
       "strStab": 1396.9,
       "strDelta": -6,
       "stats": {
-        "matches": 18,
+        "matches": 67,
         "wins": 31,
         "losses": 36,
         "sets": [
           0,
           0
         ],
-        "winPct": 172
+        "winPct": 46
       }
     },
     {
@@ -1954,14 +1954,14 @@ const CLUB_DATA = {
       "strStab": 1352.5,
       "strDelta": 22,
       "stats": {
-        "matches": 17,
+        "matches": 52,
         "wins": 19,
         "losses": 33,
         "sets": [
           0,
           0
         ],
-        "winPct": 112
+        "winPct": 37
       }
     },
     {
@@ -1978,14 +1978,14 @@ const CLUB_DATA = {
       "strStab": 1378.4,
       "strDelta": 9,
       "stats": {
-        "matches": 19,
+        "matches": 58,
         "wins": 24,
         "losses": 34,
         "sets": [
           0,
           0
         ],
-        "winPct": 126
+        "winPct": 41
       }
     },
     {
@@ -2002,14 +2002,14 @@ const CLUB_DATA = {
       "strStab": 1424.3,
       "strDelta": -10,
       "stats": {
-        "matches": 18,
+        "matches": 62,
         "wins": 31,
         "losses": 31,
         "sets": [
           0,
           0
         ],
-        "winPct": 172
+        "winPct": 50
       }
     },
     {
@@ -2026,14 +2026,14 @@ const CLUB_DATA = {
       "strStab": 1321,
       "strDelta": 8,
       "stats": {
-        "matches": 1,
+        "matches": 3,
         "wins": 1,
         "losses": 2,
         "sets": [
           0,
           0
         ],
-        "winPct": 100
+        "winPct": 33
       }
     },
     {
@@ -2050,14 +2050,14 @@ const CLUB_DATA = {
       "strStab": 1410.6,
       "strDelta": -34,
       "stats": {
-        "matches": 5,
+        "matches": 17,
         "wins": 6,
         "losses": 11,
         "sets": [
           0,
           0
         ],
-        "winPct": 120
+        "winPct": 35
       }
     },
     {
@@ -2074,14 +2074,14 @@ const CLUB_DATA = {
       "strStab": 1489.2,
       "strDelta": -3,
       "stats": {
-        "matches": 1,
+        "matches": 4,
         "wins": 2,
         "losses": 2,
         "sets": [
           0,
           0
         ],
-        "winPct": 200
+        "winPct": 50
       }
     },
     {
@@ -2290,14 +2290,14 @@ const CLUB_DATA = {
       "strStab": 1232,
       "strDelta": 152,
       "stats": {
-        "matches": 18,
+        "matches": 52,
         "wins": 22,
         "losses": 30,
         "sets": [
           0,
           0
         ],
-        "winPct": 122
+        "winPct": 42
       }
     },
     {
@@ -2314,14 +2314,14 @@ const CLUB_DATA = {
       "strStab": 1321,
       "strDelta": 54,
       "stats": {
-        "matches": 16,
+        "matches": 52,
         "wins": 28,
         "losses": 24,
         "sets": [
           0,
           0
         ],
-        "winPct": 175
+        "winPct": 54
       }
     },
     {
@@ -2338,14 +2338,14 @@ const CLUB_DATA = {
       "strStab": 1233.6,
       "strDelta": 15,
       "stats": {
-        "matches": 10,
+        "matches": 30,
         "wins": 10,
         "losses": 20,
         "sets": [
           0,
           0
         ],
-        "winPct": 100
+        "winPct": 33
       }
     },
     {
@@ -2362,14 +2362,14 @@ const CLUB_DATA = {
       "strStab": 1250.1,
       "strDelta": 78,
       "stats": {
-        "matches": 16,
+        "matches": 48,
         "wins": 20,
         "losses": 28,
         "sets": [
           0,
           0
         ],
-        "winPct": 125
+        "winPct": 42
       }
     },
     {
@@ -2386,7 +2386,7 @@ const CLUB_DATA = {
       "strStab": 951.9,
       "strDelta": 0,
       "stats": {
-        "matches": 2,
+        "matches": 4,
         "wins": 0,
         "losses": 4,
         "sets": [
@@ -2410,14 +2410,14 @@ const CLUB_DATA = {
       "strStab": 1166,
       "strDelta": 341,
       "stats": {
-        "matches": 17,
+        "matches": 50,
         "wins": 23,
         "losses": 27,
         "sets": [
           0,
           0
         ],
-        "winPct": 135
+        "winPct": 46
       }
     },
     {
