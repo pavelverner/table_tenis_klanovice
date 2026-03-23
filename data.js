@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "23.03.26 18:11",
+  "lastUpdate": "23.03.26 19:38",
   "teams": [
     {
       "id": 63401,
@@ -898,14 +898,14 @@ var CLUB_DATA = {
       "strStab": 1750.9,
       "strDelta": 45,
       "stats": {
-        "matches": 58,
-        "wins": 40,
+        "matches": 60,
+        "wins": 42,
         "losses": 18,
         "sets": [
           0,
           0
         ],
-        "winPct": 69
+        "winPct": 70
       }
     },
     {
@@ -946,8 +946,8 @@ var CLUB_DATA = {
       "strStab": 1843.6,
       "strDelta": -60,
       "stats": {
-        "matches": 61,
-        "wins": 48,
+        "matches": 63,
+        "wins": 50,
         "losses": 13,
         "sets": [
           0,
@@ -970,14 +970,14 @@ var CLUB_DATA = {
       "strStab": 1698.4,
       "strDelta": 24,
       "stats": {
-        "matches": 55,
-        "wins": 29,
-        "losses": 26,
+        "matches": 58,
+        "wins": 30,
+        "losses": 28,
         "sets": [
           0,
           0
         ],
-        "winPct": 53
+        "winPct": 52
       }
     },
     {
@@ -1042,14 +1042,14 @@ var CLUB_DATA = {
       "strStab": 1715.2,
       "strDelta": 65,
       "stats": {
-        "matches": 30,
-        "wins": 21,
+        "matches": 32,
+        "wins": 23,
         "losses": 9,
         "sets": [
           0,
           0
         ],
-        "winPct": 70
+        "winPct": 72
       }
     },
     {
@@ -11097,8 +11097,8 @@ var CLUB_DATA = {
       "date": "2026-03-23",
       "opponent": "TJ Sokol Běchovice II A",
       "score": {
-        "home": 2,
-        "away": 0
+        "home": 9,
+        "away": 2
       },
       "result": "W",
       "playerResults": [
@@ -11166,10 +11166,10 @@ var CLUB_DATA = {
           "rubberNum": 3,
           "player": "Hořejší Radim",
           "opponent": "Červeňák Miroslav",
-          "result": "2:0",
+          "result": "3:1",
           "won": true,
-          "setsWon": 2,
-          "setsLost": 0,
+          "setsWon": 3,
+          "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1843,
           "oppStr": 1747,
@@ -11181,6 +11181,14 @@ var CLUB_DATA = {
             [
               11,
               4
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              4
             ]
           ]
         },
@@ -11188,9 +11196,9 @@ var CLUB_DATA = {
           "rubberNum": 4,
           "player": "Polák František",
           "opponent": "Hlista Petr",
-          "result": "1:2",
-          "won": false,
-          "setsWon": 1,
+          "result": "3:2",
+          "won": true,
+          "setsWon": 3,
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1715,
@@ -11207,13 +11215,246 @@ var CLUB_DATA = {
             [
               6,
               11
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              11,
+              8
+            ]
+          ]
+        },
+        {
+          "rubberNum": 5,
+          "player": "Hudek Tomáš",
+          "opponent": "Bartel Michal",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1672,
+          "setScores": [
+            [
+              15,
+              17
+            ],
+            [
+              11,
+              3
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              13,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 6,
+          "player": "Kárník Tomáš",
+          "opponent": "Jírů Libor",
+          "result": "3:0",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 0,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1584,
+          "setScores": [
+            [
+              11,
+              4
+            ],
+            [
+              14,
+              12
+            ],
+            [
+              12,
+              10
+            ]
+          ]
+        },
+        {
+          "rubberNum": 7,
+          "player": "Polák František",
+          "opponent": "Červeňák Miroslav",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1747,
+          "setScores": [
+            [
+              11,
+              7
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              2,
+              11
+            ],
+            [
+              11,
+              6
+            ]
+          ]
+        },
+        {
+          "rubberNum": 8,
+          "player": "Hudek Tomáš",
+          "opponent": "Hlista Petr",
+          "result": "1:3",
+          "won": false,
+          "setsWon": 1,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1718,
+          "setScores": [
+            [
+              11,
+              8
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              4,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 9,
+          "player": "Kárník Tomáš",
+          "opponent": "Bartel Michal",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1672,
+          "setScores": [
+            [
+              11,
+              9
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              11,
+              8
+            ]
+          ]
+        },
+        {
+          "rubberNum": 10,
+          "player": "Hořejší Radim",
+          "opponent": "Jírů Libor",
+          "result": "3:0",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 0,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1584,
+          "setScores": [
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              11,
+              7
+            ]
+          ]
+        },
+        {
+          "rubberNum": 11,
+          "player": "Hudek Tomáš",
+          "opponent": "Červeňák Miroslav",
+          "result": "1:3",
+          "won": false,
+          "setsWon": 1,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1698,
+          "oppStr": 1747,
+          "setScores": [
+            [
+              7,
+              11
+            ],
+            [
+              12,
+              10
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              6,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 12,
+          "player": "Kárník Tomáš",
+          "opponent": "Hlista Petr",
+          "result": "2:0",
+          "won": true,
+          "setsWon": 2,
+          "setsLost": 0,
+          "isDoubles": false,
+          "ourStr": 1750,
+          "oppStr": 1718,
+          "setScores": [
+            [
+              13,
+              11
+            ],
+            [
+              11,
+              5
             ]
           ]
         }
       ],
       "keyPoints": [
-        "Domácí výhra 2:0",
-        "Čtyřhra Hořejší Radim / Kárník Tomáš: ✓ výhra"
+        "Hořejší – perfektní výkon 2/2",
+        "Hudek pod formou – 1/3",
+        "Domácí výhra 9:2"
       ]
     },
     {
