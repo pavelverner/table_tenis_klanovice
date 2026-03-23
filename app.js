@@ -820,10 +820,9 @@ function renderClubSummary() {
   const maxStr = allStr.length ? Math.max(...allStr) : 1000;
   const minStr = allStr.length ? Math.min(...allStr) : 800;
   const teamStrRows = CLUB_DATA.teams.map(t => {
-    // Top 4 players by matches played (core lineup)
+    // Positions 1–4 in roster order = základní sestava
     const ps = CLUB_DATA.players
       .filter(p => p.teamId === t.id && p.str)
-      .sort((a,b) => (b.stats?.matches||0) - (a.stats?.matches||0))
       .slice(0, 4);
     if (!ps.length) return '';
     const avg = Math.round(ps.reduce((s,p) => s + p.str, 0) / ps.length);
@@ -852,22 +851,18 @@ function renderClubSummary() {
     if (!rows.length) return null;
     const n = rows.length;
     const perTeam = rows.map(r => ({
-      winPct:   r.z > 0 ? r.w / r.z : 0,
-      setDiff:  r.z > 0 ? (r.sf - r.sa) / r.z : 0,
-      sfPerM:   r.z > 0 ? r.sf / r.z : 0,
-      saPerM:   r.z > 0 ? r.sa / r.z : 0,
-      ptsPerM:  r.z > 0 ? r.pts / r.z : 0,
+      winPct:  r.z > 0 ? r.w / r.z : 0,
+      ptsPerM: r.z > 0 ? r.pts / r.z : 0,
     }));
     const avg = f => perTeam.reduce((s,r) => s + f(r), 0) / n;
     const lgWinPct  = Math.round(avg(r => r.winPct) * 100);
-    const lgSetDiff = avg(r => r.setDiff).toFixed(1);
-    const lgSfPerM  = avg(r => r.sfPerM).toFixed(1);
-    const lgSaPerM  = avg(r => r.saPerM).toFixed(1);
+    const lgPtsPerM = avg(r => r.ptsPerM).toFixed(1);
     const ourRow    = rows.find(r => r.highlight);
     const ourWinPct = ourRow && ourRow.z > 0 ? Math.round(ourRow.w / ourRow.z * 100) : mPct;
-    const ourSetDiff = ourRow && ourRow.z > 0 ? ((ourRow.sf - ourRow.sa) / ourRow.z).toFixed(1) : (total > 0 ? (sDiff/total).toFixed(1) : '–');
+    const ourPos    = ourRow?.pos || '–';
+    const ourPtsPerM = ourRow && ourRow.z > 0 ? (ourRow.pts / ourRow.z).toFixed(1) : '–';
     const teamKey = t.name.replace('TTC Klánovice ', 'Tým ');
-    return { teamKey, lgWinPct, lgSetDiff, lgSfPerM, lgSaPerM, ourWinPct, ourSetDiff };
+    return { teamKey, lgWinPct, lgPtsPerM, ourWinPct, ourPos, ourPtsPerM, total: n };
   }).filter(Boolean);
 
   const leagueAvgHtml = lgRows.length ? `
@@ -878,17 +873,20 @@ function renderClubSummary() {
           <div class="league-avg-card">
             ${lgRows.length > 1 ? `<div class="league-avg-team">${r.teamKey}</div>` : ''}
             <div class="league-avg-row">
+              <span class="league-avg-lbl">Pořadí</span>
+              <span class="league-avg-val">${r.ourPos}. / ${r.total}</span>
+            </div>
+            <div class="league-avg-row">
               <span class="league-avg-lbl">Úspěšnost</span>
               <span class="league-avg-val">${r.ourWinPct}%</span>
-              <span class="league-avg-sep">vs liga</span>
+              <span class="league-avg-sep">liga ø</span>
               <span class="league-avg-league">${r.lgWinPct}%</span>
             </div>
             <div class="league-avg-row">
-              <span class="league-avg-lbl">Sety / zápas</span>
-              <span class="league-avg-val">${r.lgSfPerM}</span>
-              <span class="league-avg-sep">:</span>
-              <span class="league-avg-league">${r.lgSaPerM}</span>
-              <span class="league-avg-muted">(liga průměr)</span>
+              <span class="league-avg-lbl">Body / zápas</span>
+              <span class="league-avg-val">${r.ourPtsPerM}</span>
+              <span class="league-avg-sep">liga ø</span>
+              <span class="league-avg-league">${r.lgPtsPerM}</span>
             </div>
           </div>`).join('')}
       </div>
@@ -991,7 +989,7 @@ function renderSeasonProgressChart() {
       `<circle cx="${c.x.toFixed(1)}" cy="${c.y.toFixed(1)}" r="5" fill="${color}" fill-opacity="0" stroke="none" style="cursor:pointer"
         onmouseover="showChartTip(event,${JSON.stringify(c.tip || '')})" onmouseout="hideChartTip()"/>`
     ).join('');
-    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="${dim ? 1.5 : 2.5}" stroke-linejoin="round" opacity="${dim ? 0.12 : 1}"/>${label}${circles}`;
+    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="${dim ? 0.8 : 1.5}" stroke-linejoin="round" opacity="${dim ? 0.12 : 1}"/>${label}${circles}`;
   }).join('');
 
   const legend = teamLines.map(({ team, color }) => {
@@ -1108,6 +1106,10 @@ function renderStatsTable() {
     const deltaColor = delta > 0 ? 'var(--c-green)' : delta < 0 ? 'var(--c-red)' : 'var(--c-muted)';
     const deltaStr   = delta > 0 ? `+${delta}` : String(delta);
     const playedTeams = (p.teams||[]).filter(t => t.stats.matches > 0);
+    // When team filter active, show stats for that team only
+    const teamStats = activeStatsTeam !== 'all'
+      ? (p.teams||[]).find(t => t.team === activeStatsTeam)?.stats || p.stats
+      : p.stats;
     return `
     <tr class="player-row" onclick="openPlayerModal(${p.id})" style="cursor:pointer">
       <td class="player-rank">${i+1}</td>
@@ -1115,24 +1117,24 @@ function renderStatsTable() {
         <span class="pnc-name">${p.name}${p.isRegular === false ? ' <span class="sub-badge">náhr.</span>' : ''}</span>
         <span class="pnc-team">${playedTeams.length > 1
           ? playedTeams.map(t => `Tým ${t.team}`).join(', ')
-          : `Tým ${p.team}`
+          : `Tým ${playedTeams[0]?.team || p.team}`
         }</span>
       </td>
       <td class="col-team">${playedTeams.length > 1
           ? playedTeams.map(t => `<span class="player-team-pill">Tým ${t.team}</span>`).join(' ')
-          : `<span class="player-team-pill">Tým ${p.team}</span>`
+          : `<span class="player-team-pill">Tým ${playedTeams[0]?.team || p.team}</span>`
         }</td>
       <td class="rating-val">${p.str || '–'}</td>
       <td style="color:${deltaColor};font-weight:600;font-size:13px">${p.str ? deltaStr : '–'}</td>
-      <td>${p.stats.matches}</td>
-      <td style="color:var(--c-green);font-weight:600">${p.stats.wins}</td>
-      <td style="color:var(--c-red);font-weight:600">${p.stats.losses}</td>
+      <td>${teamStats.matches}</td>
+      <td style="color:var(--c-green);font-weight:600">${teamStats.wins}</td>
+      <td style="color:var(--c-red);font-weight:600">${teamStats.losses}</td>
       <td>
         <div class="win-pct-bar-wrap">
           <div class="win-pct-bar-bg">
-            <div class="win-pct-bar-fill" style="width:${p.stats.winPct}%"></div>
+            <div class="win-pct-bar-fill" style="width:${teamStats.winPct}%"></div>
           </div>
-          <span class="win-pct-cell">${p.stats.winPct}%</span>
+          <span class="win-pct-cell">${teamStats.winPct}%</span>
         </div>
       </td>
     </tr>`;

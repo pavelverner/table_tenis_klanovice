@@ -946,10 +946,10 @@ a:hover { text-decoration: underline; }
 
 /* ── League averages block ── */
 .league-avg-section { margin-top: 4px; }
-.league-avg-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.league-avg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
 .league-avg-card {
   background: var(--c-surface2); border-radius: var(--radius-sm);
-  padding: 10px 14px; min-width: 220px; flex: 1;
+  padding: 10px 14px;
 }
 .league-avg-team { font-size: 12px; font-weight: 700; color: var(--c-primary); margin-bottom: 6px; }
 .league-avg-row {
