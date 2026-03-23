@@ -1,4 +1,6 @@
-// TTC Klánovice – data.js (22. 3. 2026)
+// TTC Klánovice – data.js (23. 3. 2026)
+// Zdroj: https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025
+
 const CLUB_DATA = {
   "name": "TTC Klánovice",
   "shortName": "Klánovice",
@@ -6,7 +8,7 @@ const CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "22.03.26 22:08",
+  "lastUpdate": "23.03.26 8:09",
   "teams": [
     {
       "id": 63401,
@@ -61,7 +63,7 @@ const CLUB_DATA = {
       "name": "TTC Klánovice D",
       "competition": "4. třída A",
       "division": "4. třída A",
-      "leagueAvgStr": 1375,
+      "leagueAvgStr": 1362,
       "standing": {
         "pos": 10,
         "wins": 5,
@@ -891,19 +893,19 @@ const CLUB_DATA = {
       "stisId": 40101,
       "soutezId": "6274",
       "born": "1989",
-      "ranking": "",
+      "soupiskaPos": 2,
       "str": 1748,
       "strStab": 1750.9,
       "strDelta": 45,
       "stats": {
-        "matches": 58,
+        "matches": 18,
         "wins": 40,
         "losses": 18,
         "sets": [
           0,
           0
         ],
-        "winPct": 69
+        "winPct": 222
       }
     },
     {
@@ -915,12 +917,12 @@ const CLUB_DATA = {
       "stisId": 49072,
       "soutezId": "6274",
       "born": "1977",
-      "ranking": "",
+      "soupiskaPos": 8,
       "str": 1572,
       "strStab": 1587.2,
       "strDelta": -11,
       "stats": {
-        "matches": 3,
+        "matches": 1,
         "wins": 0,
         "losses": 3,
         "sets": [
@@ -939,19 +941,19 @@ const CLUB_DATA = {
       "stisId": 10531,
       "soutezId": "6274",
       "born": "1976",
-      "ranking": "",
+      "soupiskaPos": 1,
       "str": 1828,
       "strStab": 1843.6,
       "strDelta": -60,
       "stats": {
-        "matches": 61,
+        "matches": 19,
         "wins": 48,
         "losses": 13,
         "sets": [
           0,
           0
         ],
-        "winPct": 79
+        "winPct": 253
       }
     },
     {
@@ -963,19 +965,19 @@ const CLUB_DATA = {
       "stisId": 8545,
       "soutezId": "6274",
       "born": "1968",
-      "ranking": "",
+      "soupiskaPos": 3,
       "str": 1708,
       "strStab": 1698.4,
       "strDelta": 24,
       "stats": {
-        "matches": 55,
+        "matches": 19,
         "wins": 29,
         "losses": 26,
         "sets": [
           0,
           0
         ],
-        "winPct": 53
+        "winPct": 153
       }
     },
     {
@@ -987,19 +989,19 @@ const CLUB_DATA = {
       "stisId": 10724,
       "soutezId": "6274",
       "born": "1954",
-      "ranking": "",
+      "soupiskaPos": 4,
       "str": 1672,
       "strStab": 1680.8,
       "strDelta": -27,
       "stats": {
-        "matches": 23,
+        "matches": 8,
         "wins": 8,
         "losses": 15,
         "sets": [
           0,
           0
         ],
-        "winPct": 35
+        "winPct": 100
       }
     },
     {
@@ -1011,12 +1013,12 @@ const CLUB_DATA = {
       "stisId": 39968,
       "soutezId": "6274",
       "born": "1992",
-      "ranking": "",
+      "soupiskaPos": 7,
       "str": 1649,
       "strStab": 1659.4,
       "strDelta": -15,
       "stats": {
-        "matches": 2,
+        "matches": 1,
         "wins": 0,
         "losses": 2,
         "sets": [
@@ -1035,19 +1037,19 @@ const CLUB_DATA = {
       "stisId": 92522,
       "soutezId": "6274",
       "born": "1974",
-      "ranking": "",
+      "soupiskaPos": 5,
       "str": 1728,
       "strStab": 1715.2,
       "strDelta": 65,
       "stats": {
-        "matches": 30,
+        "matches": 10,
         "wins": 21,
         "losses": 9,
         "sets": [
           0,
           0
         ],
-        "winPct": 70
+        "winPct": 210
       }
     },
     {
@@ -1059,7 +1061,7 @@ const CLUB_DATA = {
       "stisId": 33856,
       "soutezId": "6274",
       "born": "1990",
-      "ranking": "",
+      "soupiskaPos": 6,
       "str": 1651,
       "strStab": 1651,
       "strDelta": 0,
@@ -1083,7 +1085,7 @@ const CLUB_DATA = {
       "stisId": 7517,
       "soutezId": "6274",
       "born": "1979",
-      "ranking": "",
+      "soupiskaPos": 9,
       "str": 1624,
       "strStab": 1624.3,
       "strDelta": 0,
@@ -1107,7 +1109,7 @@ const CLUB_DATA = {
       "stisId": 7520,
       "soutezId": "6274",
       "born": "1977",
-      "ranking": "",
+      "soupiskaPos": 10,
       "str": 1571,
       "strStab": 1566.6,
       "strDelta": 0,
@@ -1131,7 +1133,7 @@ const CLUB_DATA = {
       "stisId": 30684,
       "soutezId": "6274",
       "born": "1990",
-      "ranking": "",
+      "soupiskaPos": 11,
       "str": 1512,
       "strStab": 1514.3,
       "strDelta": 0,
@@ -1155,7 +1157,7 @@ const CLUB_DATA = {
       "stisId": 49073,
       "soutezId": "6274",
       "born": "1973",
-      "ranking": "",
+      "soupiskaPos": 12,
       "str": 1471,
       "strStab": 1467.8,
       "strDelta": 0,
@@ -1179,19 +1181,19 @@ const CLUB_DATA = {
       "stisId": 49072,
       "soutezId": "6276",
       "born": "1977",
-      "ranking": "",
+      "soupiskaPos": 4,
       "str": 1572,
       "strStab": 1587.2,
       "strDelta": -61,
       "stats": {
-        "matches": 56,
+        "matches": 17,
         "wins": 22,
         "losses": 34,
         "sets": [
           0,
           0
         ],
-        "winPct": 39
+        "winPct": 129
       }
     },
     {
@@ -1203,19 +1205,19 @@ const CLUB_DATA = {
       "stisId": 39968,
       "soutezId": "6276",
       "born": "1992",
-      "ranking": "",
+      "soupiskaPos": 3,
       "str": 1649,
       "strStab": 1659.4,
       "strDelta": 22,
       "stats": {
-        "matches": 60,
+        "matches": 17,
         "wins": 40,
         "losses": 20,
         "sets": [
           0,
           0
         ],
-        "winPct": 67
+        "winPct": 235
       }
     },
     {
@@ -1227,19 +1229,19 @@ const CLUB_DATA = {
       "stisId": 38698,
       "soutezId": "6276",
       "born": "1974",
-      "ranking": "",
+      "soupiskaPos": 9,
       "str": 1480,
       "strStab": 1489.2,
       "strDelta": -2,
       "stats": {
-        "matches": 23,
+        "matches": 8,
         "wins": 4,
         "losses": 19,
         "sets": [
           0,
           0
         ],
-        "winPct": 17
+        "winPct": 50
       }
     },
     {
@@ -1251,19 +1253,19 @@ const CLUB_DATA = {
       "stisId": 30684,
       "soutezId": "6276",
       "born": "1990",
-      "ranking": "",
+      "soupiskaPos": 7,
       "str": 1512,
       "strStab": 1514.3,
       "strDelta": -9,
       "stats": {
-        "matches": 21,
+        "matches": 7,
         "wins": 6,
         "losses": 15,
         "sets": [
           0,
           0
         ],
-        "winPct": 29
+        "winPct": 86
       }
     },
     {
@@ -1275,19 +1277,19 @@ const CLUB_DATA = {
       "stisId": 33856,
       "soutezId": "6276",
       "born": "1990",
-      "ranking": "",
+      "soupiskaPos": 2,
       "str": 1651,
       "strStab": 1651,
       "strDelta": -7,
       "stats": {
-        "matches": 42,
+        "matches": 12,
         "wins": 25,
         "losses": 17,
         "sets": [
           0,
           0
         ],
-        "winPct": 60
+        "winPct": 208
       }
     },
     {
@@ -1299,19 +1301,19 @@ const CLUB_DATA = {
       "stisId": 7517,
       "soutezId": "6276",
       "born": "1979",
-      "ranking": "",
+      "soupiskaPos": 5,
       "str": 1624,
       "strStab": 1624.3,
       "strDelta": -26,
       "stats": {
-        "matches": 21,
+        "matches": 7,
         "wins": 10,
         "losses": 11,
         "sets": [
           0,
           0
         ],
-        "winPct": 48
+        "winPct": 143
       }
     },
     {
@@ -1323,19 +1325,19 @@ const CLUB_DATA = {
       "stisId": 49073,
       "soutezId": "6276",
       "born": "1973",
-      "ranking": "",
+      "soupiskaPos": 8,
       "str": 1471,
       "strStab": 1467.8,
       "strDelta": 4,
       "stats": {
-        "matches": 6,
+        "matches": 2,
         "wins": 1,
         "losses": 5,
         "sets": [
           0,
           0
         ],
-        "winPct": 17
+        "winPct": 50
       }
     },
     {
@@ -1347,19 +1349,19 @@ const CLUB_DATA = {
       "stisId": 17280,
       "soutezId": "6276",
       "born": "1978",
-      "ranking": "",
+      "soupiskaPos": 13,
       "str": 1759,
       "strStab": 1773.1,
       "strDelta": -34,
       "stats": {
-        "matches": 15,
+        "matches": 4,
         "wins": 10,
         "losses": 5,
         "sets": [
           0,
           0
         ],
-        "winPct": 67
+        "winPct": 250
       }
     },
     {
@@ -1371,19 +1373,19 @@ const CLUB_DATA = {
       "stisId": 92522,
       "soutezId": "6276",
       "born": "1974",
-      "ranking": "",
+      "soupiskaPos": 1,
       "str": 1728,
       "strStab": 1715.2,
       "strDelta": -13,
       "stats": {
-        "matches": 4,
+        "matches": 1,
         "wins": 2,
         "losses": 2,
         "sets": [
           0,
           0
         ],
-        "winPct": 50
+        "winPct": 200
       }
     },
     {
@@ -1395,7 +1397,7 @@ const CLUB_DATA = {
       "stisId": 7520,
       "soutezId": "6276",
       "born": "1977",
-      "ranking": "",
+      "soupiskaPos": 6,
       "str": 1571,
       "strStab": 1566.6,
       "strDelta": 0,
@@ -1419,7 +1421,7 @@ const CLUB_DATA = {
       "stisId": 61935,
       "soutezId": "6276",
       "born": "1974",
-      "ranking": "",
+      "soupiskaPos": 11,
       "str": 1437,
       "strStab": 1424.3,
       "strDelta": 0,
@@ -1443,7 +1445,7 @@ const CLUB_DATA = {
       "stisId": 7527,
       "soutezId": "6276",
       "born": "1965",
-      "ranking": "",
+      "soupiskaPos": 10,
       "str": 1403,
       "strStab": 1410.6,
       "strDelta": 0,
@@ -1467,7 +1469,7 @@ const CLUB_DATA = {
       "stisId": 30890,
       "soutezId": "6276",
       "born": "1988",
-      "ranking": "",
+      "soupiskaPos": 12,
       "str": 1402,
       "strStab": 1396.9,
       "strDelta": 0,
@@ -1491,19 +1493,19 @@ const CLUB_DATA = {
       "stisId": 7520,
       "soutezId": "6278",
       "born": "1977",
-      "ranking": "",
+      "soupiskaPos": 2,
       "str": 1571,
       "strStab": 1566.6,
       "strDelta": -23,
       "stats": {
-        "matches": 38,
+        "matches": 12,
         "wins": 23,
         "losses": 15,
         "sets": [
           0,
           0
         ],
-        "winPct": 61
+        "winPct": 192
       }
     },
     {
@@ -1515,19 +1517,19 @@ const CLUB_DATA = {
       "stisId": 49073,
       "soutezId": "6278",
       "born": "1973",
-      "ranking": "",
+      "soupiskaPos": 4,
       "str": 1471,
       "strStab": 1467.8,
       "strDelta": -19,
       "stats": {
-        "matches": 52,
+        "matches": 17,
         "wins": 20,
         "losses": 32,
         "sets": [
           0,
           0
         ],
-        "winPct": 38
+        "winPct": 118
       }
     },
     {
@@ -1539,19 +1541,19 @@ const CLUB_DATA = {
       "stisId": 7527,
       "soutezId": "6278",
       "born": "1965",
-      "ranking": "",
+      "soupiskaPos": 6,
       "str": 1403,
       "strStab": 1410.6,
       "strDelta": -24,
       "stats": {
-        "matches": 35,
+        "matches": 11,
         "wins": 10,
         "losses": 25,
         "sets": [
           0,
           0
         ],
-        "winPct": 29
+        "winPct": 91
       }
     },
     {
@@ -1563,19 +1565,19 @@ const CLUB_DATA = {
       "stisId": 30684,
       "soutezId": "6278",
       "born": "1990",
-      "ranking": "",
+      "soupiskaPos": 3,
       "str": 1512,
       "strStab": 1514.3,
       "strDelta": -47,
       "stats": {
-        "matches": 56,
+        "matches": 17,
         "wins": 30,
         "losses": 26,
         "sets": [
           0,
           0
         ],
-        "winPct": 54
+        "winPct": 176
       }
     },
     {
@@ -1587,19 +1589,19 @@ const CLUB_DATA = {
       "stisId": 38698,
       "soutezId": "6278",
       "born": "1974",
-      "ranking": "",
+      "soupiskaPos": 5,
       "str": 1480,
       "strStab": 1489.2,
       "strDelta": 22,
       "stats": {
-        "matches": 45,
+        "matches": 14,
         "wins": 20,
         "losses": 25,
         "sets": [
           0,
           0
         ],
-        "winPct": 44
+        "winPct": 143
       }
     },
     {
@@ -1611,19 +1613,19 @@ const CLUB_DATA = {
       "stisId": 70816,
       "soutezId": "6278",
       "born": "2008",
-      "ranking": "",
+      "soupiskaPos": 11,
       "str": 1344,
       "strStab": 1321,
       "strDelta": 10,
       "stats": {
-        "matches": 3,
+        "matches": 1,
         "wins": 1,
         "losses": 2,
         "sets": [
           0,
           0
         ],
-        "winPct": 33
+        "winPct": 100
       }
     },
     {
@@ -1635,19 +1637,19 @@ const CLUB_DATA = {
       "stisId": 7517,
       "soutezId": "6278",
       "born": "1979",
-      "ranking": "",
+      "soupiskaPos": 1,
       "str": 1624,
       "strStab": 1624.3,
       "strDelta": 1,
       "stats": {
-        "matches": 3,
+        "matches": 1,
         "wins": 3,
         "losses": 0,
         "sets": [
           0,
           0
         ],
-        "winPct": 100
+        "winPct": 300
       }
     },
     {
@@ -1659,12 +1661,12 @@ const CLUB_DATA = {
       "stisId": 7522,
       "soutezId": "6278",
       "born": "1969",
-      "ranking": "",
+      "soupiskaPos": 10,
       "str": 1351,
       "strStab": 1352.5,
       "strDelta": -2,
       "stats": {
-        "matches": 3,
+        "matches": 1,
         "wins": 0,
         "losses": 3,
         "sets": [
@@ -1683,19 +1685,19 @@ const CLUB_DATA = {
       "stisId": 61935,
       "soutezId": "6278",
       "born": "1974",
-      "ranking": "",
+      "soupiskaPos": 7,
       "str": 1437,
       "strStab": 1424.3,
       "strDelta": 3,
       "stats": {
-        "matches": 3,
+        "matches": 1,
         "wins": 2,
         "losses": 1,
         "sets": [
           0,
           0
         ],
-        "winPct": 67
+        "winPct": 200
       }
     },
     {
@@ -1707,7 +1709,7 @@ const CLUB_DATA = {
       "stisId": 30890,
       "soutezId": "6278",
       "born": "1988",
-      "ranking": "",
+      "soupiskaPos": 9,
       "str": 1402,
       "strStab": 1396.9,
       "strDelta": 0,
@@ -1731,7 +1733,7 @@ const CLUB_DATA = {
       "stisId": 19139,
       "soutezId": "6278",
       "born": "1972",
-      "ranking": "",
+      "soupiskaPos": 8,
       "str": 1394,
       "strStab": 1378.4,
       "strDelta": 0,
@@ -1755,7 +1757,7 @@ const CLUB_DATA = {
       "stisId": 82609,
       "soutezId": "6278",
       "born": "2005",
-      "ranking": "",
+      "soupiskaPos": 14,
       "str": 1265,
       "strStab": 1232,
       "strDelta": 0,
@@ -1779,7 +1781,7 @@ const CLUB_DATA = {
       "stisId": 87179,
       "soutezId": "6278",
       "born": "2009",
-      "ranking": "",
+      "soupiskaPos": 13,
       "str": 1257,
       "strStab": 1250.1,
       "strDelta": 0,
@@ -1803,7 +1805,7 @@ const CLUB_DATA = {
       "stisId": 81217,
       "soutezId": "6278",
       "born": "2010",
-      "ranking": "",
+      "soupiskaPos": 12,
       "str": 1233,
       "strStab": 1233.6,
       "strDelta": 0,
@@ -1827,7 +1829,7 @@ const CLUB_DATA = {
       "stisId": 84552,
       "soutezId": "6278",
       "born": "2010",
-      "ranking": "",
+      "soupiskaPos": 15,
       "str": 993,
       "strStab": 995.2,
       "strDelta": 0,
@@ -1851,7 +1853,7 @@ const CLUB_DATA = {
       "stisId": 81218,
       "soutezId": "6278",
       "born": "2006",
-      "ranking": "",
+      "soupiskaPos": 17,
       "str": 953,
       "strStab": 951.9,
       "strDelta": 0,
@@ -1875,7 +1877,7 @@ const CLUB_DATA = {
       "stisId": 87687,
       "soutezId": "6278",
       "born": "2010",
-      "ranking": "",
+      "soupiskaPos": 18,
       "str": 947,
       "strStab": 947,
       "strDelta": 0,
@@ -1899,7 +1901,7 @@ const CLUB_DATA = {
       "stisId": 81241,
       "soutezId": "6278",
       "born": "2007",
-      "ranking": "",
+      "soupiskaPos": 16,
       "str": 928,
       "strStab": 929,
       "strDelta": 0,
@@ -1923,19 +1925,19 @@ const CLUB_DATA = {
       "stisId": 30890,
       "soutezId": "6280",
       "born": "1988",
-      "ranking": "",
+      "soupiskaPos": 4,
       "str": 1402,
       "strStab": 1396.9,
       "strDelta": -6,
       "stats": {
-        "matches": 67,
+        "matches": 18,
         "wins": 31,
         "losses": 36,
         "sets": [
           0,
           0
         ],
-        "winPct": 46
+        "winPct": 172
       }
     },
     {
@@ -1947,19 +1949,19 @@ const CLUB_DATA = {
       "stisId": 7522,
       "soutezId": "6280",
       "born": "1969",
-      "ranking": "",
+      "soupiskaPos": 6,
       "str": 1351,
       "strStab": 1352.5,
       "strDelta": 22,
       "stats": {
-        "matches": 52,
+        "matches": 17,
         "wins": 19,
         "losses": 33,
         "sets": [
           0,
           0
         ],
-        "winPct": 37
+        "winPct": 112
       }
     },
     {
@@ -1971,19 +1973,19 @@ const CLUB_DATA = {
       "stisId": 19139,
       "soutezId": "6280",
       "born": "1972",
-      "ranking": "",
+      "soupiskaPos": 5,
       "str": 1394,
       "strStab": 1378.4,
       "strDelta": 9,
       "stats": {
-        "matches": 58,
+        "matches": 19,
         "wins": 24,
         "losses": 34,
         "sets": [
           0,
           0
         ],
-        "winPct": 41
+        "winPct": 126
       }
     },
     {
@@ -1995,19 +1997,19 @@ const CLUB_DATA = {
       "stisId": 61935,
       "soutezId": "6280",
       "born": "1974",
-      "ranking": "",
+      "soupiskaPos": 3,
       "str": 1437,
       "strStab": 1424.3,
       "strDelta": -10,
       "stats": {
-        "matches": 62,
+        "matches": 18,
         "wins": 31,
         "losses": 31,
         "sets": [
           0,
           0
         ],
-        "winPct": 50
+        "winPct": 172
       }
     },
     {
@@ -2019,19 +2021,19 @@ const CLUB_DATA = {
       "stisId": 70816,
       "soutezId": "6280",
       "born": "2008",
-      "ranking": "",
+      "soupiskaPos": 7,
       "str": 1344,
       "strStab": 1321,
       "strDelta": 8,
       "stats": {
-        "matches": 3,
+        "matches": 1,
         "wins": 1,
         "losses": 2,
         "sets": [
           0,
           0
         ],
-        "winPct": 33
+        "winPct": 100
       }
     },
     {
@@ -2043,19 +2045,19 @@ const CLUB_DATA = {
       "stisId": 7527,
       "soutezId": "6280",
       "born": "1965",
-      "ranking": "",
+      "soupiskaPos": 2,
       "str": 1403,
       "strStab": 1410.6,
       "strDelta": -34,
       "stats": {
-        "matches": 17,
+        "matches": 5,
         "wins": 6,
         "losses": 11,
         "sets": [
           0,
           0
         ],
-        "winPct": 35
+        "winPct": 120
       }
     },
     {
@@ -2067,19 +2069,19 @@ const CLUB_DATA = {
       "stisId": 38698,
       "soutezId": "6280",
       "born": "1974",
-      "ranking": "",
+      "soupiskaPos": 1,
       "str": 1480,
       "strStab": 1489.2,
       "strDelta": -3,
       "stats": {
-        "matches": 4,
+        "matches": 1,
         "wins": 2,
         "losses": 2,
         "sets": [
           0,
           0
         ],
-        "winPct": 50
+        "winPct": 200
       }
     },
     {
@@ -2091,7 +2093,7 @@ const CLUB_DATA = {
       "stisId": 82609,
       "soutezId": "6280",
       "born": "2005",
-      "ranking": "",
+      "soupiskaPos": 10,
       "str": 1265,
       "strStab": 1232,
       "strDelta": 0,
@@ -2115,7 +2117,7 @@ const CLUB_DATA = {
       "stisId": 87179,
       "soutezId": "6280",
       "born": "2009",
-      "ranking": "",
+      "soupiskaPos": 9,
       "str": 1257,
       "strStab": 1250.1,
       "strDelta": 0,
@@ -2139,7 +2141,7 @@ const CLUB_DATA = {
       "stisId": 81217,
       "soutezId": "6280",
       "born": "2010",
-      "ranking": "",
+      "soupiskaPos": 8,
       "str": 1233,
       "strStab": 1233.6,
       "strDelta": 0,
@@ -2163,7 +2165,7 @@ const CLUB_DATA = {
       "stisId": 87836,
       "soutezId": "6280",
       "born": "2012",
-      "ranking": "",
+      "soupiskaPos": 14,
       "str": 1226,
       "strStab": 1166,
       "strDelta": 0,
@@ -2187,7 +2189,7 @@ const CLUB_DATA = {
       "stisId": 84552,
       "soutezId": "6280",
       "born": "2010",
-      "ranking": "",
+      "soupiskaPos": 11,
       "str": 993,
       "strStab": 995.2,
       "strDelta": 0,
@@ -2211,7 +2213,7 @@ const CLUB_DATA = {
       "stisId": 81218,
       "soutezId": "6280",
       "born": "2006",
-      "ranking": "",
+      "soupiskaPos": 13,
       "str": 953,
       "strStab": 951.9,
       "strDelta": 0,
@@ -2235,7 +2237,7 @@ const CLUB_DATA = {
       "stisId": 87687,
       "soutezId": "6280",
       "born": "2010",
-      "ranking": "",
+      "soupiskaPos": 15,
       "str": 947,
       "strStab": 947,
       "strDelta": 0,
@@ -2259,7 +2261,7 @@ const CLUB_DATA = {
       "stisId": 81241,
       "soutezId": "6280",
       "born": "2007",
-      "ranking": "",
+      "soupiskaPos": 12,
       "str": 928,
       "strStab": 929,
       "strDelta": 0,
@@ -2283,19 +2285,19 @@ const CLUB_DATA = {
       "stisId": 82609,
       "soutezId": "6283",
       "born": "2005",
-      "ranking": "",
+      "soupiskaPos": 6,
       "str": 1265,
       "strStab": 1232,
       "strDelta": 152,
       "stats": {
-        "matches": 52,
+        "matches": 18,
         "wins": 22,
         "losses": 30,
         "sets": [
           0,
           0
         ],
-        "winPct": 42
+        "winPct": 122
       }
     },
     {
@@ -2307,19 +2309,19 @@ const CLUB_DATA = {
       "stisId": 70816,
       "soutezId": "6283",
       "born": "2008",
-      "ranking": "",
+      "soupiskaPos": 3,
       "str": 1344,
       "strStab": 1321,
       "strDelta": 54,
       "stats": {
-        "matches": 52,
+        "matches": 16,
         "wins": 28,
         "losses": 24,
         "sets": [
           0,
           0
         ],
-        "winPct": 54
+        "winPct": 175
       }
     },
     {
@@ -2331,19 +2333,19 @@ const CLUB_DATA = {
       "stisId": 81217,
       "soutezId": "6283",
       "born": "2010",
-      "ranking": "",
+      "soupiskaPos": 4,
       "str": 1233,
       "strStab": 1233.6,
       "strDelta": 15,
       "stats": {
-        "matches": 30,
+        "matches": 10,
         "wins": 10,
         "losses": 20,
         "sets": [
           0,
           0
         ],
-        "winPct": 33
+        "winPct": 100
       }
     },
     {
@@ -2355,19 +2357,19 @@ const CLUB_DATA = {
       "stisId": 87179,
       "soutezId": "6283",
       "born": "2009",
-      "ranking": "",
+      "soupiskaPos": 5,
       "str": 1257,
       "strStab": 1250.1,
       "strDelta": 78,
       "stats": {
-        "matches": 48,
+        "matches": 16,
         "wins": 20,
         "losses": 28,
         "sets": [
           0,
           0
         ],
-        "winPct": 42
+        "winPct": 125
       }
     },
     {
@@ -2379,12 +2381,12 @@ const CLUB_DATA = {
       "stisId": 81218,
       "soutezId": "6283",
       "born": "2006",
-      "ranking": "",
+      "soupiskaPos": 9,
       "str": 953,
       "strStab": 951.9,
       "strDelta": 0,
       "stats": {
-        "matches": 4,
+        "matches": 2,
         "wins": 0,
         "losses": 4,
         "sets": [
@@ -2403,19 +2405,19 @@ const CLUB_DATA = {
       "stisId": 87836,
       "soutezId": "6283",
       "born": "2012",
-      "ranking": "",
+      "soupiskaPos": 10,
       "str": 1226,
       "strStab": 1166,
       "strDelta": 341,
       "stats": {
-        "matches": 50,
+        "matches": 17,
         "wins": 23,
         "losses": 27,
         "sets": [
           0,
           0
         ],
-        "winPct": 46
+        "winPct": 135
       }
     },
     {
@@ -2427,7 +2429,7 @@ const CLUB_DATA = {
       "stisId": 19139,
       "soutezId": "6283",
       "born": "1972",
-      "ranking": "",
+      "soupiskaPos": 1,
       "str": 1394,
       "strStab": 1378.4,
       "strDelta": 0,
@@ -2451,7 +2453,7 @@ const CLUB_DATA = {
       "stisId": 7522,
       "soutezId": "6283",
       "born": "1969",
-      "ranking": "",
+      "soupiskaPos": 2,
       "str": 1351,
       "strStab": 1352.5,
       "strDelta": 0,
@@ -2475,7 +2477,7 @@ const CLUB_DATA = {
       "stisId": 42186,
       "soutezId": "6283",
       "born": "1948",
-      "ranking": "",
+      "soupiskaPos": 12,
       "str": 1016,
       "strStab": 1025.4,
       "strDelta": 0,
@@ -2499,7 +2501,7 @@ const CLUB_DATA = {
       "stisId": 84552,
       "soutezId": "6283",
       "born": "2010",
-      "ranking": "",
+      "soupiskaPos": 7,
       "str": 993,
       "strStab": 995.2,
       "strDelta": 0,
@@ -2523,7 +2525,7 @@ const CLUB_DATA = {
       "stisId": 87687,
       "soutezId": "6283",
       "born": "2010",
-      "ranking": "",
+      "soupiskaPos": 11,
       "str": 947,
       "strStab": 947,
       "strDelta": 0,
@@ -2547,7 +2549,7 @@ const CLUB_DATA = {
       "stisId": 81241,
       "soutezId": "6283",
       "born": "2007",
-      "ranking": "",
+      "soupiskaPos": 8,
       "str": 928,
       "strStab": 929,
       "strDelta": 0,
