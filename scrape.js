@@ -8,6 +8,17 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
 
+// Load .env for local runs (GitHub Actions injects env vars directly)
+try {
+  const envFile = fs.readFileSync('.env', 'utf8');
+  envFile.split('\n').forEach(line => {
+    const m = line.match(/^([A-Z_]+)=(.+)$/);
+    if (m) process.env[m[1]] = m[2].trim();
+  });
+} catch (_) {}
+
+const { createClient } = require('@supabase/supabase-js');
+
 const BASE = 'https://stis.ping-pong.cz';
 const SVAZ = '420101';
 const ODDIL = '420109007';
@@ -402,6 +413,21 @@ function parseUspesnostRow(row) {
   };
 }
 
+// Decode raw signed set values into [[home_score, away_score], ...]
+// Positive v = home won that set (v = away's losing score)
+// Negative v = away won that set (|v| = home's losing score)
+function decodeSetScores(sets) {
+  if (!sets || !sets.length) return null;
+  const result = [];
+  for (const v of sets) {
+    if (v === 0) continue;
+    const loser  = Math.abs(v);
+    const winner = loser >= 10 ? loser + 2 : 11;
+    result.push(v > 0 ? [winner, loser] : [loser, winner]);
+  }
+  return result.length ? result : null;
+}
+
 function buildPlayerResults(matchData, weAreHome, uspMap) {
   return matchData.matchResults
     .filter(r => r.sadyH !== null && r.sadyA !== null && r.sadyH <= 4 && r.sadyA <= 4)
@@ -413,13 +439,17 @@ function buildPlayerResults(matchData, weAreHome, uspMap) {
       const ourStr  = ourPlayers.length === 1  ? ((uspMap || {})[ourPlayers[0]]?.str  || 0) : 0;
       const oppStr  = theirPlayers.length === 1 ? ((uspMap || {})[theirPlayers[0]]?.str || 0) : 0;
       return {
+        rubberNum: r.num,
         player:    ourPlayers.join(' / '),
         opponent:  theirPlayers.join(' / '),
         result:    `${ourSady}:${theirSady}`,
         won:       ourSady > theirSady,
+        setsWon:   ourSady,
+        setsLost:  theirSady,
         isDoubles: r.isDoubles || false,
         ourStr,
         oppStr,
+        setScores: decodeSetScores(r.sets),  // [[home,away], ...]
       };
     });
 }
@@ -486,6 +516,109 @@ function seasonLabel(rocnik) {
   // rocnik-2025 → "2025/26", rocnik-2024 → "2024/25"
   const yr = parseInt(rocnik);
   return `${yr}/${String(yr + 1).slice(2)}`;
+}
+
+// ── Write scraped data to Supabase ────────────────────────
+async function writeToSupabase(clubData) {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SECRET_KEY;
+  if (!url || !key) { console.log('  ⚠ SUPABASE_URL/SUPABASE_SECRET_KEY not set – skipping DB write'); return; }
+
+  const sb = createClient(url, key);
+  const rocnik = parseInt(clubData.rocnik || ROCNIK);
+  const now = new Date().toISOString();
+  console.log('\n📤 Zapisuji do Supabase...');
+
+  // 1. Teams
+  for (const t of clubData.teams) {
+    const { error } = await sb.from('teams').upsert({
+      id: t.id, rocnik, name: t.name,
+      suffix: t.name.replace('TTC Klánovice ', ''),
+      soutez_id: clubData.matches.find(m => m.teamId === t.id)?.soutezId || null,
+    }, { onConflict: 'id,rocnik' });
+    if (error) console.error('  teams:', error.message);
+  }
+
+  // 2. Players + player_seasons
+  for (const p of clubData.players) {
+    // Upsert identity
+    const { data: row, error: pe } = await sb.from('players')
+      .upsert({ name: p.name, stis_id: p.stisId || null, born: p.born || null }, { onConflict: 'name' })
+      .select('id').single();
+    if (pe || !row) { console.error('  players upsert:', pe?.message); continue; }
+
+    // Upsert season snapshot
+    const { error: pse } = await sb.from('player_seasons').upsert({
+      player_id:    row.id,
+      team_id:      p.teamId,
+      rocnik,
+      soupiska_pos: p.soupiskaPos !== 999 ? p.soupiskaPos : null,
+      str:          p.str       || null,
+      str_stab:     p.strStab   || null,
+      str_delta:    p.strDelta  ?? null,
+      is_regular:   p.isRegular ?? true,
+      scraped_at:   now,
+    }, { onConflict: 'player_id,team_id,rocnik' });
+    if (pse) console.error('  player_seasons:', pse.message);
+  }
+
+  // 3. Matches + games
+  for (const m of clubData.matches) {
+    const { error: me } = await sb.from('matches').upsert({
+      id:         m.id,
+      team_id:    m.teamId,
+      rocnik,
+      date:       m.date   || null,
+      time:       m.time   || null,
+      opponent:   m.opponent,
+      home:       m.home,
+      score_home: m.score?.home ?? null,
+      score_away: m.score?.away ?? null,
+      result:     m.result || null,
+      round:      m.round  || null,
+      future:     m.future || false,
+      competition: m.competition || null,
+    }, { onConflict: 'id' });
+    if (me) { console.error('  matches:', me.message); continue; }
+
+    if (m.future || !m.playerResults?.length) continue;
+
+    // Replace games for this match
+    await sb.from('games').delete().eq('match_id', m.id);
+    const rows = m.playerResults.map(g => ({
+      match_id:   m.id,
+      rubber_num: g.rubberNum || null,
+      our_player: g.player,
+      opp_player: g.opponent,
+      our_str:    g.ourStr   || null,
+      opp_str:    g.oppStr   || null,
+      sets_won:   g.setsWon  ?? null,
+      sets_lost:  g.setsLost ?? null,
+      won:        g.won,
+      is_doubles: g.isDoubles || false,
+      set_scores: g.setScores || null,
+    }));
+    const { error: ge } = await sb.from('games').insert(rows);
+    if (ge) console.error('  games:', ge.message);
+  }
+
+  // 4. League tables – replace per team+rocnik each run
+  for (const [teamIdStr, rows] of Object.entries(clubData.tables)) {
+    const teamId = parseInt(teamIdStr);
+    await sb.from('league_table').delete().eq('team_id', teamId).eq('rocnik', rocnik);
+    const tableRows = rows.map(r => ({
+      team_id: teamId, rocnik,
+      pos: r.pos, club_name: r.name,
+      z: r.z, w: r.w, d: r.d, l: r.l,
+      sf: r.sf, sa: r.sa, points: r.pts ?? r.points,
+      is_ours: r.highlight || false,
+      scraped_at: now,
+    }));
+    const { error: le } = await sb.from('league_table').insert(tableRows);
+    if (le) console.error('  league_table:', le.message);
+  }
+
+  console.log('✅ Supabase zapsáno');
 }
 
 // ── Main ──────────────────────────────────────────────────
@@ -749,6 +882,8 @@ async function main() {
   const dataJs = `// TTC Klánovice – ${OUT_FILE} (${new Date().toLocaleDateString('cs-CZ')})\n// Zdroj: ${clubData.stisUrl}\n\nconst ${VAR_NAME} = ${JSON.stringify(clubData, null, 2)};\n`;
   fs.writeFileSync(OUT_FILE, dataJs);
   console.log(`✅ ${OUT_FILE}\n`);
+
+  await writeToSupabase(clubData);
 
   console.log('─── SUMMARY ───');
   clubData.teams.forEach(t => {
