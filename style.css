@@ -179,9 +179,11 @@ a:hover { text-decoration: underline; }
 .matches-list { display: flex; flex-direction: column; gap: 0; }
 .latest-match-wrap { display: flex; flex-direction: column; margin-bottom: 8px; }
 .latest-match-wrap:last-child { margin-bottom: 0; }
-.latest-match-row { border-radius: var(--radius-sm) !important; }
+.latest-match-row { border-radius: var(--radius-sm) !important; grid-template-columns: 80px 1fr auto; }
 .latest-match-row.latest-open { border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important; border-bottom-color: transparent !important; }
-.latest-expand-icon { font-size: 14px; color: var(--c-muted); margin-left: 4px; transition: transform .2s; display: inline-block; }
+.latest-match-row .match-result { display: flex; align-items: center; gap: 6px; }
+.latest-expand-icon { font-size: 13px; color: var(--c-muted); margin-left: 2px; transition: transform .2s; display: inline-block; flex-shrink: 0; }
+.latest-open .latest-expand-icon { transform: rotate(180deg); }
 .latest-open .latest-expand-icon { transform: rotate(180deg); }
 .latest-match-detail { background: var(--c-surface); border: 1px solid var(--c-border); border-top: none; border-bottom-left-radius: var(--radius-sm); border-bottom-right-radius: var(--radius-sm); }
 .latest-match-detail .match-card { border: none; border-radius: 0; margin: 0; }
