@@ -943,6 +943,11 @@ a:hover { text-decoration: underline; }
   position: absolute; top: -3px; width: 2px; height: 14px;
   background: var(--c-orange); border-radius: 1px; transform: translateX(-50%);
 }
+.team-str-avgall-mark {
+  position: absolute; top: -3px; width: 2px; height: 14px;
+  background: var(--c-muted); border-radius: 1px; transform: translateX(-50%); opacity: 0.7;
+  cursor: help;
+}
 .team-str-val { font-size: 13px; font-weight: 700; color: var(--c-text); text-align: right; }
 .team-str-league-lbl { font-size: 11px; font-weight: 400; color: var(--c-muted); }
 

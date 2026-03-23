@@ -606,9 +606,10 @@ async function main() {
       for (const [name, s] of Object.entries(m.playerStats || {})) {
         if (!name || name === 'čtyřhry') continue;
         if (!ourNames.has(name)) continue;  // skip opponent players
-        if (!aggregated[name]) aggregated[name] = { wins: 0, losses: 0 };
-        aggregated[name].wins   += s.wins  || 0;
-        aggregated[name].losses += s.losses || 0;
+        if (!aggregated[name]) aggregated[name] = { wins: 0, losses: 0, matchCount: 0 };
+        aggregated[name].wins      += s.wins  || 0;
+        aggregated[name].losses    += s.losses || 0;
+        aggregated[name].matchCount += 1;   // team matches (utkání) this player appeared in
       }
     }
 
@@ -703,12 +704,13 @@ async function main() {
       if (clubData.players.find(x => x.name === playerName && x.teamId === teamCfg.id)) continue;
       const oddilPlayer = oddil.players.find(p => p.name === playerName);
       const usp = uspMap[playerName] || null;
-      const agg = aggregated[playerName] || { wins: 0, losses: 0 };
+      const agg = aggregated[playerName] || { wins: 0, losses: 0, matchCount: 0 };
       // Use aggregated (from actual match records = current season only) as primary source.
       // Fall back to uspMap only when aggregated has nothing (player in roster but no matches scraped yet).
       const w   = (agg.wins  > 0 || agg.losses > 0) ? agg.wins   : (usp?.wins   ?? 0);
       const l   = (agg.wins  > 0 || agg.losses > 0) ? agg.losses : (usp?.losses ?? 0);
-      const m   = w + l;
+      // matches = team matches (utkání) the player appeared in — NOT individual singles games
+      const m   = agg.matchCount > 0 ? agg.matchCount : (usp?.teamMatches ?? 0);
       if (m === 0 && !oddilPlayer) continue;  // skip ghost names
       clubData.players.push({
         id:        clubData.players.length + 1,

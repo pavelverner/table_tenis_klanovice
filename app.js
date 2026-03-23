@@ -837,17 +837,19 @@ function renderClubSummary() {
     const rangeMin = leagueAvg ? Math.min(minStr, leagueAvg) : minStr;
     const rangeMax = leagueAvg ? Math.max(maxStr, leagueAvg) : maxStr;
     const range = rangeMax - rangeMin || 1;
-    const pct      = 5 + Math.round((avg        - rangeMin) / range * 85);
+    const pct       = 5 + Math.round((avg        - rangeMin) / range * 85);
     const leaguePct = leagueAvg ? 5 + Math.round((leagueAvg - rangeMin) / range * 85) : 0;
+    const avgAllPct = avgAll    ? 5 + Math.round((avgAll    - rangeMin) / range * 85) : 0;
     const teamKey = t.name.replace('TTC Klánovice ', '');
     const dim = activeStatsTeam !== 'all' && teamKey !== activeStatsTeam;
     return `<div class="team-str-row${dim ? ' team-str-row--dim' : ''}">
       <span class="team-str-name">${t.name.replace('TTC Klánovice ','Tým ')}</span>
       <div class="team-str-bar-wrap">
         <div class="team-str-bar" style="width:${pct}%"></div>
+        ${avgAll && avgAll !== avg ? `<div class="team-str-avgall-mark" style="left:${avgAllPct}%" title="Průměr všech aktivních hráčů: ${avgAll}"></div>` : ''}
         ${leagueAvg ? `<div class="team-str-league-mark" style="left:${leaguePct}%" title="Průměr ligy: ${leagueAvg}"></div>` : ''}
       </div>
-      <span class="team-str-val">${avg}${avgAll && avgAll !== avg ? `<span class="team-str-league-lbl"> / ${avgAll}</span>` : ''}${leagueAvg ? `<span class="team-str-league-lbl" style="color:var(--c-orange)"> · ${leagueAvg}</span>` : ''}</span>
+      <span class="team-str-val">${avg}${leagueAvg ? `<span class="team-str-league-lbl" style="color:var(--c-orange)"> · ${leagueAvg}</span>` : ''}</span>
     </div>`;
   }).join('');
 
