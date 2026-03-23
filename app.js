@@ -374,6 +374,9 @@ function toggleLatestMatch(matchId) {
     const card = detailEl.querySelector('.match-card');
     if (card) card.classList.add('open');
     detailEl.dataset.loaded = '1';
+    if (typeof loadMatchSetScores === 'function') {
+      loadMatchSetScores(matchId, m.home ?? true);
+    }
   }
 
   detailEl.style.display = 'block';
@@ -634,7 +637,20 @@ function renderVysledky() {
   document.querySelectorAll('.match-card-header').forEach(h => {
     h.addEventListener('click', () => {
       if (h.closest('.match-card-future')) return;
-      h.closest('.match-card').classList.toggle('open');
+      const card = h.closest('.match-card');
+      card.classList.toggle('open');
+      if (card.classList.contains('open')) {
+        const idStr = card.id?.replace('match-', '');
+        const matchId = parseInt(idStr);
+        if (matchId) {
+          const m = CLUB_DATA.matches.find(x => x.id === matchId)
+            || (window.CLUB_DATA_PREV?.matches || []).find(x => x.id === matchId)
+            || (window.CLUB_DATA_PREV2?.matches || []).find(x => x.id === matchId);
+          if (typeof loadMatchSetScores === 'function') {
+            loadMatchSetScores(matchId, m?.home ?? true);
+          }
+        }
+      }
     });
   });
 
@@ -758,6 +774,7 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
           <span class="mc-opp-elo">${m.home ? awayTeam : homeTeam} <strong>${avgOppStr}</strong></span>
         </div>` : ''}
       </div>
+      <div id="set-scores-${m.id}" class="set-scores-wrap"></div>
     </div>
   </div>`;
 }
