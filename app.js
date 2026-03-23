@@ -823,7 +823,6 @@ function renderStatistiky() {
   renderClubSummary();
   renderSeasonProgressChart();
   renderStatsTable();
-  renderSetStats();
 }
 
 // Club-wide summary: total matches W/D/L, sets, individual games
@@ -862,9 +861,10 @@ function renderClubSummary() {
   const maxStr = allStr.length ? Math.max(...allStr) : 1000;
   const minStr = allStr.length ? Math.min(...allStr) : 800;
   const teamStrRows = CLUB_DATA.teams.map(t => {
-    // P.č. 1–4 = základní sestava (soupiskaPos set after next scrape; fallback: array order)
+    // Top-4 by soupiskaPos, but only players who actually played this season
     const allPs = CLUB_DATA.players.filter(p => p.teamId === t.id && p.str);
-    const ps = allPs
+    const activePsForAvg = allPs.filter(p => (p.stats?.matches || 0) > 0);
+    const ps = (activePsForAvg.length >= 4 ? activePsForAvg : allPs)
       .slice()
       .sort((a,b) => (a.soupiskaPos || 999) - (b.soupiskaPos || 999))
       .slice(0, 4);
@@ -1442,35 +1442,6 @@ function buildFunFact(matchHistory) {
 // ── Set-score based statistics ──────────────────────────────
 let _setStatsCache = null;
 
-async function renderSetStats() {
-  let el = document.getElementById('setStatsSection');
-  if (!el) {
-    el = document.createElement('div');
-    el.id = 'setStatsSection';
-    const statsTable = document.getElementById('statsTable');
-    if (statsTable) statsTable.parentNode.appendChild(el);
-    else document.getElementById('statistiky')?.appendChild(el);
-  }
-
-  el.innerHTML = '<div class="set-stats-loading">Načítám detailní statistiky…</div>';
-
-  try {
-    if (!_setStatsCache) _setStatsCache = await dbGetSeasonSingles(2025);
-
-    // Filter by active team
-    let games = _setStatsCache;
-    if (activeStatsTeam !== 'all') {
-      const team = CLUB_DATA.teams.find(t => t.name.replace('TTC Klánovice ', '') === activeStatsTeam);
-      if (team) games = games.filter(g => g.teamId === team.id);
-    }
-
-    const stats = computeSetStats(games);
-    el.innerHTML = renderSetStatsHTML(stats, games);
-  } catch (e) {
-    el.innerHTML = '';
-    console.error('renderSetStats', e);
-  }
-}
 
 function computeSetStats(games) {
   // Find last rubber per match (to detect "closer" role)
@@ -1547,98 +1518,78 @@ function computeSetStats(games) {
   return Object.values(p).filter(r => r.total >= 5);
 }
 
-function renderSetStatsHTML(stats, allGames) {
-  if (!stats.length) return '';
-
-  // Total matches played per team (from raw game data)
+// Generate fun-fact strings for one player, compared to league averages from all players' stats.
+function playerFunFacts(p, allStats, allGames) {
   const teamMatchSets = {};
   for (const g of (allGames || [])) {
     if (!g.teamId) continue;
     if (!teamMatchSets[g.teamId]) teamMatchSets[g.teamId] = new Set();
     teamMatchSets[g.teamId].add(g.match_id);
   }
-
-  // League averages (only players with enough data)
-  const meanPct = (arr, key, minT) => {
-    const v = arr.filter(p => p[key].t >= minT).map(p => p[key].w / p[key].t);
+  const meanPct = (key, minT) => {
+    const v = allStats.filter(x => x[key].t >= minT).map(x => x[key].w / x[key].t);
     return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null;
   };
-  const avg1win  = meanPct(stats, 'afterWin1',  5) ?? 0.75;
-  const avg1loss = meanPct(stats, 'afterLoss1', 4) ?? 0.30;
+  const avg1win  = meanPct('afterWin1',  5) ?? 0.75;
+  const avg1loss = meanPct('afterLoss1', 4) ?? 0.30;
 
   const facts = [];
-  for (const p of stats) {
-    const fn = p.name.split(' ').slice(1).join(' ') || p.name;
 
-    // After winning 1st set → match win rate notably above average
-    if (p.afterWin1.t >= 5) {
-      const pct = p.afterWin1.w / p.afterWin1.t;
-      if (pct >= avg1win + 0.14 && pct >= 0.82) {
-        facts.push(`🎯 <b>${fn}</b>: po výhře 1. setu vyhraje zápas v <b>${Math.round(pct * 100)} %</b> (průměr ${Math.round(avg1win * 100)} %)`);
-      }
-    }
-
-    // Comeback after losing 1st set
-    if (p.afterLoss1.t >= 4) {
-      const pct = p.afterLoss1.w / p.afterLoss1.t;
-      if (pct >= avg1loss + 0.18) {
-        facts.push(`💪 <b>${fn}</b>: otočí zápas po prohře 1. setu v <b>${Math.round(pct * 100)} %</b> (průměr ${Math.round(avg1loss * 100)} %)`);
-      }
-    }
-
-    // Comeback from 0:2 in sets
-    if (p.comeback2.w >= 2) {
-      facts.push(`🔄 <b>${fn}</b>: ${p.comeback2.w}× otočil zápas po prohře prvních dvou setů`);
-    }
-
-    // 5-set mastery
-    if (p.five.t >= 4 && p.five.w / p.five.t >= 0.65) {
-      facts.push(`🔥 <b>${fn}</b>: ovládl ${p.five.w} z ${p.five.t} pětiseťáků (${Math.round(p.five.w / p.five.t * 100)} %)`);
-    }
-
-    // Sweeper
-    if (p.sweep >= 6) {
-      facts.push(`⚡ <b>${fn}</b>: ${p.sweep}× vyhrál bez ztráty setu (3:0)`);
-    }
-
-    // Deuce king
-    if (p.deuce >= 8) {
-      facts.push(`🎾 <b>${fn}</b>: odehrál ${p.deuce} setů v prodloužení (12+)`);
-    }
-
-    // Resilience: high avg score in lost sets
-    if (p.lostScores.length >= 8) {
-      const avg = p.lostScores.reduce((s, v) => s + v, 0) / p.lostScores.length;
-      if (avg >= 8.0) {
-        facts.push(`🛡️ <b>${fn}</b>: průměrně dává <b>${avg.toFixed(1)}</b> bodu i v prohraných setech`);
-      }
-    }
-
-    // Attendance
-    const teamTotal = teamMatchSets[p.teamId]?.size ?? 0;
-    if (teamTotal >= 8 && p.matchIds.size >= teamTotal * 0.90) {
-      const missed = teamTotal - p.matchIds.size;
-      facts.push(`📅 <b>${fn}</b>: ${missed === 0
-        ? `nechyběl na žádném ze ${teamTotal} zápasů`
-        : `chyběl jen na ${missed} ze ${teamTotal} zápasů`}`);
-    }
-
-    // Opener (rubber 1)
-    if (p.opener.t >= 4 && p.opener.w / p.opener.t >= 0.75) {
-      facts.push(`🚀 <b>${fn}</b>: otvírá zápasy s ${Math.round(p.opener.w / p.opener.t * 100)} % úspěšností (${p.opener.w}/${p.opener.t})`);
-    }
-
-    // Closer (last rubber)
-    if (p.closer.t >= 4 && p.closer.w / p.closer.t >= 0.70) {
-      facts.push(`🏁 <b>${fn}</b>: uzavírá zápasy s ${Math.round(p.closer.w / p.closer.t * 100)} % (${p.closer.w}/${p.closer.t})`);
-    }
+  if (p.afterWin1.t >= 5) {
+    const pct = p.afterWin1.w / p.afterWin1.t;
+    if (pct >= avg1win + 0.12 && pct >= 0.80)
+      facts.push(`🎯 Po výhře 1. setu vyhraje zápas v <b>${Math.round(pct * 100)} %</b> (průměr ${Math.round(avg1win * 100)} %)`);
   }
+  if (p.afterLoss1.t >= 4) {
+    const pct = p.afterLoss1.w / p.afterLoss1.t;
+    if (pct >= avg1loss + 0.15)
+      facts.push(`💪 Otočí zápas po prohře 1. setu v <b>${Math.round(pct * 100)} %</b> (průměr ${Math.round(avg1loss * 100)} %)`);
+  }
+  if (p.comeback2.w >= 2)
+    facts.push(`🔄 ${p.comeback2.w}× otočil zápas po prohře prvních dvou setů`);
+  if (p.five.t >= 4 && p.five.w / p.five.t >= 0.60)
+    facts.push(`🔥 Ovládl <b>${p.five.w}</b> z ${p.five.t} pětiseťáků (${Math.round(p.five.w / p.five.t * 100)} %)`);
+  if (p.sweep >= 5)
+    facts.push(`⚡ ${p.sweep}× vyhrál bez ztráty setu (3:0)`);
+  if (p.deuce >= 6)
+    facts.push(`🎾 Odehrál <b>${p.deuce}</b> setů v prodloužení (12+)`);
+  if (p.lostScores.length >= 6) {
+    const avg = p.lostScores.reduce((s, v) => s + v, 0) / p.lostScores.length;
+    if (avg >= 7.5)
+      facts.push(`🛡️ Průměrně dává <b>${avg.toFixed(1)}</b> bodu i v prohraných setech`);
+  }
+  const teamTotal = teamMatchSets[p.teamId]?.size ?? 0;
+  if (teamTotal >= 6 && p.matchIds.size >= teamTotal * 0.88) {
+    const missed = teamTotal - p.matchIds.size;
+    facts.push(`📅 ${missed === 0 ? `Nechyběl na žádném ze ${teamTotal} zápasů` : `Chyběl jen na ${missed} ze ${teamTotal} zápasů`}`);
+  }
+  if (p.opener.t >= 3 && p.opener.w / p.opener.t >= 0.72)
+    facts.push(`🚀 Otvírá zápasy s <b>${Math.round(p.opener.w / p.opener.t * 100)} %</b> (${p.opener.w}/${p.opener.t})`);
+  if (p.closer.t >= 3 && p.closer.w / p.closer.t >= 0.68)
+    facts.push(`🏁 Uzavírá zápasy s <b>${Math.round(p.closer.w / p.closer.t * 100)} %</b> (${p.closer.w}/${p.closer.t})`);
 
-  if (!facts.length) return '';
-  const items = facts.map(f => `<div class="modal-fun-fact">${f}</div>`).join('');
-  return `
-    <div class="modal-history-title" style="margin:24px 0 12px">Zajímavosti sezóny</div>
-    <div class="modal-fun-facts">${items}</div>`;
+  return facts;
+}
+
+// Async: load DB games, compute stats for this player, inject fun-facts into modal placeholder
+async function appendPlayerFunFacts(playerName) {
+  const el = document.getElementById('playerFunFacts');
+  if (!el) return;
+  try {
+    if (!_setStatsCache) _setStatsCache = await dbGetSeasonSingles(CLUB_DATA.rocnik || 2025);
+    const allGames = _setStatsCache;
+    const allStats = computeSetStats(allGames);
+    const pStat = allStats.find(x => x.name === playerName);
+    if (!pStat) { el.remove(); return; }
+    const facts = playerFunFacts(pStat, allStats, allGames);
+    if (!facts.length) { el.remove(); return; }
+    el.innerHTML = `
+      <div class="modal-history-title" style="margin:20px 0 10px">Zajímavosti sezóny</div>
+      <div class="modal-fun-facts">${facts.map(f => `<div class="modal-fun-fact">${f}</div>`).join('')}</div>`;
+  } catch (e) {
+    el.remove();
+    console.error('appendPlayerFunFacts', e);
+  }
 }
 
 function openPlayerModal(playerId) {
@@ -1765,6 +1716,7 @@ function openPlayerModal(playerId) {
     ${teamBreakdown}
     ${buildFunFact(curHistory)}
     ${curHistory.length >= 2 ? buildWinChart(curHistory) : ''}
+    <div id="playerFunFacts"></div>
     ${historyTotal ? `
     <div class="modal-history-title">Zápasová historie (${historyTotal})</div>
     <div class="modal-history-wrap">
@@ -1776,6 +1728,7 @@ function openPlayerModal(playerId) {
   `;
 
   document.getElementById('playerModal').classList.add('open');
+  appendPlayerFunFacts(p.name);
   document.body.style.overflow = 'hidden';
 }
 
