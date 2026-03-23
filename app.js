@@ -187,9 +187,20 @@ function renderLiveBlock() {
   const liveBlock = document.getElementById('liveBlock');
   const liveContainer = document.getElementById('liveMatches');
 
-  if (!todayMatches.length) {
+  const anyLive      = todayMatches.some(m => isMatchLive(m) && m.future);
+  const anyPlayed    = todayMatches.some(m => m.result);
+
+  if (!anyLive && !anyPlayed) {
     liveBlock.style.display = 'none';
     return;
+  }
+
+  // Update title dynamically
+  const titleEl = liveBlock.querySelector('.live-title');
+  if (titleEl) {
+    titleEl.innerHTML = anyLive
+      ? '<span class="live-dot"></span> Právě se hraje'
+      : 'Dnes se hraje';
   }
 
   liveBlock.style.display = 'block';
@@ -315,22 +326,58 @@ function renderLatestMatches() {
     const scoreHome = m.home ? m.score.home : m.score.away;
     const scoreAway = m.home ? m.score.away : m.score.home;
     return `
-    <div class="match-row" onclick="goToMatch(${m.id})" style="cursor:pointer">
-      <div class="match-date">${fmtDate(m.date)}</div>
-      <div class="match-teams">
-        <div class="mc-teams">
-          <span class="mc-team${m.home ? ' mc-our' : ''}">${homeTeam}</span>
-          <span class="mc-vs">vs</span>
-          <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
+    <div class="latest-match-wrap">
+      <div class="match-row latest-match-row" onclick="toggleLatestMatch(${m.id})" style="cursor:pointer">
+        <div class="match-date">${fmtDate(m.date)}</div>
+        <div class="match-teams">
+          <div class="mc-teams">
+            <span class="mc-team${m.home ? ' mc-our' : ''}">${homeTeam}</span>
+            <span class="mc-vs">vs</span>
+            <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
+          </div>
+          <div class="match-sub">${fmtDate(m.date)} · ${team.competition}</div>
         </div>
-        <div class="match-sub">${fmtDate(m.date)} · ${team.competition}</div>
+        <div class="match-result">
+          <div class="match-score">${scoreHome}<span class="score-sep">:</span>${scoreAway}</div>
+          <div class="match-badge ${resultClass(m.result)}">${resultLabel(m.result)}</div>
+          <span class="latest-expand-icon">▾</span>
+        </div>
       </div>
-      <div class="match-result">
-        <div class="match-score">${scoreHome}<span class="score-sep">:</span>${scoreAway}</div>
-        <div class="match-badge ${resultClass(m.result)}">${resultLabel(m.result)}</div>
-      </div>
+      <div class="latest-match-detail" id="latest-detail-${m.id}" style="display:none"></div>
     </div>`;
   }).join('');
+}
+
+function toggleLatestMatch(matchId) {
+  const detailEl = document.getElementById(`latest-detail-${matchId}`);
+  if (!detailEl) return;
+
+  if (detailEl.style.display !== 'none') {
+    detailEl.style.display = 'none';
+    detailEl.closest('.latest-match-wrap')?.querySelector('.latest-match-row')?.classList.remove('latest-open');
+    return;
+  }
+
+  if (!detailEl.dataset.loaded) {
+    const m = CLUB_DATA.matches.find(x => x.id === matchId);
+    if (!m) return;
+    // Render card with a unique id to avoid duplicate with Zápasy section
+    detailEl.innerHTML = renderMatchCard(m).replace(`id="match-${matchId}"`, `id="inline-match-${matchId}"`);
+    // Attach header click for collapse/expand
+    detailEl.querySelectorAll('.match-card-header').forEach(h => {
+      h.addEventListener('click', () => {
+        if (h.closest('.match-card-future')) return;
+        h.closest('.match-card').classList.toggle('open');
+      });
+    });
+    // Auto-open body
+    const card = detailEl.querySelector('.match-card');
+    if (card) card.classList.add('open');
+    detailEl.dataset.loaded = '1';
+  }
+
+  detailEl.style.display = 'block';
+  detailEl.closest('.latest-match-wrap')?.querySelector('.latest-match-row')?.classList.add('latest-open');
 }
 
 function renderUpcoming() {
@@ -770,7 +817,11 @@ function renderClubSummary() {
   const maxStr = allStr.length ? Math.max(...allStr) : 1000;
   const minStr = allStr.length ? Math.min(...allStr) : 800;
   const teamStrRows = CLUB_DATA.teams.map(t => {
-    const ps = CLUB_DATA.players.filter(p => p.teamId === t.id && p.str);
+    // Top 4 players by matches played (core lineup)
+    const ps = CLUB_DATA.players
+      .filter(p => p.teamId === t.id && p.str)
+      .sort((a,b) => (b.stats?.matches||0) - (a.stats?.matches||0))
+      .slice(0, 4);
     if (!ps.length) return '';
     const avg = Math.round(ps.reduce((s,p) => s + p.str, 0) / ps.length);
     const leagueAvg = t.leagueAvgStr || 0;
@@ -790,6 +841,55 @@ function renderClubSummary() {
       <span class="team-str-val">${avg}${leagueAvg ? `<span class="team-str-league-lbl"> / ${leagueAvg}</span>` : ''}</span>
     </div>`;
   }).join('');
+
+  // League averages from tables
+  const teamsForLg = activeTeam ? [activeTeam] : CLUB_DATA.teams.filter(t => CLUB_DATA.tables[t.id]?.length);
+  const lgRows = teamsForLg.map(t => {
+    const rows = CLUB_DATA.tables[t.id] || [];
+    if (!rows.length) return null;
+    const n = rows.length;
+    const perTeam = rows.map(r => ({
+      winPct:   r.z > 0 ? r.w / r.z : 0,
+      setDiff:  r.z > 0 ? (r.sf - r.sa) / r.z : 0,
+      sfPerM:   r.z > 0 ? r.sf / r.z : 0,
+      saPerM:   r.z > 0 ? r.sa / r.z : 0,
+      ptsPerM:  r.z > 0 ? r.pts / r.z : 0,
+    }));
+    const avg = f => perTeam.reduce((s,r) => s + f(r), 0) / n;
+    const lgWinPct  = Math.round(avg(r => r.winPct) * 100);
+    const lgSetDiff = avg(r => r.setDiff).toFixed(1);
+    const lgSfPerM  = avg(r => r.sfPerM).toFixed(1);
+    const lgSaPerM  = avg(r => r.saPerM).toFixed(1);
+    const ourRow    = rows.find(r => r.highlight);
+    const ourWinPct = ourRow && ourRow.z > 0 ? Math.round(ourRow.w / ourRow.z * 100) : mPct;
+    const ourSetDiff = ourRow && ourRow.z > 0 ? ((ourRow.sf - ourRow.sa) / ourRow.z).toFixed(1) : (total > 0 ? (sDiff/total).toFixed(1) : '–');
+    const teamKey = t.name.replace('TTC Klánovice ', 'Tým ');
+    return { teamKey, lgWinPct, lgSetDiff, lgSfPerM, lgSaPerM, ourWinPct, ourSetDiff };
+  }).filter(Boolean);
+
+  const leagueAvgHtml = lgRows.length ? `
+    <div class="league-avg-section">
+      <div class="modal-history-title" style="margin:16px 0 10px">Průměr soutěže</div>
+      <div class="league-avg-grid">
+        ${lgRows.map(r => `
+          <div class="league-avg-card">
+            ${lgRows.length > 1 ? `<div class="league-avg-team">${r.teamKey}</div>` : ''}
+            <div class="league-avg-row">
+              <span class="league-avg-lbl">Úspěšnost</span>
+              <span class="league-avg-val">${r.ourWinPct}%</span>
+              <span class="league-avg-sep">vs liga</span>
+              <span class="league-avg-league">${r.lgWinPct}%</span>
+            </div>
+            <div class="league-avg-row">
+              <span class="league-avg-lbl">Sety / zápas</span>
+              <span class="league-avg-val">${r.lgSfPerM}</span>
+              <span class="league-avg-sep">:</span>
+              <span class="league-avg-league">${r.lgSaPerM}</span>
+              <span class="league-avg-muted">(liga průměr)</span>
+            </div>
+          </div>`).join('')}
+      </div>
+    </div>` : '';
 
   el.innerHTML = `
     <h2 class="block-title">Celková bilance${activeTeam ? ` – Tým ${activeTeam.name.replace('TTC Klánovice ', '')}` : ''}</h2>
@@ -811,7 +911,8 @@ function renderClubSummary() {
     <div class="team-str-section">
       <div class="modal-history-title" style="margin:16px 0 10px">Průměrné STR (Elo) týmů</div>
       ${teamStrRows}
-    </div>` : ''}`;
+    </div>` : ''}
+    ${leagueAvgHtml}`;
 }
 
 // Season progress: cumulative wins per team as SVG polylines
@@ -994,8 +1095,7 @@ function renderStatsTable() {
   const players = activeStatsTeam === 'all'
     ? merged
     : merged.filter(p =>
-        p.team === activeStatsTeam ||
-        (p.teams || []).some(t => t.team === activeStatsTeam)
+        (p.teams || []).some(t => t.team === activeStatsTeam && t.stats.matches > 0)
       );
 
   const sorted = sortPlayers(players);
@@ -1004,18 +1104,19 @@ function renderStatsTable() {
     const delta = p.strDelta || 0;
     const deltaColor = delta > 0 ? 'var(--c-green)' : delta < 0 ? 'var(--c-red)' : 'var(--c-muted)';
     const deltaStr   = delta > 0 ? `+${delta}` : String(delta);
+    const playedTeams = (p.teams||[]).filter(t => t.stats.matches > 0);
     return `
     <tr class="player-row" onclick="openPlayerModal(${p.id})" style="cursor:pointer">
       <td class="player-rank">${i+1}</td>
       <td class="player-name-cell">
         <span class="pnc-name">${p.name}${p.isRegular === false ? ' <span class="sub-badge">náhr.</span>' : ''}</span>
-        <span class="pnc-team">${(p.teams||[]).length > 1
-          ? (p.teams||[]).map(t => `Tým ${t.team}`).join(', ')
+        <span class="pnc-team">${playedTeams.length > 1
+          ? playedTeams.map(t => `Tým ${t.team}`).join(', ')
           : `Tým ${p.team}`
         }</span>
       </td>
-      <td class="col-team">${(p.teams||[]).length > 1
-          ? (p.teams||[]).map(t => `<span class="player-team-pill">Tým ${t.team}</span>`).join(' ')
+      <td class="col-team">${playedTeams.length > 1
+          ? playedTeams.map(t => `<span class="player-team-pill">Tým ${t.team}</span>`).join(' ')
           : `<span class="player-team-pill">Tým ${p.team}</span>`
         }</td>
       <td class="rating-val">${p.str || '–'}</td>
@@ -1325,8 +1426,9 @@ function openPlayerModal(playerId) {
   matchHistory.sort((a,b) => {
     const dc = (b.date||'').localeCompare(a.date||'');
     if (dc !== 0) return dc;
-    const mc = (a.matchId||0) - (b.matchId||0);
-    if (mc !== 0) return mc;
+    const ma = a.matchId || 0, mb = b.matchId || 0;
+    if (ma && mb && ma !== mb) return ma - mb;
+    if ((a.teamId||0) !== (b.teamId||0)) return (a.teamId||0) - (b.teamId||0);
     return (a.rowIdx||0) - (b.rowIdx||0);
   });
 
