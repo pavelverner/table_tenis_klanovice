@@ -50,6 +50,9 @@ jobs:
       - name: Scrape
         if: steps.check.outputs.has_match == 'true'
         run: node scrape.js
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
 
       - name: Commitni data
         if: steps.check.outputs.has_match == 'true'

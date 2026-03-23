@@ -31,6 +31,9 @@ jobs:
 
       - name: Scrape current season
         run: node scrape.js
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
 
       - name: Commit updated data
         run: |
