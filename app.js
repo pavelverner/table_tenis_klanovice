@@ -298,10 +298,10 @@ function renderTeamCards() {
           <div class="team-name">${team.name} ${zoneBadge}</div>
           <div class="team-division">${team.competition}</div>
         </div>
-        <div style="text-align:right">
+        ${s.pos && s.pos !== '?' ? `<div style="text-align:right">
           <div class="team-pos">${s.pos}.</div>
           <div class="team-pos-label">místo</div>
-        </div>
+        </div>` : ''}
       </div>
       <div class="team-stats">
         <div class="team-stat">
@@ -1207,6 +1207,13 @@ function renderStatsTable() {
 function renderTabulky() {
   const teamsWithTables = CLUB_DATA.teams.filter(t => CLUB_DATA.tables[t.id]?.length);
   const tabs = document.getElementById('tableFilterTabs');
+  const container = document.getElementById('leagueTables');
+
+  if (!teamsWithTables.length) {
+    tabs.innerHTML = '';
+    container.innerHTML = '<p style="color:var(--c-muted);padding:20px 0">Tabulka pro tuto sezónu není k dispozici.</p>';
+    return;
+  }
 
   tabs.innerHTML = teamsWithTables.map(t => `
     <div class="filter-tab ${activeTableTeam === t.id ? 'active' : ''}"
@@ -1226,7 +1233,6 @@ function renderTabulky() {
     return;
   }
 
-  const container = document.getElementById('leagueTables');
   container.innerHTML = '';
 
   teamsWithTables
