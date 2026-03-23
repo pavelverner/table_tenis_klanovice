@@ -730,7 +730,7 @@ async function main() {
           wins: w,
           losses: l,
           sets: usp?.sets || [0, 0],
-          winPct: m > 0 ? Math.round(w / m * 100) : 0,
+          winPct: (w + l) > 0 ? Math.round(w / (w + l) * 100) : 0,
         },
       });
     }
