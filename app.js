@@ -1438,7 +1438,7 @@ async function renderSetStats() {
     }
 
     const stats = computeSetStats(games);
-    el.innerHTML = renderSetStatsHTML(stats);
+    el.innerHTML = renderSetStatsHTML(stats, games);
   } catch (e) {
     el.innerHTML = '';
     console.error('renderSetStats', e);
@@ -1446,118 +1446,172 @@ async function renderSetStats() {
 }
 
 function computeSetStats(games) {
+  // Find last rubber per match (to detect "closer" role)
+  const matchMaxRubber = {};
+  for (const g of games) {
+    if (g.rubber_num != null &&
+        (matchMaxRubber[g.match_id] == null || g.rubber_num > matchMaxRubber[g.match_id])) {
+      matchMaxRubber[g.match_id] = g.rubber_num;
+    }
+  }
+
   const p = {};
   for (const g of games) {
     if (!g.set_scores?.length) continue;
     const n = g.our_player;
     if (!p[n]) p[n] = {
       name: n,
-      afterWin1:  { w: 0, t: 0 },   // won 1st set → match win
-      afterLoss1: { w: 0, t: 0 },   // lost 1st set → match win
-      five:       { w: 0, t: 0 },   // 5-set matches
-      sweep:      0,                 // 3:0 wins
-      deuce:      0,                 // sets with score 12+
-      lostScores: [],                // scores in sets player lost
+      teamId: g.teamId,
+      afterWin1:  { w: 0, t: 0 },  // won 1st set → match win
+      afterLoss1: { w: 0, t: 0 },  // lost 1st set → match win
+      comeback2:  { w: 0, t: 0 },  // was 0:2 down in sets → won
+      five:       { w: 0, t: 0 },  // 5-set matches
+      sweep:      0,                // 3:0 wins
+      deuce:      0,                // sets with score 12+
+      lostScores: [],               // our scores in sets we lost
+      opener:     { w: 0, t: 0 },  // rubber #1
+      closer:     { w: 0, t: 0 },  // last rubber of match
+      matchIds:   new Set(),
       total:      0,
     };
     const r = p[n];
     r.total++;
+    r.matchIds.add(g.match_id);
 
-    // First-set outcome (set_scores stored home perspective)
+    // First-set outcome (set_scores stored in home perspective)
     const [fh, fa] = g.set_scores[0];
     const ourFirst = g.home ? fh : fa;
     const oppFirst = g.home ? fa : fh;
     if (ourFirst > oppFirst) { r.afterWin1.t++;  if (g.won) r.afterWin1.w++;  }
     else                      { r.afterLoss1.t++; if (g.won) r.afterLoss1.w++; }
 
-    // 5-set
+    // 5-set + comeback from 0:2
     const tot = g.sets_won + g.sets_lost;
-    if (tot === 5) { r.five.t++; if (g.won) r.five.w++; }
+    if (tot === 5) {
+      r.five.t++; if (g.won) r.five.w++;
+      if (g.set_scores.length >= 2) {
+        const s0our = g.home ? g.set_scores[0][0] : g.set_scores[0][1];
+        const s0opp = g.home ? g.set_scores[0][1] : g.set_scores[0][0];
+        const s1our = g.home ? g.set_scores[1][0] : g.set_scores[1][1];
+        const s1opp = g.home ? g.set_scores[1][1] : g.set_scores[1][0];
+        if (s0our < s0opp && s1our < s1opp) {
+          r.comeback2.t++; if (g.won) r.comeback2.w++;
+        }
+      }
+    }
 
     // 3:0 sweep
     if (g.sets_won === 3 && g.sets_lost === 0) r.sweep++;
 
-    // Deuce sets & lost set scores
+    // Deuce sets & scores in lost sets
     for (const [sh, sa] of g.set_scores) {
       if (Math.max(sh, sa) >= 12) r.deuce++;
       const ours = g.home ? sh : sa;
       const opps = g.home ? sa : sh;
       if (ours < opps) r.lostScores.push(ours);
     }
+
+    // Opener (rubber 1) / closer (last rubber in match)
+    if (g.rubber_num === 1) { r.opener.t++; if (g.won) r.opener.w++; }
+    if (matchMaxRubber[g.match_id] != null && g.rubber_num === matchMaxRubber[g.match_id]) {
+      r.closer.t++; if (g.won) r.closer.w++;
+    }
   }
   return Object.values(p).filter(r => r.total >= 5);
 }
 
-function renderSetStatsHTML(stats) {
-  const top = (arr, key, minSample, fmt, desc) => {
-    const filtered = arr.filter(p => (p[key]?.t ?? p[key] ?? 0) >= minSample);
-    if (!filtered.length) return '';
-    const sorted = [...filtered].sort((a, b) => {
-      const va = typeof a[key] === 'object' ? (a[key].t ? a[key].w / a[key].t : 0) : a[key];
-      const vb = typeof b[key] === 'object' ? (b[key].t ? b[key].w / b[key].t : 0) : b[key];
-      return vb - va;
-    }).slice(0, 4);
+function renderSetStatsHTML(stats, allGames) {
+  if (!stats.length) return '';
 
-    const rows = sorted.map((p, i) => {
-      const val = typeof p[key] === 'object'
-        ? `${Math.round(p[key].w / p[key].t * 100)}%`
-        : p[key];
-      const sub = typeof p[key] === 'object'
-        ? `${p[key].w}/${p[key].t}`
-        : '';
-      const firstName = p.name.split(' ').slice(1).join(' ') || p.name;
-      return `<div class="ss-row">
-        <span class="ss-rank">${i + 1}.</span>
-        <span class="ss-name">${firstName}</span>
-        <span class="ss-val">${val}</span>
-        ${sub ? `<span class="ss-sub">${sub}</span>` : ''}
-      </div>`;
-    }).join('');
+  // Total matches played per team (from raw game data)
+  const teamMatchSets = {};
+  for (const g of (allGames || [])) {
+    if (!g.teamId) continue;
+    if (!teamMatchSets[g.teamId]) teamMatchSets[g.teamId] = new Set();
+    teamMatchSets[g.teamId].add(g.match_id);
+  }
 
-    return `<div class="ss-card">
-      <div class="ss-card-title">${key === 'afterWin1' ? '🎯' : key === 'afterLoss1' ? '💪' : key === 'five' ? '🔥' : key === 'sweep' ? '⚡' : key === 'deuce' ? '🎾' : '🛡️'} ${desc}</div>
-      <div class="ss-card-rows">${rows}</div>
-    </div>`;
+  // League averages (only players with enough data)
+  const meanPct = (arr, key, minT) => {
+    const v = arr.filter(p => p[key].t >= minT).map(p => p[key].w / p[key].t);
+    return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null;
   };
+  const avg1win  = meanPct(stats, 'afterWin1',  5) ?? 0.75;
+  const avg1loss = meanPct(stats, 'afterLoss1', 4) ?? 0.30;
 
-  // Special: avg score in lost sets (higher = better)
-  const resilience = stats
-    .filter(p => p.lostScores.length >= 8)
-    .sort((a, b) => {
-      const avgA = a.lostScores.reduce((s, v) => s + v, 0) / a.lostScores.length;
-      const avgB = b.lostScores.reduce((s, v) => s + v, 0) / b.lostScores.length;
-      return avgB - avgA;
-    }).slice(0, 4);
+  const facts = [];
+  for (const p of stats) {
+    const fn = p.name.split(' ').slice(1).join(' ') || p.name;
 
-  const resRows = resilience.map((p, i) => {
-    const avg = (p.lostScores.reduce((s, v) => s + v, 0) / p.lostScores.length).toFixed(1);
-    const firstName = p.name.split(' ').slice(1).join(' ') || p.name;
-    return `<div class="ss-row">
-      <span class="ss-rank">${i + 1}.</span>
-      <span class="ss-name">${firstName}</span>
-      <span class="ss-val">${avg}</span>
-      <span class="ss-sub">${p.lostScores.length} setů</span>
-    </div>`;
-  }).join('');
+    // After winning 1st set → match win rate notably above average
+    if (p.afterWin1.t >= 5) {
+      const pct = p.afterWin1.w / p.afterWin1.t;
+      if (pct >= avg1win + 0.14 && pct >= 0.82) {
+        facts.push(`🎯 <b>${fn}</b>: po výhře 1. setu vyhraje zápas v <b>${Math.round(pct * 100)} %</b> (průměr ${Math.round(avg1win * 100)} %)`);
+      }
+    }
 
-  const resCard = resilience.length ? `<div class="ss-card">
-    <div class="ss-card-title">🛡️ Průměr bodů v prohraném setu</div>
-    <div class="ss-card-rows">${resRows}</div>
-  </div>` : '';
+    // Comeback after losing 1st set
+    if (p.afterLoss1.t >= 4) {
+      const pct = p.afterLoss1.w / p.afterLoss1.t;
+      if (pct >= avg1loss + 0.18) {
+        facts.push(`💪 <b>${fn}</b>: otočí zápas po prohře 1. setu v <b>${Math.round(pct * 100)} %</b> (průměr ${Math.round(avg1loss * 100)} %)`);
+      }
+    }
 
-  const cards = [
-    top(stats, 'afterWin1',  5, null, 'Po výhře 1. setu'),
-    top(stats, 'afterLoss1', 3, null, 'Comeback – po prohře 1. setu'),
-    top(stats, 'five',       3, null, 'Výhry v 5-setových zápasech'),
-    top(stats, 'sweep',      3, null, 'Výhry bez ztráty setu (3:0)'),
-    top(stats, 'deuce',      5, null, 'Sety v prodloužení (12+)'),
-    resCard,
-  ].filter(Boolean).join('');
+    // Comeback from 0:2 in sets
+    if (p.comeback2.w >= 2) {
+      facts.push(`🔄 <b>${fn}</b>: ${p.comeback2.w}× otočil zápas po prohře prvních dvou setů`);
+    }
 
-  if (!cards) return '';
+    // 5-set mastery
+    if (p.five.t >= 4 && p.five.w / p.five.t >= 0.65) {
+      facts.push(`🔥 <b>${fn}</b>: ovládl ${p.five.w} z ${p.five.t} pětiseťáků (${Math.round(p.five.w / p.five.t * 100)} %)`);
+    }
+
+    // Sweeper
+    if (p.sweep >= 6) {
+      facts.push(`⚡ <b>${fn}</b>: ${p.sweep}× vyhrál bez ztráty setu (3:0)`);
+    }
+
+    // Deuce king
+    if (p.deuce >= 8) {
+      facts.push(`🎾 <b>${fn}</b>: odehrál ${p.deuce} setů v prodloužení (12+)`);
+    }
+
+    // Resilience: high avg score in lost sets
+    if (p.lostScores.length >= 8) {
+      const avg = p.lostScores.reduce((s, v) => s + v, 0) / p.lostScores.length;
+      if (avg >= 8.0) {
+        facts.push(`🛡️ <b>${fn}</b>: průměrně dává <b>${avg.toFixed(1)}</b> bodu i v prohraných setech`);
+      }
+    }
+
+    // Attendance
+    const teamTotal = teamMatchSets[p.teamId]?.size ?? 0;
+    if (teamTotal >= 8 && p.matchIds.size >= teamTotal * 0.90) {
+      const missed = teamTotal - p.matchIds.size;
+      facts.push(`📅 <b>${fn}</b>: ${missed === 0
+        ? `nechyběl na žádném ze ${teamTotal} zápasů`
+        : `chyběl jen na ${missed} ze ${teamTotal} zápasů`}`);
+    }
+
+    // Opener (rubber 1)
+    if (p.opener.t >= 4 && p.opener.w / p.opener.t >= 0.75) {
+      facts.push(`🚀 <b>${fn}</b>: otvírá zápasy s ${Math.round(p.opener.w / p.opener.t * 100)} % úspěšností (${p.opener.w}/${p.opener.t})`);
+    }
+
+    // Closer (last rubber)
+    if (p.closer.t >= 4 && p.closer.w / p.closer.t >= 0.70) {
+      facts.push(`🏁 <b>${fn}</b>: uzavírá zápasy s ${Math.round(p.closer.w / p.closer.t * 100)} % (${p.closer.w}/${p.closer.t})`);
+    }
+  }
+
+  if (!facts.length) return '';
+  const items = facts.map(f => `<div class="modal-fun-fact">${f}</div>`).join('');
   return `
-    <div class="modal-history-title" style="margin:24px 0 12px">Detailní statistiky</div>
-    <div class="ss-grid">${cards}</div>`;
+    <div class="modal-history-title" style="margin:24px 0 12px">Zajímavosti sezóny</div>
+    <div class="modal-fun-facts">${items}</div>`;
 }
 
 function openPlayerModal(playerId) {

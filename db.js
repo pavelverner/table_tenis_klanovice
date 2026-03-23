@@ -41,7 +41,7 @@ function dbGetPlayerGames(playerName, rocnik = null) {
 async function dbGetSeasonSingles(rocnik = 2025) {
   const [matches, games] = await Promise.all([
     dbFetch(`matches?rocnik=eq.${rocnik}&future=eq.false&select=id,team_id,home`),
-    dbFetch(`games?is_doubles=eq.false&select=match_id,our_player,sets_won,sets_lost,won,set_scores`),
+    dbFetch(`games?is_doubles=eq.false&select=match_id,rubber_num,our_player,sets_won,sets_lost,won,set_scores`),
   ]);
   const matchMap = {};
   for (const m of matches) matchMap[m.id] = m;
