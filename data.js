@@ -8,14 +8,14 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "23.03.26 10:17",
+  "lastUpdate": "23.03.26 11:33",
   "teams": [
     {
       "id": 63401,
       "name": "TTC Klánovice A",
       "competition": "1. třída A",
       "division": "1. třída A",
-      "leagueAvgStr": 1653,
+      "leagueAvgStr": 1734,
       "standing": {
         "pos": 1,
         "wins": 17,
@@ -31,7 +31,7 @@ var CLUB_DATA = {
       "name": "TTC Klánovice B",
       "competition": "2. třída A",
       "division": "2. třída A",
-      "leagueAvgStr": 1542,
+      "leagueAvgStr": 1638,
       "standing": {
         "pos": 7,
         "wins": 8,
@@ -47,7 +47,7 @@ var CLUB_DATA = {
       "name": "TTC Klánovice C",
       "competition": "3. třída A",
       "division": "3. třída A",
-      "leagueAvgStr": 1448,
+      "leagueAvgStr": 1546,
       "standing": {
         "pos": 7,
         "wins": 7,
@@ -63,7 +63,7 @@ var CLUB_DATA = {
       "name": "TTC Klánovice D",
       "competition": "4. třída A",
       "division": "4. třída A",
-      "leagueAvgStr": 1362,
+      "leagueAvgStr": 1456,
       "standing": {
         "pos": 10,
         "wins": 5,
@@ -79,7 +79,7 @@ var CLUB_DATA = {
       "name": "TTC Klánovice E",
       "competition": "5. třída B",
       "division": "5. třída B",
-      "leagueAvgStr": 1261,
+      "leagueAvgStr": 1358,
       "standing": {
         "pos": 7,
         "wins": 7,
