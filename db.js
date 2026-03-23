@@ -36,6 +36,20 @@ function dbGetPlayerGames(playerName, rocnik = null) {
   );
 }
 
+// All singles games for a season (used for set-score stats)
+// Returns games enriched with match.home and match.team_id
+async function dbGetSeasonSingles(rocnik = 2025) {
+  const [matches, games] = await Promise.all([
+    dbFetch(`matches?rocnik=eq.${rocnik}&future=eq.false&select=id,team_id,home`),
+    dbFetch(`games?is_doubles=eq.false&select=match_id,our_player,sets_won,sets_lost,won,set_scores`),
+  ]);
+  const matchMap = {};
+  for (const m of matches) matchMap[m.id] = m;
+  return games
+    .filter(g => matchMap[g.match_id] && g.set_scores?.length >= 1)
+    .map(g => ({ ...g, home: matchMap[g.match_id].home, teamId: matchMap[g.match_id].team_id }));
+}
+
 // ── Players ──────────────────────────────────────────────────
 // STR snapshots across seasons for one player
 function dbGetPlayerStrHistory(playerName) {

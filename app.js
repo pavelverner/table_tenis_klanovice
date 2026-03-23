@@ -799,6 +799,7 @@ function renderStatistiky() {
   renderClubSummary();
   renderSeasonProgressChart();
   renderStatsTable();
+  renderSetStats();
 }
 
 // Club-wide summary: total matches W/D/L, sets, individual games
@@ -1409,6 +1410,154 @@ function buildFunFact(matchHistory) {
     <div class="modal-fun-facts">
       ${facts.map(f => `<div class="modal-fun-fact"><span class="fun-fact-icon">💡</span> ${f}</div>`).join('')}
     </div>`;
+}
+
+// ── Set-score based statistics ──────────────────────────────
+let _setStatsCache = null;
+
+async function renderSetStats() {
+  let el = document.getElementById('setStatsSection');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'setStatsSection';
+    const statsTable = document.getElementById('statsTable');
+    if (statsTable) statsTable.parentNode.appendChild(el);
+    else document.getElementById('statistiky')?.appendChild(el);
+  }
+
+  el.innerHTML = '<div class="set-stats-loading">Načítám detailní statistiky…</div>';
+
+  try {
+    if (!_setStatsCache) _setStatsCache = await dbGetSeasonSingles(2025);
+
+    // Filter by active team
+    let games = _setStatsCache;
+    if (activeStatsTeam !== 'all') {
+      const team = CLUB_DATA.teams.find(t => t.name.replace('TTC Klánovice ', '') === activeStatsTeam);
+      if (team) games = games.filter(g => g.teamId === team.id);
+    }
+
+    const stats = computeSetStats(games);
+    el.innerHTML = renderSetStatsHTML(stats);
+  } catch (e) {
+    el.innerHTML = '';
+    console.error('renderSetStats', e);
+  }
+}
+
+function computeSetStats(games) {
+  const p = {};
+  for (const g of games) {
+    if (!g.set_scores?.length) continue;
+    const n = g.our_player;
+    if (!p[n]) p[n] = {
+      name: n,
+      afterWin1:  { w: 0, t: 0 },   // won 1st set → match win
+      afterLoss1: { w: 0, t: 0 },   // lost 1st set → match win
+      five:       { w: 0, t: 0 },   // 5-set matches
+      sweep:      0,                 // 3:0 wins
+      deuce:      0,                 // sets with score 12+
+      lostScores: [],                // scores in sets player lost
+      total:      0,
+    };
+    const r = p[n];
+    r.total++;
+
+    // First-set outcome (set_scores stored home perspective)
+    const [fh, fa] = g.set_scores[0];
+    const ourFirst = g.home ? fh : fa;
+    const oppFirst = g.home ? fa : fh;
+    if (ourFirst > oppFirst) { r.afterWin1.t++;  if (g.won) r.afterWin1.w++;  }
+    else                      { r.afterLoss1.t++; if (g.won) r.afterLoss1.w++; }
+
+    // 5-set
+    const tot = g.sets_won + g.sets_lost;
+    if (tot === 5) { r.five.t++; if (g.won) r.five.w++; }
+
+    // 3:0 sweep
+    if (g.sets_won === 3 && g.sets_lost === 0) r.sweep++;
+
+    // Deuce sets & lost set scores
+    for (const [sh, sa] of g.set_scores) {
+      if (Math.max(sh, sa) >= 12) r.deuce++;
+      const ours = g.home ? sh : sa;
+      const opps = g.home ? sa : sh;
+      if (ours < opps) r.lostScores.push(ours);
+    }
+  }
+  return Object.values(p).filter(r => r.total >= 5);
+}
+
+function renderSetStatsHTML(stats) {
+  const top = (arr, key, minSample, fmt, desc) => {
+    const filtered = arr.filter(p => (p[key]?.t ?? p[key] ?? 0) >= minSample);
+    if (!filtered.length) return '';
+    const sorted = [...filtered].sort((a, b) => {
+      const va = typeof a[key] === 'object' ? (a[key].t ? a[key].w / a[key].t : 0) : a[key];
+      const vb = typeof b[key] === 'object' ? (b[key].t ? b[key].w / b[key].t : 0) : b[key];
+      return vb - va;
+    }).slice(0, 4);
+
+    const rows = sorted.map((p, i) => {
+      const val = typeof p[key] === 'object'
+        ? `${Math.round(p[key].w / p[key].t * 100)}%`
+        : p[key];
+      const sub = typeof p[key] === 'object'
+        ? `${p[key].w}/${p[key].t}`
+        : '';
+      const firstName = p.name.split(' ').slice(1).join(' ') || p.name;
+      return `<div class="ss-row">
+        <span class="ss-rank">${i + 1}.</span>
+        <span class="ss-name">${firstName}</span>
+        <span class="ss-val">${val}</span>
+        ${sub ? `<span class="ss-sub">${sub}</span>` : ''}
+      </div>`;
+    }).join('');
+
+    return `<div class="ss-card">
+      <div class="ss-card-title">${key === 'afterWin1' ? '🎯' : key === 'afterLoss1' ? '💪' : key === 'five' ? '🔥' : key === 'sweep' ? '⚡' : key === 'deuce' ? '🎾' : '🛡️'} ${desc}</div>
+      <div class="ss-card-rows">${rows}</div>
+    </div>`;
+  };
+
+  // Special: avg score in lost sets (higher = better)
+  const resilience = stats
+    .filter(p => p.lostScores.length >= 8)
+    .sort((a, b) => {
+      const avgA = a.lostScores.reduce((s, v) => s + v, 0) / a.lostScores.length;
+      const avgB = b.lostScores.reduce((s, v) => s + v, 0) / b.lostScores.length;
+      return avgB - avgA;
+    }).slice(0, 4);
+
+  const resRows = resilience.map((p, i) => {
+    const avg = (p.lostScores.reduce((s, v) => s + v, 0) / p.lostScores.length).toFixed(1);
+    const firstName = p.name.split(' ').slice(1).join(' ') || p.name;
+    return `<div class="ss-row">
+      <span class="ss-rank">${i + 1}.</span>
+      <span class="ss-name">${firstName}</span>
+      <span class="ss-val">${avg}</span>
+      <span class="ss-sub">${p.lostScores.length} setů</span>
+    </div>`;
+  }).join('');
+
+  const resCard = resilience.length ? `<div class="ss-card">
+    <div class="ss-card-title">🛡️ Průměr bodů v prohraném setu</div>
+    <div class="ss-card-rows">${resRows}</div>
+  </div>` : '';
+
+  const cards = [
+    top(stats, 'afterWin1',  5, null, 'Po výhře 1. setu'),
+    top(stats, 'afterLoss1', 3, null, 'Comeback – po prohře 1. setu'),
+    top(stats, 'five',       3, null, 'Výhry v 5-setových zápasech'),
+    top(stats, 'sweep',      3, null, 'Výhry bez ztráty setu (3:0)'),
+    top(stats, 'deuce',      5, null, 'Sety v prodloužení (12+)'),
+    resCard,
+  ].filter(Boolean).join('');
+
+  if (!cards) return '';
+  return `
+    <div class="modal-history-title" style="margin:24px 0 12px">Detailní statistiky</div>
+    <div class="ss-grid">${cards}</div>`;
 }
 
 function openPlayerModal(playerId) {
