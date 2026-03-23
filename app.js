@@ -818,6 +818,8 @@ function renderStatistiky() {
   const tabs = document.getElementById('statsFilterTabs');
   tabs.innerHTML = filterTabsHTML('stats');
   activateFilterTabs('stats', tabs);
+  const lbl = document.getElementById('statsSeasonLabel');
+  if (lbl) lbl.textContent = CLUB_DATA.season || '';
   renderClubSummary();
   renderSeasonProgressChart();
   renderStatsTable();
@@ -1143,7 +1145,7 @@ function setStatsSort(col) {
 function renderStatsTable() {
   const merged = getMergedPlayers();
   const players = activeStatsTeam === 'all'
-    ? merged
+    ? merged.filter(p => p.stats.matches > 0)
     : merged.filter(p =>
         (p.teams || []).some(t => t.team === activeStatsTeam && t.stats.matches > 0)
       );
@@ -1154,7 +1156,10 @@ function renderStatsTable() {
     const delta = p.strDelta || 0;
     const deltaColor = delta > 0 ? 'var(--c-green)' : delta < 0 ? 'var(--c-red)' : 'var(--c-muted)';
     const deltaStr   = delta > 0 ? `+${delta}` : String(delta);
+    // Only show tags for teams the player actually played for this season
     const playedTeams = (p.teams||[]).filter(t => t.stats.matches > 0);
+    const teamPills = playedTeams.map(t => `<span class="player-team-pill" data-team="${t.team}">${t.team}</span>`).join(' ');
+    const teamSubtitle = playedTeams.map(t => `Tým ${t.team}`).join(', ');
     // When team filter active, show stats for that team only
     const teamStats = activeStatsTeam !== 'all'
       ? (p.teams||[]).find(t => t.team === activeStatsTeam)?.stats || p.stats
@@ -1164,15 +1169,9 @@ function renderStatsTable() {
       <td class="player-rank">${i+1}</td>
       <td class="player-name-cell">
         <span class="pnc-name">${p.name}${p.isRegular === false ? ' <span class="sub-badge">náhr.</span>' : ''}</span>
-        <span class="pnc-team">${playedTeams.length > 1
-          ? playedTeams.map(t => `Tým ${t.team}`).join(', ')
-          : `Tým ${playedTeams[0]?.team || p.team}`
-        }</span>
+        <span class="pnc-team">${teamSubtitle}</span>
       </td>
-      <td class="col-team">${playedTeams.length > 1
-          ? playedTeams.map(t => `<span class="player-team-pill">Tým ${t.team}</span>`).join(' ')
-          : `<span class="player-team-pill">Tým ${playedTeams[0]?.team || p.team}</span>`
-        }</td>
+      <td class="col-team">${teamPills}</td>
       <td class="rating-val">${p.str || '–'}</td>
       <td style="color:${deltaColor};font-weight:600;font-size:13px">${p.str ? deltaStr : '–'}</td>
       <td>${teamStats.matches}</td>
