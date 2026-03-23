@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "23.03.26 16:13",
+  "lastUpdate": "23.03.26 18:11",
   "teams": [
     {
       "id": 63401,
@@ -2566,20 +2566,6 @@ var CLUB_DATA = {
     }
   ],
   "matches": [
-    {
-      "id": 63401020,
-      "teamId": 63401,
-      "home": true,
-      "round": 20,
-      "date": "2026-03-23",
-      "time": "18:30",
-      "opponent": "TJ Sokol Běchovice II A",
-      "score": null,
-      "result": null,
-      "playerResults": [],
-      "keyPoints": [],
-      "future": true
-    },
     {
       "id": 63401021,
       "teamId": 63401,
@@ -11101,6 +11087,133 @@ var CLUB_DATA = {
         "Polák – perfektní výkon 3/3",
         "Výjezdní výhra 10:3",
         "Čtyřhra Kárník Tomáš / Hořejší Radim: ✓ výhra"
+      ]
+    },
+    {
+      "id": 645467,
+      "teamId": 63401,
+      "home": true,
+      "round": 20,
+      "date": "2026-03-23",
+      "opponent": "TJ Sokol Běchovice II A",
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "result": "W",
+      "playerResults": [
+        {
+          "rubberNum": 1,
+          "player": "Hořejší Radim / Kárník Tomáš",
+          "opponent": "Hlista Petr / Jírů Libor",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0,
+          "setScores": [
+            [
+              11,
+              8
+            ],
+            [
+              11,
+              3
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              6
+            ]
+          ]
+        },
+        {
+          "rubberNum": 2,
+          "player": "Hudek Tomáš / Polák František",
+          "opponent": "Červeňák Miroslav / Bartel Michal",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0,
+          "setScores": [
+            [
+              11,
+              8
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              14,
+              12
+            ]
+          ]
+        },
+        {
+          "rubberNum": 3,
+          "player": "Hořejší Radim",
+          "opponent": "Červeňák Miroslav",
+          "result": "2:0",
+          "won": true,
+          "setsWon": 2,
+          "setsLost": 0,
+          "isDoubles": false,
+          "ourStr": 1843,
+          "oppStr": 1747,
+          "setScores": [
+            [
+              11,
+              7
+            ],
+            [
+              11,
+              4
+            ]
+          ]
+        },
+        {
+          "rubberNum": 4,
+          "player": "Polák František",
+          "opponent": "Hlista Petr",
+          "result": "1:2",
+          "won": false,
+          "setsWon": 1,
+          "setsLost": 2,
+          "isDoubles": false,
+          "ourStr": 1715,
+          "oppStr": 1718,
+          "setScores": [
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              6,
+              11
+            ]
+          ]
+        }
+      ],
+      "keyPoints": [
+        "Domácí výhra 2:0",
+        "Čtyřhra Hořejší Radim / Kárník Tomáš: ✓ výhra"
       ]
     },
     {
