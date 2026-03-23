@@ -851,18 +851,18 @@ function renderClubSummary() {
     if (!rows.length) return null;
     const n = rows.length;
     const perTeam = rows.map(r => ({
-      winPct:  r.z > 0 ? r.w / r.z : 0,
-      ptsPerM: r.z > 0 ? r.pts / r.z : 0,
+      winPct: r.z > 0 ? r.w / r.z : 0,
+      sfPerM: r.z > 0 ? r.sf / r.z : 0,
     }));
     const avg = f => perTeam.reduce((s,r) => s + f(r), 0) / n;
-    const lgWinPct  = Math.round(avg(r => r.winPct) * 100);
-    const lgPtsPerM = avg(r => r.ptsPerM).toFixed(1);
-    const ourRow    = rows.find(r => r.highlight);
-    const ourWinPct = ourRow && ourRow.z > 0 ? Math.round(ourRow.w / ourRow.z * 100) : mPct;
-    const ourPos    = ourRow?.pos || '–';
-    const ourPtsPerM = ourRow && ourRow.z > 0 ? (ourRow.pts / ourRow.z).toFixed(1) : '–';
+    const lgWinPct   = Math.round(avg(r => r.winPct) * 100);
+    const lgSfPerM   = avg(r => r.sfPerM).toFixed(1);
+    const ourRow     = rows.find(r => r.highlight);
+    const ourWinPct  = ourRow && ourRow.z > 0 ? Math.round(ourRow.w / ourRow.z * 100) : mPct;
+    const ourPos     = ourRow?.pos || '–';
+    const ourSfPerM  = ourRow && ourRow.z > 0 ? (ourRow.sf / ourRow.z).toFixed(1) : (total > 0 ? (sFor / total).toFixed(1) : '–');
     const teamKey = t.name.replace('TTC Klánovice ', 'Tým ');
-    return { teamKey, lgWinPct, lgPtsPerM, ourWinPct, ourPos, ourPtsPerM, total: n };
+    return { teamKey, lgWinPct, lgSfPerM, ourWinPct, ourPos, ourSfPerM, total: n };
   }).filter(Boolean);
 
   const leagueAvgHtml = lgRows.length ? `
@@ -883,10 +883,10 @@ function renderClubSummary() {
               <span class="league-avg-league">${r.lgWinPct}%</span>
             </div>
             <div class="league-avg-row">
-              <span class="league-avg-lbl">Body / zápas</span>
-              <span class="league-avg-val">${r.ourPtsPerM}</span>
+              <span class="league-avg-lbl">Hry / zápas</span>
+              <span class="league-avg-val">${r.ourSfPerM}</span>
               <span class="league-avg-sep">liga ø</span>
-              <span class="league-avg-league">${r.lgPtsPerM}</span>
+              <span class="league-avg-league">${r.lgSfPerM}</span>
             </div>
           </div>`).join('')}
       </div>
