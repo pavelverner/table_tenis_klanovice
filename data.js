@@ -1,7 +1,7 @@
 // TTC Klánovice – data.js (23. 3. 2026)
 // Zdroj: https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025
 
-const CLUB_DATA = {
+var CLUB_DATA = {
   "name": "TTC Klánovice",
   "shortName": "Klánovice",
   "city": "Praha – Klánovice",

@@ -890,7 +890,7 @@ async function main() {
   fs.writeFileSync('scraped_full.json', JSON.stringify(clubData, null, 2));
   console.log('\n✅ scraped_full.json');
 
-  const dataJs = `// TTC Klánovice – ${OUT_FILE} (${new Date().toLocaleDateString('cs-CZ')})\n// Zdroj: ${clubData.stisUrl}\n\nconst ${VAR_NAME} = ${JSON.stringify(clubData, null, 2)};\n`;
+  const dataJs = `// TTC Klánovice – ${OUT_FILE} (${new Date().toLocaleDateString('cs-CZ')})\n// Zdroj: ${clubData.stisUrl}\n\nvar ${VAR_NAME} = ${JSON.stringify(clubData, null, 2)};\n`;
   fs.writeFileSync(OUT_FILE, dataJs);
   console.log(`✅ ${OUT_FILE}\n`);
 

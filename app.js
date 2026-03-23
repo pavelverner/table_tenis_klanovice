@@ -21,6 +21,9 @@ const SEASONS = [
   { rocnik: 2021, label: '2021 / 22' },
 ];
 
+// Immutable reference to the live (current) season data; CLUB_DATA may be swapped on season change
+const _LIVE_DATA = CLUB_DATA;
+
 // ── Navigation ─────────────────────────────────────────────
 function initNav() {
   document.querySelectorAll('.nav-link').forEach(link => {
@@ -57,27 +60,46 @@ function switchSection(sec) {
 // ── Season selector ────────────────────────────────────────
 function initSeasonSelect() {
   const sel = document.getElementById('seasonSelect');
-  // Determine current season from data (prefer explicit rocnik field, fallback to URL)
-  const currentRocnik = CLUB_DATA.rocnik
-    || parseInt(CLUB_DATA.stisUrl?.match(/rocnik-(\d+)/)?.[1] || '2025');
-  activeSeason = currentRocnik;
+  const liveRocnik = _LIVE_DATA.rocnik
+    || parseInt(_LIVE_DATA.stisUrl?.match(/rocnik-(\d+)/)?.[1] || '2025');
+  activeSeason = liveRocnik;
+
+  // Build option list; mark which seasons have local data
+  const localRocniks = new Set([
+    liveRocnik,
+    window.CLUB_DATA_PREV?.rocnik,
+    window.CLUB_DATA_PREV2?.rocnik,
+  ].filter(Boolean));
 
   sel.innerHTML = SEASONS.map(s =>
-    `<option value="${s.rocnik}" ${s.rocnik === currentRocnik ? 'selected' : ''}>${s.label}</option>`
+    `<option value="${s.rocnik}" ${s.rocnik === liveRocnik ? 'selected' : ''}>${s.label}${localRocniks.has(s.rocnik) ? '' : ' ↗'}</option>`
   ).join('');
 
   sel.addEventListener('change', () => {
     const chosen = parseInt(sel.value);
-    if (chosen === currentRocnik) {
-      renderPrehled();
-      return;
+    let dataset = null;
+    if (chosen === liveRocnik) {
+      dataset = _LIVE_DATA;
+    } else if (window.CLUB_DATA_PREV?.rocnik === chosen) {
+      dataset = window.CLUB_DATA_PREV;
+    } else if (window.CLUB_DATA_PREV2?.rocnik === chosen) {
+      dataset = window.CLUB_DATA_PREV2;
     }
-    // For other seasons: open STIS in new tab and show toast
-    const stisUrl = `https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-${chosen}`;
-    showToast(`Sezóna ${SEASONS.find(s=>s.rocnik===chosen)?.label} není načtena. Otevírám STIS…`, 4000);
-    setTimeout(() => window.open(stisUrl, '_blank'), 1200);
-    // Reset selector back to current
-    setTimeout(() => { sel.value = currentRocnik; }, 100);
+
+    if (dataset) {
+      window.CLUB_DATA = dataset;
+      activeSeason = chosen;
+      activeMatchTeam = 'all';
+      activeStatsTeam = 'all';
+      activeTableTeam = 0;
+      _setStatsCache = null;
+      renderSection(activeSection);
+    } else {
+      // Season not available locally → open STIS
+      showToast(`Sezóna ${SEASONS.find(s => s.rocnik === chosen)?.label} není k dispozici, otevírám STIS…`, 4000);
+      window.open(`https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-${chosen}`, '_blank');
+      sel.value = activeSeason;
+    }
   });
 }
 
@@ -1634,8 +1656,8 @@ function openPlayerModal(playerId) {
       const teamMatch = (dataSource.teams || []).find(t => t.id === m.teamId);
       // Accept any team if same name (for prev season: team IDs may differ)
       const nameMatch = playerTeamIds.includes(m.teamId)
-        || (dataSource !== CLUB_DATA && (dataSource.teams || []).some(t =>
-            CLUB_DATA.teams.some(ct => ct.name === t.name) && t.id === m.teamId));
+        || (dataSource !== _LIVE_DATA && (dataSource.teams || []).some(t =>
+            _LIVE_DATA.teams.some(ct => ct.name === t.name) && t.id === m.teamId));
       if (!nameMatch) continue;
       (m.playerResults || []).forEach((pr, ri) => {
         if (pr.player !== p.name) return;
@@ -1654,7 +1676,7 @@ function openPlayerModal(playerId) {
     }
   }
 
-  collectHistory(CLUB_DATA, CLUB_DATA.season || '');
+  collectHistory(_LIVE_DATA, _LIVE_DATA.season || '');
   if (window.CLUB_DATA_PREV)  collectHistory(window.CLUB_DATA_PREV,  window.CLUB_DATA_PREV.season  || '2024/25');
   if (window.CLUB_DATA_PREV2) collectHistory(window.CLUB_DATA_PREV2, window.CLUB_DATA_PREV2.season || '2023/24');
   matchHistory.sort((a,b) => {
@@ -1767,8 +1789,8 @@ async function fetchFreshData() {
     const json = await res.json();
     if (!json.data) return;
 
-    // Update global CLUB_DATA in-place so all renderers see new data
-    Object.assign(CLUB_DATA, json.data);
+    // Update live data in-place so all renderers see new data
+    Object.assign(_LIVE_DATA, json.data);
 
     // Update footer timestamp
     const lu = document.getElementById('lastUpdate');
