@@ -401,8 +401,10 @@ function parseUspesnostRow(row) {
   const total  = wins + losses;
   if (total === 0) return null;
   const str = parseInt(row[4]) || 0;
+  const club = (row[3] || '').trim();
   return {
     name,
+    club,
     str,
     teamMatches,
     matches: total,   // individual games played
@@ -720,8 +722,17 @@ async function main() {
       const parsed = parseUspesnostRow(row);
       if (parsed) uspMap[parsed.name] = parsed;
     }
-    const leagueStrs = Object.values(uspMap).map(u => u.str).filter(s => s > 0);
-    const leagueAvgStr = leagueStrs.length ? Math.round(leagueStrs.reduce((a,b)=>a+b,0)/leagueStrs.length) : 0;
+    // League avg STR = average of top-4 players (by STR) per club, same logic as our own team
+    const byClub = {};
+    for (const u of Object.values(uspMap)) {
+      if (!u.club || !u.str) continue;
+      if (!byClub[u.club]) byClub[u.club] = [];
+      byClub[u.club].push(u.str);
+    }
+    const top4Strs = Object.values(byClub).flatMap(strs =>
+      strs.sort((a,b) => b - a).slice(0, 4)
+    );
+    const leagueAvgStr = top4Strs.length ? Math.round(top4Strs.reduce((a,b)=>a+b,0)/top4Strs.length) : 0;
     console.log(`${Object.keys(uspMap).length} hráčů, liga avg STR: ${leagueAvgStr}`);
 
     // 5. Oddil (roster stránka konkrétního týmu)
