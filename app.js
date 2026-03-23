@@ -820,12 +820,19 @@ function renderClubSummary() {
   const maxStr = allStr.length ? Math.max(...allStr) : 1000;
   const minStr = allStr.length ? Math.min(...allStr) : 800;
   const teamStrRows = CLUB_DATA.teams.map(t => {
-    // Positions 1–4 in roster order = základní sestava
-    const ps = CLUB_DATA.players
-      .filter(p => p.teamId === t.id && p.str)
+    // P.č. 1–4 = základní sestava (soupiskaPos set after next scrape; fallback: array order)
+    const allPs = CLUB_DATA.players.filter(p => p.teamId === t.id && p.str);
+    const ps = allPs
+      .slice()
+      .sort((a,b) => (a.soupiskaPos || 999) - (b.soupiskaPos || 999))
       .slice(0, 4);
     if (!ps.length) return '';
     const avg = Math.round(ps.reduce((s,p) => s + p.str, 0) / ps.length);
+    // Average of all players who played at least 1 match
+    const activePsAll = allPs.filter(p => (p.stats?.matches || 0) > 0);
+    const avgAll = activePsAll.length
+      ? Math.round(activePsAll.reduce((s,p) => s + p.str, 0) / activePsAll.length)
+      : 0;
     const leagueAvg = t.leagueAvgStr || 0;
     const rangeMin = leagueAvg ? Math.min(minStr, leagueAvg) : minStr;
     const rangeMax = leagueAvg ? Math.max(maxStr, leagueAvg) : maxStr;
@@ -840,7 +847,7 @@ function renderClubSummary() {
         <div class="team-str-bar" style="width:${pct}%"></div>
         ${leagueAvg ? `<div class="team-str-league-mark" style="left:${leaguePct}%" title="Průměr ligy: ${leagueAvg}"></div>` : ''}
       </div>
-      <span class="team-str-val">${avg}${leagueAvg ? `<span class="team-str-league-lbl"> / ${leagueAvg}</span>` : ''}</span>
+      <span class="team-str-val">${avg}${avgAll && avgAll !== avg ? `<span class="team-str-league-lbl"> / ${avgAll}</span>` : ''}${leagueAvg ? `<span class="team-str-league-lbl" style="color:var(--c-orange)"> · ${leagueAvg}</span>` : ''}</span>
     </div>`;
   }).join('');
 

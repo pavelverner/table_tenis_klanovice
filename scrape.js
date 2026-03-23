@@ -355,11 +355,12 @@ async function parseOddil(page, soutezId, drustvoId) {
         if (!name || name.length < 3 || name === 'Hráč') return;
         const stisHref = nameLink?.getAttribute('href') || '';
         const stisId   = parseInt(stisHref.match(/hrac-(\d+)/)?.[1] || '0') || null;
+        const soupiskaPos = parseInt(cells[1]) || 999;  // P.č. = pořadí na soupisce
         const str      = parseFloat((cells[5] || '0').replace(',', '.').replace(/[^\d.]/g, '')) || 0;
         const strStab  = parseFloat((cells[6] || '0').replace(',', '.').replace(/[^\d.]/g, '')) || 0;
         const strDelta = parseInt((cells[7] || '0').replace(/[^\d-]/g, '')) || 0;
         players.push({
-          name, born: cells[3] || '', str, strStab, strDelta, stisId,
+          name, born: cells[3] || '', soupiskaPos, str, strStab, strDelta, stisId,
           isRegular: regularNames.size > 0 ? regularNames.has(name) : true,
         });
       });
@@ -717,8 +718,8 @@ async function main() {
         isRegular: oddilPlayer?.isRegular ?? true,
         stisId:    oddilPlayer?.stisId   || null,
         soutezId:  teamCfg.soutezId,
-        born:      oddilPlayer?.born    || '',
-        ranking:   oddilPlayer?.ranking || '',
+        born:         oddilPlayer?.born         || '',
+        soupiskaPos:  oddilPlayer?.soupiskaPos  || 999,
         str:       oddilPlayer?.str     || 0,
         strStab:   oddilPlayer?.strStab  || 0,
         strDelta:  oddilPlayer?.strDelta ?? 0,
