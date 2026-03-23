@@ -208,11 +208,11 @@ function renderLiveBlock() {
   liveContainer.innerHTML = todayMatches.map(m => {
     const team    = getTeamById(m.teamId);
     const isLive  = isMatchLive(m);
-    const played  = m.result !== undefined && m.score.home + m.score.away > 0;
+    const played  = !m.future && m.result && m.score != null;
     const homeTeamName = m.home ? team.name : m.opponent;
     const awayTeamName = m.home ? m.opponent : team.name;
-    const homeScore = m.home ? m.score.home : m.score.away;
-    const awayScore = m.home ? m.score.away : m.score.home;
+    const homeScore = played ? (m.home ? m.score.home : m.score.away) : '–';
+    const awayScore = played ? (m.home ? m.score.away : m.score.home) : '–';
 
     return `
     <div class="live-match-card ${isLive && !played ? 'live-pulsing' : ''}">
