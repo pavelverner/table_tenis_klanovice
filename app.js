@@ -363,10 +363,11 @@ function _lineupRows(players, posLabels, alignRight = false, isOpponent = false)
     let matches = '';
     if (isOpponent) {
       const opp = CLUB_DATA.opponentStats?.[p.name];
-      if (opp?.teamMatches > 0) matches = `<span class="lu-matches">${opp.teamMatches}z</span>`;
+      if (opp?.teamMatches > 0) matches = `<span class="lu-matches">${opp.teamMatches}u</span>`;
     } else {
       const pl = (CLUB_DATA.players || []).find(x => x.name === p.name);
-      if (pl?.stats?.matches > 0) matches = `<span class="lu-matches">${pl.stats.matches}z</span>`;
+      const tm = pl?.stats?.teamMatches ?? pl?.stats?.matches;
+      if (tm > 0) matches = `<span class="lu-matches">${tm}u</span>`;
     }
     return alignRight
       ? `<div class="lu-row lu-row-r">${matches}${pct}<span class="lu-name">${surname}</span><span class="lu-pos">${pos}</span></div>`
@@ -607,9 +608,12 @@ function renderInlineMatchDetail(m) {
   const prs = m.playerResults || [];
   const seenOur = new Set();
   const seenOpp = new Set();
+  let ourScore = 0, theirScore = 0;
   const rows = prs.map(pr => {
     const [a, b] = pr.result.split(':').map(Number);
     const weWin = a > b;
+    if (weWin) ourScore++; else theirScore++;
+    const running = `<span class="inl-running">${ourScore}:${theirScore}</span>`;
     const sets = renderSetScoresPills(pr.setScores, m.home);
     if (pr.isDoubles) {
       return `<div class="inl-row inl-doubles">
@@ -617,6 +621,7 @@ function renderInlineMatchDetail(m) {
           <span class="inl-left">${pr.player}</span>
           <span class="inl-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</span>
           <span class="inl-right">${pr.opponent}</span>
+          ${running}
         </div>
         ${sets ? `<div class="inl-sets">${sets}</div>` : ''}
       </div>`;
@@ -631,6 +636,7 @@ function renderInlineMatchDetail(m) {
         <span class="inl-left">${isMvp ? '⭐ ' : ''}${pr.player}${ourElo}</span>
         <span class="inl-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</span>
         <span class="inl-right">${oppElo}${pr.opponent}</span>
+        ${running}
       </div>
       ${sets ? `<div class="inl-sets">${sets}</div>` : ''}
     </div>`;

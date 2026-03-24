@@ -898,6 +898,7 @@ async function main() {
           matches: m,
           wins: w,
           losses: l,
+          teamMatches: agg.matchCount,
           sets: usp?.sets || [0, 0],
           winPct: (w + l) > 0 ? Math.round(w / (w + l) * 100) : 0,
         },
