@@ -560,39 +560,48 @@ function goToMatchesForTeam(teamId) {
   switchSection('vysledky');
 }
 
+// ── Shared past match row (used in Přehled + Zápasy) ──────
+function renderPastMatchRow(m, teamOverride, seasonLabel) {
+  const team      = teamOverride || getTeamById(m.teamId);
+  const homeTeam  = m.home ? team.name : m.opponent;
+  const awayTeam  = m.home ? m.opponent : team.name;
+  const scoreHome = m.home ? m.score.home : m.score.away;
+  const scoreAway = m.home ? m.score.away : m.score.home;
+  const subParts  = [
+    seasonLabel,
+    m.round ? `Kolo ${m.round}` : null,
+    fmtDate(m.date),
+    team.competition,
+    m.home ? '🏠 doma' : '✈️ venku',
+  ].filter(Boolean);
+  return `
+  <div class="latest-match-wrap">
+    <div class="match-row latest-match-row" onclick="toggleLatestMatch(${m.id})" style="cursor:pointer">
+      <div class="match-date">${fmtDate(m.date)}</div>
+      <div class="match-teams">
+        <div class="mc-teams">
+          <span class="mc-team${m.home ? ' mc-our' : ''}">${homeTeam}</span>
+          <span class="mc-vs">vs</span>
+          <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
+        </div>
+        <div class="match-sub">${subParts.join(' · ')}</div>
+      </div>
+      <div class="match-result">
+        <div class="match-score">${scoreHome}<span class="score-sep">:</span>${scoreAway}</div>
+        <div class="match-badge ${resultClass(m.result)}">${resultLabel(m.result)}</div>
+        <span class="latest-expand-icon">▾</span>
+      </div>
+    </div>
+    <div class="latest-match-detail" id="latest-detail-${m.id}" style="display:none"></div>
+  </div>`;
+}
+
 function renderLatestMatches() {
   const sorted = [...CLUB_DATA.matches]
     .filter(m => !m.future && m.result && m.score)
     .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
     .slice(0, 6);
-
-  document.getElementById('latestMatches').innerHTML = sorted.map(m => {
-    const team      = getTeamById(m.teamId);
-    const homeTeam  = m.home ? team.name : m.opponent;
-    const awayTeam  = m.home ? m.opponent : team.name;
-    const scoreHome = m.home ? m.score.home : m.score.away;
-    const scoreAway = m.home ? m.score.away : m.score.home;
-    return `
-    <div class="latest-match-wrap">
-      <div class="match-row latest-match-row" onclick="toggleLatestMatch(${m.id})" style="cursor:pointer">
-        <div class="match-date">${fmtDate(m.date)}</div>
-        <div class="match-teams">
-          <div class="mc-teams">
-            <span class="mc-team${m.home ? ' mc-our' : ''}">${homeTeam}</span>
-            <span class="mc-vs">vs</span>
-            <span class="mc-team${!m.home ? ' mc-our' : ''}">${awayTeam}</span>
-          </div>
-          <div class="match-sub">${fmtDate(m.date)} · ${team.competition}</div>
-        </div>
-        <div class="match-result">
-          <div class="match-score">${scoreHome}<span class="score-sep">:</span>${scoreAway}</div>
-          <div class="match-badge ${resultClass(m.result)}">${resultLabel(m.result)}</div>
-          <span class="latest-expand-icon">▾</span>
-        </div>
-      </div>
-      <div class="latest-match-detail" id="latest-detail-${m.id}" style="display:none"></div>
-    </div>`;
-  }).join('');
+  document.getElementById('latestMatches').innerHTML = sorted.map(m => renderPastMatchRow(m)).join('');
 }
 
 function renderSetScoresPills(setScores, weAreHome) {
@@ -655,7 +664,9 @@ function toggleLatestMatch(matchId) {
   }
 
   if (!detailEl.dataset.loaded) {
-    const m = CLUB_DATA.matches.find(x => x.id === matchId);
+    const m = CLUB_DATA.matches.find(x => x.id === matchId)
+      || (window.CLUB_DATA_PREV?.matches  || []).find(x => x.id === matchId)
+      || (window.CLUB_DATA_PREV2?.matches || []).find(x => x.id === matchId);
     if (!m) return;
     detailEl.innerHTML = renderInlineMatchDetail(m);
     detailEl.dataset.loaded = '1';
@@ -848,34 +859,14 @@ function renderVysledky() {
   }
   if (currentPast.length) {
     if (upcoming.length) html += `<div class="matches-section-head" style="margin-top:20px">Odehrané</div>`;
-    html += currentPast.map(m => renderMatchCard(m, m._team, m._season)).join('');
+    html += currentPast.map(m => renderPastMatchRow(m, m._team)).join('');
   }
   if (prevPast.length) {
     html += `<div class="matches-section-head" style="margin-top:24px">Předchozí sezóny</div>`;
-    html += prevPast.map(m => renderMatchCard(m, m._team, m._season)).join('');
+    html += prevPast.map(m => renderPastMatchRow(m, m._team, m._season)).join('');
   }
 
   document.getElementById('matchesDetail').innerHTML = html;
-
-  document.querySelectorAll('.match-card-header').forEach(h => {
-    h.addEventListener('click', () => {
-      if (h.closest('.match-card-future')) return;
-      const card = h.closest('.match-card');
-      card.classList.toggle('open');
-      if (card.classList.contains('open')) {
-        const idStr = card.id?.replace('match-', '');
-        const matchId = parseInt(idStr);
-        if (matchId) {
-          const m = CLUB_DATA.matches.find(x => x.id === matchId)
-            || (window.CLUB_DATA_PREV?.matches || []).find(x => x.id === matchId)
-            || (window.CLUB_DATA_PREV2?.matches || []).find(x => x.id === matchId);
-          if (typeof loadMatchSetScores === 'function') {
-            loadMatchSetScores(matchId, m?.home ?? true);
-          }
-        }
-      }
-    });
-  });
 
   activateFilterTabs('match', tabs);
 }
