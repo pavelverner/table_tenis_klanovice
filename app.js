@@ -329,27 +329,25 @@ function _assignPositions(posFreq, total) {
 const _sortDesc = (a, b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0;
 
 function predictLineup(match) {
+  // All matches for this team regardless of opponent
   const base = m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length;
-  // Prefer same home/away context for accurate position ordering
   const sameCtx = CLUB_DATA.matches.filter(m => base(m) && m.home === match.home)
-    .sort(_sortDesc).slice(0, 6);
-  // Fallback to all matches only when no same-context data exists
+    .sort(_sortDesc).slice(0, 8);
   const pool = sameCtx.length
     ? sameCtx
-    : CLUB_DATA.matches.filter(base).sort(_sortDesc).slice(0, 6);
+    : CLUB_DATA.matches.filter(base).sort(_sortDesc).slice(0, 8);
   if (!pool.length) return null;
   const { posFreq, total } = _buildPositionFreq(pool, pr => pr.player);
   return _assignPositions(posFreq, total);
 }
 
 function predictOpponentLineup(match) {
-  const base = m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length
-    && m.opponent === match.opponent;
-  // Prefer same home/away context (opponent in same role); fall back to any H2H
-  const sameCtx = CLUB_DATA.matches.filter(m => base(m) && m.home === match.home).sort(_sortDesc).slice(0, 6);
+  // Use all matches across all our teams vs this opponent club (more data)
+  const base = m => !m.future && m.result && m.playerResults?.length && m.opponent === match.opponent;
+  const sameCtx = CLUB_DATA.matches.filter(m => base(m) && m.home === match.home).sort(_sortDesc).slice(0, 8);
   const pool = sameCtx.length
     ? sameCtx
-    : CLUB_DATA.matches.filter(base).sort(_sortDesc).slice(0, 6);
+    : CLUB_DATA.matches.filter(base).sort(_sortDesc).slice(0, 8);
   if (!pool.length) return null;
   const { posFreq, total } = _buildPositionFreq(pool, pr => pr.opponent);
   return _assignPositions(posFreq, total);
