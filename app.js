@@ -612,57 +612,7 @@ function renderUpcoming() {
   if (!upcoming.length) { if(block) block.style.display='none'; return; }
   if(block) block.style.display='block';
 
-  el.innerHTML = upcoming.map(m => {
-    const team = getTeamById(m.teamId);
-    const homeTeam = m.home ? team.name : m.opponent;
-    const awayTeam = m.home ? m.opponent : team.name;
-
-    // H2H: last 3 past results vs same opponent – current + up to 2 previous seasons
-    function prevH2HMatches(src) {
-      if (!src) return [];
-      const prevTeamName = (src.teams || []).find(t => {
-        const ourTeam = CLUB_DATA.teams.find(ct => ct.id === m.teamId);
-        return t.name === ourTeam?.name;
-      });
-      if (!prevTeamName) return [];
-      return (src.matches || []).filter(x => x.teamId === prevTeamName.id && x.opponent === m.opponent && x.result);
-    }
-    const h2h = [
-      ...CLUB_DATA.matches.filter(x => x.teamId === m.teamId && x.opponent === m.opponent && x.result && x.date < today),
-      ...prevH2HMatches(window.CLUB_DATA_PREV),
-      ...prevH2HMatches(window.CLUB_DATA_PREV2),
-    ]
-      .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
-      .slice(0, 3);
-
-    const oppShort = m.opponent.replace(/^(TTC|TJ|SK|SC|USK)\s+/i, '').replace(/\s+(Praha|Brno|Ostrava)\s*/i, ' ').trim();
-    const teamLetter = team.name.replace('TTC Klánovice ', '');
-    const h2hDots = h2h.map(x => {
-      const hs = x.home ? x.score.home : x.score.away;
-      const as = x.home ? x.score.away : x.score.home;
-      return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${hs}:${as}</span>`;
-    }).join('');
-
-    return `
-    <div class="upcoming-card">
-      <div class="uc-teams">
-        <span class="${m.home ? 'our-side' : ''}">${homeTeam}</span>
-        <span class="uc-vs">vs</span>
-        <span class="${!m.home ? 'our-side' : ''}">${awayTeam}</span>
-      </div>
-      <div class="uc-bottom">
-        <div class="uc-when">
-          <span class="uc-date">${fmtDate(m.date)}</span>
-          ${m.time ? `<span class="uc-time">${m.time}</span>` : ''}
-        </div>
-        <div class="uc-meta">
-          <span>${team.competition}</span>
-          <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
-          ${h2hDots ? `<span class="h2h-inline">${h2hDots}</span>` : ''}
-        </div>
-      </div>
-    </div>`;
-  }).join('');
+  el.innerHTML = upcoming.map(m => renderUpcomingCard(m)).join('');
 }
 
 function renderTopPlayers() {
@@ -723,36 +673,43 @@ function h2hHtml(h2h) {
   }).join('')}</div>`;
 }
 
-// ── 2. ZÁPASY ──────────────────────────────────────────────
-function renderFutureCard(m) {
+// ── Shared upcoming match card (used in Přehled + Zápasy) ──
+function renderUpcomingCard(m) {
   const team = getTeamById(m.teamId);
   const homeTeam = m.home ? team.name : m.opponent;
   const awayTeam = m.home ? m.opponent : team.name;
   const h2h = getH2H(m);
-  const h2hInline = h2h.length ? `<span class="h2h-inline">${h2h.map(x => {
+  const h2hDots = h2h.length ? `<span class="h2h-inline">${h2h.map(x => {
     const s = x.home ? x.score.home : x.score.away;
     const o = x.home ? x.score.away : x.score.home;
-    const yr = (x.date || '').slice(2, 4);
-    return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${s}:${o}<span class="h2h-yr">'${yr}</span></span>`;
+    return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${s}:${o}</span>`;
   }).join('')}</span>` : '';
+  const roundLabel = m.round ? `<span>Kolo ${m.round}</span>` : '';
   return `
-  <div class="match-row upcoming-row">
-    <div class="match-date">${fmtDate(m.date)}${m.time ? `<div style="font-size:12px;font-weight:700;color:var(--c-text)">${m.time}</div>` : ''}</div>
-    <div class="match-teams">
-      <div class="upcoming-teams-line">
-        <span class="team-name${m.home ? ' our-side' : ''}">${homeTeam}</span>
-        <span class="upcoming-vs">vs</span>
-        <span class="team-name${!m.home ? ' our-side' : ''}">${awayTeam}</span>
+  <div class="upcoming-card">
+    <div class="uc-teams">
+      <span class="${m.home ? 'our-side' : ''}">${homeTeam}</span>
+      <span class="uc-vs">vs</span>
+      <span class="${!m.home ? 'our-side' : ''}">${awayTeam}</span>
+    </div>
+    <div class="uc-bottom">
+      <div class="uc-when">
+        <span class="uc-date">${fmtDate(m.date)}</span>
+        ${m.time ? `<span class="uc-time">${m.time}</span>` : ''}
       </div>
-      <div style="font-size:11px;color:var(--c-muted);margin-top:2px;display:flex;align-items:center;gap:8px;flex-wrap:nowrap;overflow:hidden">
-        <span style="flex-shrink:0">Kolo ${m.round}</span>
-        <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${team.competition}</span>
-        <span class="${m.home ? 'venue-home' : 'venue-away'}" style="flex-shrink:0">${m.home ? '🏠 doma' : '✈️ venku'}</span>
-        ${h2hInline}
+      <div class="uc-meta">
+        ${roundLabel}
+        <span>${team.competition}</span>
+        <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
+        ${h2hDots}
       </div>
     </div>
-    <div class="match-badge badge-upcoming">→</div>
   </div>`;
+}
+
+// ── 2. ZÁPASY ──────────────────────────────────────────────
+function renderFutureCard(m) {
+  return renderUpcomingCard(m);
 }
 
 // Collect past matches from one data source, resolved with team object + season label
