@@ -1087,28 +1087,36 @@ a:hover { text-decoration: underline; }
 }
 .upcoming-card:hover { border-color: var(--c-primary); }
 
-/* Teams line — full width */
+/* Upcoming card layout — desktop: teams top, then when+meta row */
+.upcoming-card {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0;
+}
 .uc-teams {
+  width: 100%; order: 2;
   display: flex; align-items: baseline; gap: 8px;
   font-size: 15px; font-weight: 700;
-  margin-bottom: 10px; flex-wrap: nowrap; white-space: nowrap; overflow: hidden;
+  flex-wrap: nowrap; white-space: nowrap; overflow: hidden;
 }
 .uc-teams .our-side { color: var(--c-primary); }
 .uc-teams span:not(.uc-vs) { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .uc-vs { font-size: 12px; color: var(--c-muted); font-weight: 400; flex-shrink: 0; }
 
-/* Bottom row: date/time left, meta right */
-.uc-bottom {
-  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-}
-.uc-when { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.uc-when { order: 3; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .uc-date { font-size: 13px; font-weight: 600; color: var(--c-text); }
 .uc-time { font-size: 13px; font-weight: 700; color: var(--c-primary); }
 
 .uc-meta {
-  display: flex; align-items: center; gap: 8px;
+  order: 4; display: flex; align-items: center; gap: 8px;
   font-size: 12px; color: var(--c-muted);
   flex-wrap: wrap; margin-left: auto;
+}
+
+/* Mobile: date → teams → meta, all left */
+@media (max-width: 600px) {
+  .upcoming-card { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .uc-when { order: 1; }
+  .uc-teams { order: 2; width: auto; }
+  .uc-meta  { order: 3; margin-left: 0; }
 }
 
 .h2h-inline { display: inline-flex; gap: 4px; align-items: center; }

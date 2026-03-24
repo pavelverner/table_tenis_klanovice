@@ -343,13 +343,15 @@ function predictLineup(match) {
 }
 
 function predictOpponentLineup(match) {
-  // Same opponent, same home/away context (opponent plays same role as in upcoming match)
-  const vs = CLUB_DATA.matches
-    .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length
-      && m.opponent === match.opponent && m.home === match.home)
-    .sort(_sortDesc).slice(0, 6);
-  if (!vs.length) return null;
-  const { posFreq, total } = _buildPositionFreq(vs, pr => pr.opponent);
+  const base = m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length
+    && m.opponent === match.opponent;
+  // Prefer same home/away context (opponent in same role); fall back to any H2H
+  const sameCtx = CLUB_DATA.matches.filter(m => base(m) && m.home === match.home).sort(_sortDesc).slice(0, 6);
+  const pool = sameCtx.length
+    ? sameCtx
+    : CLUB_DATA.matches.filter(base).sort(_sortDesc).slice(0, 6);
+  if (!pool.length) return null;
+  const { posFreq, total } = _buildPositionFreq(pool, pr => pr.opponent);
   return _assignPositions(posFreq, total);
 }
 
@@ -687,22 +689,20 @@ function renderUpcomingCard(m) {
   const roundLabel = m.round ? `<span>Kolo ${m.round}</span>` : '';
   return `
   <div class="upcoming-card">
+    <div class="uc-when">
+      <span class="uc-date">${fmtDate(m.date)}</span>
+      ${m.time ? `<span class="uc-time">${m.time}</span>` : ''}
+    </div>
     <div class="uc-teams">
       <span class="${m.home ? 'our-side' : ''}">${homeTeam}</span>
       <span class="uc-vs">vs</span>
       <span class="${!m.home ? 'our-side' : ''}">${awayTeam}</span>
     </div>
-    <div class="uc-bottom">
-      <div class="uc-when">
-        <span class="uc-date">${fmtDate(m.date)}</span>
-        ${m.time ? `<span class="uc-time">${m.time}</span>` : ''}
-      </div>
-      <div class="uc-meta">
-        ${roundLabel}
-        <span>${team.competition}</span>
-        <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
-        ${h2hDots}
-      </div>
+    <div class="uc-meta">
+      ${roundLabel}
+      <span>${team.competition}</span>
+      <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
+      ${h2hDots}
     </div>
   </div>`;
 }
