@@ -345,34 +345,37 @@ function predictOpponentLineup(match) {
     .sort((a, b) => a.minRubber - b.minRubber);
 }
 
-function _lineupRows(players, alignRight = false) {
-  let pos = 0;
-  return players.map(p => {
-    if (!p.uncertain) pos++;
-    const posLabel = p.uncertain ? '<span class="lu-q">?</span>' : `${pos}.`;
+// posLabels: e.g. ['A','B','C','D'] for home side, ['X','Y','Z','U'] for away side
+function _lineupRows(players, posLabels, alignRight = false) {
+  return players.map((p, i) => {
+    const pos     = posLabels[i] ?? String.fromCharCode(65 + i);
     const surname = p.name.split(' ')[0];
-    const pct = `<span class="lu-pct">${Math.round(p.pct * 100)}%</span>`;
+    const pct     = `<span class="lu-pct">${Math.round(p.pct * 100)}%</span>`;
+    const cls     = p.uncertain ? ' lu-dim' : '';
     return alignRight
-      ? `<div class="lu-row lu-row-r${p.uncertain ? ' lu-dim' : ''}">
-           ${pct}<span class="lu-name">${surname}</span><span class="lu-pos">${posLabel}</span>
-         </div>`
-      : `<div class="lu-row${p.uncertain ? ' lu-dim' : ''}">
-           <span class="lu-pos">${posLabel}</span><span class="lu-name">${surname}</span>${pct}
-         </div>`;
+      ? `<div class="lu-row lu-row-r${cls}">${pct}<span class="lu-name">${surname}</span><span class="lu-pos">${pos}</span></div>`
+      : `<div class="lu-row${cls}"><span class="lu-pos">${pos}</span><span class="lu-name">${surname}</span>${pct}</div>`;
   }).join('');
 }
 
 function buildLineupToggle(match, autoOpen = false) {
   const ours = predictLineup(match);
   if (!ours?.length) return '';
-  const opp  = predictOpponentLineup(match);
+  const opp = predictOpponentLineup(match);
 
   const team = getTeamById(match.teamId);
-  const ourName  = team?.name?.replace('TTC Klánovice ', '') || 'Naši';
-  const oppShort = match.opponent?.replace(/^(TTC|TJ|SK|SC)\s+/i, '').split(' ').slice(0, 2).join(' ') || 'Soupeř';
 
-  const ourRows = _lineupRows(ours, false);
-  const oppRows = opp?.length ? _lineupRows(opp, true) : '<div class="lu-no-data">Žádná data</div>';
+  // Home team uses A,B,C,D; away team uses X,Y,Z,U
+  const homeLabels = ['A','B','C','D','E'];
+  const awayLabels = ['X','Y','Z','U','V'];
+  const ourLabels  = match.home ? homeLabels : awayLabels;
+  const oppLabels  = match.home ? awayLabels : homeLabels;
+
+  const ourName = team?.name || 'TTC Klánovice';
+  const oppName = match.opponent?.replace(/^(TTC|TJ|SK|SC|USK)\s+/i, '').split(' ').slice(0, 2).join(' ') || 'Soupeř';
+
+  const ourRows = _lineupRows(ours, ourLabels, false);
+  const oppRows = opp?.length ? _lineupRows(opp, oppLabels, true) : '<div class="lu-no-data">Žádná data</div>';
 
   const body = `
     <div class="lu-cols">
@@ -382,7 +385,7 @@ function buildLineupToggle(match, autoOpen = false) {
       </div>
       <div class="lu-col-sep">vs</div>
       <div class="lu-col lu-col-r">
-        <div class="lu-col-head">${oppShort}</div>
+        <div class="lu-col-head">${oppName}</div>
         ${oppRows}
       </div>
     </div>`;
