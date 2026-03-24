@@ -1353,10 +1353,15 @@ function renderStatsTable() {
     const delta = p.strDelta || 0;
     const deltaColor = delta > 0 ? 'var(--c-green)' : delta < 0 ? 'var(--c-red)' : 'var(--c-muted)';
     const deltaStr   = delta > 0 ? `+${delta}` : String(delta);
-    // Only show tags for teams the player actually played for this season
+    // In "all" view show only primary team; in team filter show all played teams
     const playedTeams = (p.teams||[]).filter(t => t.stats.matches > 0);
-    const teamPills = playedTeams.map(t => `<span class="player-team-pill" data-team="${t.team}">${t.team}</span>`).join(' ');
-    const teamSubtitle = playedTeams.map(t => `Tým ${t.team}`).join(', ');
+    const primaryTeam = p.team || (playedTeams[0]?.team ?? '');
+    const teamPills = activeStatsTeam === 'all'
+      ? `<span class="player-team-pill" data-team="${primaryTeam}">${primaryTeam}</span>`
+      : playedTeams.map(t => `<span class="player-team-pill" data-team="${t.team}">${t.team}</span>`).join(' ');
+    const teamSubtitle = activeStatsTeam === 'all'
+      ? `Tým ${primaryTeam}`
+      : playedTeams.map(t => `Tým ${t.team}`).join(', ');
     // When team filter active, show stats for that team only
     const teamStats = activeStatsTeam !== 'all'
       ? (p.teams||[]).find(t => t.team === activeStatsTeam)?.stats || p.stats
