@@ -567,12 +567,13 @@ function renderPastMatchRow(m, teamOverride, seasonLabel) {
   const awayTeam  = m.home ? m.opponent : team.name;
   const scoreHome = m.home ? m.score.home : m.score.away;
   const scoreAway = m.home ? m.score.away : m.score.home;
+  const mvp = calcMVP(m.playerResults);
   const subParts  = [
     seasonLabel,
     m.round ? `Kolo ${m.round}` : null,
     fmtDate(m.date),
     team.competition,
-    m.home ? '🏠 doma' : '✈️ venku',
+    mvp ? `⭐ ${mvp.split(' ')[0]}` : null,
   ].filter(Boolean);
   return `
   <div class="latest-match-wrap">
