@@ -614,25 +614,6 @@ function renderUpcoming() {
       .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
       .slice(0, 3);
 
-    const h2hDots = h2h.length ? `
-      <div class="upcoming-h2h">
-        <span class="h2h-label">Předchozí vs ${m.opponent.replace('TTC ','').replace('TJ ','').split(' ').slice(0,2).join(' ')}:</span>
-        ${h2h.map(x => {
-          const hs = x.home ? x.score.home : x.score.away;
-          const as = x.home ? x.score.away : x.score.home;
-          const yr = x.date ? x.date.slice(0,4) : '';
-          return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${hs}:${as}<span class="h2h-yr">${yr}</span></span>`;
-        }).join('')}
-      </div>` : '';
-
-    // Top scorers from last match vs this opponent
-    const lastVs = h2h[0];
-    let scorers = '';
-    if (lastVs?.playerResults?.length) {
-      const top = lastVs.playerResults.filter(pr => pr.won).slice(0, 2).map(pr => pr.player.split(' ')[0]).join(', ');
-      if (top) scorers = `<span class="upcoming-scorers">Bodovali: ${top}</span>`;
-    }
-
     const oppShort = m.opponent.replace(/^(TTC|TJ|SK|SC|USK)\s+/i, '').replace(/\s+(Praha|Brno|Ostrava)\s*/i, ' ').trim();
     const teamLetter = team.name.replace('TTC Klánovice ', '');
     const h2hDots = h2h.map(x => {
