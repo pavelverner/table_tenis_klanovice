@@ -354,14 +354,23 @@ function predictOpponentLineup(match) {
 }
 
 // posLabels: e.g. ['A','B','C','D'] for home side, ['X','Y','Z','U'] for away side
-function _lineupRows(players, posLabels, alignRight = false) {
+// isOpponent: if true, look up match count from CLUB_DATA.opponentStats
+function _lineupRows(players, posLabels, alignRight = false, isOpponent = false) {
   return players.map((p, i) => {
     const pos     = posLabels[i] ?? String.fromCharCode(65 + i);
     const surname = p.name.split(' ')[0];
     const pct     = p.pct > 0 ? `<span class="lu-pct">${Math.round(p.pct * 100)}%</span>` : '';
+    let matches = '';
+    if (isOpponent) {
+      const opp = CLUB_DATA.opponentStats?.[p.name];
+      if (opp?.teamMatches > 0) matches = `<span class="lu-matches">${opp.teamMatches}z</span>`;
+    } else {
+      const pl = (CLUB_DATA.players || []).find(x => x.name === p.name);
+      if (pl?.stats?.matches > 0) matches = `<span class="lu-matches">${pl.stats.matches}z</span>`;
+    }
     return alignRight
-      ? `<div class="lu-row lu-row-r">${pct}<span class="lu-name">${surname}</span><span class="lu-pos">${pos}</span></div>`
-      : `<div class="lu-row"><span class="lu-pos">${pos}</span><span class="lu-name">${surname}</span>${pct}</div>`;
+      ? `<div class="lu-row lu-row-r">${matches}${pct}<span class="lu-name">${surname}</span><span class="lu-pos">${pos}</span></div>`
+      : `<div class="lu-row"><span class="lu-pos">${pos}</span><span class="lu-name">${surname}</span>${pct}${matches}</div>`;
   }).join('');
 }
 
@@ -381,8 +390,8 @@ function buildLineupToggle(match, autoOpen = false) {
   const ourName = team?.name || 'TTC Klánovice';
   const oppName = match.opponent?.replace(/^(TTC|TJ|SK|SC|USK)\s+/i, '').split(' ').slice(0, 2).join(' ') || 'Soupeř';
 
-  const ourRows = _lineupRows(ours, ourLabels, !match.home);
-  const oppRows = opp?.length ? _lineupRows(opp, oppLabels, match.home) : '<div class="lu-no-data">Žádná data</div>';
+  const ourRows = _lineupRows(ours, ourLabels, !match.home, false);
+  const oppRows = opp?.length ? _lineupRows(opp, oppLabels, match.home, true) : '<div class="lu-no-data">Žádná data</div>';
 
   // Home team always on left, away team on right
   const leftName  = match.home ? ourName : oppName;

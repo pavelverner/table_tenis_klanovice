@@ -857,7 +857,8 @@ a:hover { text-decoration: underline; }
 .lu-row-r .lu-pos { text-align: left; }
 .lu-q  { font-size: 11px; color: var(--c-orange); font-weight: 700; }
 .lu-name { font-size: 12px; font-weight: 500; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.lu-pct { font-size: 10px; color: var(--c-muted); flex-shrink: 0; }
+.lu-pct     { font-size: 10px; color: var(--c-muted); flex-shrink: 0; }
+.lu-matches { font-size: 10px; color: var(--c-primary); opacity: 0.8; flex-shrink: 0; margin-left: 2px; }
 .lu-dim { opacity: 0.4; }
 .lu-no-data { font-size: 11px; color: var(--c-muted); font-style: italic; }
 

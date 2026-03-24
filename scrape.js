@@ -654,7 +654,9 @@ async function main() {
     tables: {},
     players: [],
     matches: [],
+    opponentStats: {},  // name → { club, str, teamMatches, wins, losses, winPct }
   };
+  const opponentStats = clubData.opponentStats;
 
   for (const teamCfg of TEAMS_CONFIG) {
     console.log(`\n═══ ${teamCfg.name} ═══`);
@@ -722,6 +724,22 @@ async function main() {
       const parsed = parseUspesnostRow(row);
       if (parsed) uspMap[parsed.name] = parsed;
     }
+    // Collect opponent player stats (all non-Klánovice players from this competition)
+    for (const [name, stats] of Object.entries(uspMap)) {
+      if (!stats.club || stats.club.includes('Klánovice')) continue;
+      // Keep best/most-recent entry if player appears in multiple competitions
+      if (!opponentStats[name] || stats.teamMatches > opponentStats[name].teamMatches) {
+        opponentStats[name] = {
+          club: stats.club,
+          str: stats.str,
+          teamMatches: stats.teamMatches,
+          wins: stats.wins,
+          losses: stats.losses,
+          winPct: stats.winPct,
+        };
+      }
+    }
+
     // League avg STR = average of top-4 players (by STR) per club, same logic as our own team
     const byClub = {};
     for (const u of Object.values(uspMap)) {
