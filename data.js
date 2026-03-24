@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "24.03.26 19:56",
+  "lastUpdate": "24.03.26 21:25",
   "teams": [
     {
       "id": 63401,
@@ -49,13 +49,13 @@ var CLUB_DATA = {
       "division": "3. třída A",
       "leagueAvgStr": 1546,
       "standing": {
-        "pos": 7,
-        "wins": 7,
+        "pos": 6,
+        "wins": 8,
         "losses": 11,
         "draws": 1,
-        "points": 22,
-        "setsFor": 126,
-        "setsAgainst": 154
+        "points": 25,
+        "setsFor": 136,
+        "setsAgainst": 162
       }
     },
     {
@@ -83,11 +83,11 @@ var CLUB_DATA = {
       "standing": {
         "pos": 7,
         "wins": 7,
-        "losses": 11,
+        "losses": 12,
         "draws": 1,
         "points": 22,
-        "setsFor": 129,
-        "setsAgainst": 150
+        "setsFor": 133,
+        "setsAgainst": 160
       }
     }
   ],
@@ -451,12 +451,12 @@ var CLUB_DATA = {
       {
         "pos": 4,
         "team": "TJ Sokol Petrovice B",
-        "z": 19,
+        "z": 20,
         "w": 10,
         "d": 3,
-        "l": 6,
-        "sf": 150,
-        "sa": 138,
+        "l": 7,
+        "sf": 158,
+        "sa": 148,
         "pts": 33,
         "highlight": false,
         "zone": "neutral"
@@ -476,6 +476,19 @@ var CLUB_DATA = {
       },
       {
         "pos": 6,
+        "team": "TTC Klánovice C",
+        "z": 20,
+        "w": 8,
+        "d": 1,
+        "l": 11,
+        "sf": 136,
+        "sa": 162,
+        "pts": 25,
+        "highlight": true,
+        "zone": "neutral"
+      },
+      {
+        "pos": 7,
         "team": "AC Sparta Praha I",
         "z": 20,
         "w": 7,
@@ -485,19 +498,6 @@ var CLUB_DATA = {
         "sa": 163,
         "pts": 25,
         "highlight": false,
-        "zone": "neutral"
-      },
-      {
-        "pos": 7,
-        "team": "TTC Klánovice C",
-        "z": 19,
-        "w": 7,
-        "d": 1,
-        "l": 11,
-        "sf": 126,
-        "sa": 154,
-        "pts": 22,
-        "highlight": true,
         "zone": "neutral"
       },
       {
@@ -741,13 +741,13 @@ var CLUB_DATA = {
       {
         "pos": 2,
         "team": "TJ Lokomotiva Vršovice F",
-        "z": 18,
-        "w": 15,
+        "z": 19,
+        "w": 16,
         "d": 1,
         "l": 2,
-        "sf": 172,
-        "sa": 90,
-        "pts": 46,
+        "sf": 182,
+        "sa": 94,
+        "pts": 49,
         "highlight": false,
         "zone": "promotion"
       },
@@ -780,12 +780,12 @@ var CLUB_DATA = {
       {
         "pos": 5,
         "team": "SF SKK El Niňo Praha J",
-        "z": 18,
+        "z": 19,
         "w": 10,
         "d": 1,
-        "l": 7,
-        "sf": 133,
-        "sa": 137,
+        "l": 8,
+        "sf": 140,
+        "sa": 147,
         "pts": 31,
         "highlight": false,
         "zone": "neutral"
@@ -806,12 +806,12 @@ var CLUB_DATA = {
       {
         "pos": 7,
         "team": "TTC Klánovice E",
-        "z": 19,
+        "z": 20,
         "w": 7,
         "d": 1,
-        "l": 11,
-        "sf": 129,
-        "sa": 150,
+        "l": 12,
+        "sf": 133,
+        "sa": 160,
         "pts": 22,
         "highlight": true,
         "zone": "neutral"
@@ -858,13 +858,13 @@ var CLUB_DATA = {
       {
         "pos": 11,
         "team": "TJ Sokol Petrovice D",
-        "z": 19,
-        "w": 4,
+        "z": 20,
+        "w": 5,
         "d": 2,
         "l": 13,
-        "sf": 107,
-        "sa": 170,
-        "pts": 14,
+        "sf": 117,
+        "sa": 177,
+        "pts": 17,
         "highlight": false,
         "zone": "relegation"
       },
@@ -1548,15 +1548,15 @@ var CLUB_DATA = {
       "strStab": 1467.8,
       "strDelta": -19,
       "stats": {
-        "matches": 73,
-        "wins": 26,
+        "matches": 75,
+        "wins": 28,
         "losses": 47,
         "teamMatches": 18,
         "sets": [
           0,
           0
         ],
-        "winPct": 36
+        "winPct": 37
       }
     },
     {
@@ -1573,15 +1573,15 @@ var CLUB_DATA = {
       "strStab": 1410.6,
       "strDelta": -24,
       "stats": {
-        "matches": 50,
-        "wins": 15,
-        "losses": 35,
+        "matches": 52,
+        "wins": 16,
+        "losses": 36,
         "teamMatches": 13,
         "sets": [
           0,
           0
         ],
-        "winPct": 30
+        "winPct": 31
       }
     },
     {
@@ -1598,15 +1598,15 @@ var CLUB_DATA = {
       "strStab": 1514.3,
       "strDelta": -47,
       "stats": {
-        "matches": 78,
-        "wins": 43,
+        "matches": 79,
+        "wins": 44,
         "losses": 35,
         "teamMatches": 18,
         "sets": [
           0,
           0
         ],
-        "winPct": 55
+        "winPct": 56
       }
     },
     {
@@ -1648,15 +1648,15 @@ var CLUB_DATA = {
       "strStab": 1321,
       "strDelta": 10,
       "stats": {
-        "matches": 8,
+        "matches": 9,
         "wins": 3,
-        "losses": 5,
+        "losses": 6,
         "teamMatches": 2,
         "sets": [
           0,
           0
         ],
-        "winPct": 38
+        "winPct": 33
       }
     },
     {
@@ -2348,15 +2348,15 @@ var CLUB_DATA = {
       "strStab": 1232,
       "strDelta": 152,
       "stats": {
-        "matches": 77,
-        "wins": 37,
+        "matches": 78,
+        "wins": 38,
         "losses": 40,
         "teamMatches": 19,
         "sets": [
           0,
           0
         ],
-        "winPct": 48
+        "winPct": 49
       }
     },
     {
@@ -2423,15 +2423,15 @@ var CLUB_DATA = {
       "strStab": 1250.1,
       "strDelta": 78,
       "stats": {
-        "matches": 65,
+        "matches": 66,
         "wins": 29,
-        "losses": 36,
+        "losses": 37,
         "teamMatches": 17,
         "sets": [
           0,
           0
         ],
-        "winPct": 45
+        "winPct": 44
       }
     },
     {
@@ -2473,9 +2473,9 @@ var CLUB_DATA = {
       "strStab": 1166,
       "strDelta": 341,
       "stats": {
-        "matches": 72,
-        "wins": 36,
-        "losses": 36,
+        "matches": 74,
+        "wins": 37,
+        "losses": 37,
         "teamMatches": 18,
         "sets": [
           0,
@@ -2498,9 +2498,9 @@ var CLUB_DATA = {
       "strStab": 929,
       "strDelta": 0,
       "stats": {
-        "matches": 2,
+        "matches": 4,
         "wins": 0,
-        "losses": 2,
+        "losses": 4,
         "teamMatches": 1,
         "sets": [
           0,
@@ -29217,10 +29217,10 @@ var CLUB_DATA = {
       "date": "2026-03-24",
       "opponent": "TJ Sokol Petrovice B",
       "score": {
-        "home": 4,
-        "away": 6
+        "home": 10,
+        "away": 8
       },
-      "result": "L",
+      "result": "W",
       "playerResults": [
         {
           "rubberNum": 1,
@@ -29522,9 +29522,9 @@ var CLUB_DATA = {
           "rubberNum": 11,
           "player": "Horčák Vojtěch",
           "opponent": "Blaho Martin",
-          "result": "2:0",
+          "result": "3:0",
           "won": true,
-          "setsWon": 2,
+          "setsWon": 3,
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1321,
@@ -29537,6 +29537,10 @@ var CLUB_DATA = {
             [
               8,
               11
+            ],
+            [
+              11,
+              13
             ]
           ]
         },
@@ -29544,10 +29548,10 @@ var CLUB_DATA = {
           "rubberNum": 12,
           "player": "Raiser Dan",
           "opponent": "Matoušek Jan",
-          "result": "1:0",
+          "result": "3:2",
           "won": true,
-          "setsWon": 1,
-          "setsLost": 0,
+          "setsWon": 3,
+          "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1514,
           "oppStr": 1554,
@@ -29555,14 +29559,202 @@ var CLUB_DATA = {
             [
               8,
               11
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              6,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 13,
+          "player": "Pospíšil Jan st.",
+          "opponent": "Pecka Zdeněk",
+          "result": "2:3",
+          "won": false,
+          "setsWon": 2,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1535,
+          "setScores": [
+            [
+              11,
+              5
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              11,
+              5
+            ]
+          ]
+        },
+        {
+          "rubberNum": 14,
+          "player": "Hájek Luděk",
+          "opponent": "Pícha David",
+          "result": "3:0",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 0,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 1454,
+          "setScores": [
+            [
+              10,
+              12
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              9,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 15,
+          "player": "Horčák Vojtěch",
+          "opponent": "Matoušek Jan",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1321,
+          "oppStr": 1554,
+          "setScores": [
+            [
+              12,
+              10
+            ],
+            [
+              11,
+              4
+            ],
+            [
+              11,
+              4
+            ]
+          ]
+        },
+        {
+          "rubberNum": 16,
+          "player": "Raiser Dan",
+          "opponent": "Pecka Zdeněk",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": false,
+          "ourStr": 1514,
+          "oppStr": 1535,
+          "setScores": [
+            [
+              6,
+              11
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              6,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 17,
+          "player": "Pospíšil Jan st.",
+          "opponent": "Pícha David",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": false,
+          "ourStr": 1410,
+          "oppStr": 1454,
+          "setScores": [
+            [
+              11,
+              4
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              8,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 18,
+          "player": "Hájek Luděk",
+          "opponent": "Blaho Martin",
+          "result": "3:0",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 0,
+          "isDoubles": false,
+          "ourStr": 1467,
+          "oppStr": 0,
+          "setScores": [
+            [
+              8,
+              11
+            ],
+            [
+              13,
+              15
+            ],
+            [
+              7,
+              11
             ]
           ]
         }
       ],
       "keyPoints": [
-        "Raiser – perfektní výkon 2/2",
-        "Hájek pod formou – 0/2",
-        "Prohra venku 4:6"
+        "Raiser – perfektní výkon 4/4",
+        "Horčák pod formou – 1/4",
+        "Výjezdní výhra 10:8"
       ]
     },
     {
@@ -47706,8 +47898,8 @@ var CLUB_DATA = {
       "date": "2026-03-24",
       "opponent": "TJ Lokomotiva Vršovice F",
       "score": {
-        "home": 3,
-        "away": 6
+        "home": 4,
+        "away": 10
       },
       "result": "L",
       "playerResults": [
@@ -47988,12 +48180,167 @@ var CLUB_DATA = {
               9
             ]
           ]
+        },
+        {
+          "rubberNum": 10,
+          "player": "Petruš Matyáš",
+          "opponent": "Huleš Kryštof",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1428,
+          "setScores": [
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              5
+            ]
+          ]
+        },
+        {
+          "rubberNum": 11,
+          "player": "Rybář Milan",
+          "opponent": "Sork Viktor",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1361,
+          "setScores": [
+            [
+              11,
+              8
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              9
+            ]
+          ]
+        },
+        {
+          "rubberNum": 12,
+          "player": "Pravda Jakub",
+          "opponent": "Dufek Jakub",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1451,
+          "setScores": [
+            [
+              11,
+              4
+            ],
+            [
+              16,
+              14
+            ],
+            [
+              12,
+              10
+            ]
+          ]
+        },
+        {
+          "rubberNum": 13,
+          "player": "Pospíšil Jan ml.",
+          "opponent": "Huleš Kryštof",
+          "result": "3:2",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 2,
+          "isDoubles": false,
+          "ourStr": 1232,
+          "oppStr": 1428,
+          "setScores": [
+            [
+              11,
+              13
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              23,
+              25
+            ]
+          ]
+        },
+        {
+          "rubberNum": 14,
+          "player": "Petruš Matyáš",
+          "opponent": "Kobras Ludvík",
+          "result": "1:3",
+          "won": false,
+          "setsWon": 1,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1319,
+          "setScores": [
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              9
+            ]
+          ]
+        },
+        {
+          "rubberNum": 15,
+          "player": "Rybář Milan",
+          "opponent": "Dufek Jakub",
+          "result": "1:0",
+          "won": true,
+          "setsWon": 1,
+          "setsLost": 0,
+          "isDoubles": false,
+          "ourStr": 1166,
+          "oppStr": 1451,
+          "setScores": null
         }
       ],
       "keyPoints": [
-        "Pravda pod formou – 0/2",
-        "Prohra venku 3:6",
-        "Čtyřhra Rybář Milan / Pravda Jakub: ✓ výhra"
+        "Pospíšil táhl tým – 2/3 bodů",
+        "Petruš pod formou – 0/3",
+        "Prohra venku 4:10"
       ]
     }
   ],
