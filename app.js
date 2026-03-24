@@ -277,72 +277,92 @@ function renderLiveBlock() {
   }).join('');
 }
 
-// Build per-player appearance stats from a pool of matches.
-// playerFn(pr) → player name string, rubberFn(pr) → rubber number
-function _lineupStats(pool, playerFn, rubberFn) {
+// Build per-position frequency table from a pool of matches.
+// playerFn(pr) → player name string
+// Returns posFreq[0..3] = { playerName: count }, last2played set, total match count
+function _buildPositionFreq(pool, playerFn) {
   const last2played = new Set(
     pool.slice(0, 2).flatMap(m =>
       m.playerResults.filter(pr => !pr.isDoubles).map(pr => playerFn(pr))
     )
   );
-  const stats = {};
+  const posFreq = [{}, {}, {}, {}];
+  let total = 0;
   for (const m of pool) {
-    const seenThisMatch = new Set();
-    for (const pr of m.playerResults) {
-      if (pr.isDoubles) continue;
+    const singles = m.playerResults
+      .filter(pr => !pr.isDoubles && playerFn(pr))
+      .sort((a, b) => (a.rubberNum ?? 99) - (b.rubberNum ?? 99));
+    // deduplicate: keep first occurrence of each player in this match
+    const seen = new Set();
+    const ordered = [];
+    for (const pr of singles) {
       const name = playerFn(pr);
-      if (!name) continue;
-      if (!stats[name]) stats[name] = { matchCount: 0, rubbers: [] };
-      if (!seenThisMatch.has(name)) {
-        stats[name].matchCount++;
-        seenThisMatch.add(name);
-      }
-      stats[name].rubbers.push(rubberFn(pr));
+      if (!seen.has(name)) { seen.add(name); ordered.push(name); }
     }
+    for (let i = 0; i < Math.min(ordered.length, 4); i++) {
+      posFreq[i][ordered[i]] = (posFreq[i][ordered[i]] || 0) + 1;
+    }
+    if (ordered.length > 0) total++;
   }
-  return { stats, last2played, total: pool.length };
+  return { posFreq, last2played, total };
 }
 
-function predictLineup(match) {
-  const sameCtx = CLUB_DATA.matches
+// Greedy position assignment: for each position 0-3 pick the highest-frequency
+// unassigned player. Always returns exactly 4 entries.
+function _assignPositions(posFreq, last2played, total) {
+  const allPlayers = new Set();
+  for (const freq of posFreq) Object.keys(freq).forEach(n => allPlayers.add(n));
+  const assigned = new Set();
+  const result = [];
+  for (let pos = 0; pos < 4; pos++) {
+    const freq = posFreq[pos];
+    let best = null, bestScore = -1;
+    for (const name of allPlayers) {
+      if (assigned.has(name)) continue;
+      const score = (freq[name] || 0) / (total || 1);
+      if (score > bestScore) { bestScore = score; best = name; }
+    }
+    if (!best) {
+      result.push({ name: '?', pct: 0, uncertain: true });
+    } else {
+      assigned.add(best);
+      result.push({
+        name: best,
+        pct: bestScore,
+        uncertain: !last2played.has(best) || bestScore < 0.4,
+      });
+    }
+  }
+  return result;
+}
+
+function _getPool(match) {
+  const byCtx = CLUB_DATA.matches
     .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length && m.home === match.home)
     .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
     .slice(0, 6);
-  const pool = sameCtx.length >= 2 ? sameCtx
-    : CLUB_DATA.matches
-        .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length)
-        .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
-        .slice(0, 6);
-  if (!pool.length) return null;
+  if (byCtx.length >= 2) return byCtx;
+  return CLUB_DATA.matches
+    .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length)
+    .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
+    .slice(0, 6);
+}
 
-  const { stats, last2played, total } = _lineupStats(pool, pr => pr.player, pr => pr.rubberNum);
-  return Object.entries(stats)
-    .map(([name, s]) => ({
-      name,
-      pct: s.matchCount / total,
-      minRubber: Math.min(...s.rubbers),
-      uncertain: !last2played.has(name) || s.matchCount / total < 0.4,
-    }))
-    .sort((a, b) => a.minRubber - b.minRubber);
+function predictLineup(match) {
+  const pool = _getPool(match);
+  if (!pool.length) return null;
+  const { posFreq, last2played, total } = _buildPositionFreq(pool, pr => pr.player);
+  return _assignPositions(posFreq, last2played, total);
 }
 
 function predictOpponentLineup(match) {
-  // Past matches vs same opponent for this team
   const vs = CLUB_DATA.matches
     .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length && m.opponent === match.opponent)
     .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
     .slice(0, 6);
   if (!vs.length) return null;
-
-  const { stats, last2played, total } = _lineupStats(vs, pr => pr.opponent, pr => pr.rubberNum);
-  return Object.entries(stats)
-    .map(([name, s]) => ({
-      name,
-      pct: s.matchCount / total,
-      minRubber: Math.min(...s.rubbers),
-      uncertain: s.matchCount / total < 0.5,
-    }))
-    .sort((a, b) => a.minRubber - b.minRubber);
+  const { posFreq, last2played, total } = _buildPositionFreq(vs, pr => pr.opponent);
+  return _assignPositions(posFreq, last2played, total);
 }
 
 // posLabels: e.g. ['A','B','C','D'] for home side, ['X','Y','Z','U'] for away side
@@ -537,11 +557,13 @@ function renderInlineMatchDetail(m) {
       </div>`;
     }
     const isMvp = pr.player === mvp && pr.won;
+    const ourElo = pr.ourStr > 0 ? `<span class="inl-elo">${pr.ourStr}</span>` : '';
+    const oppElo = pr.oppStr > 0 ? `<span class="inl-elo">${pr.oppStr}</span>` : '';
     return `<div class="inl-row">
       <div class="inl-row-main">
-        <span class="inl-left">${isMvp ? '⭐ ' : ''}${pr.player}</span>
+        <span class="inl-left">${isMvp ? '⭐ ' : ''}${pr.player}${ourElo}</span>
         <span class="inl-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</span>
-        <span class="inl-right">${pr.opponent}</span>
+        <span class="inl-right">${oppElo}${pr.opponent}</span>
       </div>
       ${sets ? `<div class="inl-sets">${sets}</div>` : ''}
     </div>`;

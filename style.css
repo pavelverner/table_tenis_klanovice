@@ -828,6 +828,7 @@ a:hover { text-decoration: underline; }
 .inl-right { font-size: 13px; color: var(--c-muted); text-align: right; }
 .inl-doubles .inl-left { font-size: 12px; color: var(--c-muted); font-style: italic; }
 .inl-sets { display: flex; flex-wrap: wrap; gap: 3px; padding: 2px 14px 6px; }
+.inl-elo  { font-size: 10px; font-weight: 400; color: var(--c-muted); opacity: 0.7; margin-left: 4px; }
 
 /* ── Set score pills (inline in match cards & latest expand) ── */
 .sp { font-size: 11px; font-weight: 600; padding: 1px 5px; border-radius: 3px; }
