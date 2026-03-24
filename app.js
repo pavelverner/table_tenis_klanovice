@@ -354,24 +354,16 @@ function predictOpponentLineup(match) {
 }
 
 // posLabels: e.g. ['A','B','C','D'] for home side, ['X','Y','Z','U'] for away side
-// isOpponent: if true, look up match count from CLUB_DATA.opponentStats
-function _lineupRows(players, posLabels, alignRight = false, isOpponent = false) {
+function _lineupRows(players, posLabels, alignRight = false) {
   return players.map((p, i) => {
     const pos     = posLabels[i] ?? String.fromCharCode(65 + i);
     const surname = p.name.split(' ')[0];
     const pct     = p.pct > 0 ? `<span class="lu-pct">${Math.round(p.pct * 100)}%</span>` : '';
-    let matches = '';
-    if (isOpponent) {
-      const opp = CLUB_DATA.opponentStats?.[p.name];
-      if (opp?.teamMatches > 0) matches = `<span class="lu-matches">${opp.teamMatches}u</span>`;
-    } else {
-      const pl = (CLUB_DATA.players || []).find(x => x.name === p.name);
-      const tm = pl?.stats?.teamMatches ?? pl?.stats?.matches;
-      if (tm > 0) matches = `<span class="lu-matches">${tm}u</span>`;
-    }
+    const str     = _playerStr(p.name);
+    const strBadge = str > 0 ? `<span class="lu-str">${str}</span>` : '';
     return alignRight
-      ? `<div class="lu-row lu-row-r">${matches}${pct}<span class="lu-name">${surname}</span><span class="lu-pos">${pos}</span></div>`
-      : `<div class="lu-row"><span class="lu-pos">${pos}</span><span class="lu-name">${surname}</span>${pct}${matches}</div>`;
+      ? `<div class="lu-row lu-row-r">${pct}<span class="lu-name">${surname}</span>${strBadge}<span class="lu-pos">${pos}</span></div>`
+      : `<div class="lu-row"><span class="lu-pos">${pos}</span>${strBadge}<span class="lu-name">${surname}</span>${pct}</div>`;
   }).join('');
 }
 
@@ -386,37 +378,67 @@ function _eloProb(strA, strB) {
   return 1 / (1 + Math.pow(10, (strB - strA) / 400));
 }
 
-// Estimate expected score using ELO for each of 13 rubbers
-// Czech 4-player format: R1 doubles (A+B vs X+Y), then 12 singles
-// Singles matchups: AX BY CZ DU | AY BX CU DZ | AZ CX BU DY
-function _predictScore(ours, opp) {
+// Detect the match rubber-count format from a team's completed matches
+function _teamFormat(teamId) {
+  const team = CLUB_DATA.teams.find(t => t.id === teamId);
+  if (!team) return 13;
+  const counts = {};
+  for (const m of team.matches || []) {
+    if (m.playerResults?.length && m.score) {
+      const n = m.score.home + m.score.away;
+      if (n > 0) counts[n] = (counts[n] || 0) + 1;
+    }
+  }
+  const entries = Object.entries(counts);
+  if (!entries.length) return 13;
+  // Use the most-common full-match total (assume the highest mode is the real format)
+  return parseInt(entries.sort((a, b) => b[1] - a[1])[0][0]);
+}
+
+// Estimate expected score using ELO.
+// Czech 4-player format: 1 or 2 doubles + 12 or 16 singles depending on league.
+function _predictScore(ours, opp, total = 13) {
   if (!ours?.length || !opp?.length) return null;
-  // Czech 4-player format: away rotate X,Y,Z,U each round; home cycle A→B→C→D→A
-  // Group 1: A-X, B-Y, C-Z, D-U
-  // Group 2: B-X, C-Y, D-Z, A-U
-  // Group 3: C-X, D-Y, A-Z, B-U
-  const MATCHUPS = [
+  // Full round-robin singles for 4 players (16 matchups) + 2 doubles = 18
+  // Partial round-robin for 13-format: 12 singles + 1 doubles
+  const MATCHUPS_12 = [
     [0,0],[1,1],[2,2],[3,3],
     [1,0],[2,1],[3,2],[0,3],
     [2,0],[3,1],[0,2],[1,3],
   ];
+  const MATCHUPS_16 = [
+    ...MATCHUPS_12,
+    [0,3],[1,0],[2,1],[3,2],
+  ];
+  const use18 = total >= 16;
+  const MATCHUPS = use18 ? MATCHUPS_16 : MATCHUPS_12;
+  const numDbl   = use18 ? 2 : 1;
+
   const ourStrs = ours.map(p => _playerStr(p.name));
   const oppStrs = opp.map(p => _playerStr(p.name));
   const hasStr  = [...ourStrs, ...oppStrs].some(s => s > 0);
   if (!hasStr) return null;
 
   let ourExp = 0;
-  // Doubles: avg STR of top-2 vs top-2
+  // Doubles: 1st pair avg STR
   const dblOur = (ourStrs[0] + ourStrs[1]) / 2;
   const dblOpp = (oppStrs[0] + oppStrs[1]) / 2;
   ourExp += _eloProb(dblOur, dblOpp);
+  if (numDbl === 2) {
+    const dbl2Our = (ourStrs[2] + ourStrs[3]) / 2;
+    const dbl2Opp = (oppStrs[2] + oppStrs[3]) / 2;
+    ourExp += _eloProb(dbl2Our, dbl2Opp);
+  }
   // Singles
   for (const [oi, ti] of MATCHUPS) ourExp += _eloProb(ourStrs[oi], oppStrs[ti]);
 
-  const ourRound = Math.round(ourExp);
-  const oppRound = 13 - ourRound;
-  const winProb  = Math.round(ourExp / 13 * 100);
-  return { ourRound, oppRound, winProb };
+  // Scale to actual format total and ensure a winner (no ties)
+  const winFrac  = ourExp / (MATCHUPS.length + numDbl);
+  let ourRound   = Math.round(winFrac * total);
+  const oppRound = total - ourRound;
+  if (ourRound === oppRound) ourRound += winFrac >= 0.5 ? 1 : -1;
+  const winProb = Math.round(winFrac * 100);
+  return { ourRound, oppRound: total - ourRound, winProb };
 }
 
 function buildLineupToggle(match, autoOpen = false) {
@@ -435,8 +457,8 @@ function buildLineupToggle(match, autoOpen = false) {
   const ourName = team?.name || 'TTC Klánovice';
   const oppName = match.opponent?.replace(/^(TTC|TJ|SK|SC|USK)\s+/i, '').split(' ').slice(0, 2).join(' ') || 'Soupeř';
 
-  const ourRows = _lineupRows(ours, ourLabels, !match.home, false);
-  const oppRows = opp?.length ? _lineupRows(opp, oppLabels, match.home, true) : '<div class="lu-no-data">Žádná data</div>';
+  const ourRows = _lineupRows(ours, ourLabels, !match.home);
+  const oppRows = opp?.length ? _lineupRows(opp, oppLabels, match.home) : '<div class="lu-no-data">Žádná data</div>';
 
   // Home team always on left, away team on right
   const leftName  = match.home ? ourName : oppName;
@@ -444,7 +466,7 @@ function buildLineupToggle(match, autoOpen = false) {
   const leftRows  = match.home ? ourRows : oppRows;
   const rightRows = match.home ? oppRows : ourRows;
 
-  const pred = _predictScore(ours, opp);
+  const pred = _predictScore(ours, opp, _teamFormat(match.teamId));
   const predHtml = (() => {
     if (!pred) return '';
     const homeScore = match.home ? pred.ourRound : pred.oppRound;
