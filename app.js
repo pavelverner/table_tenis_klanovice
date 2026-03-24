@@ -390,10 +390,14 @@ function _eloProb(strA, strB) {
 // Singles matchups: AX BY CZ DU | AY BX CU DZ | AZ CX BU DY
 function _predictScore(ours, opp) {
   if (!ours?.length || !opp?.length) return null;
+  // Czech 4-player format: away rotate X,Y,Z,U each round; home cycle A→B→C→D→A
+  // Group 1: A-X, B-Y, C-Z, D-U
+  // Group 2: B-X, C-Y, D-Z, A-U
+  // Group 3: C-X, D-Y, A-Z, B-U
   const MATCHUPS = [
     [0,0],[1,1],[2,2],[3,3],
-    [0,1],[1,0],[2,3],[3,2],
-    [0,2],[2,0],[1,3],[3,1],
+    [1,0],[2,1],[3,2],[0,3],
+    [2,0],[3,1],[0,2],[1,3],
   ];
   const ourStrs = ours.map(p => _playerStr(p.name));
   const oppStrs = opp.map(p => _playerStr(p.name));
@@ -601,8 +605,9 @@ function renderSetScoresPills(setScores, weAreHome) {
 function renderInlineMatchDetail(m) {
   const mvp = calcMVP(m.playerResults);
   const prs = m.playerResults || [];
-  const firstSinglesIdx = prs.findIndex(pr => !pr.isDoubles);
-  const rows = prs.map((pr, i) => {
+  const seenOur = new Set();
+  const seenOpp = new Set();
+  const rows = prs.map(pr => {
     const [a, b] = pr.result.split(':').map(Number);
     const weWin = a > b;
     const sets = renderSetScoresPills(pr.setScores, m.home);
@@ -617,9 +622,10 @@ function renderInlineMatchDetail(m) {
       </div>`;
     }
     const isMvp = pr.player === mvp && pr.won;
-    const showElo = i === firstSinglesIdx;
-    const ourElo = showElo && pr.ourStr > 0 ? `<span class="inl-elo">${pr.ourStr}</span>` : '';
-    const oppElo = showElo && pr.oppStr > 0 ? `<span class="inl-elo inl-elo-opp">${pr.oppStr}</span>` : '';
+    const showOurElo = !seenOur.has(pr.player); seenOur.add(pr.player);
+    const showOppElo = !seenOpp.has(pr.opponent); seenOpp.add(pr.opponent);
+    const ourElo = showOurElo && pr.ourStr > 0 ? `<span class="inl-elo">${pr.ourStr}</span>` : '';
+    const oppElo = showOppElo && pr.oppStr > 0 ? `<span class="inl-elo inl-elo-opp">${pr.oppStr}</span>` : '';
     return `<div class="inl-row">
       <div class="inl-row-main">
         <span class="inl-left">${isMvp ? '⭐ ' : ''}${pr.player}${ourElo}</span>
