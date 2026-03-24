@@ -624,13 +624,6 @@ a:hover { text-decoration: underline; }
   .match-result {
     display: flex; flex-direction: column; align-items: center; gap: 3px;
   }
-  /* Upcoming rows: compact mobile layout */
-  .upcoming-row { grid-template-columns: auto 1fr auto; gap: 6px; }
-  .upcoming-row .match-date { display: block; white-space: nowrap; font-size: 11px; }
-  .upcoming-row .match-date .upcoming-time { font-size: 13px; }
-  .upcoming-teams-line { display: none; }
-  .upcoming-mobile-line { display: flex; align-items: center; gap: 5px; min-width: 0; }
-  .upcoming-row .upcoming-meta { gap: 5px; }
   /* Latest results: keep score+badge+arrow on one row */
   .latest-match-row .match-result { flex-direction: row; align-items: center; }
   .match-score { font-size: 15px; }
@@ -827,8 +820,9 @@ a:hover { text-decoration: underline; }
 .inl-score { font-size: 13px; font-weight: 700; text-align: center; white-space: nowrap; }
 .inl-right { font-size: 13px; color: var(--c-muted); text-align: right; }
 .inl-doubles .inl-left { font-size: 12px; color: var(--c-muted); font-style: italic; }
-.inl-sets { display: flex; flex-wrap: wrap; gap: 3px; padding: 2px 14px 6px; }
-.inl-elo  { font-size: 10px; font-weight: 400; color: var(--c-muted); opacity: 0.7; margin-left: 4px; }
+.inl-sets { display: flex; flex-wrap: wrap; justify-content: center; gap: 3px; padding: 2px 14px 6px; }
+.inl-elo  { font-size: 10px; font-weight: 400; color: var(--c-muted); opacity: 0.7; margin-left: 5px; }
+.inl-elo-opp { margin-left: 0; margin-right: 5px; }
 
 /* ── Set score pills (inline in match cards & latest expand) ── */
 .sp { font-size: 11px; font-weight: 600; padding: 1px 5px; border-radius: 3px; }
@@ -1083,33 +1077,6 @@ a:hover { text-decoration: underline; }
   .sc-bar-wrap { display: none; }
 }
 
-/* ── Upcoming rows (reuse match-row style) ── */
-.upcoming-row { cursor: default; }
-.upcoming-teams-line {
-  display: flex; align-items: center; gap: 0;
-  flex-wrap: nowrap; font-size: 14px; font-weight: 600;
-  overflow: hidden;
-}
-.upcoming-teams-line .team-name {
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  flex: 1; min-width: 0; font-size: 14px; font-weight: 600;
-}
-.upcoming-teams-line .our-side { color: var(--c-primary); }
-.upcoming-teams-line .upcoming-vs { margin: 0 6px; flex-shrink: 0; }
-.match-teams .our-side { color: var(--c-primary); font-weight: 600; }
-.upcoming-time { font-size: 12px; font-weight: 700; color: var(--c-text); margin-top: 2px; }
-.upcoming-mobile-line { display: none; }  /* shown only on mobile */
-.upcoming-team-badge {
-  font-size: 11px; font-weight: 800; background: var(--c-primary);
-  color: #fff; padding: 1px 5px; border-radius: 3px; flex-shrink: 0;
-}
-.upcoming-opp-name { font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
-.upcoming-row .upcoming-meta { margin-top: 3px; margin-bottom: 0; font-size: 11px; }
-.badge-upcoming {
-  color: var(--c-muted); font-size: 18px; min-width: 28px; text-align: center;
-}
-.h2h-inline { display: inline-flex; gap: 4px; align-items: center; }
-
 /* ── Upcoming match cards ── */
 .upcoming-card {
   background: var(--c-surface);
@@ -1120,36 +1087,40 @@ a:hover { text-decoration: underline; }
 }
 .upcoming-card:hover { border-color: var(--c-primary); }
 
-.upcoming-meta {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 12px; color: var(--c-muted); margin-bottom: 8px;
-  flex-wrap: wrap;
+/* Teams line — full width */
+.uc-teams {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: 15px; font-weight: 700;
+  margin-bottom: 10px; flex-wrap: wrap;
 }
-.upcoming-date { font-weight: 600; color: var(--c-text); }
-.upcoming-comp { }
-.upcoming-venue { }
+.uc-teams .our-side { color: var(--c-primary); }
+.uc-vs { font-size: 12px; color: var(--c-muted); font-weight: 400; flex-shrink: 0; }
 
-.upcoming-teams {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 15px; font-weight: 600; margin-bottom: 8px;
+/* Bottom row: date/time left, meta right */
+.uc-bottom {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
 }
-.upcoming-teams .our-side { color: var(--c-primary); }
-.upcoming-vs { font-size: 12px; color: var(--c-muted); font-weight: 400; }
+.uc-when { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.uc-date { font-size: 13px; font-weight: 600; color: var(--c-text); }
+.uc-time { font-size: 13px; font-weight: 700; color: var(--c-primary); }
 
-.upcoming-h2h {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 12px; flex-wrap: wrap;
+.uc-meta {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; color: var(--c-muted);
+  flex-wrap: wrap; margin-left: auto;
 }
-.h2h-label { color: var(--c-muted); }
+
+.h2h-inline { display: inline-flex; gap: 4px; align-items: center; }
 .h2h-item {
-  padding: 2px 8px; border-radius: 4px; font-weight: 700;
-  font-size: 12px;
+  padding: 2px 7px; border-radius: 4px; font-weight: 700; font-size: 12px;
 }
 .h2h-w { background: rgba(34,197,94,.15); color: var(--c-green); }
 .h2h-l { background: rgba(239,68,68,.15); color: var(--c-red); }
 .h2h-d { background: rgba(245,158,11,.15); color: var(--c-orange); }
 .h2h-yr { font-size: 10px; opacity: .6; margin-left: 3px; }
-.upcoming-scorers { font-size: 12px; color: var(--c-muted); margin-top: 4px; display: block; }
+
+.venue-home { color: var(--c-green); }
+.venue-away { color: var(--c-orange); }
 
 /* ── Modal chart ── */
 .modal-chart-wrap {

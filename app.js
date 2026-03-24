@@ -279,20 +279,14 @@ function renderLiveBlock() {
 
 // Build per-position frequency table from a pool of matches.
 // playerFn(pr) → player name string
-// Returns posFreq[0..3] = { playerName: count }, last2played set, total match count
+// Returns posFreq[0..3] = { playerName: count } and total match count
 function _buildPositionFreq(pool, playerFn) {
-  const last2played = new Set(
-    pool.slice(0, 2).flatMap(m =>
-      m.playerResults.filter(pr => !pr.isDoubles).map(pr => playerFn(pr))
-    )
-  );
   const posFreq = [{}, {}, {}, {}];
   let total = 0;
   for (const m of pool) {
     const singles = m.playerResults
       .filter(pr => !pr.isDoubles && playerFn(pr))
       .sort((a, b) => (a.rubberNum ?? 99) - (b.rubberNum ?? 99));
-    // deduplicate: keep first occurrence of each player in this match
     const seen = new Set();
     const ordered = [];
     for (const pr of singles) {
@@ -304,12 +298,12 @@ function _buildPositionFreq(pool, playerFn) {
     }
     if (ordered.length > 0) total++;
   }
-  return { posFreq, last2played, total };
+  return { posFreq, total };
 }
 
 // Greedy position assignment: for each position 0-3 pick the highest-frequency
 // unassigned player. Always returns exactly 4 entries.
-function _assignPositions(posFreq, last2played, total) {
+function _assignPositions(posFreq, total) {
   const allPlayers = new Set();
   for (const freq of posFreq) Object.keys(freq).forEach(n => allPlayers.add(n));
   const assigned = new Set();
@@ -323,46 +317,36 @@ function _assignPositions(posFreq, last2played, total) {
       if (score > bestScore) { bestScore = score; best = name; }
     }
     if (!best) {
-      result.push({ name: '?', pct: 0, uncertain: true });
+      result.push({ name: '?', pct: 0 });
     } else {
       assigned.add(best);
-      result.push({
-        name: best,
-        pct: bestScore,
-        uncertain: !last2played.has(best) || bestScore < 0.4,
-      });
+      result.push({ name: best, pct: bestScore });
     }
   }
   return result;
 }
 
-function _getPool(match) {
-  const byCtx = CLUB_DATA.matches
-    .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length && m.home === match.home)
-    .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
-    .slice(0, 6);
-  if (byCtx.length >= 2) return byCtx;
-  return CLUB_DATA.matches
-    .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length)
-    .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
-    .slice(0, 6);
-}
+const _sortDesc = (a, b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0;
 
 function predictLineup(match) {
-  const pool = _getPool(match);
-  if (!pool.length) return null;
-  const { posFreq, last2played, total } = _buildPositionFreq(pool, pr => pr.player);
-  return _assignPositions(posFreq, last2played, total);
+  const base = m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length;
+  // Position ordering from same home/away context
+  const sameCtx = CLUB_DATA.matches.filter(m => base(m) && m.home === match.home)
+    .sort(_sortDesc).slice(0, 6);
+  if (!sameCtx.length) return null;
+  const { posFreq, total } = _buildPositionFreq(sameCtx, pr => pr.player);
+  return _assignPositions(posFreq, total);
 }
 
 function predictOpponentLineup(match) {
+  // Same opponent, same home/away context (opponent plays same role as in upcoming match)
   const vs = CLUB_DATA.matches
-    .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length && m.opponent === match.opponent)
-    .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
-    .slice(0, 6);
+    .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length
+      && m.opponent === match.opponent && m.home === match.home)
+    .sort(_sortDesc).slice(0, 6);
   if (!vs.length) return null;
-  const { posFreq, last2played, total } = _buildPositionFreq(vs, pr => pr.opponent);
-  return _assignPositions(posFreq, last2played, total);
+  const { posFreq, total } = _buildPositionFreq(vs, pr => pr.opponent);
+  return _assignPositions(posFreq, total);
 }
 
 // posLabels: e.g. ['A','B','C','D'] for home side, ['X','Y','Z','U'] for away side
@@ -370,11 +354,10 @@ function _lineupRows(players, posLabels, alignRight = false) {
   return players.map((p, i) => {
     const pos     = posLabels[i] ?? String.fromCharCode(65 + i);
     const surname = p.name.split(' ')[0];
-    const pct     = `<span class="lu-pct">${Math.round(p.pct * 100)}%</span>`;
-    const cls     = p.uncertain ? ' lu-dim' : '';
+    const pct     = p.pct > 0 ? `<span class="lu-pct">${Math.round(p.pct * 100)}%</span>` : '';
     return alignRight
-      ? `<div class="lu-row lu-row-r${cls}">${pct}<span class="lu-name">${surname}</span><span class="lu-pos">${pos}</span></div>`
-      : `<div class="lu-row${cls}"><span class="lu-pos">${pos}</span><span class="lu-name">${surname}</span>${pct}</div>`;
+      ? `<div class="lu-row lu-row-r">${pct}<span class="lu-name">${surname}</span><span class="lu-pos">${pos}</span></div>`
+      : `<div class="lu-row"><span class="lu-pos">${pos}</span><span class="lu-name">${surname}</span>${pct}</div>`;
   }).join('');
 }
 
@@ -394,19 +377,25 @@ function buildLineupToggle(match, autoOpen = false) {
   const ourName = team?.name || 'TTC Klánovice';
   const oppName = match.opponent?.replace(/^(TTC|TJ|SK|SC|USK)\s+/i, '').split(' ').slice(0, 2).join(' ') || 'Soupeř';
 
-  const ourRows = _lineupRows(ours, ourLabels, false);
-  const oppRows = opp?.length ? _lineupRows(opp, oppLabels, true) : '<div class="lu-no-data">Žádná data</div>';
+  const ourRows = _lineupRows(ours, ourLabels, !match.home);
+  const oppRows = opp?.length ? _lineupRows(opp, oppLabels, match.home) : '<div class="lu-no-data">Žádná data</div>';
+
+  // Home team always on left, away team on right
+  const leftName  = match.home ? ourName : oppName;
+  const rightName = match.home ? oppName : ourName;
+  const leftRows  = match.home ? ourRows : oppRows;
+  const rightRows = match.home ? oppRows : ourRows;
 
   const body = `
     <div class="lu-cols">
       <div class="lu-col">
-        <div class="lu-col-head">${ourName}</div>
-        ${ourRows}
+        <div class="lu-col-head">${leftName}</div>
+        ${leftRows}
       </div>
       <div class="lu-col-sep">vs</div>
       <div class="lu-col lu-col-r">
-        <div class="lu-col-head">${oppName}</div>
-        ${oppRows}
+        <div class="lu-col-head">${rightName}</div>
+        ${rightRows}
       </div>
     </div>`;
 
@@ -542,7 +531,9 @@ function renderSetScoresPills(setScores, weAreHome) {
 
 function renderInlineMatchDetail(m) {
   const mvp = calcMVP(m.playerResults);
-  const rows = (m.playerResults || []).map(pr => {
+  const prs = m.playerResults || [];
+  const firstSinglesIdx = prs.findIndex(pr => !pr.isDoubles);
+  const rows = prs.map((pr, i) => {
     const [a, b] = pr.result.split(':').map(Number);
     const weWin = a > b;
     const sets = renderSetScoresPills(pr.setScores, m.home);
@@ -557,8 +548,9 @@ function renderInlineMatchDetail(m) {
       </div>`;
     }
     const isMvp = pr.player === mvp && pr.won;
-    const ourElo = pr.ourStr > 0 ? `<span class="inl-elo">${pr.ourStr}</span>` : '';
-    const oppElo = pr.oppStr > 0 ? `<span class="inl-elo">${pr.oppStr}</span>` : '';
+    const showElo = i === firstSinglesIdx;
+    const ourElo = showElo && pr.ourStr > 0 ? `<span class="inl-elo">${pr.ourStr}</span>` : '';
+    const oppElo = showElo && pr.oppStr > 0 ? `<span class="inl-elo inl-elo-opp">${pr.oppStr}</span>` : '';
     return `<div class="inl-row">
       <div class="inl-row-main">
         <span class="inl-left">${isMvp ? '⭐ ' : ''}${pr.player}${ourElo}</span>
@@ -648,29 +640,23 @@ function renderUpcoming() {
     }).join('');
 
     return `
-    <div class="match-row upcoming-row">
-      <div class="match-date">
-        ${fmtDate(m.date)}
-        ${m.time ? `<div class="upcoming-time">${m.time}</div>` : ''}
+    <div class="upcoming-card">
+      <div class="uc-teams">
+        <span class="${m.home ? 'our-side' : ''}">${homeTeam}</span>
+        <span class="uc-vs">vs</span>
+        <span class="${!m.home ? 'our-side' : ''}">${awayTeam}</span>
       </div>
-      <div class="match-teams">
-        <div class="upcoming-teams-line">
-          <span class="team-name${m.home ? ' our-side' : ''}">${homeTeam}</span>
-          <span class="upcoming-vs">vs</span>
-          <span class="team-name${!m.home ? ' our-side' : ''}">${awayTeam}</span>
+      <div class="uc-bottom">
+        <div class="uc-when">
+          <span class="uc-date">${fmtDate(m.date)}</span>
+          ${m.time ? `<span class="uc-time">${m.time}</span>` : ''}
         </div>
-        <div class="upcoming-mobile-line">
-          <span class="upcoming-team-badge">${teamLetter}</span>
-          <span class="upcoming-vs">vs</span>
-          <span class="upcoming-opp-name">${oppShort}</span>
-        </div>
-        <div class="upcoming-meta">
+        <div class="uc-meta">
           <span>${team.competition}</span>
           <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
           ${h2hDots ? `<span class="h2h-inline">${h2hDots}</span>` : ''}
         </div>
       </div>
-      <div class="match-badge badge-upcoming">→</div>
     </div>`;
   }).join('');
 }
