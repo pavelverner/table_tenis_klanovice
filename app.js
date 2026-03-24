@@ -160,7 +160,7 @@ function getTeamById(id) {
 // ── Live match detection ───────────────────────────────────
 function getTodayMatches() {
   const now   = new Date();
-  const today = now.toISOString().split('T')[0]; // "2026-03-22"
+  const today = localDateStr();
 
   return CLUB_DATA.matches.filter(m => {
     if (!m.date) return false;
@@ -176,13 +176,24 @@ function parseStisDate(s) {
   return `${m[3]}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`;
 }
 
+// Returns local date as "YYYY-MM-DD" (avoids UTC offset bug of toISOString)
+function localDateStr(d = new Date()) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
 function isMatchLive(m) {
-  const now  = new Date();
-  const mDate = m.date.includes('.') ? parseStisDate(m.date) : m.date;
-  const today = now.toISOString().split('T')[0];
+  const now   = new Date();
+  const today = localDateStr();
+  const mDate = m.date?.includes('.') ? parseStisDate(m.date) : m.date;
   if (mDate !== today) return false;
-  // Consider live if current time is within 4 hours of midnight (rough heuristic for evening matches)
-  const hour = now.getHours();
+  if (!m.future) return false;  // already has a result → not live
+  const hour = now.getHours(), min = now.getMinutes();
+  if (m.time) {
+    const [hh, mm = 0] = m.time.split(':').map(Number);
+    const started = hour > hh || (hour === hh && min >= mm);
+    const ended   = hour >= hh + 4;
+    return started && !ended;
+  }
   return hour >= 17 && hour <= 23;
 }
 
@@ -209,10 +220,9 @@ function renderLiveBlock() {
   const liveBlock = document.getElementById('liveBlock');
   const liveContainer = document.getElementById('liveMatches');
 
-  const anyLive      = todayMatches.some(m => isMatchLive(m) && m.future);
-  const anyPlayed    = todayMatches.some(m => m.result);
+  const anyLive = todayMatches.some(m => isMatchLive(m));
 
-  if (!anyLive && !anyPlayed) {
+  if (!todayMatches.length) {
     liveBlock.style.display = 'none';
     return;
   }
@@ -236,11 +246,13 @@ function renderLiveBlock() {
     const homeScore = played ? (m.home ? m.score.home : m.score.away) : '–';
     const awayScore = played ? (m.home ? m.score.away : m.score.home) : '–';
 
+    const timeLabel = m.time || fmtDate(m.date?.includes('.') ? parseStisDate(m.date) : m.date);
+
     return `
-    <div class="live-match-card ${isLive && !played ? 'live-pulsing' : ''}">
+    <div class="live-match-card ${isLive ? 'live-pulsing' : ''}">
       <div class="live-match-meta">
-        <span class="live-tag ${isLive && !played ? 'live-active' : 'live-today'}">
-          ${isLive && !played ? '● LIVE' : 'DNES'}
+        <span class="live-tag ${isLive ? 'live-active' : 'live-today'}">
+          ${isLive ? '● LIVE' : 'DNES'}
         </span>
         <span class="live-competition">${team.competition}</span>
         <span class="live-venue">${m.home ? '🏠 doma' : '✈️ venku'}</span>
@@ -251,7 +263,7 @@ function renderLiveBlock() {
           ${played
             ? `<span class="live-score-val">${homeScore}<span class="live-colon">:</span>${awayScore}</span>
                <span class="match-badge ${resultClass(m.result)}">${resultLabel(m.result)}</span>`
-            : `<span class="live-time">${fmtDate(m.date.includes('.') ? parseStisDate(m.date).split('T')[0] : m.date)}</span>`
+            : `<span class="live-time">${timeLabel}</span>`
           }
         </span>
         <span class="live-team ${!m.home ? 'our-side' : ''}">${awayTeamName}</span>
@@ -260,8 +272,81 @@ function renderLiveBlock() {
       <div class="live-keypoints">
         ${m.keyPoints.map(k => `<span class="live-kp">▶ ${k}</span>`).join('')}
       </div>` : ''}
+      ${!played ? buildLineupToggle(m, isLive) : ''}
     </div>`;
   }).join('');
+}
+
+function predictLineup(match) {
+  // Same home/away context, last 6 completed matches
+  const sameCtx = CLUB_DATA.matches
+    .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length && m.home === match.home)
+    .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
+    .slice(0, 6);
+  // Fall back to any context if too few same-context matches
+  const pool = sameCtx.length >= 2 ? sameCtx
+    : CLUB_DATA.matches
+        .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length)
+        .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
+        .slice(0, 6);
+  if (!pool.length) return null;
+
+  // Who played in the last 2 context matches (availability signal)
+  const last2played = new Set(
+    pool.slice(0, 2).flatMap(m => m.playerResults.filter(pr => !pr.isDoubles).map(pr => pr.player))
+  );
+
+  const stats = {};
+  for (const m of pool) {
+    for (const pr of m.playerResults) {
+      if (pr.isDoubles) continue;
+      if (!stats[pr.player]) stats[pr.player] = { count: 0, rubbers: [] };
+      stats[pr.player].count++;
+      stats[pr.player].rubbers.push(pr.rubberNum);
+    }
+  }
+
+  return Object.entries(stats)
+    .map(([name, s]) => ({
+      name,
+      pct: s.count / pool.length,
+      minRubber: Math.min(...s.rubbers),
+      uncertain: !last2played.has(name) || s.count / pool.length < 0.4,
+    }))
+    .sort((a, b) => a.minRubber - b.minRubber);
+}
+
+function buildLineupToggle(match, autoOpen = false) {
+  const players = predictLineup(match);
+  if (!players || !players.length) return '';
+
+  let pos = 0;
+  const rows = players.map(p => {
+    if (!p.uncertain) pos++;
+    const posLabel = p.uncertain ? '<span class="lu-q">?</span>' : `${pos}.`;
+    const shortName = p.name.split(' ').slice(0, 2).join(' ');
+    const pctLabel = `<span class="lu-pct">${Math.round(p.pct * 100)}%</span>`;
+    return `<div class="lu-row${p.uncertain ? ' lu-dim' : ''}">
+      <span class="lu-pos">${posLabel}</span>
+      <span class="lu-name">${shortName}</span>
+      ${pctLabel}
+    </div>`;
+  }).join('');
+
+  return `
+    <div class="lu-toggle${autoOpen ? ' lu-open' : ''}" id="lu-toggle-${match.id}" onclick="toggleLiveLineup(${match.id})">
+      <span>Předpokládaná sestava</span><span class="lu-arrow">▾</span>
+    </div>
+    <div class="lu-body" id="lu-body-${match.id}" style="${autoOpen ? '' : 'display:none'}">${rows}</div>`;
+}
+
+function toggleLiveLineup(matchId) {
+  const body   = document.getElementById(`lu-body-${matchId}`);
+  const toggle = document.getElementById(`lu-toggle-${matchId}`);
+  if (!body) return;
+  const open = body.style.display !== 'none';
+  body.style.display = open ? 'none' : 'block';
+  toggle?.classList.toggle('lu-open', !open);
 }
 
 function renderTeamCards() {
@@ -284,7 +369,7 @@ function renderTeamCards() {
     // Last 5 match result dots
     const lastFive = CLUB_DATA.matches
       .filter(m => m.teamId === team.id && m.result)
-      .sort((a,b) => (b.date||'').localeCompare(a.date||''))
+      .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
       .slice(0, 5)
       .reverse();
     const dots = lastFive.map(m =>
@@ -338,7 +423,7 @@ function goToMatchesForTeam(teamId) {
 function renderLatestMatches() {
   const sorted = [...CLUB_DATA.matches]
     .filter(m => !m.future && m.result && m.score)
-    .sort((a,b) => (b.date || '').localeCompare(a.date || ''))
+    .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
     .slice(0, 6);
 
   document.getElementById('latestMatches').innerHTML = sorted.map(m => {
@@ -370,6 +455,43 @@ function renderLatestMatches() {
   }).join('');
 }
 
+function renderSetScoresPills(setScores, weAreHome) {
+  if (!setScores?.length) return '';
+  return setScores.map(([h, a]) => {
+    const us = weAreHome ? h : a, them = weAreHome ? a : h;
+    return `<span class="sp ${us > them ? 'sp-w' : 'sp-l'}">${us}:${them}</span>`;
+  }).join('');
+}
+
+function renderInlineMatchDetail(m) {
+  const mvp = calcMVP(m.playerResults);
+  const rows = (m.playerResults || []).map(pr => {
+    const [a, b] = pr.result.split(':').map(Number);
+    const weWin = a > b;
+    const sets = renderSetScoresPills(pr.setScores, m.home);
+    if (pr.isDoubles) {
+      return `<div class="inl-row inl-doubles">
+        <div class="inl-row-main">
+          <span class="inl-left">${pr.player}</span>
+          <span class="inl-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</span>
+          <span class="inl-right">${pr.opponent}</span>
+        </div>
+        ${sets ? `<div class="inl-sets">${sets}</div>` : ''}
+      </div>`;
+    }
+    const isMvp = pr.player === mvp && pr.won;
+    return `<div class="inl-row">
+      <div class="inl-row-main">
+        <span class="inl-left">${isMvp ? '⭐ ' : ''}${pr.player}</span>
+        <span class="inl-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</span>
+        <span class="inl-right">${pr.opponent}</span>
+      </div>
+      ${sets ? `<div class="inl-sets">${sets}</div>` : ''}
+    </div>`;
+  }).join('');
+  return `<div class="inl-detail">${rows}</div>`;
+}
+
 function toggleLatestMatch(matchId) {
   const detailEl = document.getElementById(`latest-detail-${matchId}`);
   if (!detailEl) return;
@@ -383,22 +505,8 @@ function toggleLatestMatch(matchId) {
   if (!detailEl.dataset.loaded) {
     const m = CLUB_DATA.matches.find(x => x.id === matchId);
     if (!m) return;
-    // Render card with a unique id to avoid duplicate with Zápasy section
-    detailEl.innerHTML = renderMatchCard(m).replace(`id="match-${matchId}"`, `id="inline-match-${matchId}"`);
-    // Attach header click for collapse/expand
-    detailEl.querySelectorAll('.match-card-header').forEach(h => {
-      h.addEventListener('click', () => {
-        if (h.closest('.match-card-future')) return;
-        h.closest('.match-card').classList.toggle('open');
-      });
-    });
-    // Auto-open body
-    const card = detailEl.querySelector('.match-card');
-    if (card) card.classList.add('open');
+    detailEl.innerHTML = renderInlineMatchDetail(m);
     detailEl.dataset.loaded = '1';
-    if (typeof loadMatchSetScores === 'function') {
-      loadMatchSetScores(matchId, m.home ?? true);
-    }
   }
 
   detailEl.style.display = 'block';
@@ -407,7 +515,7 @@ function toggleLatestMatch(matchId) {
 
 function renderUpcoming() {
   const now = new Date();
-  const today = now.toISOString().split('T')[0];
+  const today = localDateStr();
 
   // If live block shows today's matches, skip today in upcoming to avoid duplication
   const liveActive = document.getElementById('liveBlock')?.style.display !== 'none';
@@ -417,10 +525,10 @@ function renderUpcoming() {
   for (const team of CLUB_DATA.teams) {
     const next = CLUB_DATA.matches
       .filter(m => m.teamId === team.id && m.future && m.date && (liveActive ? m.date > today : m.date >= today))
-      .sort((a,b) => (a.date||'').localeCompare(b.date||''))[0];
+      .sort((a,b) => (a.date||'') > (b.date||'') ? 1 : (a.date||'') < (b.date||'') ? -1 : 0)[0];
     if (next) upcoming.push(next);
   }
-  upcoming.sort((a,b) => (a.date||'').localeCompare(b.date||''));
+  upcoming.sort((a,b) => (a.date||'') > (b.date||'') ? 1 : (a.date||'') < (b.date||'') ? -1 : 0);
 
   const el = document.getElementById('upcomingMatches');
   const block = document.getElementById('upcomingBlock');
@@ -449,7 +557,7 @@ function renderUpcoming() {
       ...prevH2HMatches(window.CLUB_DATA_PREV),
       ...prevH2HMatches(window.CLUB_DATA_PREV2),
     ]
-      .sort((a,b) => (b.date||'').localeCompare(a.date||''))
+      .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
       .slice(0, 3);
 
     const h2hDots = h2h.length ? `
@@ -541,7 +649,7 @@ function getH2H(m) {
     ...CLUB_DATA.matches.filter(x => x.teamId === m.teamId && x.opponent === m.opponent && x.result && x.score && x.date < today),
     ...prevMatches(window.CLUB_DATA_PREV),
     ...prevMatches(window.CLUB_DATA_PREV2),
-  ].sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 3);
+  ].sort((a, b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0).slice(0, 3);
 }
 
 function h2hHtml(h2h) {
@@ -618,27 +726,27 @@ function renderVysledky() {
   if (teamFilter) {
     upcoming = CLUB_DATA.matches
       .filter(m => m.future && m.teamId === parseInt(activeMatchTeam))
-      .sort((a,b) => (a.date||'').localeCompare(b.date||''))
+      .sort((a,b) => (a.date||'') > (b.date||'') ? 1 : (a.date||'') < (b.date||'') ? -1 : 0)
       .slice(0, 3);
   } else {
     upcoming = [];
     for (const team of CLUB_DATA.teams) {
       const next = CLUB_DATA.matches
         .filter(m => m.teamId === team.id && m.future)
-        .sort((a,b) => (a.date||'').localeCompare(b.date||''))[0];
+        .sort((a,b) => (a.date||'') > (b.date||'') ? 1 : (a.date||'') < (b.date||'') ? -1 : 0)[0];
       if (next) upcoming.push(next);
     }
-    upcoming.sort((a,b) => (a.date||'').localeCompare(b.date||''));
+    upcoming.sort((a,b) => (a.date||'') > (b.date||'') ? 1 : (a.date||'') < (b.date||'') ? -1 : 0);
   }
 
   // Past – current season
   const currentPast = collectPastMatches(CLUB_DATA, filterTeamName)
-    .sort((a,b) => (b.date||'').localeCompare(a.date||''));
+    .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0);
   // Past – previous seasons (separate section)
   const prevPast = [
     ...collectPastMatches(window.CLUB_DATA_PREV,  filterTeamName),
     ...collectPastMatches(window.CLUB_DATA_PREV2, filterTeamName),
-  ].sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  ].sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0);
 
   let html = '';
   if (upcoming.length) {
@@ -715,30 +823,35 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
   );
 
   const playerRows = (m.playerResults || []).map(pr => {
-    if (pr.isDoubles) {
-      const [a, b] = pr.result.split(':').map(Number);
-      const weWin = a > b;
-      return `
-      <div class="match-player-row doubles-row">
-        <div class="player-name-left doubles-label">${pr.player}</div>
-        <div class="match-player-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</div>
-        <div class="player-name-right">${pr.opponent}</div>
-      </div>`;
-    }
     const [a, b] = pr.result.split(':').map(Number);
     const weWin = a > b;
+    const sets = renderSetScoresPills(pr.setScores, m.home);
+    if (pr.isDoubles) {
+      return `
+      <div class="match-player-wrap">
+        <div class="match-player-row doubles-row">
+          <div class="player-name-left doubles-label">${pr.player}</div>
+          <div class="match-player-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</div>
+          <div class="player-name-right">${pr.opponent}</div>
+        </div>
+        ${sets ? `<div class="match-player-sets">${sets}</div>` : ''}
+      </div>`;
+    }
     const isMvp = pr.player === mvp && pr.won;
     const hasStrData = pr.ourStr > 0 && pr.oppStr > 0 && Math.abs(pr.ourStr - pr.oppStr) > 50;
-    const upsetWin  = hasStrData && pr.won  && pr.ourStr < pr.oppStr;  // nižší ELO vyhrál
-    const upsetLoss = hasStrData && !pr.won && pr.ourStr > pr.oppStr;  // vyšší ELO prohrál
+    const upsetWin  = hasStrData && pr.won  && pr.ourStr < pr.oppStr;
+    const upsetLoss = hasStrData && !pr.won && pr.ourStr > pr.oppStr;
     const upsetIcon = upsetWin ? '<span class="upset-icon upset-win" title="Překvapivá výhra (nižší ELO)">⚡</span>'
                     : upsetLoss ? '<span class="upset-icon upset-loss" title="Překvapivá prohra (vyšší ELO)">💔</span>'
                     : '';
     return `
-    <div class="match-player-row${isMvp ? ' mvp-row' : ''}">
-      <div class="player-name-left">${isMvp ? '⭐ ' : ''}${pr.player}${upsetIcon}</div>
-      <div class="match-player-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</div>
-      <div class="player-name-right">${pr.opponent}</div>
+    <div class="match-player-wrap${isMvp ? ' mvp-row' : ''}">
+      <div class="match-player-row">
+        <div class="player-name-left">${isMvp ? '⭐ ' : ''}${pr.player}${upsetIcon}</div>
+        <div class="match-player-score ${weWin ? 'score-w' : 'score-l'}">${pr.result}</div>
+        <div class="player-name-right">${pr.opponent}</div>
+      </div>
+      ${sets ? `<div class="match-player-sets">${sets}</div>` : ''}
     </div>`;
   }).join('');
 
@@ -796,7 +909,6 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
           <span class="mc-opp-elo">${m.home ? awayTeam : homeTeam} <strong>${avgOppStr}</strong></span>
         </div>` : ''}
       </div>
-      <div id="set-scores-${m.id}" class="set-scores-wrap"></div>
     </div>
   </div>`;
 }
@@ -980,7 +1092,7 @@ function renderSeasonProgressChart() {
 
   const played = CLUB_DATA.matches
     .filter(m => !m.future && m.result && m.date)
-    .sort((a,b) => (a.date||'').localeCompare(b.date||''));
+    .sort((a,b) => (a.date||'') > (b.date||'') ? 1 : (a.date||'') < (b.date||'') ? -1 : 0);
 
   if (played.length < 2) { el.innerHTML = ''; return; }
 
@@ -991,7 +1103,7 @@ function renderSeasonProgressChart() {
   const teamLines = teams.map((team, ti) => {
     const teamMatches = played
       .filter(m => m.teamId === team.id)
-      .sort((a,b) => (a.date||'').localeCompare(b.date||''));
+      .sort((a,b) => (a.date||'') > (b.date||'') ? 1 : (a.date||'') < (b.date||'') ? -1 : 0);
     let w = 0;
     const points = [{ pct: 50, date: '', n: 0, tip: null }]; // neutral start
     for (const m of teamMatches) {
@@ -1336,14 +1448,10 @@ function startLiveRefresh() {
   const todayMatches = getTodayMatches();
   if (!todayMatches.length) return;
 
-  const now = new Date();
-  const hour = now.getHours();
-  if (hour < 16 || hour > 24) return;  // only refresh during likely match hours
-
   console.log('Live refresh started – match today detected');
   setInterval(() => {
     if (activeSection === 'prehled') renderLiveBlock();
-  }, 5 * 60 * 1000);  // every 5 minutes
+  }, 2 * 60 * 1000);  // every 2 minutes
 }
 
 // ── Player Modal ────────────────────────────────────────────
@@ -1636,7 +1744,8 @@ function openPlayerModal(playerId) {
   if (window.CLUB_DATA_PREV)  collectHistory(window.CLUB_DATA_PREV,  window.CLUB_DATA_PREV.season  || '2024/25');
   if (window.CLUB_DATA_PREV2) collectHistory(window.CLUB_DATA_PREV2, window.CLUB_DATA_PREV2.season || '2023/24');
   matchHistory.sort((a,b) => {
-    const dc = (b.date||'').localeCompare(a.date||'');
+    const da = a.date || '', db = b.date || '';
+    const dc = db > da ? 1 : db < da ? -1 : 0;
     if (dc !== 0) return dc;
     const ma = a.matchId || 0, mb = b.matchId || 0;
     if (ma && mb && ma !== mb) return ma - mb;
@@ -1776,7 +1885,7 @@ function startPolling() {
   const hour = new Date().getHours();
   const fastPoll = todayMatch && hour >= 16 && hour <= 23;
 
-  const interval = fastPoll ? 15 * 1000 : POLL_MS;  // 15 s on match day evening
+  const interval = fastPoll ? 2 * 60 * 1000 : POLL_MS;  // 2 min on match day evening
 
   console.log(`[poll] Starting – interval ${interval / 1000}s${fastPoll ? ' (zápas dnes!)' : ''}`);
   _pollInterval = setInterval(fetchFreshData, interval);
