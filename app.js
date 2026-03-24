@@ -374,6 +374,46 @@ function _lineupRows(players, posLabels, alignRight = false, isOpponent = false)
   }).join('');
 }
 
+function _playerStr(name) {
+  const ours = (CLUB_DATA.players || []).find(p => p.name === name);
+  if (ours?.str > 0) return ours.str;
+  return CLUB_DATA.opponentStats?.[name]?.str || 0;
+}
+
+function _eloProb(strA, strB) {
+  if (!strA || !strB) return 0.5;
+  return 1 / (1 + Math.pow(10, (strB - strA) / 400));
+}
+
+// Estimate expected score using ELO for each of 13 rubbers
+// Czech 4-player format: R1 doubles (A+B vs X+Y), then 12 singles
+// Singles matchups: AX BY CZ DU | AY BX CU DZ | AZ CX BU DY
+function _predictScore(ours, opp) {
+  if (!ours?.length || !opp?.length) return null;
+  const MATCHUPS = [
+    [0,0],[1,1],[2,2],[3,3],
+    [0,1],[1,0],[2,3],[3,2],
+    [0,2],[2,0],[1,3],[3,1],
+  ];
+  const ourStrs = ours.map(p => _playerStr(p.name));
+  const oppStrs = opp.map(p => _playerStr(p.name));
+  const hasStr  = [...ourStrs, ...oppStrs].some(s => s > 0);
+  if (!hasStr) return null;
+
+  let ourExp = 0;
+  // Doubles: avg STR of top-2 vs top-2
+  const dblOur = (ourStrs[0] + ourStrs[1]) / 2;
+  const dblOpp = (oppStrs[0] + oppStrs[1]) / 2;
+  ourExp += _eloProb(dblOur, dblOpp);
+  // Singles
+  for (const [oi, ti] of MATCHUPS) ourExp += _eloProb(ourStrs[oi], oppStrs[ti]);
+
+  const ourRound = Math.round(ourExp);
+  const oppRound = 13 - ourRound;
+  const winProb  = Math.round(ourExp / 13 * 100);
+  return { ourRound, oppRound, winProb };
+}
+
 function buildLineupToggle(match, autoOpen = false) {
   const ours = predictLineup(match);
   if (!ours?.length) return '';
@@ -399,6 +439,21 @@ function buildLineupToggle(match, autoOpen = false) {
   const leftRows  = match.home ? ourRows : oppRows;
   const rightRows = match.home ? oppRows : ourRows;
 
+  const pred = _predictScore(ours, opp);
+  const predHtml = (() => {
+    if (!pred) return '';
+    const homeScore = match.home ? pred.ourRound : pred.oppRound;
+    const awayScore = match.home ? pred.oppRound : pred.ourRound;
+    const ourWin    = pred.winProb;
+    const cls       = ourWin >= 55 ? 'pred-w' : ourWin <= 45 ? 'pred-l' : 'pred-d';
+    return `
+    <div class="lu-pred">
+      <span class="lu-pred-label">Odhad:</span>
+      <span class="lu-pred-score">${homeScore}:${awayScore}</span>
+      <span class="lu-pred-pct ${cls}">${ourWin}% výhra</span>
+    </div>`;
+  })();
+
   const body = `
     <div class="lu-cols">
       <div class="lu-col">
@@ -410,7 +465,8 @@ function buildLineupToggle(match, autoOpen = false) {
         <div class="lu-col-head">${rightName}</div>
         ${rightRows}
       </div>
-    </div>`;
+    </div>
+    ${predHtml}`;
 
   return `
     <div class="lu-toggle${autoOpen ? ' lu-open' : ''}" id="lu-toggle-${match.id}" onclick="toggleLiveLineup(${match.id})">

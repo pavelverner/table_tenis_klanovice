@@ -859,6 +859,13 @@ a:hover { text-decoration: underline; }
 .lu-name { font-size: 12px; font-weight: 500; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lu-pct     { font-size: 10px; color: var(--c-muted); flex-shrink: 0; }
 .lu-matches { font-size: 10px; color: var(--c-primary); opacity: 0.8; flex-shrink: 0; margin-left: 2px; }
+.lu-pred    { display: flex; align-items: center; gap: 8px; margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--c-border); font-size: 12px; }
+.lu-pred-label { color: var(--c-muted); }
+.lu-pred-score { font-weight: 700; font-size: 14px; }
+.lu-pred-pct   { font-size: 11px; font-weight: 600; margin-left: auto; }
+.pred-w { color: var(--c-green); }
+.pred-l { color: var(--c-red); }
+.pred-d { color: var(--c-orange); }
 .lu-dim { opacity: 0.4; }
 .lu-no-data { font-size: 11px; color: var(--c-muted); font-style: italic; }
 
