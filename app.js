@@ -330,11 +330,15 @@ const _sortDesc = (a, b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.
 
 function predictLineup(match) {
   const base = m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length;
-  // Position ordering from same home/away context
+  // Prefer same home/away context for accurate position ordering
   const sameCtx = CLUB_DATA.matches.filter(m => base(m) && m.home === match.home)
     .sort(_sortDesc).slice(0, 6);
-  if (!sameCtx.length) return null;
-  const { posFreq, total } = _buildPositionFreq(sameCtx, pr => pr.player);
+  // Fallback to all matches only when no same-context data exists
+  const pool = sameCtx.length
+    ? sameCtx
+    : CLUB_DATA.matches.filter(base).sort(_sortDesc).slice(0, 6);
+  if (!pool.length) return null;
+  const { posFreq, total } = _buildPositionFreq(pool, pr => pr.player);
   return _assignPositions(posFreq, total);
 }
 
