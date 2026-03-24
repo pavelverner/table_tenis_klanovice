@@ -277,13 +277,37 @@ function renderLiveBlock() {
   }).join('');
 }
 
+// Build per-player appearance stats from a pool of matches.
+// playerFn(pr) → player name string, rubberFn(pr) → rubber number
+function _lineupStats(pool, playerFn, rubberFn) {
+  const last2played = new Set(
+    pool.slice(0, 2).flatMap(m =>
+      m.playerResults.filter(pr => !pr.isDoubles).map(pr => playerFn(pr))
+    )
+  );
+  const stats = {};
+  for (const m of pool) {
+    const seenThisMatch = new Set();
+    for (const pr of m.playerResults) {
+      if (pr.isDoubles) continue;
+      const name = playerFn(pr);
+      if (!name) continue;
+      if (!stats[name]) stats[name] = { matchCount: 0, rubbers: [] };
+      if (!seenThisMatch.has(name)) {
+        stats[name].matchCount++;
+        seenThisMatch.add(name);
+      }
+      stats[name].rubbers.push(rubberFn(pr));
+    }
+  }
+  return { stats, last2played, total: pool.length };
+}
+
 function predictLineup(match) {
-  // Same home/away context, last 6 completed matches
   const sameCtx = CLUB_DATA.matches
     .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length && m.home === match.home)
     .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
     .slice(0, 6);
-  // Fall back to any context if too few same-context matches
   const pool = sameCtx.length >= 2 ? sameCtx
     : CLUB_DATA.matches
         .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length)
@@ -291,53 +315,83 @@ function predictLineup(match) {
         .slice(0, 6);
   if (!pool.length) return null;
 
-  // Who played in the last 2 context matches (availability signal)
-  const last2played = new Set(
-    pool.slice(0, 2).flatMap(m => m.playerResults.filter(pr => !pr.isDoubles).map(pr => pr.player))
-  );
-
-  const stats = {};
-  for (const m of pool) {
-    for (const pr of m.playerResults) {
-      if (pr.isDoubles) continue;
-      if (!stats[pr.player]) stats[pr.player] = { count: 0, rubbers: [] };
-      stats[pr.player].count++;
-      stats[pr.player].rubbers.push(pr.rubberNum);
-    }
-  }
-
+  const { stats, last2played, total } = _lineupStats(pool, pr => pr.player, pr => pr.rubberNum);
   return Object.entries(stats)
     .map(([name, s]) => ({
       name,
-      pct: s.count / pool.length,
+      pct: s.matchCount / total,
       minRubber: Math.min(...s.rubbers),
-      uncertain: !last2played.has(name) || s.count / pool.length < 0.4,
+      uncertain: !last2played.has(name) || s.matchCount / total < 0.4,
     }))
     .sort((a, b) => a.minRubber - b.minRubber);
 }
 
-function buildLineupToggle(match, autoOpen = false) {
-  const players = predictLineup(match);
-  if (!players || !players.length) return '';
+function predictOpponentLineup(match) {
+  // Past matches vs same opponent for this team
+  const vs = CLUB_DATA.matches
+    .filter(m => m.teamId === match.teamId && !m.future && m.result && m.playerResults?.length && m.opponent === match.opponent)
+    .sort((a,b) => (b.date||'') > (a.date||'') ? 1 : (b.date||'') < (a.date||'') ? -1 : 0)
+    .slice(0, 6);
+  if (!vs.length) return null;
 
+  const { stats, last2played, total } = _lineupStats(vs, pr => pr.opponent, pr => pr.rubberNum);
+  return Object.entries(stats)
+    .map(([name, s]) => ({
+      name,
+      pct: s.matchCount / total,
+      minRubber: Math.min(...s.rubbers),
+      uncertain: s.matchCount / total < 0.5,
+    }))
+    .sort((a, b) => a.minRubber - b.minRubber);
+}
+
+function _lineupRows(players, alignRight = false) {
   let pos = 0;
-  const rows = players.map(p => {
+  return players.map(p => {
     if (!p.uncertain) pos++;
     const posLabel = p.uncertain ? '<span class="lu-q">?</span>' : `${pos}.`;
-    const shortName = p.name.split(' ').slice(0, 2).join(' ');
-    const pctLabel = `<span class="lu-pct">${Math.round(p.pct * 100)}%</span>`;
-    return `<div class="lu-row${p.uncertain ? ' lu-dim' : ''}">
-      <span class="lu-pos">${posLabel}</span>
-      <span class="lu-name">${shortName}</span>
-      ${pctLabel}
-    </div>`;
+    const surname = p.name.split(' ')[0];
+    const pct = `<span class="lu-pct">${Math.round(p.pct * 100)}%</span>`;
+    return alignRight
+      ? `<div class="lu-row lu-row-r${p.uncertain ? ' lu-dim' : ''}">
+           ${pct}<span class="lu-name">${surname}</span><span class="lu-pos">${posLabel}</span>
+         </div>`
+      : `<div class="lu-row${p.uncertain ? ' lu-dim' : ''}">
+           <span class="lu-pos">${posLabel}</span><span class="lu-name">${surname}</span>${pct}
+         </div>`;
   }).join('');
+}
+
+function buildLineupToggle(match, autoOpen = false) {
+  const ours = predictLineup(match);
+  if (!ours?.length) return '';
+  const opp  = predictOpponentLineup(match);
+
+  const team = getTeamById(match.teamId);
+  const ourName  = team?.name?.replace('TTC Klánovice ', '') || 'Naši';
+  const oppShort = match.opponent?.replace(/^(TTC|TJ|SK|SC)\s+/i, '').split(' ').slice(0, 2).join(' ') || 'Soupeř';
+
+  const ourRows = _lineupRows(ours, false);
+  const oppRows = opp?.length ? _lineupRows(opp, true) : '<div class="lu-no-data">Žádná data</div>';
+
+  const body = `
+    <div class="lu-cols">
+      <div class="lu-col">
+        <div class="lu-col-head">${ourName}</div>
+        ${ourRows}
+      </div>
+      <div class="lu-col-sep">vs</div>
+      <div class="lu-col lu-col-r">
+        <div class="lu-col-head">${oppShort}</div>
+        ${oppRows}
+      </div>
+    </div>`;
 
   return `
     <div class="lu-toggle${autoOpen ? ' lu-open' : ''}" id="lu-toggle-${match.id}" onclick="toggleLiveLineup(${match.id})">
       <span>Předpokládaná sestava</span><span class="lu-arrow">▾</span>
     </div>
-    <div class="lu-body" id="lu-body-${match.id}" style="${autoOpen ? '' : 'display:none'}">${rows}</div>`;
+    <div class="lu-body" id="lu-body-${match.id}" style="${autoOpen ? '' : 'display:none'}">${body}</div>`;
 }
 
 function toggleLiveLineup(matchId) {
@@ -579,24 +633,35 @@ function renderUpcoming() {
       if (top) scorers = `<span class="upcoming-scorers">Bodovali: ${top}</span>`;
     }
 
+    const oppShort = m.opponent.replace(/^(TTC|TJ|SK|SC|USK)\s+/i, '').replace(/\s+(Praha|Brno|Ostrava)\s*/i, ' ').trim();
+    const teamLetter = team.name.replace('TTC Klánovice ', '');
+    const h2hDots = h2h.map(x => {
+      const hs = x.home ? x.score.home : x.score.away;
+      const as = x.home ? x.score.away : x.score.home;
+      return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${hs}:${as}</span>`;
+    }).join('');
+
     return `
     <div class="match-row upcoming-row">
-      <div class="match-date">${fmtDate(m.date)}${m.time ? `<div style="font-size:12px;font-weight:700;color:var(--c-text)">${m.time}</div>` : ''}</div>
+      <div class="match-date">
+        ${fmtDate(m.date)}
+        ${m.time ? `<div class="upcoming-time">${m.time}</div>` : ''}
+      </div>
       <div class="match-teams">
         <div class="upcoming-teams-line">
           <span class="team-name${m.home ? ' our-side' : ''}">${homeTeam}</span>
           <span class="upcoming-vs">vs</span>
           <span class="team-name${!m.home ? ' our-side' : ''}">${awayTeam}</span>
         </div>
-        <div style="font-size:11px;color:var(--c-muted);margin-top:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <div class="upcoming-mobile-line">
+          <span class="upcoming-team-badge">${teamLetter}</span>
+          <span class="upcoming-vs">vs</span>
+          <span class="upcoming-opp-name">${oppShort}</span>
+        </div>
+        <div class="upcoming-meta">
           <span>${team.competition}</span>
           <span class="${m.home ? 'venue-home' : 'venue-away'}">${m.home ? '🏠 doma' : '✈️ venku'}</span>
-          ${h2h.length ? `<span class="h2h-inline">${h2h.map(x => {
-            const hs = x.home ? x.score.home : x.score.away;
-            const as = x.home ? x.score.away : x.score.home;
-            const yr = x.date ? x.date.slice(2,4) : '';
-            return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${hs}:${as}<span class="h2h-yr">'${yr}</span></span>`;
-          }).join('')}</span>` : ''}
+          ${h2hDots ? `<span class="h2h-inline">${h2hDots}</span>` : ''}
         </div>
       </div>
       <div class="match-badge badge-upcoming">→</div>
