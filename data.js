@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "24.03.26 11:35",
+  "lastUpdate": "24.03.26 16:41",
   "teams": [
     {
       "id": 63401,
@@ -901,6 +901,7 @@ var CLUB_DATA = {
         "matches": 83,
         "wins": 58,
         "losses": 25,
+        "teamMatches": 19,
         "sets": [
           0,
           0
@@ -925,6 +926,7 @@ var CLUB_DATA = {
         "matches": 4,
         "wins": 1,
         "losses": 3,
+        "teamMatches": 1,
         "sets": [
           0,
           0
@@ -949,6 +951,7 @@ var CLUB_DATA = {
         "matches": 86,
         "wins": 72,
         "losses": 14,
+        "teamMatches": 20,
         "sets": [
           0,
           0
@@ -973,6 +976,7 @@ var CLUB_DATA = {
         "matches": 80,
         "wins": 43,
         "losses": 37,
+        "teamMatches": 20,
         "sets": [
           0,
           0
@@ -997,6 +1001,7 @@ var CLUB_DATA = {
         "matches": 35,
         "wins": 18,
         "losses": 17,
+        "teamMatches": 10,
         "sets": [
           0,
           0
@@ -1021,6 +1026,7 @@ var CLUB_DATA = {
         "matches": 3,
         "wins": 1,
         "losses": 2,
+        "teamMatches": 1,
         "sets": [
           0,
           0
@@ -1045,6 +1051,7 @@ var CLUB_DATA = {
         "matches": 43,
         "wins": 31,
         "losses": 12,
+        "teamMatches": 11,
         "sets": [
           0,
           0
@@ -1069,6 +1076,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1093,6 +1101,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1117,6 +1126,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1141,6 +1151,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1165,6 +1176,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1189,6 +1201,7 @@ var CLUB_DATA = {
         "matches": 74,
         "wins": 29,
         "losses": 45,
+        "teamMatches": 17,
         "sets": [
           0,
           0
@@ -1213,6 +1226,7 @@ var CLUB_DATA = {
         "matches": 78,
         "wins": 52,
         "losses": 26,
+        "teamMatches": 17,
         "sets": [
           0,
           0
@@ -1237,6 +1251,7 @@ var CLUB_DATA = {
         "matches": 30,
         "wins": 6,
         "losses": 24,
+        "teamMatches": 8,
         "sets": [
           0,
           0
@@ -1261,6 +1276,7 @@ var CLUB_DATA = {
         "matches": 28,
         "wins": 12,
         "losses": 16,
+        "teamMatches": 7,
         "sets": [
           0,
           0
@@ -1285,6 +1301,7 @@ var CLUB_DATA = {
         "matches": 53,
         "wins": 30,
         "losses": 23,
+        "teamMatches": 12,
         "sets": [
           0,
           0
@@ -1309,6 +1326,7 @@ var CLUB_DATA = {
         "matches": 28,
         "wins": 16,
         "losses": 12,
+        "teamMatches": 7,
         "sets": [
           0,
           0
@@ -1333,6 +1351,7 @@ var CLUB_DATA = {
         "matches": 8,
         "wins": 2,
         "losses": 6,
+        "teamMatches": 2,
         "sets": [
           0,
           0
@@ -1357,6 +1376,7 @@ var CLUB_DATA = {
         "matches": 20,
         "wins": 14,
         "losses": 6,
+        "teamMatches": 4,
         "sets": [
           0,
           0
@@ -1381,6 +1401,7 @@ var CLUB_DATA = {
         "matches": 5,
         "wins": 3,
         "losses": 2,
+        "teamMatches": 1,
         "sets": [
           0,
           0
@@ -1405,6 +1426,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1429,6 +1451,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1453,6 +1476,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1477,6 +1501,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1501,6 +1526,7 @@ var CLUB_DATA = {
         "matches": 49,
         "wins": 28,
         "losses": 21,
+        "teamMatches": 12,
         "sets": [
           0,
           0
@@ -1525,6 +1551,7 @@ var CLUB_DATA = {
         "matches": 70,
         "wins": 26,
         "losses": 44,
+        "teamMatches": 17,
         "sets": [
           0,
           0
@@ -1549,6 +1576,7 @@ var CLUB_DATA = {
         "matches": 47,
         "wins": 13,
         "losses": 34,
+        "teamMatches": 12,
         "sets": [
           0,
           0
@@ -1573,6 +1601,7 @@ var CLUB_DATA = {
         "matches": 74,
         "wins": 40,
         "losses": 34,
+        "teamMatches": 17,
         "sets": [
           0,
           0
@@ -1597,6 +1626,7 @@ var CLUB_DATA = {
         "matches": 61,
         "wins": 28,
         "losses": 33,
+        "teamMatches": 14,
         "sets": [
           0,
           0
@@ -1621,6 +1651,7 @@ var CLUB_DATA = {
         "matches": 4,
         "wins": 1,
         "losses": 3,
+        "teamMatches": 1,
         "sets": [
           0,
           0
@@ -1645,6 +1676,7 @@ var CLUB_DATA = {
         "matches": 4,
         "wins": 4,
         "losses": 0,
+        "teamMatches": 1,
         "sets": [
           0,
           0
@@ -1669,6 +1701,7 @@ var CLUB_DATA = {
         "matches": 4,
         "wins": 1,
         "losses": 3,
+        "teamMatches": 1,
         "sets": [
           0,
           0
@@ -1693,6 +1726,7 @@ var CLUB_DATA = {
         "matches": 4,
         "wins": 3,
         "losses": 1,
+        "teamMatches": 1,
         "sets": [
           0,
           0
@@ -1717,6 +1751,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1741,6 +1776,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1765,6 +1801,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1789,6 +1826,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1813,6 +1851,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1837,6 +1876,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1861,6 +1901,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1885,6 +1926,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1909,6 +1951,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -1933,6 +1976,7 @@ var CLUB_DATA = {
         "matches": 85,
         "wins": 39,
         "losses": 46,
+        "teamMatches": 18,
         "sets": [
           0,
           0
@@ -1957,6 +2001,7 @@ var CLUB_DATA = {
         "matches": 71,
         "wins": 30,
         "losses": 41,
+        "teamMatches": 17,
         "sets": [
           0,
           0
@@ -1981,6 +2026,7 @@ var CLUB_DATA = {
         "matches": 81,
         "wins": 41,
         "losses": 40,
+        "teamMatches": 19,
         "sets": [
           0,
           0
@@ -2005,6 +2051,7 @@ var CLUB_DATA = {
         "matches": 83,
         "wins": 47,
         "losses": 36,
+        "teamMatches": 18,
         "sets": [
           0,
           0
@@ -2029,6 +2076,7 @@ var CLUB_DATA = {
         "matches": 4,
         "wins": 1,
         "losses": 3,
+        "teamMatches": 1,
         "sets": [
           0,
           0
@@ -2053,6 +2101,7 @@ var CLUB_DATA = {
         "matches": 21,
         "wins": 8,
         "losses": 13,
+        "teamMatches": 5,
         "sets": [
           0,
           0
@@ -2077,6 +2126,7 @@ var CLUB_DATA = {
         "matches": 4,
         "wins": 2,
         "losses": 2,
+        "teamMatches": 1,
         "sets": [
           0,
           0
@@ -2101,6 +2151,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2125,6 +2176,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2149,6 +2201,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2173,6 +2226,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2197,6 +2251,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2221,6 +2276,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2245,6 +2301,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2269,6 +2326,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2293,6 +2351,7 @@ var CLUB_DATA = {
         "matches": 74,
         "wins": 36,
         "losses": 38,
+        "teamMatches": 18,
         "sets": [
           0,
           0
@@ -2317,6 +2376,7 @@ var CLUB_DATA = {
         "matches": 68,
         "wins": 39,
         "losses": 29,
+        "teamMatches": 16,
         "sets": [
           0,
           0
@@ -2341,6 +2401,7 @@ var CLUB_DATA = {
         "matches": 40,
         "wins": 15,
         "losses": 25,
+        "teamMatches": 10,
         "sets": [
           0,
           0
@@ -2365,6 +2426,7 @@ var CLUB_DATA = {
         "matches": 62,
         "wins": 28,
         "losses": 34,
+        "teamMatches": 16,
         "sets": [
           0,
           0
@@ -2389,6 +2451,7 @@ var CLUB_DATA = {
         "matches": 6,
         "wins": 0,
         "losses": 6,
+        "teamMatches": 3,
         "sets": [
           0,
           0
@@ -2413,6 +2476,7 @@ var CLUB_DATA = {
         "matches": 69,
         "wins": 34,
         "losses": 35,
+        "teamMatches": 17,
         "sets": [
           0,
           0
@@ -2437,6 +2501,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2461,6 +2526,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2485,6 +2551,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2509,6 +2576,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2533,6 +2601,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -2557,6 +2626,7 @@ var CLUB_DATA = {
         "matches": 0,
         "wins": 0,
         "losses": 0,
+        "teamMatches": 0,
         "sets": [
           0,
           0
@@ -47300,5 +47370,3311 @@ var CLUB_DATA = {
         "Čtyřhra Rybář Milan / Horčák Zdeněk: ✓ výhra"
       ]
     }
-  ]
+  ],
+  "opponentStats": {
+    "Veselý Filip": {
+      "club": "TJ AVIA Čakovice C",
+      "str": 1930,
+      "teamMatches": 20,
+      "wins": 68,
+      "losses": 3,
+      "winPct": 96
+    },
+    "Oplt Pavel": {
+      "club": "AC Sparta Praha F",
+      "str": 1878,
+      "teamMatches": 12,
+      "wins": 38,
+      "losses": 3,
+      "winPct": 93
+    },
+    "Tichý Jiří": {
+      "club": "TJ Sokol Michle A",
+      "str": 1843,
+      "teamMatches": 18,
+      "wins": 56,
+      "losses": 10,
+      "winPct": 85
+    },
+    "Železný Daniel": {
+      "club": "TJ Lokomotiva Vršovice B",
+      "str": 1816,
+      "teamMatches": 17,
+      "wins": 40,
+      "losses": 12,
+      "winPct": 77
+    },
+    "Polcar Vojtěch": {
+      "club": "Slovan KST Bohnice C",
+      "str": 1778,
+      "teamMatches": 17,
+      "wins": 40,
+      "losses": 14,
+      "winPct": 74
+    },
+    "Pospíšil Milan": {
+      "club": "TJ Lokomotiva Vršovice B",
+      "str": 1771,
+      "teamMatches": 12,
+      "wins": 25,
+      "losses": 9,
+      "winPct": 74
+    },
+    "Gruber Josef": {
+      "club": "SK OAZA Praha A",
+      "str": 1772,
+      "teamMatches": 16,
+      "wins": 39,
+      "losses": 16,
+      "winPct": 71
+    },
+    "Přiklopil Jan": {
+      "club": "TJ AVIA Čakovice C",
+      "str": 1775,
+      "teamMatches": 19,
+      "wins": 42,
+      "losses": 18,
+      "winPct": 70
+    },
+    "Šimeček Jan": {
+      "club": "TTC Elizza Praha G",
+      "str": 1734,
+      "teamMatches": 7,
+      "wins": 16,
+      "losses": 7,
+      "winPct": 70
+    },
+    "Koscelanský Samuel": {
+      "club": "Slovan KST Bohnice C",
+      "str": 1782,
+      "teamMatches": 14,
+      "wins": 30,
+      "losses": 14,
+      "winPct": 68
+    },
+    "Boltík Martin": {
+      "club": "TJ Sokol Stodůlky B",
+      "str": 1757,
+      "teamMatches": 17,
+      "wins": 38,
+      "losses": 18,
+      "winPct": 68
+    },
+    "Hučko Tomáš": {
+      "club": "Slovan KST Bohnice C",
+      "str": 1765,
+      "teamMatches": 14,
+      "wins": 28,
+      "losses": 15,
+      "winPct": 65
+    },
+    "Vodal Petr": {
+      "club": "TJ Sokol Stodůlky B",
+      "str": 1723,
+      "teamMatches": 16,
+      "wins": 31,
+      "losses": 18,
+      "winPct": 63
+    },
+    "Šindelář Daniel": {
+      "club": "TJ Slavoj Praha B",
+      "str": 1752,
+      "teamMatches": 16,
+      "wins": 32,
+      "losses": 19,
+      "winPct": 63
+    },
+    "Averin Timofei": {
+      "club": "TJ Sokol Stodůlky B",
+      "str": 1702,
+      "teamMatches": 16,
+      "wins": 32,
+      "losses": 19,
+      "winPct": 63
+    },
+    "Řepík Jaroslav": {
+      "club": "SK OAZA Praha A",
+      "str": 1756,
+      "teamMatches": 15,
+      "wins": 29,
+      "losses": 20,
+      "winPct": 59
+    },
+    "Chyba Jáchym": {
+      "club": "TTC Elizza Praha G",
+      "str": 1690,
+      "teamMatches": 12,
+      "wins": 24,
+      "losses": 17,
+      "winPct": 59
+    },
+    "Červeňák Miroslav": {
+      "club": "TJ Sokol Běchovice II A",
+      "str": 1745,
+      "teamMatches": 19,
+      "wins": 38,
+      "losses": 28,
+      "winPct": 58
+    },
+    "Hrdý Martin": {
+      "club": "TJ AVIA Čakovice C",
+      "str": 1747,
+      "teamMatches": 14,
+      "wins": 27,
+      "losses": 20,
+      "winPct": 57
+    },
+    "Pospíšil David": {
+      "club": "TJ Slavoj Praha B",
+      "str": 1737,
+      "teamMatches": 16,
+      "wins": 27,
+      "losses": 20,
+      "winPct": 57
+    },
+    "Břicháček David": {
+      "club": "TJ Lokomotiva Vršovice B",
+      "str": 1731,
+      "teamMatches": 15,
+      "wins": 25,
+      "losses": 19,
+      "winPct": 57
+    },
+    "Orlowski Petr": {
+      "club": "Slovan KST Bohnice E",
+      "str": 1728,
+      "teamMatches": 16,
+      "wins": 39,
+      "losses": 8,
+      "winPct": 83
+    },
+    "Kouba Jan": {
+      "club": "Slovan KST Bohnice C",
+      "str": 1712,
+      "teamMatches": 15,
+      "wins": 27,
+      "losses": 22,
+      "winPct": 55
+    },
+    "Zýková Petra": {
+      "club": "TJ Lokomotiva Vršovice B",
+      "str": 1716,
+      "teamMatches": 17,
+      "wins": 28,
+      "losses": 24,
+      "winPct": 54
+    },
+    "Dušek Zdeněk": {
+      "club": "AC Sparta Praha F",
+      "str": 1654,
+      "teamMatches": 10,
+      "wins": 16,
+      "losses": 15,
+      "winPct": 52
+    },
+    "Charamza Ondřej st.": {
+      "club": "TJ AVIA Čakovice C",
+      "str": 1765,
+      "teamMatches": 8,
+      "wins": 11,
+      "losses": 11,
+      "winPct": 50
+    },
+    "Ambrož Adam": {
+      "club": "TJ Sokol Michle A",
+      "str": 1729,
+      "teamMatches": 20,
+      "wins": 33,
+      "losses": 33,
+      "winPct": 50
+    },
+    "Hlista Petr": {
+      "club": "TJ Sokol Běchovice II A",
+      "str": 1719,
+      "teamMatches": 20,
+      "wins": 32,
+      "losses": 32,
+      "winPct": 50
+    },
+    "Jelínek Šimon": {
+      "club": "TJ Sokol Nusle Praha A",
+      "str": 1670,
+      "teamMatches": 14,
+      "wins": 20,
+      "losses": 25,
+      "winPct": 44
+    },
+    "Hrstka Tomáš": {
+      "club": "TJ Sokol Stodůlky B",
+      "str": 1693,
+      "teamMatches": 10,
+      "wins": 15,
+      "losses": 20,
+      "winPct": 43
+    },
+    "Bartel Michal": {
+      "club": "TJ Sokol Běchovice II A",
+      "str": 1673,
+      "teamMatches": 17,
+      "wins": 23,
+      "losses": 31,
+      "winPct": 43
+    },
+    "Sklenář Ondřej": {
+      "club": "TJ Slavoj Praha B",
+      "str": 1656,
+      "teamMatches": 16,
+      "wins": 21,
+      "losses": 29,
+      "winPct": 42
+    },
+    "Průša Martin": {
+      "club": "TTC Elizza Praha G",
+      "str": 1675,
+      "teamMatches": 12,
+      "wins": 14,
+      "losses": 20,
+      "winPct": 41
+    },
+    "Černoch Jan": {
+      "club": "TJ Sokol Michle A",
+      "str": 1650,
+      "teamMatches": 18,
+      "wins": 25,
+      "losses": 37,
+      "winPct": 40
+    },
+    "Kucharčík Jan": {
+      "club": "TJ Sokol Michle A",
+      "str": 1645,
+      "teamMatches": 14,
+      "wins": 16,
+      "losses": 27,
+      "winPct": 37
+    },
+    "Šimůnková Veronika": {
+      "club": "TJ Slavoj Praha B",
+      "str": 1679,
+      "teamMatches": 15,
+      "wins": 14,
+      "losses": 24,
+      "winPct": 37
+    },
+    "Kadlec Tomáš": {
+      "club": "TTC Elizza Praha G",
+      "str": 1677,
+      "teamMatches": 9,
+      "wins": 10,
+      "losses": 19,
+      "winPct": 34
+    },
+    "Prokš Vladimír": {
+      "club": "TJ Sokol Nusle Praha A",
+      "str": 1648,
+      "teamMatches": 16,
+      "wins": 17,
+      "losses": 33,
+      "winPct": 34
+    },
+    "Nemčík Marek": {
+      "club": "TTC Elizza Praha G",
+      "str": 1598,
+      "teamMatches": 10,
+      "wins": 11,
+      "losses": 22,
+      "winPct": 33
+    },
+    "Botka Jan": {
+      "club": "AC Sparta Praha F",
+      "str": 1680,
+      "teamMatches": 13,
+      "wins": 12,
+      "losses": 27,
+      "winPct": 31
+    },
+    "Barcal Petr": {
+      "club": "SK OAZA Praha A",
+      "str": 1613,
+      "teamMatches": 15,
+      "wins": 15,
+      "losses": 34,
+      "winPct": 31
+    },
+    "Kraml Karel": {
+      "club": "TJ Sokol Nusle Praha B",
+      "str": 1608,
+      "teamMatches": 18,
+      "wins": 30,
+      "losses": 31,
+      "winPct": 49
+    },
+    "Liška Marek": {
+      "club": "SK OAZA Praha A",
+      "str": 1607,
+      "teamMatches": 17,
+      "wins": 15,
+      "losses": 36,
+      "winPct": 29
+    },
+    "Hron Jiří": {
+      "club": "TJ Sokol Nusle Praha A",
+      "str": 1605,
+      "teamMatches": 14,
+      "wins": 13,
+      "losses": 34,
+      "winPct": 28
+    },
+    "Petřík Filip": {
+      "club": "TJ AVIA Čakovice D",
+      "str": 1665,
+      "teamMatches": 15,
+      "wins": 32,
+      "losses": 12,
+      "winPct": 73
+    },
+    "Seeman Jan": {
+      "club": "TJ Lokomotiva Vršovice C",
+      "str": 1634,
+      "teamMatches": 14,
+      "wins": 31,
+      "losses": 12,
+      "winPct": 72
+    },
+    "Jírů Libor": {
+      "club": "TJ Sokol Běchovice II A",
+      "str": 1582,
+      "teamMatches": 14,
+      "wins": 8,
+      "losses": 34,
+      "winPct": 19
+    },
+    "Pour Lukáš": {
+      "club": "TJ Sokol Nusle Praha B",
+      "str": 1513,
+      "teamMatches": 16,
+      "wins": 16,
+      "losses": 32,
+      "winPct": 33
+    },
+    "Škopková Věra": {
+      "club": "AC Sparta Praha F",
+      "str": 1560,
+      "teamMatches": 19,
+      "wins": 8,
+      "losses": 48,
+      "winPct": 14
+    },
+    "Tichý Květoslav": {
+      "club": "TJ Sokol Nusle Praha A",
+      "str": 1581,
+      "teamMatches": 13,
+      "wins": 5,
+      "losses": 31,
+      "winPct": 14
+    },
+    "Šimůnek Ondřej": {
+      "club": "TJ Slavoj Praha B",
+      "str": 1525,
+      "teamMatches": 11,
+      "wins": 0,
+      "losses": 33,
+      "winPct": 0
+    },
+    "Juhász Martin": {
+      "club": "TTC Elizza Praha G",
+      "str": 1732,
+      "teamMatches": 1,
+      "wins": 4,
+      "losses": 0,
+      "winPct": 100
+    },
+    "Ullman Miloslav": {
+      "club": "TJ Lokomotiva Vršovice B",
+      "str": 1819,
+      "teamMatches": 1,
+      "wins": 3,
+      "losses": 0,
+      "winPct": 100
+    },
+    "Cousin Jean-Baptiste": {
+      "club": "AC Sparta Praha F",
+      "str": 1787,
+      "teamMatches": 3,
+      "wins": 8,
+      "losses": 1,
+      "winPct": 89
+    },
+    "Karpíšek Ondřej": {
+      "club": "TJ AVIA Čakovice D",
+      "str": 1706,
+      "teamMatches": 14,
+      "wins": 34,
+      "losses": 14,
+      "winPct": 71
+    },
+    "Tlustý František": {
+      "club": "TTC Elizza Praha G",
+      "str": 1664,
+      "teamMatches": 3,
+      "wins": 7,
+      "losses": 2,
+      "winPct": 78
+    },
+    "Bruk Martin": {
+      "club": "AC Sparta Praha F",
+      "str": 1761,
+      "teamMatches": 4,
+      "wins": 9,
+      "losses": 4,
+      "winPct": 69
+    },
+    "Mach Jakub": {
+      "club": "TJ AVIA Čakovice D",
+      "str": 1655,
+      "teamMatches": 16,
+      "wins": 31,
+      "losses": 21,
+      "winPct": 60
+    },
+    "Plch Jiří": {
+      "club": "TJ Sokol Nusle Praha A",
+      "str": 1627,
+      "teamMatches": 2,
+      "wins": 2,
+      "losses": 1,
+      "winPct": 67
+    },
+    "Lamr Martin": {
+      "club": "TTC Elizza Praha G",
+      "str": 1730,
+      "teamMatches": 4,
+      "wins": 10,
+      "losses": 6,
+      "winPct": 63
+    },
+    "Koutník Vojtěch": {
+      "club": "TTC Elizza Praha G",
+      "str": 1755,
+      "teamMatches": 5,
+      "wins": 11,
+      "losses": 8,
+      "winPct": 58
+    },
+    "Merkl Roman": {
+      "club": "TJ Sokol Stodůlky B",
+      "str": 1687,
+      "teamMatches": 3,
+      "wins": 6,
+      "losses": 5,
+      "winPct": 55
+    },
+    "Hüttl Michal": {
+      "club": "AC Sparta Praha F",
+      "str": 1792,
+      "teamMatches": 4,
+      "wins": 6,
+      "losses": 6,
+      "winPct": 50
+    },
+    "Srnka Jan": {
+      "club": "TJ Lokomotiva Vršovice C",
+      "str": 1720,
+      "teamMatches": 18,
+      "wins": 50,
+      "losses": 13,
+      "winPct": 79
+    },
+    "Celler Jiří": {
+      "club": "TJ Sokol Stodůlky D",
+      "str": 1674,
+      "teamMatches": 13,
+      "wins": 35,
+      "losses": 3,
+      "winPct": 92
+    },
+    "Hušek Filip": {
+      "club": "TJ AVIA Čakovice D",
+      "str": 1629,
+      "teamMatches": 10,
+      "wins": 18,
+      "losses": 12,
+      "winPct": 60
+    },
+    "Baran Peter": {
+      "club": "TJ Sokol Stodůlky D",
+      "str": 1644,
+      "teamMatches": 14,
+      "wins": 34,
+      "losses": 5,
+      "winPct": 87
+    },
+    "Rypar Teo": {
+      "club": "TJ Slavoj Praha D",
+      "str": 1558,
+      "teamMatches": 18,
+      "wins": 29,
+      "losses": 30,
+      "winPct": 49
+    },
+    "Mazánek Jiří": {
+      "club": "SK OAZA Praha A",
+      "str": 1542,
+      "teamMatches": 2,
+      "wins": 3,
+      "losses": 5,
+      "winPct": 38
+    },
+    "Fialka Jindřich": {
+      "club": "TJ Sokol Michle A",
+      "str": 1695,
+      "teamMatches": 6,
+      "wins": 5,
+      "losses": 10,
+      "winPct": 33
+    },
+    "Mejzlík Jakub": {
+      "club": "TJ Lokomotiva Vršovice E",
+      "str": 1582,
+      "teamMatches": 14,
+      "wins": 42,
+      "losses": 6,
+      "winPct": 88
+    },
+    "Flekač Tomáš": {
+      "club": "TJ AVIA Čakovice C",
+      "str": 1693,
+      "teamMatches": 4,
+      "wins": 4,
+      "losses": 10,
+      "winPct": 29
+    },
+    "Dobeš Tomáš st.": {
+      "club": "Slovan KST Bohnice C",
+      "str": 1475,
+      "teamMatches": 2,
+      "wins": 1,
+      "losses": 3,
+      "winPct": 25
+    },
+    "Krejčík Julius": {
+      "club": "TTC Elizza Praha I",
+      "str": 1510,
+      "teamMatches": 11,
+      "wins": 17,
+      "losses": 18,
+      "winPct": 49
+    },
+    "Šanc Vojtěch": {
+      "club": "TJ Sokol Stodůlky B",
+      "str": 1674,
+      "teamMatches": 7,
+      "wins": 4,
+      "losses": 15,
+      "winPct": 21
+    },
+    "Hasman Michael": {
+      "club": "Slovan KST Bohnice C",
+      "str": 1595,
+      "teamMatches": 6,
+      "wins": 4,
+      "losses": 15,
+      "winPct": 21
+    },
+    "Růžička Dominik": {
+      "club": "TTC Elizza Praha H",
+      "str": 1607,
+      "teamMatches": 12,
+      "wins": 22,
+      "losses": 18,
+      "winPct": 55
+    },
+    "Němec Michal": {
+      "club": "TJ Sokol Nusle Praha B",
+      "str": 1605,
+      "teamMatches": 19,
+      "wins": 36,
+      "losses": 24,
+      "winPct": 60
+    },
+    "Čapek Karel": {
+      "club": "SK OAZA Praha A",
+      "str": 1467,
+      "teamMatches": 2,
+      "wins": 1,
+      "losses": 5,
+      "winPct": 17
+    },
+    "Kaba Radka": {
+      "club": "TJ Slavoj Praha B",
+      "str": 1575,
+      "teamMatches": 4,
+      "wins": 2,
+      "losses": 10,
+      "winPct": 17
+    },
+    "Běhal Aleš": {
+      "club": "TTC Elizza Praha H",
+      "str": 1727,
+      "teamMatches": 11,
+      "wins": 30,
+      "losses": 5,
+      "winPct": 86
+    },
+    "Košek Lukáš": {
+      "club": "AC Sparta Praha F",
+      "str": 1536,
+      "teamMatches": 3,
+      "wins": 1,
+      "losses": 8,
+      "winPct": 11
+    },
+    "Šprongl Jaroslav": {
+      "club": "TJ Sokol Běchovice II B",
+      "str": 1506,
+      "teamMatches": 18,
+      "wins": 15,
+      "losses": 36,
+      "winPct": 29
+    },
+    "Kubera František": {
+      "club": "SK OAZA Praha A",
+      "str": 1535,
+      "teamMatches": 6,
+      "wins": 1,
+      "losses": 12,
+      "winPct": 8
+    },
+    "Dlouhý Karel": {
+      "club": "SK OAZA Praha A",
+      "str": 1526,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 2,
+      "winPct": 0
+    },
+    "Nedělka Petr": {
+      "club": "AC Sparta Praha K",
+      "str": 1409,
+      "teamMatches": 3,
+      "wins": 5,
+      "losses": 6,
+      "winPct": 45
+    },
+    "Kaděrka Rudolf": {
+      "club": "TJ Sokol Běchovice II B",
+      "str": 1579,
+      "teamMatches": 15,
+      "wins": 24,
+      "losses": 27,
+      "winPct": 47
+    },
+    "Tvrdý Miroslav": {
+      "club": "TJ Slavoj Praha B",
+      "str": 1518,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 3,
+      "winPct": 0
+    },
+    "Farář Petr": {
+      "club": "TJ Sokol Běchovice II C",
+      "str": 1467,
+      "teamMatches": 17,
+      "wins": 33,
+      "losses": 29,
+      "winPct": 53
+    },
+    "Krutina Lukáš": {
+      "club": "TJ Lokomotiva Vršovice E",
+      "str": 1462,
+      "teamMatches": 9,
+      "wins": 20,
+      "losses": 9,
+      "winPct": 69
+    },
+    "Král Vojtěch": {
+      "club": "AC Sparta Praha F",
+      "str": 1446,
+      "teamMatches": 2,
+      "wins": 0,
+      "losses": 5,
+      "winPct": 0
+    },
+    "Lorenc David": {
+      "club": "TJ Lokomotiva Vršovice B",
+      "str": 1625,
+      "teamMatches": 2,
+      "wins": 0,
+      "losses": 6,
+      "winPct": 0
+    },
+    "Kuběna Tomáš": {
+      "club": "SK OAZA Praha A",
+      "str": 1464,
+      "teamMatches": 2,
+      "wins": 0,
+      "losses": 6,
+      "winPct": 0
+    },
+    "Fojtl Matěj": {
+      "club": "AC Sparta Praha F",
+      "str": 1007,
+      "teamMatches": 3,
+      "wins": 0,
+      "losses": 7,
+      "winPct": 0
+    },
+    "Ambrož Jiří": {
+      "club": "TJ Sokol Michle A",
+      "str": 1455,
+      "teamMatches": 3,
+      "wins": 0,
+      "losses": 8,
+      "winPct": 0
+    },
+    "Telitsyn Vladimir": {
+      "club": "AC Sparta Praha I",
+      "str": 1527,
+      "teamMatches": 13,
+      "wins": 27,
+      "losses": 18,
+      "winPct": 60
+    },
+    "Juppa Jáchym": {
+      "club": "Slovan KST Bohnice E",
+      "str": 1712,
+      "teamMatches": 19,
+      "wins": 52,
+      "losses": 7,
+      "winPct": 88
+    },
+    "Novotný Petr": {
+      "club": "SK Start Praha B",
+      "str": 1712,
+      "teamMatches": 17,
+      "wins": 42,
+      "losses": 14,
+      "winPct": 75
+    },
+    "Novotná Markéta": {
+      "club": "SK Start Praha B",
+      "str": 1683,
+      "teamMatches": 18,
+      "wins": 39,
+      "losses": 15,
+      "winPct": 72
+    },
+    "Lipták Milan": {
+      "club": "TJ Pankrác  C",
+      "str": 1703,
+      "teamMatches": 15,
+      "wins": 35,
+      "losses": 14,
+      "winPct": 71
+    },
+    "Stejskal Tomáš": {
+      "club": "TJ Sokol Žižkov B",
+      "str": 1608,
+      "teamMatches": 7,
+      "wins": 15,
+      "losses": 8,
+      "winPct": 65
+    },
+    "Poledne Jan": {
+      "club": "SK Start Praha B",
+      "str": 1673,
+      "teamMatches": 16,
+      "wins": 32,
+      "losses": 18,
+      "winPct": 64
+    },
+    "Bašta Jáchym": {
+      "club": "SF SKK El Niňo Praha F",
+      "str": 1656,
+      "teamMatches": 8,
+      "wins": 16,
+      "losses": 10,
+      "winPct": 62
+    },
+    "Brož Pavel": {
+      "club": "Slovan KST Bohnice E",
+      "str": 1666,
+      "teamMatches": 15,
+      "wins": 22,
+      "losses": 17,
+      "winPct": 56
+    },
+    "Pavlas Petr": {
+      "club": "TJ Pankrác  C",
+      "str": 1632,
+      "teamMatches": 11,
+      "wins": 19,
+      "losses": 15,
+      "winPct": 56
+    },
+    "Blažek Jan": {
+      "club": "TJ Lokomotiva Vršovice C",
+      "str": 1613,
+      "teamMatches": 18,
+      "wins": 31,
+      "losses": 26,
+      "winPct": 54
+    },
+    "Hrbáček Milan": {
+      "club": "TJ Lokomotiva Vršovice C",
+      "str": 1630,
+      "teamMatches": 16,
+      "wins": 27,
+      "losses": 24,
+      "winPct": 53
+    },
+    "Zapletal Jan": {
+      "club": "TJ Sokol Nusle Praha B",
+      "str": 1607,
+      "teamMatches": 16,
+      "wins": 30,
+      "losses": 27,
+      "winPct": 53
+    },
+    "Prokopenko Oleg": {
+      "club": "SF SKK El Niňo Praha F",
+      "str": 1638,
+      "teamMatches": 11,
+      "wins": 20,
+      "losses": 18,
+      "winPct": 53
+    },
+    "Hondlík Josef": {
+      "club": "TJ Pankrác  C",
+      "str": 1627,
+      "teamMatches": 14,
+      "wins": 23,
+      "losses": 21,
+      "winPct": 52
+    },
+    "Král Lukáš": {
+      "club": "TJ Pankrác  C",
+      "str": 1619,
+      "teamMatches": 9,
+      "wins": 13,
+      "losses": 12,
+      "winPct": 52
+    },
+    "Tůma Ladislav": {
+      "club": "TJ Pankrác  C",
+      "str": 1626,
+      "teamMatches": 17,
+      "wins": 28,
+      "losses": 26,
+      "winPct": 52
+    },
+    "Remeš Zdeněk": {
+      "club": "SF SKK El Niňo Praha F",
+      "str": 1601,
+      "teamMatches": 9,
+      "wins": 12,
+      "losses": 12,
+      "winPct": 50
+    },
+    "Ako David": {
+      "club": "TJ Sokol Žižkov B",
+      "str": 1573,
+      "teamMatches": 12,
+      "wins": 21,
+      "losses": 21,
+      "winPct": 50
+    },
+    "Puk Jaroslav": {
+      "club": "TTC Elizza Praha H",
+      "str": 1601,
+      "teamMatches": 17,
+      "wins": 27,
+      "losses": 29,
+      "winPct": 48
+    },
+    "Kučala Viktor": {
+      "club": "SF SKK El Niňo Praha F",
+      "str": 1617,
+      "teamMatches": 18,
+      "wins": 27,
+      "losses": 32,
+      "winPct": 46
+    },
+    "Kolesnikov Nikita": {
+      "club": "Slovan KST Bohnice E",
+      "str": 1598,
+      "teamMatches": 16,
+      "wins": 21,
+      "losses": 26,
+      "winPct": 45
+    },
+    "Rejent Marek": {
+      "club": "TJ Sokol Žižkov B",
+      "str": 1580,
+      "teamMatches": 15,
+      "wins": 20,
+      "losses": 27,
+      "winPct": 43
+    },
+    "Meline Jéróme": {
+      "club": "TJ Sokol Žižkov B",
+      "str": 1555,
+      "teamMatches": 12,
+      "wins": 14,
+      "losses": 23,
+      "winPct": 38
+    },
+    "Stejskal Marek": {
+      "club": "TJ Slavoj Praha D",
+      "str": 1401,
+      "teamMatches": 6,
+      "wins": 7,
+      "losses": 12,
+      "winPct": 37
+    },
+    "Slavíčková Eliška": {
+      "club": "TJ Slavoj Praha D",
+      "str": 1529,
+      "teamMatches": 16,
+      "wins": 16,
+      "losses": 29,
+      "winPct": 36
+    },
+    "Ducháček Josef": {
+      "club": "SF SKK El Niňo Praha F",
+      "str": 1537,
+      "teamMatches": 18,
+      "wins": 17,
+      "losses": 42,
+      "winPct": 29
+    },
+    "Pernikář Tomáš": {
+      "club": "TJ Sokol Běchovice II C",
+      "str": 1454,
+      "teamMatches": 17,
+      "wins": 24,
+      "losses": 33,
+      "winPct": 42
+    },
+    "Klimovič Filip": {
+      "club": "TJ Slavoj Praha D",
+      "str": 1431,
+      "teamMatches": 6,
+      "wins": 3,
+      "losses": 16,
+      "winPct": 16
+    },
+    "Vedral Dominik": {
+      "club": "TJ Slavoj Praha D",
+      "str": 1274,
+      "teamMatches": 10,
+      "wins": 4,
+      "losses": 24,
+      "winPct": 14
+    },
+    "Kryštůfek Ondřej": {
+      "club": "TJ Slavoj Praha D",
+      "str": 1188,
+      "teamMatches": 16,
+      "wins": 3,
+      "losses": 37,
+      "winPct": 8
+    },
+    "Mihalachi Marek": {
+      "club": "SF SKK El Niňo Praha F",
+      "str": 1724,
+      "teamMatches": 5,
+      "wins": 16,
+      "losses": 2,
+      "winPct": 89
+    },
+    "Dvořáková Lucie": {
+      "club": "TTC Elizza Praha H",
+      "str": 1637,
+      "teamMatches": 6,
+      "wins": 11,
+      "losses": 3,
+      "winPct": 79
+    },
+    "Remunda Matheos": {
+      "club": "TJ Sokol Žižkov B",
+      "str": 1724,
+      "teamMatches": 3,
+      "wins": 7,
+      "losses": 3,
+      "winPct": 70
+    },
+    "Balák Pavel": {
+      "club": "TJ AVIA Čakovice D",
+      "str": 1588,
+      "teamMatches": 4,
+      "wins": 7,
+      "losses": 3,
+      "winPct": 70
+    },
+    "Rychlý Tomáš": {
+      "club": "Slovan KST Bohnice E",
+      "str": 1518,
+      "teamMatches": 4,
+      "wins": 7,
+      "losses": 4,
+      "winPct": 64
+    },
+    "Kafuněk David": {
+      "club": "SK Start Praha B",
+      "str": 1664,
+      "teamMatches": 6,
+      "wins": 10,
+      "losses": 7,
+      "winPct": 59
+    },
+    "Remunda Štěpán": {
+      "club": "TJ Sokol Žižkov B",
+      "str": 1624,
+      "teamMatches": 3,
+      "wins": 5,
+      "losses": 4,
+      "winPct": 56
+    },
+    "Vich Pavel": {
+      "club": "TJ Sokol Běchovice II B",
+      "str": 1561,
+      "teamMatches": 6,
+      "wins": 9,
+      "losses": 9,
+      "winPct": 50
+    },
+    "Holub Martin": {
+      "club": "TJ Pankrác D",
+      "str": 1479,
+      "teamMatches": 15,
+      "wins": 24,
+      "losses": 25,
+      "winPct": 49
+    },
+    "Nejedlý Pavel": {
+      "club": "SK Start Praha B",
+      "str": 1598,
+      "teamMatches": 4,
+      "wins": 5,
+      "losses": 6,
+      "winPct": 45
+    },
+    "Čermáková Anna": {
+      "club": "TJ Sokol Žižkov D",
+      "str": 1553,
+      "teamMatches": 8,
+      "wins": 20,
+      "losses": 4,
+      "winPct": 83
+    },
+    "Kalina Pavel": {
+      "club": "TTC Elizza Praha I",
+      "str": 1509,
+      "teamMatches": 11,
+      "wins": 22,
+      "losses": 16,
+      "winPct": 58
+    },
+    "Brill Filip": {
+      "club": "TJ Sokol Běchovice II C",
+      "str": 1467,
+      "teamMatches": 15,
+      "wins": 22,
+      "losses": 29,
+      "winPct": 43
+    },
+    "Peršl Martin": {
+      "club": "TJ AVIA Čakovice D",
+      "str": 1506,
+      "teamMatches": 6,
+      "wins": 6,
+      "losses": 11,
+      "winPct": 35
+    },
+    "Rybář Martin": {
+      "club": "SK Start Praha B",
+      "str": 1604,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Fišer Josef": {
+      "club": "TJ Sokol Žižkov B",
+      "str": 1511,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Thomka Pavel": {
+      "club": "Slovan KST Bohnice E",
+      "str": 1500,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Kára Petr": {
+      "club": "TJ Sokol Nusle Praha B",
+      "str": 1449,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Vřešťál Milan": {
+      "club": "TJ Sokol Žižkov D",
+      "str": 1427,
+      "teamMatches": 18,
+      "wins": 14,
+      "losses": 36,
+      "winPct": 28
+    },
+    "Richter Jan": {
+      "club": "TJ Sokol Běchovice II C",
+      "str": 1386,
+      "teamMatches": 5,
+      "wins": 3,
+      "losses": 11,
+      "winPct": 21
+    },
+    "Kanzelsberger Martin": {
+      "club": "TJ Sokol Žižkov D",
+      "str": 1382,
+      "teamMatches": 7,
+      "wins": 1,
+      "losses": 21,
+      "winPct": 5
+    },
+    "Železný Miroslav": {
+      "club": "TJ Lokomotiva Vršovice D",
+      "str": 1597,
+      "teamMatches": 18,
+      "wins": 42,
+      "losses": 13,
+      "winPct": 76
+    },
+    "Botek Radomír": {
+      "club": "SK Start Praha B",
+      "str": 1428,
+      "teamMatches": 5,
+      "wins": 4,
+      "losses": 10,
+      "winPct": 29
+    },
+    "Dvořák Michal": {
+      "club": "TTC Elizza Praha K",
+      "str": 1294,
+      "teamMatches": 12,
+      "wins": 20,
+      "losses": 21,
+      "winPct": 49
+    },
+    "Záboj Petr": {
+      "club": "TJ Sokol Nusle Praha B",
+      "str": 1477,
+      "teamMatches": 6,
+      "wins": 4,
+      "losses": 13,
+      "winPct": 24
+    },
+    "Elčkner Miroslav ml.": {
+      "club": "TJ Sokol Žižkov B",
+      "str": 1559,
+      "teamMatches": 3,
+      "wins": 2,
+      "losses": 7,
+      "winPct": 22
+    },
+    "Čermák Jiří": {
+      "club": "TJ Sokol Žižkov D",
+      "str": 1484,
+      "teamMatches": 9,
+      "wins": 12,
+      "losses": 14,
+      "winPct": 46
+    },
+    "Weis Daniel": {
+      "club": "SK Start Praha B",
+      "str": 1434,
+      "teamMatches": 2,
+      "wins": 1,
+      "losses": 4,
+      "winPct": 20
+    },
+    "Ševčík Ivan": {
+      "club": "TJ Sokol Žižkov B",
+      "str": 1502,
+      "teamMatches": 3,
+      "wins": 2,
+      "losses": 8,
+      "winPct": 20
+    },
+    "Nosál Petr": {
+      "club": "TJ Pankrác D",
+      "str": 1507,
+      "teamMatches": 14,
+      "wins": 28,
+      "losses": 18,
+      "winPct": 61
+    },
+    "Zerkal Sergey": {
+      "club": "Slovan KST Bohnice E",
+      "str": 1424,
+      "teamMatches": 2,
+      "wins": 1,
+      "losses": 5,
+      "winPct": 17
+    },
+    "Počta Tomáš": {
+      "club": "SF SKK El Niňo Praha F",
+      "str": 1741,
+      "teamMatches": 2,
+      "wins": 1,
+      "losses": 6,
+      "winPct": 14
+    },
+    "Růžička Vojtěch": {
+      "club": "TJ Sokol Žižkov D",
+      "str": 1477,
+      "teamMatches": 16,
+      "wins": 24,
+      "losses": 24,
+      "winPct": 50
+    },
+    "Novák Roman": {
+      "club": "TTC Elizza Praha I",
+      "str": 1383,
+      "teamMatches": 15,
+      "wins": 9,
+      "losses": 42,
+      "winPct": 18
+    },
+    "Bistřický David": {
+      "club": "TTC Elizza Praha H",
+      "str": 1513,
+      "teamMatches": 3,
+      "wins": 1,
+      "losses": 9,
+      "winPct": 10
+    },
+    "Reinold Albert": {
+      "club": "SF SKK El Niňo Praha F",
+      "str": 1530,
+      "teamMatches": 3,
+      "wins": 1,
+      "losses": 10,
+      "winPct": 9
+    },
+    "Šedivý Filip": {
+      "club": "TTC Elizza Praha H",
+      "str": 1383,
+      "teamMatches": 4,
+      "wins": 1,
+      "losses": 11,
+      "winPct": 8
+    },
+    "Novák Jiří": {
+      "club": "TJ Pankrác D",
+      "str": 1480,
+      "teamMatches": 7,
+      "wins": 14,
+      "losses": 9,
+      "winPct": 61
+    },
+    "Strouhal Vojtěch": {
+      "club": "SF SKK El Niňo Praha F",
+      "str": 1406,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 2,
+      "winPct": 0
+    },
+    "Slavíček Jan st.": {
+      "club": "TJ Slavoj Praha D",
+      "str": 1123,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 2,
+      "winPct": 0
+    },
+    "Vláčil Jiří": {
+      "club": "TJ Sokol Žižkov B",
+      "str": 1439,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 3,
+      "winPct": 0
+    },
+    "Korbel Matyáš": {
+      "club": "TJ Pankrác D",
+      "str": 1330,
+      "teamMatches": 6,
+      "wins": 4,
+      "losses": 13,
+      "winPct": 24
+    },
+    "Benčík Jiří": {
+      "club": "TJ Pankrác D",
+      "str": 1182,
+      "teamMatches": 3,
+      "wins": 0,
+      "losses": 7,
+      "winPct": 0
+    },
+    "Šindelář Michal": {
+      "club": "TJ Sokol Běchovice II D",
+      "str": 1219,
+      "teamMatches": 13,
+      "wins": 13,
+      "losses": 27,
+      "winPct": 33
+    },
+    "Dvořák Petr": {
+      "club": "TJ Sokol Běchovice II C",
+      "str": 1421,
+      "teamMatches": 16,
+      "wins": 13,
+      "losses": 37,
+      "winPct": 26
+    },
+    "Tůma Marek": {
+      "club": "TJ Pankrác  C",
+      "str": 994,
+      "teamMatches": 2,
+      "wins": 0,
+      "losses": 5,
+      "winPct": 0
+    },
+    "Procházka Ivan ml.": {
+      "club": "TJ Sokol Běchovice II B",
+      "str": 1514,
+      "teamMatches": 2,
+      "wins": 0,
+      "losses": 6,
+      "winPct": 0
+    },
+    "Mirovský Ondřej": {
+      "club": "Slovan KST Bohnice E",
+      "str": 1589,
+      "teamMatches": 4,
+      "wins": 0,
+      "losses": 11,
+      "winPct": 0
+    },
+    "Nemčík Martin": {
+      "club": "TTC Elizza Praha K",
+      "str": 1412,
+      "teamMatches": 14,
+      "wins": 32,
+      "losses": 9,
+      "winPct": 78
+    },
+    "Jiroušek Karel": {
+      "club": "TJ ABC Braník C",
+      "str": 1622,
+      "teamMatches": 18,
+      "wins": 46,
+      "losses": 8,
+      "winPct": 85
+    },
+    "Zika Jan": {
+      "club": "TJ ABC Braník C",
+      "str": 1601,
+      "teamMatches": 20,
+      "wins": 52,
+      "losses": 13,
+      "winPct": 80
+    },
+    "Smrkovský Petr": {
+      "club": "KK Konstruktiva Praha A",
+      "str": 1578,
+      "teamMatches": 19,
+      "wins": 43,
+      "losses": 16,
+      "winPct": 73
+    },
+    "Satorie Michal": {
+      "club": "TJ Pankrác D",
+      "str": 1565,
+      "teamMatches": 7,
+      "wins": 18,
+      "losses": 7,
+      "winPct": 72
+    },
+    "Bartošek Jan": {
+      "club": "AC Sparta Praha I",
+      "str": 1523,
+      "teamMatches": 10,
+      "wins": 26,
+      "losses": 11,
+      "winPct": 70
+    },
+    "Matoušek Jan": {
+      "club": "TJ Sokol Petrovice B",
+      "str": 1554,
+      "teamMatches": 19,
+      "wins": 47,
+      "losses": 20,
+      "winPct": 70
+    },
+    "Šťovíček Petr": {
+      "club": "TJ Sokol Stodůlky D",
+      "str": 1557,
+      "teamMatches": 17,
+      "wins": 34,
+      "losses": 15,
+      "winPct": 69
+    },
+    "Averina Sergeevna Aleksandra": {
+      "club": "TJ Sokol Stodůlky D",
+      "str": 1536,
+      "teamMatches": 9,
+      "wins": 15,
+      "losses": 8,
+      "winPct": 65
+    },
+    "Zunt Zdeněk": {
+      "club": "TJ Lokomotiva Vršovice D",
+      "str": 1573,
+      "teamMatches": 15,
+      "wins": 27,
+      "losses": 16,
+      "winPct": 63
+    },
+    "Satrapa Jan": {
+      "club": "TJ ABC Braník C",
+      "str": 1552,
+      "teamMatches": 20,
+      "wins": 36,
+      "losses": 22,
+      "winPct": 62
+    },
+    "Chalupa Jaroslav": {
+      "club": "TJ Sokol Praha - Břevnov A",
+      "str": 1570,
+      "teamMatches": 13,
+      "wins": 27,
+      "losses": 17,
+      "winPct": 61
+    },
+    "Horká Radka": {
+      "club": "TJ Lokomotiva Vršovice D",
+      "str": 1534,
+      "teamMatches": 17,
+      "wins": 29,
+      "losses": 20,
+      "winPct": 59
+    },
+    "Vatrt Michal": {
+      "club": "KK Konstruktiva Praha A",
+      "str": 1510,
+      "teamMatches": 13,
+      "wins": 22,
+      "losses": 16,
+      "winPct": 58
+    },
+    "Simandl Patrik": {
+      "club": "TTC Elizza Praha I",
+      "str": 1486,
+      "teamMatches": 19,
+      "wins": 36,
+      "losses": 28,
+      "winPct": 56
+    },
+    "Shnaider Valentyn": {
+      "club": "TJ Sokol Petrovice B",
+      "str": 1520,
+      "teamMatches": 11,
+      "wins": 18,
+      "losses": 15,
+      "winPct": 55
+    },
+    "Pecka Zdeněk": {
+      "club": "TJ Sokol Petrovice B",
+      "str": 1535,
+      "teamMatches": 19,
+      "wins": 35,
+      "losses": 30,
+      "winPct": 54
+    },
+    "Holomek Tomáš": {
+      "club": "TJ ABC Braník C",
+      "str": 1518,
+      "teamMatches": 11,
+      "wins": 16,
+      "losses": 14,
+      "winPct": 53
+    },
+    "Dunder Jiří": {
+      "club": "TJ Sokol Praha - Břevnov A",
+      "str": 1513,
+      "teamMatches": 16,
+      "wins": 28,
+      "losses": 26,
+      "winPct": 52
+    },
+    "Dymau Aliaksei": {
+      "club": "TJ Sokol Petrovice B",
+      "str": 1487,
+      "teamMatches": 10,
+      "wins": 16,
+      "losses": 15,
+      "winPct": 52
+    },
+    "Benák Daniel": {
+      "club": "AC Sparta Praha K",
+      "str": 1453,
+      "teamMatches": 14,
+      "wins": 29,
+      "losses": 19,
+      "winPct": 60
+    },
+    "Bozděch Jan": {
+      "club": "AC Sparta Praha I",
+      "str": 1486,
+      "teamMatches": 14,
+      "wins": 21,
+      "losses": 22,
+      "winPct": 49
+    },
+    "Klápa Vladislav": {
+      "club": "KK Konstruktiva Praha A",
+      "str": 1520,
+      "teamMatches": 18,
+      "wins": 24,
+      "losses": 27,
+      "winPct": 47
+    },
+    "Jankovec Jiří": {
+      "club": "AC Sparta Praha I",
+      "str": 1496,
+      "teamMatches": 9,
+      "wins": 13,
+      "losses": 17,
+      "winPct": 43
+    },
+    "Stejskal Adam": {
+      "club": "KK Konstruktiva Praha A",
+      "str": 1473,
+      "teamMatches": 14,
+      "wins": 17,
+      "losses": 25,
+      "winPct": 40
+    },
+    "Litomiský Petr": {
+      "club": "TJ Sokol Stodůlky D",
+      "str": 1435,
+      "teamMatches": 7,
+      "wins": 8,
+      "losses": 13,
+      "winPct": 38
+    },
+    "Šobáň Radek": {
+      "club": "TJ Lokomotiva Vršovice D",
+      "str": 1469,
+      "teamMatches": 16,
+      "wins": 17,
+      "losses": 30,
+      "winPct": 36
+    },
+    "Pícha David": {
+      "club": "TJ Sokol Petrovice B",
+      "str": 1454,
+      "teamMatches": 15,
+      "wins": 16,
+      "losses": 32,
+      "winPct": 33
+    },
+    "Bačík Jakub": {
+      "club": "KK Konstruktiva Praha A",
+      "str": 1414,
+      "teamMatches": 9,
+      "wins": 8,
+      "losses": 19,
+      "winPct": 30
+    },
+    "Popelka Antonín": {
+      "club": "TJ Sokol Praha - Břevnov A",
+      "str": 1443,
+      "teamMatches": 17,
+      "wins": 14,
+      "losses": 37,
+      "winPct": 27
+    },
+    "Rendl Josef": {
+      "club": "TJ Pankrác D",
+      "str": 1342,
+      "teamMatches": 11,
+      "wins": 7,
+      "losses": 26,
+      "winPct": 21
+    },
+    "Bečvář Pavel": {
+      "club": "TJ Sokol Praha - Břevnov A",
+      "str": 1392,
+      "teamMatches": 15,
+      "wins": 9,
+      "losses": 34,
+      "winPct": 21
+    },
+    "Fausek Jiří": {
+      "club": "TTC Elizza Praha J",
+      "str": 1353,
+      "teamMatches": 14,
+      "wins": 16,
+      "losses": 29,
+      "winPct": 36
+    },
+    "Běloubek Roman": {
+      "club": "TJ Sokol Žižkov D",
+      "str": 1356,
+      "teamMatches": 13,
+      "wins": 5,
+      "losses": 30,
+      "winPct": 14
+    },
+    "Duda Tadeáš": {
+      "club": "AC Sparta Praha I",
+      "str": 1296,
+      "teamMatches": 7,
+      "wins": 3,
+      "losses": 19,
+      "winPct": 14
+    },
+    "Ptáček Jan": {
+      "club": "TJ Sokol Praha - Břevnov A",
+      "str": 1277,
+      "teamMatches": 8,
+      "wins": 2,
+      "losses": 22,
+      "winPct": 8
+    },
+    "Vidlák Miloš": {
+      "club": "TJ Sokol Stodůlky D",
+      "str": 1556,
+      "teamMatches": 4,
+      "wins": 10,
+      "losses": 2,
+      "winPct": 83
+    },
+    "Huleš Kryštof": {
+      "club": "TJ Lokomotiva Vršovice F",
+      "str": 1428,
+      "teamMatches": 14,
+      "wins": 36,
+      "losses": 8,
+      "winPct": 82
+    },
+    "Mikuška Alexandr": {
+      "club": "TJ Sokol Žižkov D",
+      "str": 1490,
+      "teamMatches": 2,
+      "wins": 4,
+      "losses": 1,
+      "winPct": 80
+    },
+    "Dufek Jakub": {
+      "club": "TJ Lokomotiva Vršovice F",
+      "str": 1451,
+      "teamMatches": 15,
+      "wins": 41,
+      "losses": 10,
+      "winPct": 80
+    },
+    "Espinoza Felix": {
+      "club": "TJ ABC Braník E",
+      "str": 1488,
+      "teamMatches": 19,
+      "wins": 47,
+      "losses": 17,
+      "winPct": 73
+    },
+    "Marek Michal": {
+      "club": "TJ ABC Braník C",
+      "str": 1583,
+      "teamMatches": 1,
+      "wins": 2,
+      "losses": 1,
+      "winPct": 67
+    },
+    "Ruml Jiří": {
+      "club": "TJ ABC Braník E",
+      "str": 1430,
+      "teamMatches": 14,
+      "wins": 21,
+      "losses": 19,
+      "winPct": 53
+    },
+    "Zimmel Václav": {
+      "club": "TJ ABC Braník E",
+      "str": 1492,
+      "teamMatches": 20,
+      "wins": 46,
+      "losses": 19,
+      "winPct": 71
+    },
+    "Horák Michal": {
+      "club": "KK Konstruktiva Praha A",
+      "str": 1456,
+      "teamMatches": 6,
+      "wins": 7,
+      "losses": 9,
+      "winPct": 44
+    },
+    "Brůčková Marie": {
+      "club": "TJ Sokol Běchovice II D",
+      "str": 1397,
+      "teamMatches": 15,
+      "wins": 37,
+      "losses": 12,
+      "winPct": 76
+    },
+    "Balouch Martin": {
+      "club": "TJ Sokol Praha - Břevnov A",
+      "str": 1353,
+      "teamMatches": 2,
+      "wins": 2,
+      "losses": 3,
+      "winPct": 40
+    },
+    "Nechaev Vasily": {
+      "club": "TJ Sokol Stodůlky D",
+      "str": 1516,
+      "teamMatches": 6,
+      "wins": 6,
+      "losses": 10,
+      "winPct": 38
+    },
+    "Kosťuk Artur": {
+      "club": "AC Sparta Praha I",
+      "str": 1417,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Boštíková Věra": {
+      "club": "KK Konstruktiva Praha A",
+      "str": 1386,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Novotný Václav": {
+      "club": "TJ Sokol Petrovice B",
+      "str": 1385,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Bertho Ronan": {
+      "club": "TJ Sokol Praha - Břevnov A",
+      "str": 1214,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Janda Prokop": {
+      "club": "TTC Elizza Praha K",
+      "str": 1340,
+      "teamMatches": 10,
+      "wins": 26,
+      "losses": 10,
+      "winPct": 72
+    },
+    "Černá Martina": {
+      "club": "TJ Sokol Stodůlky D",
+      "str": 1476,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 3,
+      "winPct": 25
+    },
+    "Chmelík David": {
+      "club": "TJ Sokol Běchovice II C",
+      "str": 1443,
+      "teamMatches": 2,
+      "wins": 1,
+      "losses": 3,
+      "winPct": 25
+    },
+    "Kroupa Rudolf": {
+      "club": "AC Sparta Praha I",
+      "str": 1263,
+      "teamMatches": 2,
+      "wins": 1,
+      "losses": 5,
+      "winPct": 17
+    },
+    "Mészáros Bence": {
+      "club": "AC Sparta Praha K",
+      "str": 1334,
+      "teamMatches": 14,
+      "wins": 18,
+      "losses": 32,
+      "winPct": 36
+    },
+    "Peller Marek": {
+      "club": "KK Konstruktiva Praha A",
+      "str": 1354,
+      "teamMatches": 2,
+      "wins": 1,
+      "losses": 7,
+      "winPct": 13
+    },
+    "Slavický Benedikt": {
+      "club": "AC Sparta Praha I",
+      "str": 1172,
+      "teamMatches": 4,
+      "wins": 1,
+      "losses": 8,
+      "winPct": 11
+    },
+    "Táborský Michael": {
+      "club": "TJ Lokomotiva Vršovice E",
+      "str": 1441,
+      "teamMatches": 17,
+      "wins": 28,
+      "losses": 24,
+      "winPct": 54
+    },
+    "Nagy Ondrej": {
+      "club": "TJ Sokol Běchovice II D",
+      "str": 1231,
+      "teamMatches": 11,
+      "wins": 14,
+      "losses": 22,
+      "winPct": 39
+    },
+    "Malina Dalibor": {
+      "club": "TJ Sokol Praha - Břevnov A",
+      "str": 1158,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 2,
+      "winPct": 0
+    },
+    "Vu Hoang": {
+      "club": "AC Sparta Praha I",
+      "str": 1133,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 2,
+      "winPct": 0
+    },
+    "Gvichiani Georgy": {
+      "club": "AC Sparta Praha I",
+      "str": 1642,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 3,
+      "winPct": 0
+    },
+    "Kalaš Vladislav": {
+      "club": "TJ Sokol Stodůlky F",
+      "str": 1426,
+      "teamMatches": 7,
+      "wins": 16,
+      "losses": 5,
+      "winPct": 76
+    },
+    "Červenka Boris": {
+      "club": "TJ Sokol Praha - Břevnov A",
+      "str": 1234,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 3,
+      "winPct": 0
+    },
+    "Nalezený Jan": {
+      "club": "TJ Sokol Praha - Břevnov A",
+      "str": 1222,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 3,
+      "winPct": 0
+    },
+    "Nevmeržický Vadim": {
+      "club": "TJ Sokol Stodůlky F",
+      "str": 1417,
+      "teamMatches": 14,
+      "wins": 37,
+      "losses": 8,
+      "winPct": 82
+    },
+    "Brůček František": {
+      "club": "TJ Sokol Běchovice II D",
+      "str": 1167,
+      "teamMatches": 14,
+      "wins": 12,
+      "losses": 34,
+      "winPct": 26
+    },
+    "Skalický Jaroslav": {
+      "club": "TJ Pankrác D",
+      "str": 1079,
+      "teamMatches": 2,
+      "wins": 0,
+      "losses": 5,
+      "winPct": 0
+    },
+    "Moravec Jan": {
+      "club": "TTC Elizza Praha K",
+      "str": 1228,
+      "teamMatches": 12,
+      "wins": 16,
+      "losses": 25,
+      "winPct": 39
+    },
+    "Šebek Ondřej": {
+      "club": "TJ Sokol Nusle Praha D",
+      "str": 1528,
+      "teamMatches": 14,
+      "wins": 46,
+      "losses": 7,
+      "winPct": 87
+    },
+    "Hanáček Josef": {
+      "club": "TJ Lokomotiva Vršovice E",
+      "str": 1522,
+      "teamMatches": 17,
+      "wins": 44,
+      "losses": 8,
+      "winPct": 85
+    },
+    "Hrubý Tomáš": {
+      "club": "AC Sparta Praha K",
+      "str": 1516,
+      "teamMatches": 12,
+      "wins": 33,
+      "losses": 8,
+      "winPct": 80
+    },
+    "Bartoňová Anna": {
+      "club": "Slovan KST Bohnice H",
+      "str": 1512,
+      "teamMatches": 10,
+      "wins": 24,
+      "losses": 8,
+      "winPct": 75
+    },
+    "Petr Bohumír": {
+      "club": "TTC Praha C",
+      "str": 1544,
+      "teamMatches": 17,
+      "wins": 47,
+      "losses": 18,
+      "winPct": 72
+    },
+    "Wawrečka Ronald": {
+      "club": "TJ Mladí Veteráni - VSK ČVUT A",
+      "str": 1485,
+      "teamMatches": 15,
+      "wins": 32,
+      "losses": 17,
+      "winPct": 65
+    },
+    "Nesvačilová Petra": {
+      "club": "TJ Sokol Nusle Praha D",
+      "str": 1430,
+      "teamMatches": 15,
+      "wins": 35,
+      "losses": 20,
+      "winPct": 64
+    },
+    "Písecký Luboš": {
+      "club": "TTC Praha C",
+      "str": 1487,
+      "teamMatches": 18,
+      "wins": 36,
+      "losses": 22,
+      "winPct": 62
+    },
+    "Zúbrik Mário": {
+      "club": "TJ Sokol Suchdol - Sedlec B",
+      "str": 1452,
+      "teamMatches": 17,
+      "wins": 38,
+      "losses": 24,
+      "winPct": 61
+    },
+    "Votípka Emanuel": {
+      "club": "TJ Sokol Michle D",
+      "str": 1475,
+      "teamMatches": 10,
+      "wins": 19,
+      "losses": 12,
+      "winPct": 61
+    },
+    "Ploc Marek": {
+      "club": "TJ Sokol Suchdol - Sedlec B",
+      "str": 1466,
+      "teamMatches": 18,
+      "wins": 37,
+      "losses": 24,
+      "winPct": 61
+    },
+    "Ledr Aleš": {
+      "club": "TJ Sokol Praha - Podolí A",
+      "str": 1462,
+      "teamMatches": 19,
+      "wins": 40,
+      "losses": 27,
+      "winPct": 60
+    },
+    "Motyčka Oldřich": {
+      "club": "TJ Sokol Michle D",
+      "str": 1455,
+      "teamMatches": 13,
+      "wins": 25,
+      "losses": 17,
+      "winPct": 60
+    },
+    "Pavlenko Dmytro": {
+      "club": "TJ Sokol Praha - Podolí A",
+      "str": 1407,
+      "teamMatches": 13,
+      "wins": 25,
+      "losses": 18,
+      "winPct": 58
+    },
+    "Kopřiva Radek": {
+      "club": "TJ Sokol Suchdol - Sedlec B",
+      "str": 1475,
+      "teamMatches": 10,
+      "wins": 19,
+      "losses": 15,
+      "winPct": 56
+    },
+    "Cankař Radek": {
+      "club": "Slovan KST Bohnice H",
+      "str": 1449,
+      "teamMatches": 17,
+      "wins": 31,
+      "losses": 25,
+      "winPct": 55
+    },
+    "Turek Tomáš": {
+      "club": "TJ Sokol Suchdol - Sedlec B",
+      "str": 1443,
+      "teamMatches": 12,
+      "wins": 21,
+      "losses": 17,
+      "winPct": 55
+    },
+    "Domnosil Tomáš": {
+      "club": "Slovan KST Bohnice H",
+      "str": 1441,
+      "teamMatches": 17,
+      "wins": 34,
+      "losses": 28,
+      "winPct": 55
+    },
+    "Bartoňová Jitka": {
+      "club": "Slovan KST Bohnice H",
+      "str": 1441,
+      "teamMatches": 8,
+      "wins": 15,
+      "losses": 13,
+      "winPct": 54
+    },
+    "Pinkas Jan": {
+      "club": "Slovan KST Bohnice H",
+      "str": 1425,
+      "teamMatches": 16,
+      "wins": 28,
+      "losses": 25,
+      "winPct": 53
+    },
+    "Radil Milan": {
+      "club": "TJ Sokol Michle D",
+      "str": 1433,
+      "teamMatches": 11,
+      "wins": 18,
+      "losses": 17,
+      "winPct": 51
+    },
+    "Matuna Václav": {
+      "club": "Slovan KST Bohnice H",
+      "str": 1407,
+      "teamMatches": 9,
+      "wins": 15,
+      "losses": 16,
+      "winPct": 48
+    },
+    "Trnka Vítězslav": {
+      "club": "TJ Sokol Praha - Podolí A",
+      "str": 1372,
+      "teamMatches": 18,
+      "wins": 25,
+      "losses": 27,
+      "winPct": 48
+    },
+    "Stejskal Pavel": {
+      "club": "TJ Sokol Praha - Podolí A",
+      "str": 1400,
+      "teamMatches": 16,
+      "wins": 22,
+      "losses": 25,
+      "winPct": 47
+    },
+    "Štěpánek Petr": {
+      "club": "TJ Sokol Michle D",
+      "str": 1431,
+      "teamMatches": 9,
+      "wins": 14,
+      "losses": 16,
+      "winPct": 47
+    },
+    "Krenk Tomáš": {
+      "club": "TJ ABC Braník E",
+      "str": 1418,
+      "teamMatches": 16,
+      "wins": 21,
+      "losses": 24,
+      "winPct": 47
+    },
+    "Boloňský Andrej": {
+      "club": "TJ Mladí Veteráni - VSK ČVUT A",
+      "str": 1389,
+      "teamMatches": 13,
+      "wins": 15,
+      "losses": 20,
+      "winPct": 43
+    },
+    "Mutl David": {
+      "club": "TJ Sokol Nusle Praha D",
+      "str": 1345,
+      "teamMatches": 7,
+      "wins": 10,
+      "losses": 15,
+      "winPct": 40
+    },
+    "Hrabálek Petr": {
+      "club": "TJ Mladí Veteráni - VSK ČVUT A",
+      "str": 1370,
+      "teamMatches": 8,
+      "wins": 10,
+      "losses": 16,
+      "winPct": 38
+    },
+    "Šálek Pavel": {
+      "club": "AC Sparta Praha K",
+      "str": 1316,
+      "teamMatches": 9,
+      "wins": 10,
+      "losses": 16,
+      "winPct": 38
+    },
+    "Malá Petra": {
+      "club": "TJ Sokol Praha - Podolí A",
+      "str": 1365,
+      "teamMatches": 15,
+      "wins": 17,
+      "losses": 28,
+      "winPct": 38
+    },
+    "Svoboda Igor": {
+      "club": "TJ Sokol Nusle Praha D",
+      "str": 1375,
+      "teamMatches": 15,
+      "wins": 20,
+      "losses": 33,
+      "winPct": 38
+    },
+    "Chadt Jiří": {
+      "club": "TJ Sokol Nusle Praha D",
+      "str": 1379,
+      "teamMatches": 9,
+      "wins": 12,
+      "losses": 20,
+      "winPct": 38
+    },
+    "Vránová Helena": {
+      "club": "TTC Elizza Praha J",
+      "str": 1361,
+      "teamMatches": 8,
+      "wins": 9,
+      "losses": 16,
+      "winPct": 36
+    },
+    "Mocanu Iulian Radu": {
+      "club": "TTC Praha C",
+      "str": 1403,
+      "teamMatches": 13,
+      "wins": 15,
+      "losses": 31,
+      "winPct": 33
+    },
+    "Brýna Karel": {
+      "club": "TTC Praha C",
+      "str": 1350,
+      "teamMatches": 9,
+      "wins": 9,
+      "losses": 22,
+      "winPct": 29
+    },
+    "Hůla Jaromír": {
+      "club": "TJ Mladí Veteráni - VSK ČVUT A",
+      "str": 1329,
+      "teamMatches": 16,
+      "wins": 12,
+      "losses": 33,
+      "winPct": 27
+    },
+    "Husák Martin": {
+      "club": "TTC Praha C",
+      "str": 1309,
+      "teamMatches": 13,
+      "wins": 10,
+      "losses": 32,
+      "winPct": 24
+    },
+    "Hedervári Robert": {
+      "club": "TJ Mladí Veteráni - VSK ČVUT A",
+      "str": 1280,
+      "teamMatches": 10,
+      "wins": 4,
+      "losses": 26,
+      "winPct": 13
+    },
+    "Veselý Milan": {
+      "club": "TJ Sokol Michle D",
+      "str": 1247,
+      "teamMatches": 9,
+      "wins": 3,
+      "losses": 21,
+      "winPct": 13
+    },
+    "Rattay Gustav": {
+      "club": "TJ Sokol Michle D",
+      "str": 1191,
+      "teamMatches": 13,
+      "wins": 3,
+      "losses": 34,
+      "winPct": 8
+    },
+    "Žáček Josef": {
+      "club": "TJ Sokol Suchdol - Sedlec B",
+      "str": 1587,
+      "teamMatches": 1,
+      "wins": 4,
+      "losses": 0,
+      "winPct": 100
+    },
+    "Hubač Martin": {
+      "club": "AC Sparta Praha K",
+      "str": 1474,
+      "teamMatches": 1,
+      "wins": 2,
+      "losses": 0,
+      "winPct": 100
+    },
+    "Fernandez Munoz Raul": {
+      "club": "TJ ABC Braník E",
+      "str": -1,
+      "teamMatches": 1,
+      "wins": 3,
+      "losses": 1,
+      "winPct": 75
+    },
+    "Skoumal Adam": {
+      "club": "TJ ABC Braník E",
+      "str": 1484,
+      "teamMatches": 6,
+      "wins": 11,
+      "losses": 6,
+      "winPct": 65
+    },
+    "Hojovec Adam": {
+      "club": "TJ Sokol Suchdol - Sedlec B",
+      "str": 1362,
+      "teamMatches": 2,
+      "wins": 4,
+      "losses": 3,
+      "winPct": 57
+    },
+    "Aixner Jakub": {
+      "club": "TJ Sokol Nusle Praha D",
+      "str": 1284,
+      "teamMatches": 2,
+      "wins": 4,
+      "losses": 3,
+      "winPct": 57
+    },
+    "Mikyska Luboš": {
+      "club": "TTC Praha F",
+      "str": 1401,
+      "teamMatches": 7,
+      "wins": 20,
+      "losses": 3,
+      "winPct": 87
+    },
+    "Knob Petr": {
+      "club": "TJ Lokomotiva Vršovice E",
+      "str": 1394,
+      "teamMatches": 4,
+      "wins": 6,
+      "losses": 5,
+      "winPct": 55
+    },
+    "Rukavička Tomáš": {
+      "club": "AC Sparta Praha K",
+      "str": 1511,
+      "teamMatches": 3,
+      "wins": 5,
+      "losses": 5,
+      "winPct": 50
+    },
+    "Prokeš Jan": {
+      "club": "TJ Sokol Nusle Praha D",
+      "str": 1384,
+      "teamMatches": 5,
+      "wins": 6,
+      "losses": 9,
+      "winPct": 40
+    },
+    "Nechvátalová Jana": {
+      "club": "TTC Praha C",
+      "str": 1306,
+      "teamMatches": 3,
+      "wins": 4,
+      "losses": 7,
+      "winPct": 36
+    },
+    "Jirků Jaromír": {
+      "club": "TJ Sokol Suchdol - Sedlec B",
+      "str": 1368,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Mareš Jiří": {
+      "club": "TJ Lokomotiva Vršovice E",
+      "str": 1235,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Matsko Vasyl": {
+      "club": "TTC Praha C",
+      "str": 1295,
+      "teamMatches": 3,
+      "wins": 3,
+      "losses": 6,
+      "winPct": 33
+    },
+    "Honek Jan": {
+      "club": "TJ Sokol Suchdol - Sedlec B",
+      "str": 1258,
+      "teamMatches": 3,
+      "wins": 3,
+      "losses": 6,
+      "winPct": 33
+    },
+    "Kirschner Antonín": {
+      "club": "TJ Sokol Nusle Praha D",
+      "str": 1332,
+      "teamMatches": 4,
+      "wins": 4,
+      "losses": 12,
+      "winPct": 25
+    },
+    "Pozníček Miloš": {
+      "club": "TJ Sokol Suchdol - Sedlec B",
+      "str": 1336,
+      "teamMatches": 5,
+      "wins": 4,
+      "losses": 13,
+      "winPct": 24
+    },
+    "Pocz Štefan": {
+      "club": "TJ Sokol Suchdol - Sedlec B",
+      "str": 1291,
+      "teamMatches": 4,
+      "wins": 3,
+      "losses": 10,
+      "winPct": 23
+    },
+    "Heinz Petr": {
+      "club": "TJ Mladí Veteráni - VSK ČVUT A",
+      "str": 1297,
+      "teamMatches": 5,
+      "wins": 2,
+      "losses": 10,
+      "winPct": 17
+    },
+    "Worsch Miloslav": {
+      "club": "TJ Mladí Veteráni - VSK ČVUT A",
+      "str": 1291,
+      "teamMatches": 5,
+      "wins": 2,
+      "losses": 10,
+      "winPct": 17
+    },
+    "Rosová Kateřina": {
+      "club": "TTC Elizza Praha J",
+      "str": 1295,
+      "teamMatches": 2,
+      "wins": 1,
+      "losses": 6,
+      "winPct": 14
+    },
+    "Beaulieu Xavier": {
+      "club": "AC Sparta Praha K",
+      "str": 1251,
+      "teamMatches": 5,
+      "wins": 2,
+      "losses": 13,
+      "winPct": 13
+    },
+    "Petira Martin": {
+      "club": "TJ ABC Braník E",
+      "str": 1321,
+      "teamMatches": 5,
+      "wins": 2,
+      "losses": 14,
+      "winPct": 13
+    },
+    "Lobo Manuel": {
+      "club": "TJ Mladí Veteráni - VSK ČVUT A",
+      "str": 1391,
+      "teamMatches": 5,
+      "wins": 1,
+      "losses": 12,
+      "winPct": 8
+    },
+    "Jinoch Martin": {
+      "club": "Slovan KST Bohnice H",
+      "str": 1168,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 1,
+      "winPct": 0
+    },
+    "Žerděv Roman": {
+      "club": "TJ Mladí Veteráni - VSK ČVUT A",
+      "str": 1228,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 2,
+      "winPct": 0
+    },
+    "Sork Viktor": {
+      "club": "TJ Lokomotiva Vršovice F",
+      "str": 1361,
+      "teamMatches": 14,
+      "wins": 29,
+      "losses": 14,
+      "winPct": 67
+    },
+    "Novotný Kryštof": {
+      "club": "TJ Sokol Nusle Praha D",
+      "str": 1134,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 3,
+      "winPct": 0
+    },
+    "Antonenko Yevhenii": {
+      "club": "TJ Mladí Veteráni - VSK ČVUT A",
+      "str": 1235,
+      "teamMatches": 2,
+      "wins": 0,
+      "losses": 4,
+      "winPct": 0
+    },
+    "Šmejda Jan": {
+      "club": "Slovan KST Bohnice H",
+      "str": 1231,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 4,
+      "winPct": 0
+    },
+    "Viktora Kryštof": {
+      "club": "TJ Sokol Nusle Praha D",
+      "str": 1252,
+      "teamMatches": 2,
+      "wins": 0,
+      "losses": 6,
+      "winPct": 0
+    },
+    "Handl Erich": {
+      "club": "Slovan KST Bohnice H",
+      "str": 1230,
+      "teamMatches": 3,
+      "wins": 0,
+      "losses": 6,
+      "winPct": 0
+    },
+    "Maliauka Ihar": {
+      "club": "AC Sparta Praha K",
+      "str": 1182,
+      "teamMatches": 2,
+      "wins": 0,
+      "losses": 7,
+      "winPct": 0
+    },
+    "Dušek Denis": {
+      "club": "AC Sparta Praha K",
+      "str": 1192,
+      "teamMatches": 3,
+      "wins": 0,
+      "losses": 8,
+      "winPct": 0
+    },
+    "Rattay Martin": {
+      "club": "TJ Sokol Michle D",
+      "str": 1018,
+      "teamMatches": 3,
+      "wins": 0,
+      "losses": 8,
+      "winPct": 0
+    },
+    "Forejt Lukáš": {
+      "club": "TJ Sokol Suchdol - Sedlec B",
+      "str": 1251,
+      "teamMatches": 3,
+      "wins": 0,
+      "losses": 9,
+      "winPct": 0
+    },
+    "Chládek Pavel": {
+      "club": "TJ Sokol Nusle Praha D",
+      "str": 1144,
+      "teamMatches": 3,
+      "wins": 0,
+      "losses": 9,
+      "winPct": 0
+    },
+    "Bláha Pavel": {
+      "club": "TJ Sokol Michle D",
+      "str": 1,
+      "teamMatches": 7,
+      "wins": 0,
+      "losses": 17,
+      "winPct": 0
+    },
+    "Svoboda Vladimír": {
+      "club": "TJ Sokol Kbely A",
+      "str": 1485,
+      "teamMatches": 9,
+      "wins": 30,
+      "losses": 3,
+      "winPct": 91
+    },
+    "Bežuch Jakub": {
+      "club": "TJ AVIA Čakovice G",
+      "str": 1502,
+      "teamMatches": 14,
+      "wins": 39,
+      "losses": 7,
+      "winPct": 85
+    },
+    "Hájek Alexandr": {
+      "club": "TJ AVIA Čakovice G",
+      "str": 1498,
+      "teamMatches": 9,
+      "wins": 22,
+      "losses": 4,
+      "winPct": 85
+    },
+    "Engel Martin": {
+      "club": "VSK MFF UK Praha B",
+      "str": 1418,
+      "teamMatches": 18,
+      "wins": 48,
+      "losses": 13,
+      "winPct": 79
+    },
+    "Svojtka Václav": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1363,
+      "teamMatches": 7,
+      "wins": 20,
+      "losses": 6,
+      "winPct": 77
+    },
+    "Jareš Jakub": {
+      "club": "VSK MFF UK Praha B",
+      "str": 1424,
+      "teamMatches": 15,
+      "wins": 36,
+      "losses": 11,
+      "winPct": 77
+    },
+    "Němeček Tomáš": {
+      "club": "TJ Sokol Stodůlky F",
+      "str": 1344,
+      "teamMatches": 8,
+      "wins": 17,
+      "losses": 6,
+      "winPct": 74
+    },
+    "Nokeo Viengngeun": {
+      "club": "TJ AVIA Čakovice G",
+      "str": 1389,
+      "teamMatches": 14,
+      "wins": 34,
+      "losses": 13,
+      "winPct": 72
+    },
+    "Schützner Vladimír": {
+      "club": "TJ Sokol Petrovice D",
+      "str": 1378,
+      "teamMatches": 18,
+      "wins": 42,
+      "losses": 18,
+      "winPct": 70
+    },
+    "Hrdý Jiří": {
+      "club": "TJ Sokol Kbely A",
+      "str": 1357,
+      "teamMatches": 13,
+      "wins": 29,
+      "losses": 14,
+      "winPct": 67
+    },
+    "Babický Lukáš": {
+      "club": "TJ Sokol Stodůlky F",
+      "str": 1358,
+      "teamMatches": 12,
+      "wins": 23,
+      "losses": 12,
+      "winPct": 66
+    },
+    "Kašpar Ladislav": {
+      "club": "TJ AVIA Čakovice G",
+      "str": 1313,
+      "teamMatches": 11,
+      "wins": 22,
+      "losses": 13,
+      "winPct": 63
+    },
+    "Hronek Matouš": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1323,
+      "teamMatches": 6,
+      "wins": 12,
+      "losses": 8,
+      "winPct": 60
+    },
+    "Pecka Tomáš": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1341,
+      "teamMatches": 11,
+      "wins": 21,
+      "losses": 15,
+      "winPct": 58
+    },
+    "Stránský Zdeněk": {
+      "club": "TJ Sokol Stodůlky F",
+      "str": 1333,
+      "teamMatches": 12,
+      "wins": 21,
+      "losses": 15,
+      "winPct": 58
+    },
+    "Kobras Ludvík": {
+      "club": "TJ Lokomotiva Vršovice F",
+      "str": 1319,
+      "teamMatches": 12,
+      "wins": 20,
+      "losses": 15,
+      "winPct": 57
+    },
+    "Dolníček Marek": {
+      "club": "TJ Sokol Kbely A",
+      "str": 1320,
+      "teamMatches": 13,
+      "wins": 24,
+      "losses": 19,
+      "winPct": 56
+    },
+    "Filip Miroslav": {
+      "club": "TTC Praha F",
+      "str": 1305,
+      "teamMatches": 15,
+      "wins": 29,
+      "losses": 23,
+      "winPct": 56
+    },
+    "Vlček Adam": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1244,
+      "teamMatches": 8,
+      "wins": 14,
+      "losses": 13,
+      "winPct": 52
+    },
+    "Holštein Jaroslav": {
+      "club": "TJ Zelená Liška B",
+      "str": 1302,
+      "teamMatches": 15,
+      "wins": 26,
+      "losses": 26,
+      "winPct": 50
+    },
+    "Pouč Roman": {
+      "club": "TJ Zelená Liška B",
+      "str": 1293,
+      "teamMatches": 13,
+      "wins": 21,
+      "losses": 25,
+      "winPct": 46
+    },
+    "Jung René": {
+      "club": "TTC Praha F",
+      "str": 1287,
+      "teamMatches": 14,
+      "wins": 21,
+      "losses": 27,
+      "winPct": 44
+    },
+    "Merta Petr": {
+      "club": "TTC Praha F",
+      "str": 1311,
+      "teamMatches": 10,
+      "wins": 13,
+      "losses": 17,
+      "winPct": 43
+    },
+    "Novotný Robert": {
+      "club": "TTC Praha F",
+      "str": 1272,
+      "teamMatches": 13,
+      "wins": 17,
+      "losses": 25,
+      "winPct": 40
+    },
+    "Jägr Jiří": {
+      "club": "TTC Praha F",
+      "str": 1280,
+      "teamMatches": 9,
+      "wins": 12,
+      "losses": 18,
+      "winPct": 40
+    },
+    "Mészáros Vojtěch": {
+      "club": "VSK MFF UK Praha B",
+      "str": 1268,
+      "teamMatches": 11,
+      "wins": 14,
+      "losses": 21,
+      "winPct": 40
+    },
+    "Couf Alfréd": {
+      "club": "TJ Zelená Liška B",
+      "str": 1280,
+      "teamMatches": 16,
+      "wins": 19,
+      "losses": 30,
+      "winPct": 39
+    },
+    "Klouček Martin": {
+      "club": "TJ Sokol Kbely A",
+      "str": 1268,
+      "teamMatches": 18,
+      "wins": 21,
+      "losses": 36,
+      "winPct": 37
+    },
+    "Petránek Ivan": {
+      "club": "TTC Praha F",
+      "str": 1262,
+      "teamMatches": 8,
+      "wins": 8,
+      "losses": 14,
+      "winPct": 36
+    },
+    "Zajíček Luděk": {
+      "club": "TJ Sokol Petrovice D",
+      "str": 1280,
+      "teamMatches": 9,
+      "wins": 9,
+      "losses": 17,
+      "winPct": 35
+    },
+    "Patho Gabriel": {
+      "club": "VSK MFF UK Praha B",
+      "str": 1226,
+      "teamMatches": 13,
+      "wins": 13,
+      "losses": 25,
+      "winPct": 34
+    },
+    "Ermichev Andrei": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1191,
+      "teamMatches": 6,
+      "wins": 6,
+      "losses": 13,
+      "winPct": 32
+    },
+    "Hájek Karel": {
+      "club": "TJ Sokol Petrovice D",
+      "str": 1233,
+      "teamMatches": 19,
+      "wins": 16,
+      "losses": 36,
+      "winPct": 31
+    },
+    "Lukáč Michal": {
+      "club": "TJ Sokol Petrovice D",
+      "str": 1210,
+      "teamMatches": 18,
+      "wins": 16,
+      "losses": 40,
+      "winPct": 29
+    },
+    "Lhoták Petr": {
+      "club": "TJ Zelená Liška B",
+      "str": 1208,
+      "teamMatches": 18,
+      "wins": 15,
+      "losses": 43,
+      "winPct": 26
+    },
+    "Tranová Haiduong": {
+      "club": "VSK MFF UK Praha B",
+      "str": 1235,
+      "teamMatches": 11,
+      "wins": 8,
+      "losses": 28,
+      "winPct": 22
+    },
+    "Vostárek Martin": {
+      "club": "TJ Sokol Kbely A",
+      "str": 1155,
+      "teamMatches": 8,
+      "wins": 4,
+      "losses": 22,
+      "winPct": 15
+    },
+    "Šedivý Ondřej": {
+      "club": "TTC Elizza Praha K",
+      "str": 1087,
+      "teamMatches": 7,
+      "wins": 3,
+      "losses": 22,
+      "winPct": 12
+    },
+    "Krieger Karel": {
+      "club": "TJ Zelená Liška B",
+      "str": 1105,
+      "teamMatches": 8,
+      "wins": 2,
+      "losses": 20,
+      "winPct": 9
+    },
+    "Herčík Lubomír": {
+      "club": "TJ AVIA Čakovice G",
+      "str": 1131,
+      "teamMatches": 12,
+      "wins": 3,
+      "losses": 33,
+      "winPct": 8
+    },
+    "Blaho Martin": {
+      "club": "TJ Sokol Petrovice D",
+      "str": 1114,
+      "teamMatches": 12,
+      "wins": 2,
+      "losses": 28,
+      "winPct": 7
+    },
+    "Rezek Jan st.": {
+      "club": "TJ Sokol Běchovice II D",
+      "str": 1100,
+      "teamMatches": 8,
+      "wins": 1,
+      "losses": 22,
+      "winPct": 4
+    },
+    "Zigo Roman": {
+      "club": "TJ AVIA Čakovice G",
+      "str": 1293,
+      "teamMatches": 1,
+      "wins": 2,
+      "losses": 0,
+      "winPct": 100
+    },
+    "Lypchak Vitalii": {
+      "club": "TJ Sokol Stodůlky F",
+      "str": 1424,
+      "teamMatches": 6,
+      "wins": 15,
+      "losses": 1,
+      "winPct": 94
+    },
+    "Hladík Ivo": {
+      "club": "TJ Sokol Stodůlky F",
+      "str": 1435,
+      "teamMatches": 3,
+      "wins": 6,
+      "losses": 1,
+      "winPct": 86
+    },
+    "Zobal Jakub": {
+      "club": "TJ Sokol Stodůlky F",
+      "str": 1327,
+      "teamMatches": 5,
+      "wins": 12,
+      "losses": 3,
+      "winPct": 80
+    },
+    "Kézr Antonín": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1320,
+      "teamMatches": 4,
+      "wins": 9,
+      "losses": 3,
+      "winPct": 75
+    },
+    "Lomský Gustav": {
+      "club": "TJ AVIA Čakovice G",
+      "str": 1351,
+      "teamMatches": 2,
+      "wins": 4,
+      "losses": 2,
+      "winPct": 67
+    },
+    "Luxemburk Jaroslav": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1331,
+      "teamMatches": 2,
+      "wins": 4,
+      "losses": 2,
+      "winPct": 67
+    },
+    "Kotlorz Lukáš": {
+      "club": "TTC Elizza Praha K",
+      "str": 1434,
+      "teamMatches": 1,
+      "wins": 2,
+      "losses": 1,
+      "winPct": 67
+    },
+    "Orlov Dmitrii": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1267,
+      "teamMatches": 1,
+      "wins": 2,
+      "losses": 1,
+      "winPct": 67
+    },
+    "Jonák Přemysl": {
+      "club": "TJ Sokol Stodůlky F",
+      "str": 1223,
+      "teamMatches": 5,
+      "wins": 8,
+      "losses": 5,
+      "winPct": 62
+    },
+    "Beňovič Marek": {
+      "club": "VSK MFF UK Praha B",
+      "str": 1332,
+      "teamMatches": 4,
+      "wins": 9,
+      "losses": 6,
+      "winPct": 60
+    },
+    "Kemlinková Nela": {
+      "club": "TTC Elizza Praha K",
+      "str": 1414,
+      "teamMatches": 2,
+      "wins": 3,
+      "losses": 2,
+      "winPct": 60
+    },
+    "Kodeš David": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1086,
+      "teamMatches": 2,
+      "wins": 4,
+      "losses": 3,
+      "winPct": 57
+    },
+    "Kartaš Zdeněk": {
+      "club": "TJ Lokomotiva Vršovice F",
+      "str": 1351,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 1,
+      "winPct": 50
+    },
+    "Hajda Radim": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1283,
+      "teamMatches": 5,
+      "wins": 8,
+      "losses": 8,
+      "winPct": 50
+    },
+    "Cvešpr Tomáš": {
+      "club": "VSK MFF UK Praha B",
+      "str": 1163,
+      "teamMatches": 3,
+      "wins": 4,
+      "losses": 4,
+      "winPct": 50
+    },
+    "Maršíková Jitka": {
+      "club": "TJ AVIA Čakovice G",
+      "str": 1161,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 1,
+      "winPct": 50
+    },
+    "Bačovský David": {
+      "club": "TJ Sokol Petrovice D",
+      "str": 1387,
+      "teamMatches": 3,
+      "wins": 5,
+      "losses": 6,
+      "winPct": 45
+    },
+    "Kézr Jan": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1229,
+      "teamMatches": 5,
+      "wins": 6,
+      "losses": 8,
+      "winPct": 43
+    },
+    "Friedrich Lukáš": {
+      "club": "TJ Sokol Stodůlky F",
+      "str": 1250,
+      "teamMatches": 4,
+      "wins": 3,
+      "losses": 5,
+      "winPct": 38
+    },
+    "Nikolaienko Avrora": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1198,
+      "teamMatches": 5,
+      "wins": 6,
+      "losses": 10,
+      "winPct": 38
+    },
+    "Chýleová Eva": {
+      "club": "TJ AVIA Čakovice G",
+      "str": 1283,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Olt Oliver": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1135,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Zvěřina Tomáš": {
+      "club": "VSK MFF UK Praha B",
+      "str": 1053,
+      "teamMatches": 1,
+      "wins": 1,
+      "losses": 2,
+      "winPct": 33
+    },
+    "Dušek Martin": {
+      "club": "TJ Lokomotiva Vršovice F",
+      "str": 1235,
+      "teamMatches": 5,
+      "wins": 5,
+      "losses": 10,
+      "winPct": 33
+    },
+    "Pelikánová Renata": {
+      "club": "TJ AVIA Čakovice G",
+      "str": 1226,
+      "teamMatches": 5,
+      "wins": 5,
+      "losses": 10,
+      "winPct": 33
+    },
+    "Ayzenberg Andrey": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1275,
+      "teamMatches": 5,
+      "wins": 6,
+      "losses": 12,
+      "winPct": 33
+    },
+    "Furch Dalibor": {
+      "club": "TJ AVIA Čakovice G",
+      "str": 1223,
+      "teamMatches": 6,
+      "wins": 6,
+      "losses": 12,
+      "winPct": 33
+    },
+    "Filová Simona": {
+      "club": "TJ Lokomotiva Vršovice F",
+      "str": 1205,
+      "teamMatches": 5,
+      "wins": 5,
+      "losses": 12,
+      "winPct": 29
+    },
+    "Rabenseifnerová Zdeňka": {
+      "club": "TJ Lokomotiva Vršovice F",
+      "str": 1191,
+      "teamMatches": 5,
+      "wins": 5,
+      "losses": 12,
+      "winPct": 29
+    },
+    "Navrátil Daniel": {
+      "club": "TTC Elizza Praha K",
+      "str": 1228,
+      "teamMatches": 2,
+      "wins": 2,
+      "losses": 5,
+      "winPct": 29
+    },
+    "Nguyen Hoang Anh": {
+      "club": "TTC Elizza Praha K",
+      "str": 1178,
+      "teamMatches": 3,
+      "wins": 2,
+      "losses": 7,
+      "winPct": 22
+    },
+    "Karal Vladimír": {
+      "club": "TJ Sokol Kbely A",
+      "str": 1155,
+      "teamMatches": 5,
+      "wins": 3,
+      "losses": 11,
+      "winPct": 21
+    },
+    "Hrádocký Erik": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1239,
+      "teamMatches": 3,
+      "wins": 2,
+      "losses": 9,
+      "winPct": 18
+    },
+    "Vošický Otto": {
+      "club": "VSK MFF UK Praha B",
+      "str": 1228,
+      "teamMatches": 2,
+      "wins": 1,
+      "losses": 5,
+      "winPct": 17
+    },
+    "Šimeček Jindřich": {
+      "club": "TJ Zelená Liška B",
+      "str": 1195,
+      "teamMatches": 2,
+      "wins": 1,
+      "losses": 5,
+      "winPct": 17
+    },
+    "Vinklářová Veronika": {
+      "club": "TTC Elizza Praha K",
+      "str": 1177,
+      "teamMatches": 4,
+      "wins": 2,
+      "losses": 12,
+      "winPct": 14
+    },
+    "Rosa Vladimír": {
+      "club": "TTC Elizza Praha K",
+      "str": 1046,
+      "teamMatches": 4,
+      "wins": 1,
+      "losses": 9,
+      "winPct": 10
+    },
+    "Sejpka Ladislav": {
+      "club": "TJ Sokol Běchovice II D",
+      "str": 1135,
+      "teamMatches": 5,
+      "wins": 1,
+      "losses": 10,
+      "winPct": 9
+    },
+    "Neskusil Josef": {
+      "club": "TJ Sokol Kbely A",
+      "str": 1127,
+      "teamMatches": 4,
+      "wins": 1,
+      "losses": 10,
+      "winPct": 9
+    },
+    "Hroch Michal": {
+      "club": "VSK MFF UK Praha B",
+      "str": 1125,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 2,
+      "winPct": 0
+    },
+    "Přída Antonín": {
+      "club": "SF SKK El Niňo Praha J",
+      "str": 1106,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 2,
+      "winPct": 0
+    },
+    "Jansa Jiří": {
+      "club": "TTC Praha F",
+      "str": 1164,
+      "teamMatches": 1,
+      "wins": 0,
+      "losses": 3,
+      "winPct": 0
+    },
+    "Hrubý Jan": {
+      "club": "TJ Sokol Kbely A",
+      "str": 1218,
+      "teamMatches": 2,
+      "wins": 0,
+      "losses": 5,
+      "winPct": 0
+    },
+    "Adam Václav": {
+      "club": "TJ Zelená Liška B",
+      "str": 1081,
+      "teamMatches": 2,
+      "wins": 0,
+      "losses": 5,
+      "winPct": 0
+    },
+    "Trnka Josef": {
+      "club": "TJ Sokol Kbely A",
+      "str": 1135,
+      "teamMatches": 3,
+      "wins": 0,
+      "losses": 9,
+      "winPct": 0
+    },
+    "Hlista Jakub": {
+      "club": "TJ Sokol Běchovice II D",
+      "str": 1,
+      "teamMatches": 3,
+      "wins": 0,
+      "losses": 9,
+      "winPct": 0
+    }
+  }
 };
