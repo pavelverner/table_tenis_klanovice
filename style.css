@@ -780,6 +780,7 @@ a:hover { text-decoration: underline; }
 .live-tag.live-today  { background: rgba(79,142,247,.15); color: var(--c-primary); }
 .live-competition { font-size: 12px; color: var(--c-muted); }
 .live-venue { font-size: 12px; color: var(--c-muted); margin-left: auto; }
+.live-round { font-size: 12px; color: var(--c-muted); }
 
 .live-match-teams {
   display: flex; align-items: center;

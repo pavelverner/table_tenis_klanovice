@@ -252,6 +252,12 @@ function renderLiveBlock() {
     const awayScore = played ? (m.home ? m.score.away : m.score.home) : '–';
 
     const timeLabel = m.time || fmtDate(m.date?.includes('.') ? parseStisDate(m.date) : m.date);
+    const h2h = getH2H(m);
+    const h2hDots = h2h.length ? `<span class="h2h-inline">${h2h.map(x => {
+      const s = x.home ? x.score.home : x.score.away;
+      const o = x.home ? x.score.away : x.score.home;
+      return `<span class="h2h-item ${x.result==='W'?'h2h-w':x.result==='L'?'h2h-l':'h2h-d'}" title="${fmtDate(x.date)}">${s}:${o}</span>`;
+    }).join('')}</span>` : '';
 
     return `
     <div class="live-match-card ${isLive ? 'live-pulsing' : ''}">
@@ -261,6 +267,8 @@ function renderLiveBlock() {
         </span>
         <span class="live-competition">${team.competition}</span>
         <span class="live-venue">${m.home ? '🏠 doma' : '✈️ venku'}</span>
+        ${m.round ? `<span class="live-round">Kolo ${m.round}</span>` : ''}
+        ${h2hDots}
       </div>
       <div class="live-match-teams">
         <span class="live-team ${m.home ? 'our-side' : ''}">${homeTeamName}</span>
