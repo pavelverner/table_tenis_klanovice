@@ -273,10 +273,6 @@ function renderLiveBlock() {
         </span>
         <span class="live-team ${!m.home ? 'our-side' : ''}">${awayTeamName}</span>
       </div>
-      ${played && m.keyPoints?.length ? `
-      <div class="live-keypoints">
-        ${m.keyPoints.map(k => `<span class="live-kp">▶ ${k}</span>`).join('')}
-      </div>` : ''}
       ${!played ? (isLive ? buildLiveState(m) : buildLineupToggle(m, false)) : ''}
     </div>`;
   }).join('');
@@ -683,6 +679,7 @@ function renderInlineMatchDetail(m) {
   const seenOpp = new Set();
   let ourScore = 0, theirScore = 0;
   const rows = prs.map(pr => {
+    if (!pr.result) return '';
     const [a, b] = pr.result.split(':').map(Number);
     const weWin = a > b;
     if (weWin) ourScore++; else theirScore++;
@@ -728,9 +725,10 @@ function toggleLatestMatch(matchId) {
   }
 
   if (!detailEl.dataset.loaded) {
-    const m = CLUB_DATA.matches.find(x => x.id === matchId)
-      || (window.CLUB_DATA_PREV?.matches  || []).find(x => x.id === matchId)
-      || (window.CLUB_DATA_PREV2?.matches || []).find(x => x.id === matchId);
+    const id = String(matchId);
+    const m = CLUB_DATA.matches.find(x => String(x.id) === id)
+      || (window.CLUB_DATA_PREV?.matches  || []).find(x => String(x.id) === id)
+      || (window.CLUB_DATA_PREV2?.matches || []).find(x => String(x.id) === id);
     if (!m) return;
     detailEl.innerHTML = renderInlineMatchDetail(m);
     detailEl.dataset.loaded = '1';
@@ -1041,11 +1039,6 @@ function renderMatchCard(m, teamOverride, seasonLabel) {
       </div>
     </div>
     <div class="match-card-body">
-      ${keyPts ? `
-      <div class="keypoints">
-        <div class="keypoints-title">Klíčové momenty</div>
-        <ul class="keypoints-list">${keyPts}</ul>
-      </div>` : ''}
       <div>
         <div class="keypoints-title" style="margin-bottom:8px">Výsledky hráčů</div>
         <div class="match-players">${playerRows}</div>
