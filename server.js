@@ -57,7 +57,7 @@ function runScraper(reason) {
 // ── Zjisti zda je dnes zápas ─────────────────────────────────
 function hasTodayMatch() {
   if (!cachedData) return false;
-  const today = new Date().toISOString().split('T')[0];
+  const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Prague' });
   return cachedData.matches?.some(m => {
     const d = m.date;
     if (!d) return false;
@@ -71,9 +71,9 @@ function hasTodayMatch() {
 
 // ── Automatický reload ───────────────────────────────────────
 function scheduleAutoScrape() {
-  const now = new Date();
+  const cetNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Prague' }));
   const matchToday = hasTodayMatch();
-  const hour = now.getHours();
+  const hour = cetNow.getHours();
 
   // Pokud je dnes zápas a je v rozumný čas (16-23), scrape každých 10 minut
   const interval = (matchToday && hour >= 16 && hour <= 23) ? 10 : 60;

@@ -181,9 +181,14 @@ function localDateStr(d = new Date()) {
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 }
 
+// Returns current date/time in CET (Europe/Prague)
+function getCETDate() {
+  return new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Prague' }));
+}
+
 function isMatchLive(m) {
-  const now   = new Date();
-  const today = localDateStr();
+  const now   = getCETDate();
+  const today = localDateStr(now);
   const mDate = m.date?.includes('.') ? parseStisDate(m.date) : m.date;
   if (mDate !== today) return false;
   if (!m.future) return false;  // already has a result → not live
@@ -272,7 +277,7 @@ function renderLiveBlock() {
       <div class="live-keypoints">
         ${m.keyPoints.map(k => `<span class="live-kp">▶ ${k}</span>`).join('')}
       </div>` : ''}
-      ${!played ? buildLineupToggle(m, isLive) : ''}
+      ${!played ? (isLive ? buildLiveState(m) : buildLineupToggle(m, false)) : ''}
     </div>`;
   }).join('');
 }
@@ -432,13 +437,49 @@ function _predictScore(ours, opp, total = 13) {
   // Singles
   for (const [oi, ti] of MATCHUPS) ourExp += _eloProb(ourStrs[oi], oppStrs[ti]);
 
-  // Scale to actual format total and ensure a winner (no ties)
-  const winFrac  = ourExp / (MATCHUPS.length + numDbl);
-  let ourRound   = Math.round(winFrac * total);
-  const oppRound = total - ourRound;
-  if (ourRound === oppRound) ourRound += winFrac >= 0.5 ? 1 : -1;
+  // Scale to "played to 10" format — winner always gets exactly 10
+  const winFrac = ourExp / (MATCHUPS.length + numDbl);
+  const WIN_TARGET = 10;
+  let ourRound, oppRound;
+  if (winFrac >= 0.5) {
+    ourRound = WIN_TARGET;
+    oppRound = Math.min(WIN_TARGET - 1, Math.round(WIN_TARGET * (1 - winFrac) / winFrac));
+  } else {
+    oppRound = WIN_TARGET;
+    ourRound = Math.min(WIN_TARGET - 1, Math.round(WIN_TARGET * winFrac / (1 - winFrac)));
+  }
   const winProb = Math.round(winFrac * 100);
-  return { ourRound, oppRound: total - ourRound, winProb };
+  return { ourRound, oppRound, winProb };
+}
+
+function buildLiveState(match) {
+  const results = match.playerResults || [];
+  const completed = results.filter(pr => pr.result && pr.won !== undefined);
+
+  let homeWins = 0, awayWins = 0;
+  const rubbersHtml = completed.map(pr => {
+    const homeWon = match.home ? pr.won : !pr.won;
+    if (homeWon) homeWins++; else awayWins++;
+    const homeName = match.home ? pr.player : pr.opponent;
+    const awayName = match.home ? pr.opponent : pr.player;
+    const label = pr.isDoubles ? '2× dvouhry' : '';
+    return `
+    <div class="live-rubber-row">
+      <span class="live-rubber-player ${homeWon ? 'live-rubber-w' : 'live-rubber-l'}">${homeName}</span>
+      <span class="live-rubber-result ${homeWon ? 'score-w' : 'score-l'}">${pr.result}</span>
+      <span class="live-rubber-player ${!homeWon ? 'live-rubber-w' : 'live-rubber-l'} live-rubber-right">${awayName}</span>
+      ${label ? `<span class="live-rubber-label">${label}</span>` : ''}
+    </div>`;
+  }).join('');
+
+  const stateBlock = completed.length
+    ? `<div class="live-state-block">
+        <div class="live-state-score">${homeWins}<span class="live-colon">:</span>${awayWins}</div>
+        <div class="live-rubber-list">${rubbersHtml}</div>
+      </div>`
+    : `<div class="live-state-block live-state-waiting">⏳ Zápas probíhá – výsledky přijdou brzy</div>`;
+
+  return stateBlock + buildLineupToggle(match, false);
 }
 
 function buildLineupToggle(match, autoOpen = false) {
@@ -1993,11 +2034,18 @@ function startPolling() {
   if (!window.location.protocol.startsWith('http')) return;
 
   const POLL_MS = 60 * 1000;  // every 60 s normally
-  const todayMatch = getTodayMatches().length > 0;
-  const hour = new Date().getHours();
-  const fastPoll = todayMatch && hour >= 16 && hour <= 23;
+  const todayMatches = getTodayMatches();
+  const anyLiveOrSoon = todayMatches.some(m => {
+    const cetNow = getCETDate();
+    const h = cetNow.getHours(), min = cetNow.getMinutes();
+    if (!m.time) return h >= 16 && h <= 23;
+    const [hh, mm = 0] = m.time.split(':').map(Number);
+    const minsToStart = (hh * 60 + mm) - (h * 60 + min);
+    return minsToStart <= 30 && h <= hh + 4; // within 30 min before start, up to 4h after
+  });
+  const fastPoll = anyLiveOrSoon;
 
-  const interval = fastPoll ? 2 * 60 * 1000 : POLL_MS;  // 2 min on match day evening
+  const interval = fastPoll ? 2 * 60 * 1000 : POLL_MS;  // 2 min when live or soon
 
   console.log(`[poll] Starting – interval ${interval / 1000}s${fastPoll ? ' (zápas dnes!)' : ''}`);
   _pollInterval = setInterval(fetchFreshData, interval);
