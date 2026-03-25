@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "25.03.26 19:36",
+  "lastUpdate": "25.03.26 20:05",
   "teams": [
     {
       "id": 63401,
@@ -253,6 +253,19 @@ var CLUB_DATA = {
     "63402": [
       {
         "pos": 1,
+        "team": "Slovan KST Bohnice E",
+        "z": 20,
+        "w": 17,
+        "d": 1,
+        "l": 2,
+        "sf": 185,
+        "sa": 95,
+        "pts": 52,
+        "highlight": false,
+        "zone": "promotion"
+      },
+      {
+        "pos": 2,
         "team": "TJ Lokomotiva Vršovice C",
         "z": 19,
         "w": 16,
@@ -261,19 +274,6 @@ var CLUB_DATA = {
         "sf": 185,
         "sa": 100,
         "pts": 50,
-        "highlight": false,
-        "zone": "promotion"
-      },
-      {
-        "pos": 2,
-        "team": "Slovan KST Bohnice E",
-        "z": 19,
-        "w": 16,
-        "d": 1,
-        "l": 2,
-        "sf": 175,
-        "sa": 94,
-        "pts": 49,
         "highlight": false,
         "zone": "promotion"
       },
@@ -384,12 +384,12 @@ var CLUB_DATA = {
       {
         "pos": 11,
         "team": "TJ Sokol Běchovice II B",
-        "z": 19,
+        "z": 20,
         "w": 3,
         "d": 1,
-        "l": 15,
-        "sf": 84,
-        "sa": 170,
+        "l": 16,
+        "sf": 85,
+        "sa": 180,
         "pts": 10,
         "highlight": false,
         "zone": "relegation"
@@ -596,13 +596,13 @@ var CLUB_DATA = {
       {
         "pos": 3,
         "team": "TJ Sokol Suchdol - Sedlec B",
-        "z": 19,
-        "w": 11,
+        "z": 20,
+        "w": 12,
         "d": 1,
         "l": 7,
-        "sf": 155,
-        "sa": 137,
-        "pts": 34,
+        "sf": 165,
+        "sa": 139,
+        "pts": 37,
         "highlight": false,
         "zone": "neutral"
       },
@@ -713,12 +713,12 @@ var CLUB_DATA = {
       {
         "pos": 12,
         "team": "TJ Mladí Veteráni - VSK ČVUT A",
-        "z": 19,
+        "z": 20,
         "w": 3,
         "d": 1,
-        "l": 15,
-        "sf": 91,
-        "sa": 176,
+        "l": 16,
+        "sf": 93,
+        "sa": 186,
         "pts": 10,
         "highlight": false,
         "zone": "relegation"
@@ -767,13 +767,13 @@ var CLUB_DATA = {
       {
         "pos": 4,
         "team": "VSK MFF UK Praha B",
-        "z": 19,
-        "w": 11,
+        "z": 20,
+        "w": 12,
         "d": 2,
         "l": 6,
-        "sf": 156,
-        "sa": 131,
-        "pts": 35,
+        "sf": 166,
+        "sa": 134,
+        "pts": 38,
         "highlight": false,
         "zone": "neutral"
       },
@@ -845,12 +845,12 @@ var CLUB_DATA = {
       {
         "pos": 10,
         "team": "TJ Sokol Běchovice II D",
-        "z": 19,
+        "z": 20,
         "w": 6,
         "d": 0,
-        "l": 13,
-        "sf": 119,
-        "sa": 169,
+        "l": 14,
+        "sf": 122,
+        "sa": 179,
         "pts": 18,
         "highlight": false,
         "zone": "neutral"
