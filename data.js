@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "25.03.26 16:46",
+  "lastUpdate": "25.03.26 18:38",
   "teams": [
     {
       "id": 63401,
@@ -1198,15 +1198,15 @@ var CLUB_DATA = {
       "strStab": 1587.2,
       "strDelta": -61,
       "stats": {
-        "matches": 74,
-        "wins": 29,
+        "matches": 75,
+        "wins": 30,
         "losses": 45,
-        "teamMatches": 17,
+        "teamMatches": 18,
         "sets": [
           0,
           0
         ],
-        "winPct": 39
+        "winPct": 40
       }
     },
     {
@@ -1223,15 +1223,15 @@ var CLUB_DATA = {
       "strStab": 1659.4,
       "strDelta": 22,
       "stats": {
-        "matches": 78,
-        "wins": 52,
-        "losses": 26,
-        "teamMatches": 17,
+        "matches": 80,
+        "wins": 53,
+        "losses": 27,
+        "teamMatches": 18,
         "sets": [
           0,
           0
         ],
-        "winPct": 67
+        "winPct": 66
       }
     },
     {
@@ -1298,10 +1298,10 @@ var CLUB_DATA = {
       "strStab": 1651,
       "strDelta": -7,
       "stats": {
-        "matches": 53,
-        "wins": 30,
+        "matches": 54,
+        "wins": 31,
         "losses": 23,
-        "teamMatches": 12,
+        "teamMatches": 13,
         "sets": [
           0,
           0
@@ -1373,15 +1373,15 @@ var CLUB_DATA = {
       "strStab": 1773.1,
       "strDelta": -34,
       "stats": {
-        "matches": 20,
-        "wins": 14,
+        "matches": 22,
+        "wins": 16,
         "losses": 6,
-        "teamMatches": 4,
+        "teamMatches": 5,
         "sets": [
           0,
           0
         ],
-        "winPct": 70
+        "winPct": 73
       }
     },
     {
@@ -11545,20 +11545,6 @@ var CLUB_DATA = {
       ]
     },
     {
-      "id": 63402020,
-      "teamId": 63402,
-      "home": true,
-      "round": 20,
-      "date": "2026-03-25",
-      "time": "18:30",
-      "opponent": "TJ Sokol Žižkov B",
-      "score": null,
-      "result": null,
-      "playerResults": [],
-      "keyPoints": [],
-      "future": true
-    },
-    {
       "id": 63402021,
       "teamId": 63402,
       "home": true,
@@ -20513,6 +20499,175 @@ var CLUB_DATA = {
         "Zaplatílek – perfektní výkon 4/4",
         "Brothánek pod formou – 0/3",
         "Prohra venku 7:10"
+      ]
+    },
+    {
+      "id": 645207,
+      "teamId": 63402,
+      "home": true,
+      "round": 20,
+      "date": "2026-03-25",
+      "opponent": "TJ Sokol Žižkov B",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "result": "W",
+      "playerResults": [
+        {
+          "rubberNum": 1,
+          "player": "Zaplatílek Ctibor / Brothánek Jan",
+          "opponent": "Ševčík Ivan / Elčkner Miroslav ml.",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0,
+          "setScores": [
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              11,
+              4
+            ],
+            [
+              11,
+              5
+            ]
+          ]
+        },
+        {
+          "rubberNum": 2,
+          "player": "Farský Karel / Verner Pavel",
+          "opponent": "Rejent Marek / Růžička Vojtěch",
+          "result": "3:2",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 2,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0,
+          "setScores": [
+            [
+              14,
+              12
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              14,
+              12
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              6
+            ]
+          ]
+        },
+        {
+          "rubberNum": 3,
+          "player": "Zaplatílek Ctibor",
+          "opponent": "Rejent Marek",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": false,
+          "ourStr": 1773,
+          "oppStr": 1580,
+          "setScores": [
+            [
+              14,
+              12
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              7
+            ]
+          ]
+        },
+        {
+          "rubberNum": 4,
+          "player": "Verner Pavel",
+          "opponent": "Elčkner Miroslav ml.",
+          "result": "2:3",
+          "won": false,
+          "setsWon": 2,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1659,
+          "oppStr": 1559,
+          "setScores": [
+            [
+              6,
+              11
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              5,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 5,
+          "player": "Brothánek Jan",
+          "opponent": "Ševčík Ivan",
+          "result": "1:1",
+          "won": false,
+          "setsWon": 1,
+          "setsLost": 1,
+          "isDoubles": false,
+          "ourStr": 1587,
+          "oppStr": 1502,
+          "setScores": [
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              6
+            ]
+          ]
+        }
+      ],
+      "keyPoints": [
+        "Domácí výhra 3:1",
+        "Čtyřhra Zaplatílek Ctibor / Brothánek Jan: ✓ výhra"
       ]
     },
     {
