@@ -636,7 +636,7 @@ function renderPastMatchRow(m, teamOverride, seasonLabel) {
   ].filter(Boolean);
   return `
   <div class="latest-match-wrap">
-    <div class="match-row latest-match-row" onclick="toggleLatestMatch(${m.id})" style="cursor:pointer">
+    <div class="match-row latest-match-row" onclick="toggleLatestMatch(this, ${m.id})" style="cursor:pointer">
       <div class="match-date">${fmtDate(m.date)}</div>
       <div class="match-teams">
         <div class="mc-teams">
@@ -714,13 +714,14 @@ function renderInlineMatchDetail(m) {
   return `<div class="inl-detail">${rows}</div>`;
 }
 
-function toggleLatestMatch(matchId) {
-  const detailEl = document.getElementById(`latest-detail-${matchId}`);
+function toggleLatestMatch(btn, matchId) {
+  const wrap = btn.closest('.latest-match-wrap');
+  const detailEl = wrap?.querySelector('.latest-match-detail');
   if (!detailEl) return;
 
   if (detailEl.style.display !== 'none') {
     detailEl.style.display = 'none';
-    detailEl.closest('.latest-match-wrap')?.querySelector('.latest-match-row')?.classList.remove('latest-open');
+    btn.classList.remove('latest-open');
     return;
   }
 
@@ -735,7 +736,7 @@ function toggleLatestMatch(matchId) {
   }
 
   detailEl.style.display = 'block';
-  detailEl.closest('.latest-match-wrap')?.querySelector('.latest-match-row')?.classList.add('latest-open');
+  btn.classList.add('latest-open');
 }
 
 function renderUpcoming() {
