@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "26.03.26 19:58",
+  "lastUpdate": "26.03.26 21:04",
   "teams": [
     {
       "id": 63401,
@@ -67,11 +67,11 @@ var CLUB_DATA = {
       "standing": {
         "pos": 11,
         "wins": 5,
-        "losses": 13,
+        "losses": 14,
         "draws": 1,
         "points": 16,
-        "setsFor": 140,
-        "setsAgainst": 165
+        "setsFor": 147,
+        "setsAgainst": 175
       }
     },
     {
@@ -122,12 +122,12 @@ var CLUB_DATA = {
       {
         "pos": 3,
         "team": "Slovan KST Bohnice C",
-        "z": 19,
+        "z": 20,
         "w": 13,
         "d": 3,
-        "l": 3,
-        "sf": 170,
-        "sa": 113,
+        "l": 4,
+        "sf": 177,
+        "sa": 123,
         "pts": 42,
         "highlight": false,
         "zone": "neutral"
@@ -213,38 +213,38 @@ var CLUB_DATA = {
       {
         "pos": 10,
         "team": "SK OAZA Praha A",
-        "z": 19,
-        "w": 5,
+        "z": 20,
+        "w": 6,
         "d": 0,
         "l": 14,
-        "sf": 114,
-        "sa": 169,
-        "pts": 15,
+        "sf": 124,
+        "sa": 176,
+        "pts": 18,
         "highlight": false,
         "zone": "neutral"
       },
       {
         "pos": 11,
         "team": "TJ Slavoj Praha B",
-        "z": 19,
-        "w": 4,
+        "z": 20,
+        "w": 5,
         "d": 2,
         "l": 13,
-        "sf": 119,
-        "sa": 160,
-        "pts": 14,
+        "sf": 129,
+        "sa": 166,
+        "pts": 17,
         "highlight": false,
         "zone": "relegation"
       },
       {
         "pos": 12,
         "team": "TJ Sokol Nusle Praha A",
-        "z": 19,
+        "z": 20,
         "w": 1,
         "d": 0,
-        "l": 18,
-        "sf": 85,
-        "sa": 188,
+        "l": 19,
+        "sf": 91,
+        "sa": 198,
         "pts": 3,
         "highlight": false,
         "zone": "relegation"
@@ -503,12 +503,12 @@ var CLUB_DATA = {
       {
         "pos": 8,
         "team": "TJ Pankrác D",
-        "z": 19,
+        "z": 20,
         "w": 7,
         "d": 1,
-        "l": 10,
-        "sf": 123,
-        "sa": 148,
+        "l": 11,
+        "sf": 125,
+        "sa": 158,
         "pts": 21,
         "highlight": false,
         "zone": "neutral"
@@ -555,13 +555,13 @@ var CLUB_DATA = {
       {
         "pos": 12,
         "team": "TJ Sokol Praha - Břevnov A",
-        "z": 19,
-        "w": 2,
+        "z": 20,
+        "w": 3,
         "d": 2,
         "l": 15,
-        "sf": 98,
-        "sa": 175,
-        "pts": 8,
+        "sf": 108,
+        "sa": 177,
+        "pts": 11,
         "highlight": false,
         "zone": "relegation"
       }
@@ -570,13 +570,13 @@ var CLUB_DATA = {
       {
         "pos": 1,
         "team": "TJ Lokomotiva Vršovice E",
-        "z": 19,
-        "w": 18,
+        "z": 20,
+        "w": 19,
         "d": 0,
         "l": 1,
-        "sf": 187,
-        "sa": 82,
-        "pts": 54,
+        "sf": 197,
+        "sa": 89,
+        "pts": 57,
         "highlight": false,
         "zone": "promotion"
       },
@@ -700,12 +700,12 @@ var CLUB_DATA = {
       {
         "pos": 11,
         "team": "TTC Klánovice D",
-        "z": 19,
+        "z": 20,
         "w": 5,
         "d": 1,
-        "l": 13,
-        "sf": 140,
-        "sa": 165,
+        "l": 14,
+        "sf": 147,
+        "sa": 175,
         "pts": 16,
         "highlight": true,
         "zone": "relegation"
@@ -1973,15 +1973,15 @@ var CLUB_DATA = {
       "strStab": 1396.9,
       "strDelta": -6,
       "stats": {
-        "matches": 88,
+        "matches": 90,
         "wins": 41,
-        "losses": 47,
+        "losses": 49,
         "teamMatches": 19,
         "sets": [
           0,
           0
         ],
-        "winPct": 47
+        "winPct": 46
       }
     },
     {
@@ -1998,15 +1998,15 @@ var CLUB_DATA = {
       "strStab": 1352.5,
       "strDelta": 22,
       "stats": {
-        "matches": 74,
-        "wins": 32,
+        "matches": 75,
+        "wins": 33,
         "losses": 42,
         "teamMatches": 18,
         "sets": [
           0,
           0
         ],
-        "winPct": 43
+        "winPct": 44
       }
     },
     {
@@ -2023,9 +2023,9 @@ var CLUB_DATA = {
       "strStab": 1378.4,
       "strDelta": 9,
       "stats": {
-        "matches": 84,
-        "wins": 42,
-        "losses": 42,
+        "matches": 86,
+        "wins": 43,
+        "losses": 43,
         "teamMatches": 20,
         "sets": [
           0,
@@ -2048,9 +2048,9 @@ var CLUB_DATA = {
       "strStab": 1424.3,
       "strDelta": -10,
       "stats": {
-        "matches": 87,
+        "matches": 88,
         "wins": 48,
-        "losses": 39,
+        "losses": 40,
         "teamMatches": 19,
         "sets": [
           0,
@@ -39613,10 +39613,10 @@ var CLUB_DATA = {
       "date": "2026-03-26",
       "opponent": "TJ Lokomotiva Vršovice E",
       "score": {
-        "home": 5,
-        "away": 5
+        "home": 7,
+        "away": 10
       },
-      "result": "D",
+      "result": "L",
       "playerResults": [
         {
           "rubberNum": 1,
@@ -39906,10 +39906,10 @@ var CLUB_DATA = {
           "rubberNum": 11,
           "player": "Nový Pavel",
           "opponent": "Táborský Michael",
-          "result": "1:2",
+          "result": "1:3",
           "won": false,
           "setsWon": 1,
-          "setsLost": 2,
+          "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1424,
           "oppStr": 1441,
@@ -39925,13 +39925,194 @@ var CLUB_DATA = {
             [
               11,
               9
+            ],
+            [
+              11,
+              8
+            ]
+          ]
+        },
+        {
+          "rubberNum": 12,
+          "player": "Michálek David",
+          "opponent": "Hanáček Josef",
+          "result": "1:3",
+          "won": false,
+          "setsWon": 1,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 1522,
+          "setScores": [
+            [
+              11,
+              5
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              5
+            ]
+          ]
+        },
+        {
+          "rubberNum": 13,
+          "player": "Jiroš Martin",
+          "opponent": "Černý Jakub",
+          "result": "3:2",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 2,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 0,
+          "setScores": [
+            [
+              11,
+              9
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              11,
+              13
+            ],
+            [
+              8,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 14,
+          "player": "Hrdlic Roman",
+          "opponent": "Sork Viktor",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 1360,
+          "setScores": [
+            [
+              8,
+              11
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              7,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 15,
+          "player": "Nový Pavel",
+          "opponent": "Hanáček Josef",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1522,
+          "setScores": [
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              11,
+              2
+            ]
+          ]
+        },
+        {
+          "rubberNum": 16,
+          "player": "Michálek David",
+          "opponent": "Černý Jakub",
+          "result": "1:3",
+          "won": false,
+          "setsWon": 1,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1396,
+          "oppStr": 0,
+          "setScores": [
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              11,
+              5
+            ]
+          ]
+        },
+        {
+          "rubberNum": 17,
+          "player": "Jiroš Martin",
+          "opponent": "Sork Viktor",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1378,
+          "oppStr": 1360,
+          "setScores": [
+            [
+              11,
+              8
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              15,
+              13
             ]
           ]
         }
       ],
       "keyPoints": [
-        "Remíza 5:5",
-        "Čtyřhra Hrdlic Roman / Michálek David: ✓ výhra"
+        "Hrdlic táhl tým – 2/3 bodů",
+        "Michálek pod formou – 1/4",
+        "Prohra venku 7:10"
       ]
     },
     {
