@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "26.03.26 8:10",
+  "lastUpdate": "26.03.26 11:39",
   "teams": [
     {
       "id": 63401,
@@ -41971,7 +41971,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1233,
-          "oppStr": 1106,
+          "oppStr": 1105,
           "setScores": [
             [
               11,
@@ -42061,7 +42061,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1327,
-          "oppStr": 1106,
+          "oppStr": 1105,
           "setScores": [
             [
               9,
@@ -42283,7 +42283,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1243,
-          "oppStr": 1106,
+          "oppStr": 1105,
           "setScores": [
             [
               4,
@@ -42373,7 +42373,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1184,
-          "oppStr": 1106,
+          "oppStr": 1105,
           "setScores": [
             [
               5,
@@ -51620,7 +51620,7 @@ var CLUB_DATA = {
     },
     "Krieger Karel": {
       "club": "TJ Zelená Liška B",
-      "str": 1106,
+      "str": 1105,
       "teamMatches": 8,
       "wins": 2,
       "losses": 20,
@@ -51916,7 +51916,7 @@ var CLUB_DATA = {
     },
     "Šimeček Jindřich": {
       "club": "TJ Zelená Liška B",
-      "str": 1195,
+      "str": 1196,
       "teamMatches": 2,
       "wins": 1,
       "losses": 5,
@@ -51988,7 +51988,7 @@ var CLUB_DATA = {
     },
     "Adam Václav": {
       "club": "TJ Zelená Liška B",
-      "str": 1081,
+      "str": 1076,
       "teamMatches": 2,
       "wins": 0,
       "losses": 5,
