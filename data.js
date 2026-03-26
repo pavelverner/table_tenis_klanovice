@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "26.03.26 19:40",
+  "lastUpdate": "26.03.26 19:58",
   "teams": [
     {
       "id": 63401,
@@ -135,13 +135,13 @@ var CLUB_DATA = {
       {
         "pos": 4,
         "team": "TJ Lokomotiva Vršovice B",
-        "z": 19,
-        "w": 10,
+        "z": 20,
+        "w": 11,
         "d": 3,
         "l": 6,
-        "sf": 154,
+        "sf": 164,
         "sa": 122,
-        "pts": 33,
+        "pts": 36,
         "highlight": false,
         "zone": "neutral"
       },
@@ -174,12 +174,12 @@ var CLUB_DATA = {
       {
         "pos": 7,
         "team": "TTC Elizza Praha G",
-        "z": 19,
+        "z": 20,
         "w": 8,
         "d": 2,
-        "l": 9,
+        "l": 10,
         "sf": 135,
-        "sa": 150,
+        "sa": 160,
         "pts": 26,
         "highlight": false,
         "zone": "neutral"
@@ -1998,15 +1998,15 @@ var CLUB_DATA = {
       "strStab": 1352.5,
       "strDelta": 22,
       "stats": {
-        "matches": 73,
-        "wins": 31,
+        "matches": 74,
+        "wins": 32,
         "losses": 42,
         "teamMatches": 18,
         "sets": [
           0,
           0
         ],
-        "winPct": 42
+        "winPct": 43
       }
     },
     {
@@ -2048,15 +2048,15 @@ var CLUB_DATA = {
       "strStab": 1424.3,
       "strDelta": -10,
       "stats": {
-        "matches": 86,
+        "matches": 87,
         "wins": 48,
-        "losses": 38,
+        "losses": 39,
         "teamMatches": 19,
         "sets": [
           0,
           0
         ],
-        "winPct": 56
+        "winPct": 55
       }
     },
     {
@@ -39613,10 +39613,10 @@ var CLUB_DATA = {
       "date": "2026-03-26",
       "opponent": "TJ Lokomotiva Vršovice E",
       "score": {
-        "home": 4,
+        "home": 5,
         "away": 5
       },
-      "result": "L",
+      "result": "D",
       "playerResults": [
         {
           "rubberNum": 1,
@@ -39871,10 +39871,66 @@ var CLUB_DATA = {
               4
             ]
           ]
+        },
+        {
+          "rubberNum": 10,
+          "player": "Hrdlic Roman",
+          "opponent": "Černý Jakub",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": false,
+          "ourStr": 1352,
+          "oppStr": 0,
+          "setScores": [
+            [
+              4,
+              11
+            ],
+            [
+              12,
+              10
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              6,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 11,
+          "player": "Nový Pavel",
+          "opponent": "Táborský Michael",
+          "result": "1:2",
+          "won": false,
+          "setsWon": 1,
+          "setsLost": 2,
+          "isDoubles": false,
+          "ourStr": 1424,
+          "oppStr": 1441,
+          "setScores": [
+            [
+              12,
+              10
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              11,
+              9
+            ]
+          ]
         }
       ],
       "keyPoints": [
-        "Prohra venku 4:5",
+        "Remíza 5:5",
         "Čtyřhra Hrdlic Roman / Michálek David: ✓ výhra"
       ]
     },
