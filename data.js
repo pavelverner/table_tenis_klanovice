@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "27.03.26 19:31",
+  "lastUpdate": "27.03.26 21:52",
   "teams": [
     {
       "id": 63401,
@@ -81,7 +81,7 @@ var CLUB_DATA = {
       "division": "5. třída B",
       "leagueAvgStr": 1364,
       "standing": {
-        "pos": 7,
+        "pos": 8,
         "wins": 7,
         "losses": 12,
         "draws": 1,
@@ -371,13 +371,13 @@ var CLUB_DATA = {
       {
         "pos": 10,
         "team": "SF SKK El Niňo Praha F",
-        "z": 19,
-        "w": 4,
+        "z": 20,
+        "w": 5,
         "d": 3,
         "l": 12,
-        "sf": 134,
-        "sa": 157,
-        "pts": 15,
+        "sf": 144,
+        "sa": 162,
+        "pts": 18,
         "highlight": false,
         "zone": "neutral"
       },
@@ -397,12 +397,12 @@ var CLUB_DATA = {
       {
         "pos": 12,
         "team": "TJ Slavoj Praha D",
-        "z": 18,
+        "z": 19,
         "w": 0,
         "d": 2,
-        "l": 16,
-        "sf": 71,
-        "sa": 178,
+        "l": 17,
+        "sf": 76,
+        "sa": 188,
         "pts": 2,
         "highlight": false,
         "zone": "relegation"
@@ -622,18 +622,31 @@ var CLUB_DATA = {
       {
         "pos": 5,
         "team": "Slovan KST Bohnice H",
-        "z": 19,
+        "z": 20,
         "w": 8,
         "d": 6,
-        "l": 5,
-        "sf": 166,
-        "sa": 148,
+        "l": 6,
+        "sf": 174,
+        "sa": 158,
         "pts": 30,
         "highlight": false,
         "zone": "neutral"
       },
       {
         "pos": 6,
+        "team": "TTC Elizza Praha J",
+        "z": 20,
+        "w": 8,
+        "d": 3,
+        "l": 9,
+        "sf": 150,
+        "sa": 160,
+        "pts": 27,
+        "highlight": false,
+        "zone": "neutral"
+      },
+      {
+        "pos": 7,
         "team": "TJ Sokol Nusle Praha D",
         "z": 20,
         "w": 7,
@@ -646,7 +659,7 @@ var CLUB_DATA = {
         "zone": "neutral"
       },
       {
-        "pos": 7,
+        "pos": 8,
         "team": "TTC Praha C",
         "z": 20,
         "w": 8,
@@ -655,19 +668,6 @@ var CLUB_DATA = {
         "sf": 154,
         "sa": 158,
         "pts": 26,
-        "highlight": false,
-        "zone": "neutral"
-      },
-      {
-        "pos": 8,
-        "team": "TTC Elizza Praha J",
-        "z": 19,
-        "w": 7,
-        "d": 3,
-        "l": 9,
-        "sf": 140,
-        "sa": 152,
-        "pts": 24,
         "highlight": false,
         "zone": "neutral"
       },
@@ -728,12 +728,12 @@ var CLUB_DATA = {
       {
         "pos": 1,
         "team": "TJ Sokol Stodůlky F",
-        "z": 19,
+        "z": 20,
         "w": 17,
         "d": 1,
-        "l": 1,
-        "sf": 185,
-        "sa": 72,
+        "l": 2,
+        "sf": 192,
+        "sa": 82,
         "pts": 52,
         "highlight": false,
         "zone": "promotion"
@@ -741,13 +741,13 @@ var CLUB_DATA = {
       {
         "pos": 2,
         "team": "TJ Lokomotiva Vršovice F",
-        "z": 19,
-        "w": 16,
+        "z": 20,
+        "w": 17,
         "d": 1,
         "l": 2,
-        "sf": 182,
-        "sa": 94,
-        "pts": 49,
+        "sf": 192,
+        "sa": 100,
+        "pts": 52,
         "highlight": false,
         "zone": "promotion"
       },
@@ -780,12 +780,12 @@ var CLUB_DATA = {
       {
         "pos": 5,
         "team": "SF SKK El Niňo Praha J",
-        "z": 19,
+        "z": 20,
         "w": 10,
         "d": 1,
-        "l": 8,
-        "sf": 140,
-        "sa": 147,
+        "l": 9,
+        "sf": 146,
+        "sa": 157,
         "pts": 31,
         "highlight": false,
         "zone": "neutral"
@@ -805,6 +805,19 @@ var CLUB_DATA = {
       },
       {
         "pos": 7,
+        "team": "TTC Praha F",
+        "z": 20,
+        "w": 8,
+        "d": 0,
+        "l": 12,
+        "sf": 146,
+        "sa": 158,
+        "pts": 24,
+        "highlight": false,
+        "zone": "neutral"
+      },
+      {
+        "pos": 8,
         "team": "TTC Klánovice E",
         "z": 20,
         "w": 7,
@@ -817,7 +830,7 @@ var CLUB_DATA = {
         "zone": "neutral"
       },
       {
-        "pos": 8,
+        "pos": 9,
         "team": "TTC Elizza Praha K",
         "z": 20,
         "w": 7,
@@ -825,19 +838,6 @@ var CLUB_DATA = {
         "l": 11,
         "sf": 136,
         "sa": 162,
-        "pts": 21,
-        "highlight": false,
-        "zone": "neutral"
-      },
-      {
-        "pos": 9,
-        "team": "TTC Praha F",
-        "z": 19,
-        "w": 7,
-        "d": 0,
-        "l": 12,
-        "sf": 136,
-        "sa": 151,
         "pts": 21,
         "highlight": false,
         "zone": "neutral"
@@ -50492,7 +50492,7 @@ var CLUB_DATA = {
     },
     "Šedivý Filip": {
       "club": "TTC Elizza Praha H",
-      "str": 1383,
+      "str": 1386,
       "teamMatches": 4,
       "wins": 1,
       "losses": 11,
@@ -52212,7 +52212,7 @@ var CLUB_DATA = {
     },
     "Kotlorz Lukáš": {
       "club": "TTC Elizza Praha K",
-      "str": 1434,
+      "str": 1432,
       "teamMatches": 1,
       "wins": 2,
       "losses": 1,
