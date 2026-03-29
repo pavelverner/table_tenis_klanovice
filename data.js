@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "29.03.26 7:57",
+  "lastUpdate": "29.03.26 10:05",
   "teams": [
     {
       "id": 63401,
@@ -6671,7 +6671,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1751,
-          "oppStr": 1579,
+          "oppStr": 1584,
           "setScores": [
             [
               11,
@@ -6791,7 +6791,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1719,
-          "oppStr": 1579,
+          "oppStr": 1584,
           "setScores": [
             [
               11,
@@ -6911,7 +6911,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1841,
-          "oppStr": 1579,
+          "oppStr": 1584,
           "setScores": [
             [
               11,
@@ -7039,7 +7039,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1700,
-          "oppStr": 1579,
+          "oppStr": 1584,
           "setScores": null
         }
       ],
@@ -49764,7 +49764,7 @@ var CLUB_DATA = {
     },
     "Kaba Radka": {
       "club": "TJ Slavoj Praha B",
-      "str": 1579,
+      "str": 1584,
       "teamMatches": 5,
       "wins": 4,
       "losses": 10,
@@ -50212,7 +50212,7 @@ var CLUB_DATA = {
     },
     "Dvořáková Lucie": {
       "club": "TTC Elizza Praha H",
-      "str": 1637,
+      "str": 1641,
       "teamMatches": 6,
       "wins": 11,
       "losses": 3,
