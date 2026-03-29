@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "29.03.26 10:05",
+  "lastUpdate": "29.03.26 14:57",
   "teams": [
     {
       "id": 63401,
@@ -4128,7 +4128,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1751,
-          "oppStr": 1560,
+          "oppStr": 1559,
           "setScores": [
             [
               9,
@@ -4214,7 +4214,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1841,
-          "oppStr": 1560,
+          "oppStr": 1559,
           "setScores": [
             [
               3,
@@ -4408,7 +4408,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1680,
-          "oppStr": 1560,
+          "oppStr": 1559,
           "setScores": [
             [
               11,
@@ -4494,7 +4494,7 @@ var CLUB_DATA = {
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1700,
-          "oppStr": 1560,
+          "oppStr": 1559,
           "setScores": [
             [
               11,
@@ -7226,7 +7226,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1841,
-          "oppStr": 1932,
+          "oppStr": 1934,
           "setScores": [
             [
               12,
@@ -7316,7 +7316,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1719,
-          "oppStr": 1932,
+          "oppStr": 1934,
           "setScores": [
             [
               11,
@@ -7406,7 +7406,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1700,
-          "oppStr": 1932,
+          "oppStr": 1934,
           "setScores": [
             [
               12,
@@ -7496,7 +7496,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1751,
-          "oppStr": 1932,
+          "oppStr": 1934,
           "setScores": [
             [
               11,
@@ -9184,7 +9184,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1700,
-          "oppStr": 1560,
+          "oppStr": 1559,
           "setScores": [
             [
               11,
@@ -9300,7 +9300,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1719,
-          "oppStr": 1560,
+          "oppStr": 1559,
           "setScores": [
             [
               11,
@@ -31276,7 +31276,7 @@ var CLUB_DATA = {
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1385,
-          "oppStr": 1512,
+          "oppStr": 1516,
           "setScores": [
             [
               5,
@@ -31400,7 +31400,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1353,
-          "oppStr": 1512,
+          "oppStr": 1516,
           "setScores": [
             [
               11,
@@ -31520,7 +31520,7 @@ var CLUB_DATA = {
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1425,
-          "oppStr": 1512,
+          "oppStr": 1516,
           "setScores": [
             [
               7,
@@ -31636,7 +31636,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1397,
-          "oppStr": 1512,
+          "oppStr": 1516,
           "setScores": [
             [
               14,
@@ -36872,7 +36872,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1425,
-          "oppStr": 1512,
+          "oppStr": 1516,
           "setScores": [
             [
               11,
@@ -36970,7 +36970,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1353,
-          "oppStr": 1512,
+          "oppStr": 1516,
           "setScores": [
             [
               11,
@@ -37060,7 +37060,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1385,
-          "oppStr": 1512,
+          "oppStr": 1516,
           "setScores": [
             [
               11,
@@ -49188,7 +49188,7 @@ var CLUB_DATA = {
   "opponentStats": {
     "Veselý Filip": {
       "club": "TJ AVIA Čakovice C",
-      "str": 1932,
+      "str": 1934,
       "teamMatches": 20,
       "wins": 68,
       "losses": 3,
@@ -49572,7 +49572,7 @@ var CLUB_DATA = {
     },
     "Škopková Věra": {
       "club": "AC Sparta Praha F",
-      "str": 1560,
+      "str": 1559,
       "teamMatches": 19,
       "wins": 8,
       "losses": 48,
@@ -49628,7 +49628,7 @@ var CLUB_DATA = {
     },
     "Tlustý František": {
       "club": "TTC Elizza Praha G",
-      "str": 1664,
+      "str": 1679,
       "teamMatches": 3,
       "wins": 7,
       "losses": 2,
@@ -51020,7 +51020,7 @@ var CLUB_DATA = {
     },
     "Černá Martina": {
       "club": "TJ Sokol Stodůlky D",
-      "str": 1476,
+      "str": 1465,
       "teamMatches": 1,
       "wins": 1,
       "losses": 3,
@@ -51196,7 +51196,7 @@ var CLUB_DATA = {
     },
     "Bartoňová Anna": {
       "club": "Slovan KST Bohnice H",
-      "str": 1512,
+      "str": 1516,
       "teamMatches": 10,
       "wins": 24,
       "losses": 8,
@@ -51324,7 +51324,7 @@ var CLUB_DATA = {
     },
     "Bartoňová Jitka": {
       "club": "Slovan KST Bohnice H",
-      "str": 1441,
+      "str": 1442,
       "teamMatches": 8,
       "wins": 15,
       "losses": 13,
