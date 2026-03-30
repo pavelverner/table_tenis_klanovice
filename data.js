@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "30.03.26 19:36",
+  "lastUpdate": "30.03.26 20:00",
   "teams": [
     {
       "id": 63401,
@@ -2348,15 +2348,15 @@ var CLUB_DATA = {
       "strStab": 1243.9,
       "strDelta": 173,
       "stats": {
-        "matches": 82,
+        "matches": 83,
         "wins": 40,
-        "losses": 42,
+        "losses": 43,
         "teamMatches": 20,
         "sets": [
           0,
           0
         ],
-        "winPct": 49
+        "winPct": 48
       }
     },
     {
@@ -2423,15 +2423,15 @@ var CLUB_DATA = {
       "strStab": 1250.2,
       "strDelta": 70,
       "stats": {
-        "matches": 70,
+        "matches": 71,
         "wins": 30,
-        "losses": 40,
+        "losses": 41,
         "teamMatches": 18,
         "sets": [
           0,
           0
         ],
-        "winPct": 43
+        "winPct": 42
       }
     },
     {
@@ -2474,14 +2474,14 @@ var CLUB_DATA = {
       "strDelta": 351,
       "stats": {
         "matches": 79,
-        "wins": 40,
-        "losses": 39,
+        "wins": 41,
+        "losses": 38,
         "teamMatches": 19,
         "sets": [
           0,
           0
         ],
-        "winPct": 51
+        "winPct": 52
       }
     },
     {
@@ -49506,8 +49506,8 @@ var CLUB_DATA = {
       "date": "2026-03-30",
       "opponent": "TJ Sokol Běchovice II D",
       "score": {
-        "home": 8,
-        "away": 6
+        "home": 9,
+        "away": 8
       },
       "result": "W",
       "playerResults": [
@@ -49911,9 +49911,9 @@ var CLUB_DATA = {
           "rubberNum": 15,
           "player": "Rybář Milan",
           "opponent": "Brůček František",
-          "result": "1:2",
-          "won": false,
-          "setsWon": 1,
+          "result": "3:2",
+          "won": true,
+          "setsWon": 3,
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1184,
@@ -49930,6 +49930,14 @@ var CLUB_DATA = {
             [
               11,
               5
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              8,
+              11
             ]
           ]
         },
@@ -49937,10 +49945,10 @@ var CLUB_DATA = {
           "rubberNum": 16,
           "player": "Horčák Vojtěch",
           "opponent": "Richter Jan",
-          "result": "0:1",
+          "result": "0:3",
           "won": false,
           "setsWon": 0,
-          "setsLost": 1,
+          "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1327,
           "oppStr": 1386,
@@ -49948,14 +49956,74 @@ var CLUB_DATA = {
             [
               11,
               6
+            ],
+            [
+              14,
+              12
+            ],
+            [
+              11,
+              8
+            ]
+          ]
+        },
+        {
+          "rubberNum": 17,
+          "player": "Pravda Jakub",
+          "opponent": "Brůčková Marie",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1250,
+          "oppStr": 1396,
+          "setScores": [
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              2
+            ]
+          ]
+        },
+        {
+          "rubberNum": 18,
+          "player": "Pospíšil Jan ml.",
+          "opponent": "Šindelář Michal",
+          "result": "1:2",
+          "won": false,
+          "setsWon": 1,
+          "setsLost": 2,
+          "isDoubles": false,
+          "ourStr": 1243,
+          "oppStr": 1217,
+          "setScores": [
+            [
+              11,
+              9
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              11,
+              8
             ]
           ]
         }
       ],
       "keyPoints": [
-        "Horčák – perfektní výkon 3/3",
-        "Pravda pod formou – 0/3",
-        "Výjezdní výhra 8:6"
+        "Rybář táhl tým – 3/4 bodů",
+        "Pravda pod formou – 0/4",
+        "Výjezdní výhra 9:8"
       ]
     }
   ],
