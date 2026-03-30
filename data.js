@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "30.03.26 9:01",
+  "lastUpdate": "30.03.26 16:15",
   "teams": [
     {
       "id": 63401,
@@ -234,7 +234,7 @@ var CLUB_DATA = {
         "sa": 166,
         "pts": 17,
         "highlight": false,
-        "zone": "relegation"
+        "zone": "neutral"
       },
       {
         "pos": 12,
@@ -392,7 +392,7 @@ var CLUB_DATA = {
         "sa": 180,
         "pts": 10,
         "highlight": false,
-        "zone": "relegation"
+        "zone": "neutral"
       },
       {
         "pos": 12,
@@ -550,7 +550,7 @@ var CLUB_DATA = {
         "sa": 189,
         "pts": 12,
         "highlight": false,
-        "zone": "relegation"
+        "zone": "neutral"
       },
       {
         "pos": 12,
@@ -708,7 +708,7 @@ var CLUB_DATA = {
         "sa": 175,
         "pts": 16,
         "highlight": true,
-        "zone": "relegation"
+        "zone": "neutral"
       },
       {
         "pos": 12,
@@ -866,7 +866,7 @@ var CLUB_DATA = {
         "sa": 177,
         "pts": 17,
         "highlight": false,
-        "zone": "relegation"
+        "zone": "neutral"
       },
       {
         "pos": 12,
@@ -30277,7 +30277,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1353,
-          "oppStr": 1432,
+          "oppStr": 1433,
           "setScores": [
             [
               8,
@@ -30401,7 +30401,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1397,
-          "oppStr": 1432,
+          "oppStr": 1433,
           "setScores": [
             [
               11,
@@ -30525,7 +30525,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1425,
-          "oppStr": 1432,
+          "oppStr": 1433,
           "setScores": [
             [
               11,
@@ -30649,7 +30649,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1385,
-          "oppStr": 1432,
+          "oppStr": 1433,
           "setScores": [
             [
               11,
@@ -51252,7 +51252,7 @@ var CLUB_DATA = {
     },
     "Nesvačilová Petra": {
       "club": "TJ Sokol Nusle Praha D",
-      "str": 1432,
+      "str": 1433,
       "teamMatches": 16,
       "wins": 36,
       "losses": 22,
@@ -52044,7 +52044,7 @@ var CLUB_DATA = {
     },
     "Nikolaienko Avrora": {
       "club": "SF SKK El Niňo Praha J",
-      "str": 1199,
+      "str": 1200,
       "teamMatches": 6,
       "wins": 7,
       "losses": 13,
@@ -52292,7 +52292,7 @@ var CLUB_DATA = {
     },
     "Maršíková Jitka": {
       "club": "TJ AVIA Čakovice G",
-      "str": 1161,
+      "str": 1146,
       "teamMatches": 1,
       "wins": 1,
       "losses": 1,
@@ -52324,7 +52324,7 @@ var CLUB_DATA = {
     },
     "Chýleová Eva": {
       "club": "TJ AVIA Čakovice G",
-      "str": 1283,
+      "str": 1281,
       "teamMatches": 1,
       "wins": 1,
       "losses": 2,
@@ -52356,7 +52356,7 @@ var CLUB_DATA = {
     },
     "Pelikánová Renata": {
       "club": "TJ AVIA Čakovice G",
-      "str": 1226,
+      "str": 1225,
       "teamMatches": 5,
       "wins": 5,
       "losses": 10,
@@ -52372,7 +52372,7 @@ var CLUB_DATA = {
     },
     "Filová Simona": {
       "club": "TJ Lokomotiva Vršovice F",
-      "str": 1205,
+      "str": 1216,
       "teamMatches": 5,
       "wins": 5,
       "losses": 12,
@@ -52380,7 +52380,7 @@ var CLUB_DATA = {
     },
     "Rabenseifnerová Zdeňka": {
       "club": "TJ Lokomotiva Vršovice F",
-      "str": 1191,
+      "str": 1193,
       "teamMatches": 5,
       "wins": 5,
       "losses": 12,
