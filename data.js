@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "30.03.26 20:00",
+  "lastUpdate": "30.03.26 22:00",
   "teams": [
     {
       "id": 63401,
@@ -81,13 +81,13 @@ var CLUB_DATA = {
       "division": "5. třída B",
       "leagueAvgStr": 1365,
       "standing": {
-        "pos": 9,
-        "wins": 7,
+        "pos": 7,
+        "wins": 8,
         "losses": 12,
         "draws": 1,
-        "points": 22,
-        "setsFor": 133,
-        "setsAgainst": 160
+        "points": 25,
+        "setsFor": 143,
+        "setsAgainst": 168
       }
     }
   ],
@@ -805,6 +805,19 @@ var CLUB_DATA = {
       },
       {
         "pos": 7,
+        "team": "TTC Klánovice E",
+        "z": 21,
+        "w": 8,
+        "d": 1,
+        "l": 12,
+        "sf": 143,
+        "sa": 168,
+        "pts": 25,
+        "highlight": true,
+        "zone": "neutral"
+      },
+      {
+        "pos": 8,
         "team": "TTC Elizza Praha K",
         "z": 21,
         "w": 8,
@@ -817,7 +830,7 @@ var CLUB_DATA = {
         "zone": "neutral"
       },
       {
-        "pos": 8,
+        "pos": 9,
         "team": "TTC Praha F",
         "z": 20,
         "w": 8,
@@ -830,27 +843,14 @@ var CLUB_DATA = {
         "zone": "neutral"
       },
       {
-        "pos": 9,
-        "team": "TTC Klánovice E",
-        "z": 20,
-        "w": 7,
-        "d": 1,
-        "l": 12,
-        "sf": 133,
-        "sa": 160,
-        "pts": 22,
-        "highlight": true,
-        "zone": "neutral"
-      },
-      {
         "pos": 10,
         "team": "TJ Sokol Běchovice II D",
-        "z": 20,
+        "z": 21,
         "w": 6,
         "d": 0,
-        "l": 14,
-        "sf": 122,
-        "sa": 179,
+        "l": 15,
+        "sf": 130,
+        "sa": 189,
         "pts": 18,
         "highlight": false,
         "zone": "neutral"
@@ -2349,14 +2349,14 @@ var CLUB_DATA = {
       "strDelta": 173,
       "stats": {
         "matches": 83,
-        "wins": 40,
-        "losses": 43,
+        "wins": 41,
+        "losses": 42,
         "teamMatches": 20,
         "sets": [
           0,
           0
         ],
-        "winPct": 48
+        "winPct": 49
       }
     },
     {
@@ -49506,7 +49506,7 @@ var CLUB_DATA = {
       "date": "2026-03-30",
       "opponent": "TJ Sokol Běchovice II D",
       "score": {
-        "home": 9,
+        "home": 10,
         "away": 8
       },
       "result": "W",
@@ -49997,9 +49997,9 @@ var CLUB_DATA = {
           "rubberNum": 18,
           "player": "Pospíšil Jan ml.",
           "opponent": "Šindelář Michal",
-          "result": "1:2",
-          "won": false,
-          "setsWon": 1,
+          "result": "3:2",
+          "won": true,
+          "setsWon": 3,
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1243,
@@ -50016,6 +50016,14 @@ var CLUB_DATA = {
             [
               11,
               8
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              5,
+              11
             ]
           ]
         }
@@ -50023,7 +50031,7 @@ var CLUB_DATA = {
       "keyPoints": [
         "Rybář táhl tým – 3/4 bodů",
         "Pravda pod formou – 0/4",
-        "Výjezdní výhra 9:8"
+        "Výjezdní výhra 10:8"
       ]
     }
   ],
