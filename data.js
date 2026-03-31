@@ -1,4 +1,4 @@
-// TTC Klánovice – data.js (30. 3. 2026)
+// TTC Klánovice – data.js (31. 3. 2026)
 // Zdroj: https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025
 
 var CLUB_DATA = {
@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "30.03.26 23:54",
+  "lastUpdate": "31.03.26 5:56",
   "teams": [
     {
       "id": 63401,
