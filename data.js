@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "01.04.26 16:15",
+  "lastUpdate": "01.04.26 20:08",
   "teams": [
     {
       "id": 63401,
@@ -306,13 +306,13 @@ var CLUB_DATA = {
       {
         "pos": 5,
         "team": "TJ AVIA Čakovice D",
-        "z": 19,
+        "z": 20,
         "w": 12,
         "d": 0,
         "l": 5,
         "sf": 151,
-        "sa": 120,
-        "pts": 34,
+        "sa": 130,
+        "pts": 33,
         "highlight": false,
         "zone": "neutral"
       },
@@ -397,13 +397,13 @@ var CLUB_DATA = {
       {
         "pos": 12,
         "team": "TJ Slavoj Praha D",
-        "z": 20,
-        "w": 0,
+        "z": 21,
+        "w": 1,
         "d": 2,
         "l": 18,
-        "sf": 78,
+        "sf": 88,
         "sa": 198,
-        "pts": 2,
+        "pts": 5,
         "highlight": false,
         "zone": "relegation"
       }
