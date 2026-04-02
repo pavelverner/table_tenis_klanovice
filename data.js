@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "02.04.26 8:15",
+  "lastUpdate": "02.04.26 11:35",
   "teams": [
     {
       "id": 63401,
