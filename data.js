@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "03.04.26 19:27",
+  "lastUpdate": "03.04.26 21:20",
   "teams": [
     {
       "id": 63401,
@@ -51820,7 +51820,7 @@ var CLUB_DATA = {
     },
     "Šedivý Filip": {
       "club": "TTC Elizza Praha H",
-      "str": 1388,
+      "str": 1394,
       "teamMatches": 4,
       "wins": 1,
       "losses": 11,
@@ -53532,7 +53532,7 @@ var CLUB_DATA = {
     },
     "Kotlorz Lukáš": {
       "club": "TTC Elizza Praha K",
-      "str": 1432,
+      "str": 1429,
       "teamMatches": 1,
       "wins": 2,
       "losses": 1,
