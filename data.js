@@ -1,4 +1,4 @@
-// TTC Klánovice – data.js (4. 4. 2026)
+// TTC Klánovice – data.js (5. 4. 2026)
 // Zdroj: https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025
 
 var CLUB_DATA = {
@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "04.04.26 21:02",
+  "lastUpdate": "05.04.26 8:00",
   "teams": [
     {
       "id": 63401,
@@ -50602,6 +50602,14 @@ var CLUB_DATA = {
       "losses": 15,
       "winPct": 65
     },
+    "Vodal Petr": {
+      "club": "TJ Sokol Stodůlky B",
+      "str": 1718,
+      "teamMatches": 16,
+      "wins": 32,
+      "losses": 18,
+      "winPct": 64
+    },
     "Šindelář Daniel": {
       "club": "TJ Slavoj Praha B",
       "str": 1750,
@@ -50609,14 +50617,6 @@ var CLUB_DATA = {
       "wins": 35,
       "losses": 20,
       "winPct": 64
-    },
-    "Vodal Petr": {
-      "club": "TJ Sokol Stodůlky B",
-      "str": 1718,
-      "teamMatches": 16,
-      "wins": 31,
-      "losses": 18,
-      "winPct": 63
     },
     "Averin Timofei": {
       "club": "TJ Sokol Stodůlky B",
@@ -51183,8 +51183,8 @@ var CLUB_DATA = {
       "str": 1535,
       "teamMatches": 6,
       "wins": 1,
-      "losses": 12,
-      "winPct": 8
+      "losses": 13,
+      "winPct": 7
     },
     "Dlouhý Karel": {
       "club": "SK OAZA Praha A",
