@@ -1,4 +1,4 @@
-// TTC Klánovice – data.js (5. 4. 2026)
+// TTC Klánovice – data.js (6. 4. 2026)
 // Zdroj: https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025
 
 var CLUB_DATA = {
@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "05.04.26 21:03",
+  "lastUpdate": "06.04.26 8:58",
   "teams": [
     {
       "id": 63401,
@@ -28376,7 +28376,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1469,
-          "oppStr": 1254,
+          "oppStr": 1255,
           "setScores": [
             [
               7,
@@ -28462,7 +28462,7 @@ var CLUB_DATA = {
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1520,
-          "oppStr": 1254,
+          "oppStr": 1255,
           "setScores": [
             [
               11,
@@ -28664,7 +28664,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1625,
-          "oppStr": 1254,
+          "oppStr": 1255,
           "setScores": [
             [
               3,
@@ -30591,7 +30591,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1355,
-          "oppStr": 1433,
+          "oppStr": 1434,
           "setScores": [
             [
               8,
@@ -30715,7 +30715,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1397,
-          "oppStr": 1433,
+          "oppStr": 1434,
           "setScores": [
             [
               11,
@@ -30839,7 +30839,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1425,
-          "oppStr": 1433,
+          "oppStr": 1434,
           "setScores": [
             [
               11,
@@ -30963,7 +30963,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1388,
-          "oppStr": 1433,
+          "oppStr": 1434,
           "setScores": [
             [
               11,
@@ -52444,7 +52444,7 @@ var CLUB_DATA = {
     },
     "Červenka Boris": {
       "club": "TJ Sokol Praha - Břevnov A",
-      "str": 1254,
+      "str": 1255,
       "teamMatches": 1,
       "wins": 0,
       "losses": 3,
@@ -52580,7 +52580,7 @@ var CLUB_DATA = {
     },
     "Nesvačilová Petra": {
       "club": "TJ Sokol Nusle Praha D",
-      "str": 1433,
+      "str": 1434,
       "teamMatches": 16,
       "wins": 36,
       "losses": 22,
@@ -53604,7 +53604,7 @@ var CLUB_DATA = {
     },
     "Švarc Šimon": {
       "club": "TTC Elizza Praha K",
-      "str": -1,
+      "str": 723,
       "teamMatches": 1,
       "wins": 1,
       "losses": 1,
