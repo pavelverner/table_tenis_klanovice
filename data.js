@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "06.04.26 19:56",
+  "lastUpdate": "06.04.26 21:53",
   "teams": [
     {
       "id": 63401,
@@ -22561,7 +22561,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1469,
-          "oppStr": 1539,
+          "oppStr": 1541,
           "setScores": [
             [
               11,
@@ -22689,7 +22689,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1520,
-          "oppStr": 1539,
+          "oppStr": 1541,
           "setScores": [
             [
               8,
@@ -22801,7 +22801,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1569,
-          "oppStr": 1539,
+          "oppStr": 1541,
           "setScores": [
             [
               8,
@@ -27563,7 +27563,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1469,
-          "oppStr": 1539,
+          "oppStr": 1541,
           "setScores": [
             [
               6,
@@ -27748,7 +27748,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 0,
-          "oppStr": 1539,
+          "oppStr": 1541,
           "setScores": null
         },
         {
@@ -27817,7 +27817,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1407,
-          "oppStr": 1539,
+          "oppStr": 1541,
           "setScores": [
             [
               11,
@@ -52012,7 +52012,7 @@ var CLUB_DATA = {
     },
     "Horká Radka": {
       "club": "TJ Lokomotiva Vršovice D",
-      "str": 1539,
+      "str": 1541,
       "teamMatches": 18,
       "wins": 31,
       "losses": 21,
