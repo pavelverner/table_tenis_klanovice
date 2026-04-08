@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "08.04.26 12:01",
+  "lastUpdate": "08.04.26 16:44",
   "teams": [
     {
       "id": 63401,
@@ -1223,10 +1223,10 @@ var CLUB_DATA = {
       "strStab": 1656.5,
       "strDelta": 19,
       "stats": {
-        "matches": 81,
-        "wins": 54,
+        "matches": 82,
+        "wins": 55,
         "losses": 27,
-        "teamMatches": 18,
+        "teamMatches": 19,
         "sets": [
           0,
           0
@@ -1273,15 +1273,15 @@ var CLUB_DATA = {
       "strStab": 1520.2,
       "strDelta": -9,
       "stats": {
-        "matches": 28,
-        "wins": 12,
+        "matches": 29,
+        "wins": 13,
         "losses": 16,
-        "teamMatches": 7,
+        "teamMatches": 8,
         "sets": [
           0,
           0
         ],
-        "winPct": 43
+        "winPct": 45
       }
     },
     {
@@ -11545,20 +11545,6 @@ var CLUB_DATA = {
       ]
     },
     {
-      "id": 63402021,
-      "teamId": 63402,
-      "home": true,
-      "round": 21,
-      "date": "2026-04-08",
-      "time": "18:30",
-      "opponent": "TJ Sokol Běchovice II B",
-      "score": null,
-      "result": null,
-      "playerResults": [],
-      "keyPoints": [],
-      "future": true
-    },
-    {
       "id": 63402022,
       "teamId": 63402,
       "home": false,
@@ -20858,6 +20844,43 @@ var CLUB_DATA = {
         "Brothánek – perfektní výkon 3/3",
         "Drtivá výhra 10:1",
         "Čtyřhra Zaplatílek Ctibor / Brothánek Jan: ✓ výhra"
+      ]
+    },
+    {
+      "id": 645208,
+      "teamId": 63402,
+      "home": true,
+      "round": 21,
+      "date": "2026-04-08",
+      "opponent": "TJ Sokol Běchovice II B",
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "result": "D",
+      "playerResults": [
+        {
+          "rubberNum": 1,
+          "player": "Verner Pavel / Raiser Dan",
+          "opponent": "Kaděrka Rudolf / Šindelář Michal",
+          "result": "1:0",
+          "won": true,
+          "setsWon": 1,
+          "setsLost": 0,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0,
+          "setScores": [
+            [
+              12,
+              10
+            ]
+          ]
+        }
+      ],
+      "keyPoints": [
+        "Remíza 0:0",
+        "Čtyřhra Verner Pavel / Raiser Dan: ✓ výhra"
       ]
     },
     {
