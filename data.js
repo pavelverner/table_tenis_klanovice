@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "08.04.26 20:03",
+  "lastUpdate": "08.04.26 22:04",
   "teams": [
     {
       "id": 63401,
@@ -174,18 +174,31 @@ var CLUB_DATA = {
       {
         "pos": 7,
         "team": "TTC Elizza Praha G",
-        "z": 20,
+        "z": 21,
         "w": 8,
-        "d": 2,
+        "d": 3,
         "l": 10,
-        "sf": 135,
-        "sa": 160,
-        "pts": 26,
+        "sf": 144,
+        "sa": 169,
+        "pts": 27,
         "highlight": false,
         "zone": "neutral"
       },
       {
         "pos": 8,
+        "team": "TJ Sokol Běchovice II A",
+        "z": 21,
+        "w": 6,
+        "d": 4,
+        "l": 11,
+        "sf": 145,
+        "sa": 175,
+        "pts": 22,
+        "highlight": false,
+        "zone": "neutral"
+      },
+      {
+        "pos": 9,
         "team": "AC Sparta Praha F",
         "z": 21,
         "w": 7,
@@ -194,19 +207,6 @@ var CLUB_DATA = {
         "sf": 123,
         "sa": 172,
         "pts": 22,
-        "highlight": false,
-        "zone": "neutral"
-      },
-      {
-        "pos": 9,
-        "team": "TJ Sokol Běchovice II A",
-        "z": 20,
-        "w": 6,
-        "d": 3,
-        "l": 11,
-        "sf": 136,
-        "sa": 166,
-        "pts": 21,
         "highlight": false,
         "zone": "neutral"
       },
@@ -267,13 +267,13 @@ var CLUB_DATA = {
       {
         "pos": 2,
         "team": "Slovan KST Bohnice E",
-        "z": 20,
-        "w": 17,
+        "z": 21,
+        "w": 18,
         "d": 1,
         "l": 2,
-        "sf": 185,
-        "sa": 95,
-        "pts": 52,
+        "sf": 195,
+        "sa": 103,
+        "pts": 55,
         "highlight": false,
         "zone": "promotion"
       },
@@ -371,12 +371,12 @@ var CLUB_DATA = {
       {
         "pos": 10,
         "team": "SF SKK El Niňo Praha F",
-        "z": 20,
+        "z": 21,
         "w": 5,
         "d": 3,
-        "l": 12,
-        "sf": 144,
-        "sa": 162,
+        "l": 13,
+        "sf": 152,
+        "sa": 172,
         "pts": 18,
         "highlight": false,
         "zone": "neutral"
@@ -411,6 +411,19 @@ var CLUB_DATA = {
     "63403": [
       {
         "pos": 1,
+        "team": "TJ Sokol Stodůlky D",
+        "z": 21,
+        "w": 19,
+        "d": 1,
+        "l": 1,
+        "sf": 203,
+        "sa": 82,
+        "pts": 58,
+        "highlight": false,
+        "zone": "promotion"
+      },
+      {
+        "pos": 2,
         "team": "TJ ABC Braník C",
         "z": 21,
         "w": 18,
@@ -419,19 +432,6 @@ var CLUB_DATA = {
         "sf": 204,
         "sa": 87,
         "pts": 56,
-        "highlight": false,
-        "zone": "promotion"
-      },
-      {
-        "pos": 2,
-        "team": "TJ Sokol Stodůlky D",
-        "z": 20,
-        "w": 18,
-        "d": 1,
-        "l": 1,
-        "sf": 193,
-        "sa": 76,
-        "pts": 55,
         "highlight": false,
         "zone": "promotion"
       },
@@ -503,12 +503,12 @@ var CLUB_DATA = {
       {
         "pos": 8,
         "team": "TJ Pankrác D",
-        "z": 20,
+        "z": 21,
         "w": 7,
         "d": 1,
-        "l": 11,
-        "sf": 125,
-        "sa": 158,
+        "l": 12,
+        "sf": 131,
+        "sa": 168,
         "pts": 21,
         "highlight": false,
         "zone": "neutral"
