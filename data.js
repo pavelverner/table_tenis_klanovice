@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "08.04.26 19:49",
+  "lastUpdate": "08.04.26 20:03",
   "teams": [
     {
       "id": 63401,
@@ -609,12 +609,12 @@ var CLUB_DATA = {
       {
         "pos": 4,
         "team": "TJ Sokol Praha - Podolí A",
-        "z": 20,
+        "z": 21,
         "w": 11,
         "d": 2,
-        "l": 7,
-        "sf": 162,
-        "sa": 150,
+        "l": 8,
+        "sf": 166,
+        "sa": 160,
         "pts": 35,
         "highlight": false,
         "zone": "neutral"
@@ -634,6 +634,19 @@ var CLUB_DATA = {
       },
       {
         "pos": 6,
+        "team": "TJ Sokol Nusle Praha D",
+        "z": 21,
+        "w": 8,
+        "d": 5,
+        "l": 8,
+        "sf": 173,
+        "sa": 170,
+        "pts": 29,
+        "highlight": false,
+        "zone": "neutral"
+      },
+      {
+        "pos": 7,
         "team": "TTC Elizza Praha J",
         "z": 20,
         "w": 8,
@@ -642,19 +655,6 @@ var CLUB_DATA = {
         "sf": 150,
         "sa": 160,
         "pts": 27,
-        "highlight": false,
-        "zone": "neutral"
-      },
-      {
-        "pos": 7,
-        "team": "TJ Sokol Nusle Praha D",
-        "z": 20,
-        "w": 7,
-        "d": 5,
-        "l": 8,
-        "sf": 163,
-        "sa": 166,
-        "pts": 26,
         "highlight": false,
         "zone": "neutral"
       },
