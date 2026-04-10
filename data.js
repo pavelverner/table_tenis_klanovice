@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "10.04.26 15:37",
+  "lastUpdate": "10.04.26 19:34",
   "teams": [
     {
       "id": 63401,
@@ -570,12 +570,12 @@ var CLUB_DATA = {
       {
         "pos": 1,
         "team": "TJ Lokomotiva Vršovice E",
-        "z": 20,
+        "z": 21,
         "w": 19,
         "d": 0,
-        "l": 1,
-        "sf": 197,
-        "sa": 89,
+        "l": 2,
+        "sf": 204,
+        "sa": 99,
         "pts": 57,
         "highlight": false,
         "zone": "promotion"
@@ -634,6 +634,19 @@ var CLUB_DATA = {
       },
       {
         "pos": 6,
+        "team": "TTC Elizza Praha J",
+        "z": 21,
+        "w": 9,
+        "d": 3,
+        "l": 9,
+        "sf": 160,
+        "sa": 167,
+        "pts": 30,
+        "highlight": false,
+        "zone": "neutral"
+      },
+      {
+        "pos": 7,
         "team": "TJ Sokol Nusle Praha D",
         "z": 21,
         "w": 8,
@@ -646,7 +659,7 @@ var CLUB_DATA = {
         "zone": "neutral"
       },
       {
-        "pos": 7,
+        "pos": 8,
         "team": "TTC Praha C",
         "z": 21,
         "w": 9,
@@ -655,19 +668,6 @@ var CLUB_DATA = {
         "sf": 164,
         "sa": 163,
         "pts": 29,
-        "highlight": false,
-        "zone": "neutral"
-      },
-      {
-        "pos": 8,
-        "team": "TTC Elizza Praha J",
-        "z": 20,
-        "w": 8,
-        "d": 3,
-        "l": 9,
-        "sf": 150,
-        "sa": 160,
-        "pts": 27,
         "highlight": false,
         "zone": "neutral"
       },
