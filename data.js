@@ -1,4 +1,4 @@
-// TTC Klánovice – data.js (10. 4. 2026)
+// TTC Klánovice – data.js (11. 4. 2026)
 // Zdroj: https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025
 
 var CLUB_DATA = {
@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "10.04.26 21:57",
+  "lastUpdate": "11.04.26 7:41",
   "teams": [
     {
       "id": 63401,
@@ -1736,16 +1736,16 @@ var CLUB_DATA = {
     },
     {
       "id": 35,
-      "name": "Michálek David",
+      "name": "Jiroš Martin",
       "team": "C",
       "teamId": 63403,
       "isRegular": true,
-      "stisId": 30890,
+      "stisId": 19139,
       "soutezId": "6278",
-      "born": "1988",
-      "soupiskaPos": 9,
+      "born": "1972",
+      "soupiskaPos": 8,
       "str": 1393,
-      "strStab": 1397,
+      "strStab": 1388.9,
       "strDelta": 0,
       "stats": {
         "matches": 0,
@@ -1761,16 +1761,16 @@ var CLUB_DATA = {
     },
     {
       "id": 36,
-      "name": "Jiroš Martin",
+      "name": "Michálek David",
       "team": "C",
       "teamId": 63403,
       "isRegular": true,
-      "stisId": 19139,
+      "stisId": 30890,
       "soutezId": "6278",
-      "born": "1972",
-      "soupiskaPos": 8,
+      "born": "1988",
+      "soupiskaPos": 9,
       "str": 1393,
-      "strStab": 1388.9,
+      "strStab": 1397,
       "strDelta": 0,
       "stats": {
         "matches": 0,
@@ -52270,12 +52270,12 @@ var CLUB_DATA = {
       "winPct": 83
     },
     "Kalina Pavel": {
-      "club": "TTC Elizza Praha I",
+      "club": "TTC Elizza Praha J",
       "str": 1515,
-      "teamMatches": 12,
-      "wins": 22,
-      "losses": 18,
-      "winPct": 55
+      "teamMatches": 13,
+      "wins": 36,
+      "losses": 11,
+      "winPct": 77
     },
     "Brill Filip": {
       "club": "TJ Sokol Běchovice II C",
@@ -52422,12 +52422,12 @@ var CLUB_DATA = {
       "winPct": 14
     },
     "Novák Roman": {
-      "club": "TTC Elizza Praha I",
+      "club": "TTC Elizza Praha J",
       "str": 1380,
-      "teamMatches": 16,
-      "wins": 9,
-      "losses": 44,
-      "winPct": 17
+      "teamMatches": 17,
+      "wins": 28,
+      "losses": 33,
+      "winPct": 46
     },
     "Ševčík Ivan": {
       "club": "TJ Sokol Žižkov B",
@@ -52816,10 +52816,10 @@ var CLUB_DATA = {
     "Fausek Jiří": {
       "club": "TTC Elizza Praha J",
       "str": 1356,
-      "teamMatches": 15,
+      "teamMatches": 16,
       "wins": 18,
-      "losses": 31,
-      "winPct": 37
+      "losses": 34,
+      "winPct": 35
     },
     "Běloubek Roman": {
       "club": "TJ Sokol Žižkov D",
@@ -53525,28 +53525,12 @@ var CLUB_DATA = {
       "losses": 3,
       "winPct": 89
     },
-    "Knob Petr": {
-      "club": "TJ Lokomotiva Vršovice E",
-      "str": 1399,
-      "teamMatches": 4,
-      "wins": 6,
-      "losses": 5,
-      "winPct": 55
-    },
     "Rukavička Tomáš": {
       "club": "AC Sparta Praha K",
       "str": 1515,
       "teamMatches": 3,
       "wins": 5,
       "losses": 5,
-      "winPct": 50
-    },
-    "Černý Jakub": {
-      "club": "TJ Lokomotiva Vršovice E",
-      "str": 1370,
-      "teamMatches": 1,
-      "wins": 2,
-      "losses": 2,
       "winPct": 50
     },
     "Hojovec Adam": {
@@ -53556,6 +53540,22 @@ var CLUB_DATA = {
       "wins": 5,
       "losses": 5,
       "winPct": 50
+    },
+    "Knob Petr": {
+      "club": "TJ Lokomotiva Vršovice E",
+      "str": 1399,
+      "teamMatches": 5,
+      "wins": 7,
+      "losses": 8,
+      "winPct": 47
+    },
+    "Černý Jakub": {
+      "club": "TJ Lokomotiva Vršovice E",
+      "str": 1370,
+      "teamMatches": 2,
+      "wins": 3,
+      "losses": 4,
+      "winPct": 43
     },
     "Prokeš Jan": {
       "club": "TJ Sokol Nusle Praha D",
