@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "11.04.26 10:59",
+  "lastUpdate": "11.04.26 14:58",
   "teams": [
     {
       "id": 63401,
@@ -12796,7 +12796,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1655,
-          "oppStr": 1425,
+          "oppStr": 1426,
           "setScores": [
             [
               11,
@@ -12994,7 +12994,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1587,
-          "oppStr": 1425,
+          "oppStr": 1426,
           "setScores": [
             [
               8,
@@ -13084,7 +13084,7 @@ var CLUB_DATA = {
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1524,
-          "oppStr": 1425,
+          "oppStr": 1426,
           "setScores": [
             [
               11,
@@ -52103,7 +52103,7 @@ var CLUB_DATA = {
     },
     "Stejskal Marek": {
       "club": "TJ Slavoj Praha D",
-      "str": 1425,
+      "str": 1426,
       "teamMatches": 8,
       "wins": 10,
       "losses": 16,
