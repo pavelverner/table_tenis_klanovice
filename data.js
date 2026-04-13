@@ -1,4 +1,4 @@
-// TTC Klánovice – data.js (12. 4. 2026)
+// TTC Klánovice – data.js (13. 4. 2026)
 // Zdroj: https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025
 
 var CLUB_DATA = {
@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "12.04.26 21:51",
+  "lastUpdate": "13.04.26 6:40",
   "teams": [
     {
       "id": 63401,
@@ -52295,7 +52295,7 @@ var CLUB_DATA = {
     },
     "Čmil Marcel": {
       "club": "SF SKK El Niňo Praha F",
-      "str": 1513,
+      "str": 1514,
       "teamMatches": 1,
       "wins": 1,
       "losses": 2,
