@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "13.04.26 10:58",
+  "lastUpdate": "13.04.26 16:46",
   "teams": [
     {
       "id": 63401,
@@ -898,10 +898,10 @@ var CLUB_DATA = {
       "strStab": 1754.3,
       "strDelta": 66,
       "stats": {
-        "matches": 86,
-        "wins": 61,
+        "matches": 87,
+        "wins": 62,
         "losses": 25,
-        "teamMatches": 20,
+        "teamMatches": 21,
         "sets": [
           0,
           0
@@ -948,15 +948,15 @@ var CLUB_DATA = {
       "strStab": 1840,
       "strDelta": -50,
       "stats": {
-        "matches": 90,
-        "wins": 76,
+        "matches": 91,
+        "wins": 77,
         "losses": 14,
-        "teamMatches": 21,
+        "teamMatches": 22,
         "sets": [
           0,
           0
         ],
-        "winPct": 84
+        "winPct": 85
       }
     },
     {
@@ -1736,16 +1736,16 @@ var CLUB_DATA = {
     },
     {
       "id": 35,
-      "name": "Jiroš Martin",
+      "name": "Michálek David",
       "team": "C",
       "teamId": 63403,
       "isRegular": true,
-      "stisId": 19139,
+      "stisId": 30890,
       "soutezId": "6278",
-      "born": "1972",
-      "soupiskaPos": 8,
+      "born": "1988",
+      "soupiskaPos": 9,
       "str": 1393,
-      "strStab": 1388.9,
+      "strStab": 1397,
       "strDelta": 0,
       "stats": {
         "matches": 0,
@@ -1761,16 +1761,16 @@ var CLUB_DATA = {
     },
     {
       "id": 36,
-      "name": "Michálek David",
+      "name": "Jiroš Martin",
       "team": "C",
       "teamId": 63403,
       "isRegular": true,
-      "stisId": 30890,
+      "stisId": 19139,
       "soutezId": "6278",
-      "born": "1988",
-      "soupiskaPos": 9,
+      "born": "1972",
+      "soupiskaPos": 8,
       "str": 1393,
-      "strStab": 1397,
+      "strStab": 1388.9,
       "strDelta": 0,
       "stats": {
         "matches": 0,
@@ -2636,20 +2636,6 @@ var CLUB_DATA = {
     }
   ],
   "matches": [
-    {
-      "id": 63401022,
-      "teamId": 63401,
-      "home": true,
-      "round": 22,
-      "date": "2026-04-13",
-      "time": "18:30",
-      "opponent": "TJ AVIA Čakovice C",
-      "score": null,
-      "result": null,
-      "playerResults": [],
-      "keyPoints": [],
-      "future": true
-    },
     {
       "id": 645355,
       "teamId": 63401,
@@ -11878,6 +11864,38 @@ var CLUB_DATA = {
       "keyPoints": [
         "Hořejší – perfektní výkon 3/3",
         "Drtivá výhra 10:1",
+        "Čtyřhra Hořejší Radim / Kárník Tomáš: ✓ výhra"
+      ]
+    },
+    {
+      "id": 645480,
+      "teamId": 63401,
+      "home": true,
+      "round": 22,
+      "date": "2026-04-13",
+      "opponent": "TJ AVIA Čakovice C",
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "result": "W",
+      "playerResults": [
+        {
+          "rubberNum": 1,
+          "player": "Hořejší Radim / Kárník Tomáš",
+          "opponent": "",
+          "result": "3:0",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 0,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0,
+          "setScores": null
+        }
+      ],
+      "keyPoints": [
+        "Domácí výhra 1:0",
         "Čtyřhra Hořejší Radim / Kárník Tomáš: ✓ výhra"
       ]
     },
