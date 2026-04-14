@@ -1,4 +1,4 @@
-// TTC Klánovice – data.js (13. 4. 2026)
+// TTC Klánovice – data.js (14. 4. 2026)
 // Zdroj: https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025
 
 var CLUB_DATA = {
@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "13.04.26 22:11",
+  "lastUpdate": "14.04.26 9:59",
   "teams": [
     {
       "id": 63401,
@@ -1736,16 +1736,16 @@ var CLUB_DATA = {
     },
     {
       "id": 35,
-      "name": "Jiroš Martin",
+      "name": "Michálek David",
       "team": "C",
       "teamId": 63403,
       "isRegular": true,
-      "stisId": 19139,
+      "stisId": 30890,
       "soutezId": "6278",
-      "born": "1972",
-      "soupiskaPos": 8,
+      "born": "1988",
+      "soupiskaPos": 9,
       "str": 1393,
-      "strStab": 1388.9,
+      "strStab": 1397,
       "strDelta": 0,
       "stats": {
         "matches": 0,
@@ -1761,16 +1761,16 @@ var CLUB_DATA = {
     },
     {
       "id": 36,
-      "name": "Michálek David",
+      "name": "Jiroš Martin",
       "team": "C",
       "teamId": 63403,
       "isRegular": true,
-      "stisId": 30890,
+      "stisId": 19139,
       "soutezId": "6278",
-      "born": "1988",
-      "soupiskaPos": 9,
+      "born": "1972",
+      "soupiskaPos": 8,
       "str": 1393,
-      "strStab": 1397,
+      "strStab": 1388.9,
       "strDelta": 0,
       "stats": {
         "matches": 0,
