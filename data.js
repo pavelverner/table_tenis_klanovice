@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "16.04.26 17:00",
+  "lastUpdate": "16.04.26 19:49",
   "teams": [
     {
       "id": 63401,
@@ -51,11 +51,11 @@ var CLUB_DATA = {
       "standing": {
         "pos": 6,
         "wins": 9,
-        "losses": 11,
+        "losses": 12,
         "draws": 1,
         "points": 28,
-        "setsFor": 146,
-        "setsAgainst": 163
+        "setsFor": 148,
+        "setsAgainst": 173
       }
     },
     {
@@ -81,7 +81,7 @@ var CLUB_DATA = {
       "division": "5. třída B",
       "leagueAvgStr": 1367,
       "standing": {
-        "pos": 7,
+        "pos": 8,
         "wins": 9,
         "losses": 12,
         "draws": 1,
@@ -161,13 +161,13 @@ var CLUB_DATA = {
       {
         "pos": 6,
         "team": "TJ Sokol Stodůlky B",
-        "z": 21,
-        "w": 9,
+        "z": 22,
+        "w": 10,
         "d": 1,
         "l": 11,
-        "sf": 156,
-        "sa": 153,
-        "pts": 28,
+        "sf": 166,
+        "sa": 159,
+        "pts": 31,
         "highlight": false,
         "zone": "neutral"
       },
@@ -239,12 +239,12 @@ var CLUB_DATA = {
       {
         "pos": 12,
         "team": "TJ Sokol Nusle Praha A",
-        "z": 21,
+        "z": 22,
         "w": 1,
         "d": 0,
-        "l": 20,
-        "sf": 91,
-        "sa": 208,
+        "l": 21,
+        "sf": 97,
+        "sa": 218,
         "pts": 3,
         "highlight": false,
         "zone": "relegation"
@@ -411,6 +411,19 @@ var CLUB_DATA = {
     "63403": [
       {
         "pos": 1,
+        "team": "TJ ABC Braník C",
+        "z": 22,
+        "w": 19,
+        "d": 2,
+        "l": 1,
+        "sf": 214,
+        "sa": 89,
+        "pts": 59,
+        "highlight": false,
+        "zone": "promotion"
+      },
+      {
+        "pos": 2,
         "team": "TJ Sokol Stodůlky D",
         "z": 22,
         "w": 19,
@@ -419,19 +432,6 @@ var CLUB_DATA = {
         "sf": 206,
         "sa": 92,
         "pts": 58,
-        "highlight": false,
-        "zone": "promotion"
-      },
-      {
-        "pos": 2,
-        "team": "TJ ABC Braník C",
-        "z": 21,
-        "w": 18,
-        "d": 2,
-        "l": 1,
-        "sf": 204,
-        "sa": 87,
-        "pts": 56,
         "highlight": false,
         "zone": "promotion"
       },
@@ -477,12 +477,12 @@ var CLUB_DATA = {
       {
         "pos": 6,
         "team": "TTC Klánovice C",
-        "z": 21,
+        "z": 22,
         "w": 9,
         "d": 1,
-        "l": 11,
-        "sf": 146,
-        "sa": 163,
+        "l": 12,
+        "sf": 148,
+        "sa": 173,
         "pts": 28,
         "highlight": true,
         "zone": "neutral"
@@ -490,12 +490,12 @@ var CLUB_DATA = {
       {
         "pos": 7,
         "team": "AC Sparta Praha I",
-        "z": 21,
+        "z": 22,
         "w": 7,
         "d": 4,
-        "l": 10,
-        "sf": 136,
-        "sa": 173,
+        "l": 11,
+        "sf": 138,
+        "sa": 183,
         "pts": 25,
         "highlight": false,
         "zone": "neutral"
@@ -503,18 +503,31 @@ var CLUB_DATA = {
       {
         "pos": 8,
         "team": "TJ Pankrác D",
-        "z": 21,
-        "w": 7,
+        "z": 22,
+        "w": 8,
         "d": 1,
         "l": 12,
-        "sf": 131,
-        "sa": 168,
-        "pts": 21,
+        "sf": 141,
+        "sa": 170,
+        "pts": 24,
         "highlight": false,
         "zone": "neutral"
       },
       {
         "pos": 9,
+        "team": "TJ Sokol Žižkov D",
+        "z": 22,
+        "w": 6,
+        "d": 4,
+        "l": 12,
+        "sf": 132,
+        "sa": 179,
+        "pts": 22,
+        "highlight": false,
+        "zone": "neutral"
+      },
+      {
+        "pos": 10,
         "team": "TTC Elizza Praha I",
         "z": 22,
         "w": 6,
@@ -523,19 +536,6 @@ var CLUB_DATA = {
         "sf": 141,
         "sa": 188,
         "pts": 20,
-        "highlight": false,
-        "zone": "neutral"
-      },
-      {
-        "pos": 10,
-        "team": "TJ Sokol Žižkov D",
-        "z": 21,
-        "w": 5,
-        "d": 4,
-        "l": 12,
-        "sf": 122,
-        "sa": 175,
-        "pts": 19,
         "highlight": false,
         "zone": "neutral"
       },
@@ -555,12 +555,12 @@ var CLUB_DATA = {
       {
         "pos": 12,
         "team": "TJ Sokol Praha - Břevnov A",
-        "z": 21,
+        "z": 22,
         "w": 3,
         "d": 2,
-        "l": 16,
-        "sf": 110,
-        "sa": 187,
+        "l": 17,
+        "sf": 114,
+        "sa": 197,
         "pts": 11,
         "highlight": false,
         "zone": "relegation"
@@ -570,13 +570,13 @@ var CLUB_DATA = {
       {
         "pos": 1,
         "team": "TJ Lokomotiva Vršovice E",
-        "z": 21,
-        "w": 19,
+        "z": 22,
+        "w": 20,
         "d": 0,
         "l": 2,
-        "sf": 204,
-        "sa": 99,
-        "pts": 57,
+        "sf": 214,
+        "sa": 103,
+        "pts": 60,
         "highlight": false,
         "zone": "promotion"
       },
@@ -596,12 +596,12 @@ var CLUB_DATA = {
       {
         "pos": 3,
         "team": "TJ Sokol Suchdol - Sedlec B",
-        "z": 21,
+        "z": 22,
         "w": 13,
         "d": 1,
-        "l": 7,
-        "sf": 175,
-        "sa": 145,
+        "l": 8,
+        "sf": 179,
+        "sa": 155,
         "pts": 40,
         "highlight": false,
         "zone": "neutral"
@@ -780,31 +780,44 @@ var CLUB_DATA = {
       {
         "pos": 5,
         "team": "SF SKK El Niňo Praha J",
-        "z": 21,
+        "z": 22,
         "w": 10,
         "d": 2,
-        "l": 9,
-        "sf": 155,
-        "sa": 166,
+        "l": 10,
+        "sf": 157,
+        "sa": 176,
         "pts": 32,
         "highlight": false,
         "zone": "neutral"
       },
       {
         "pos": 6,
-        "team": "TJ Sokol Kbely A",
-        "z": 21,
-        "w": 9,
-        "d": 2,
-        "l": 10,
-        "sf": 145,
-        "sa": 155,
-        "pts": 29,
+        "team": "TTC Praha F",
+        "z": 22,
+        "w": 10,
+        "d": 0,
+        "l": 12,
+        "sf": 166,
+        "sa": 164,
+        "pts": 30,
         "highlight": false,
         "zone": "neutral"
       },
       {
         "pos": 7,
+        "team": "TJ Sokol Kbely A",
+        "z": 22,
+        "w": 9,
+        "d": 2,
+        "l": 11,
+        "sf": 147,
+        "sa": 165,
+        "pts": 29,
+        "highlight": false,
+        "zone": "neutral"
+      },
+      {
+        "pos": 8,
         "team": "TTC Klánovice E",
         "z": 22,
         "w": 9,
@@ -814,19 +827,6 @@ var CLUB_DATA = {
         "sa": 173,
         "pts": 28,
         "highlight": true,
-        "zone": "neutral"
-      },
-      {
-        "pos": 8,
-        "team": "TTC Praha F",
-        "z": 21,
-        "w": 9,
-        "d": 0,
-        "l": 12,
-        "sf": 156,
-        "sa": 162,
-        "pts": 27,
-        "highlight": false,
         "zone": "neutral"
       },
       {
@@ -871,13 +871,13 @@ var CLUB_DATA = {
       {
         "pos": 12,
         "team": "TJ Zelená Liška B",
-        "z": 21,
-        "w": 2,
+        "z": 22,
+        "w": 3,
         "d": 2,
         "l": 17,
-        "sf": 108,
-        "sa": 196,
-        "pts": 8,
+        "sf": 118,
+        "sa": 198,
+        "pts": 11,
         "highlight": false,
         "zone": "relegation"
       }
@@ -1648,15 +1648,15 @@ var CLUB_DATA = {
       "strStab": 1339.8,
       "strDelta": 5,
       "stats": {
-        "matches": 9,
-        "wins": 3,
-        "losses": 6,
-        "teamMatches": 2,
+        "matches": 13,
+        "wins": 4,
+        "losses": 9,
+        "teamMatches": 3,
         "sets": [
           0,
           0
         ],
-        "winPct": 33
+        "winPct": 31
       }
     },
     {
@@ -1736,6 +1736,81 @@ var CLUB_DATA = {
     },
     {
       "id": 35,
+      "name": "Pravda Jakub",
+      "team": "C",
+      "teamId": 63403,
+      "isRegular": true,
+      "stisId": 87179,
+      "soutezId": "6278",
+      "born": "2009",
+      "soupiskaPos": 13,
+      "str": 1232,
+      "strStab": 1245.5,
+      "strDelta": 0,
+      "stats": {
+        "matches": 3,
+        "wins": 0,
+        "losses": 3,
+        "teamMatches": 1,
+        "sets": [
+          0,
+          0
+        ],
+        "winPct": 0
+      }
+    },
+    {
+      "id": 36,
+      "name": "Horčák Zdeněk",
+      "team": "C",
+      "teamId": 63403,
+      "isRegular": true,
+      "stisId": 81217,
+      "soutezId": "6278",
+      "born": "2010",
+      "soupiskaPos": 12,
+      "str": 1248,
+      "strStab": 1235.8,
+      "strDelta": 0,
+      "stats": {
+        "matches": 3,
+        "wins": 0,
+        "losses": 3,
+        "teamMatches": 1,
+        "sets": [
+          0,
+          0
+        ],
+        "winPct": 0
+      }
+    },
+    {
+      "id": 37,
+      "name": "Pospíšil Jan ml.",
+      "team": "C",
+      "teamId": 63403,
+      "isRegular": true,
+      "stisId": 82609,
+      "soutezId": "6278",
+      "born": "2005",
+      "soupiskaPos": 14,
+      "str": 1294,
+      "strStab": 1268.2,
+      "strDelta": 0,
+      "stats": {
+        "matches": 4,
+        "wins": 2,
+        "losses": 2,
+        "teamMatches": 1,
+        "sets": [
+          0,
+          0
+        ],
+        "winPct": 50
+      }
+    },
+    {
+      "id": 38,
       "name": "Michálek David",
       "team": "C",
       "teamId": 63403,
@@ -1760,7 +1835,7 @@ var CLUB_DATA = {
       }
     },
     {
-      "id": 36,
+      "id": 39,
       "name": "Jiroš Martin",
       "team": "C",
       "teamId": 63403,
@@ -1771,81 +1846,6 @@ var CLUB_DATA = {
       "soupiskaPos": 8,
       "str": 1384,
       "strStab": 1388.2,
-      "strDelta": 0,
-      "stats": {
-        "matches": 0,
-        "wins": 0,
-        "losses": 0,
-        "teamMatches": 0,
-        "sets": [
-          0,
-          0
-        ],
-        "winPct": 0
-      }
-    },
-    {
-      "id": 37,
-      "name": "Pospíšil Jan ml.",
-      "team": "C",
-      "teamId": 63403,
-      "isRegular": true,
-      "stisId": 82609,
-      "soutezId": "6278",
-      "born": "2005",
-      "soupiskaPos": 14,
-      "str": 1294,
-      "strStab": 1268.2,
-      "strDelta": 0,
-      "stats": {
-        "matches": 0,
-        "wins": 0,
-        "losses": 0,
-        "teamMatches": 0,
-        "sets": [
-          0,
-          0
-        ],
-        "winPct": 0
-      }
-    },
-    {
-      "id": 38,
-      "name": "Horčák Zdeněk",
-      "team": "C",
-      "teamId": 63403,
-      "isRegular": true,
-      "stisId": 81217,
-      "soutezId": "6278",
-      "born": "2010",
-      "soupiskaPos": 12,
-      "str": 1248,
-      "strStab": 1235.8,
-      "strDelta": 0,
-      "stats": {
-        "matches": 0,
-        "wins": 0,
-        "losses": 0,
-        "teamMatches": 0,
-        "sets": [
-          0,
-          0
-        ],
-        "winPct": 0
-      }
-    },
-    {
-      "id": 39,
-      "name": "Pravda Jakub",
-      "team": "C",
-      "teamId": 63403,
-      "isRegular": true,
-      "stisId": 87179,
-      "soutezId": "6278",
-      "born": "2009",
-      "soupiskaPos": 13,
-      "str": 1232,
-      "strStab": 1245.5,
       "strDelta": 0,
       "stats": {
         "matches": 0,
@@ -22408,20 +22408,6 @@ var CLUB_DATA = {
       ]
     },
     {
-      "id": 63403022,
-      "teamId": 63403,
-      "home": false,
-      "round": 22,
-      "date": "2026-04-16",
-      "time": "19:00",
-      "opponent": "TJ Pankrác D",
-      "score": null,
-      "result": null,
-      "playerResults": [],
-      "keyPoints": [],
-      "future": true
-    },
-    {
       "id": 644958,
       "teamId": 63403,
       "home": false,
@@ -31975,6 +31961,366 @@ var CLUB_DATA = {
         "Fexa – perfektní výkon 3/3",
         "Drtivá výhra 10:1",
         "Čtyřhra Fexa Martin / Hájek Luděk: ✗ prohra"
+      ]
+    },
+    {
+      "id": 645086,
+      "teamId": 63403,
+      "home": false,
+      "round": 22,
+      "date": "2026-04-16",
+      "opponent": "TJ Pankrác D",
+      "score": {
+        "home": 2,
+        "away": 10
+      },
+      "result": "L",
+      "playerResults": [
+        {
+          "rubberNum": 1,
+          "player": "Pravda Jakub / Horčák Zdeněk",
+          "opponent": "Novák Jiří / Korbel Matyáš",
+          "result": "2:3",
+          "won": false,
+          "setsWon": 2,
+          "setsLost": 3,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0,
+          "setScores": [
+            [
+              11,
+              7
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              11,
+              9
+            ]
+          ]
+        },
+        {
+          "rubberNum": 2,
+          "player": "Pospíšil Jan ml. / Horčák Vojtěch",
+          "opponent": "Nosál Petr / Holub Martin",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": true,
+          "ourStr": 0,
+          "oppStr": 0,
+          "setScores": [
+            [
+              11,
+              9
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              10,
+              12
+            ]
+          ]
+        },
+        {
+          "rubberNum": 3,
+          "player": "Horčák Vojtěch",
+          "opponent": "Holub Martin",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1339,
+          "oppStr": 1485,
+          "setScores": [
+            [
+              11,
+              8
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              12,
+              10
+            ]
+          ]
+        },
+        {
+          "rubberNum": 4,
+          "player": "Pospíšil Jan ml.",
+          "opponent": "Novák Jiří",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1480,
+          "setScores": [
+            [
+              11,
+              5
+            ],
+            [
+              13,
+              11
+            ],
+            [
+              13,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 5,
+          "player": "Horčák Zdeněk",
+          "opponent": "Korbel Matyáš",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1344,
+          "setScores": [
+            [
+              11,
+              8
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              6
+            ]
+          ]
+        },
+        {
+          "rubberNum": 6,
+          "player": "Pravda Jakub",
+          "opponent": "Nosál Petr",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1513,
+          "setScores": [
+            [
+              11,
+              7
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              7
+            ]
+          ]
+        },
+        {
+          "rubberNum": 7,
+          "player": "Horčák Vojtěch",
+          "opponent": "Novák Jiří",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1339,
+          "oppStr": 1480,
+          "setScores": [
+            [
+              11,
+              4
+            ],
+            [
+              11,
+              3
+            ],
+            [
+              11,
+              4
+            ]
+          ]
+        },
+        {
+          "rubberNum": 8,
+          "player": "Pospíšil Jan ml.",
+          "opponent": "Korbel Matyáš",
+          "result": "3:1",
+          "won": true,
+          "setsWon": 3,
+          "setsLost": 1,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1344,
+          "setScores": [
+            [
+              7,
+              11
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              9,
+              11
+            ]
+          ]
+        },
+        {
+          "rubberNum": 9,
+          "player": "Horčák Zdeněk",
+          "opponent": "Nosál Petr",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1513,
+          "setScores": [
+            [
+              11,
+              7
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              7
+            ]
+          ]
+        },
+        {
+          "rubberNum": 10,
+          "player": "Pravda Jakub",
+          "opponent": "Holub Martin",
+          "result": "0:3",
+          "won": false,
+          "setsWon": 0,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1485,
+          "setScores": [
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              8
+            ]
+          ]
+        },
+        {
+          "rubberNum": 11,
+          "player": "Horčák Vojtěch",
+          "opponent": "Korbel Matyáš",
+          "result": "2:3",
+          "won": false,
+          "setsWon": 2,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 1339,
+          "oppStr": 1344,
+          "setScores": [
+            [
+              11,
+              9
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              14,
+              12
+            ],
+            [
+              11,
+              4
+            ]
+          ]
+        },
+        {
+          "rubberNum": 12,
+          "player": "Pospíšil Jan ml.",
+          "opponent": "Nosál Petr",
+          "result": "1:3",
+          "won": false,
+          "setsWon": 1,
+          "setsLost": 3,
+          "isDoubles": false,
+          "ourStr": 0,
+          "oppStr": 1513,
+          "setScores": [
+            [
+              11,
+              3
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              9
+            ]
+          ]
+        }
+      ],
+      "keyPoints": [
+        "Horčák pod formou – 0/3",
+        "Prohra venku 2:10",
+        "Čtyřhra Pravda Jakub / Horčák Zdeněk: ✗ prohra"
       ]
     },
     {
