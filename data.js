@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "16.04.26 20:06",
+  "lastUpdate": "16.04.26 22:03",
   "teams": [
     {
       "id": 63401,
@@ -135,13 +135,13 @@ var CLUB_DATA = {
       {
         "pos": 4,
         "team": "TJ Lokomotiva Vršovice B",
-        "z": 21,
-        "w": 12,
+        "z": 22,
+        "w": 13,
         "d": 3,
         "l": 6,
-        "sf": 174,
-        "sa": 125,
-        "pts": 39,
+        "sf": 184,
+        "sa": 133,
+        "pts": 42,
         "highlight": false,
         "zone": "neutral"
       },
@@ -200,12 +200,12 @@ var CLUB_DATA = {
       {
         "pos": 9,
         "team": "TJ Sokol Běchovice II A",
-        "z": 21,
+        "z": 22,
         "w": 6,
         "d": 4,
-        "l": 11,
-        "sf": 145,
-        "sa": 175,
+        "l": 12,
+        "sf": 153,
+        "sa": 185,
         "pts": 22,
         "highlight": false,
         "zone": "neutral"
