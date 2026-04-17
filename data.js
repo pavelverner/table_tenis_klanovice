@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "17.04.26 16:16",
+  "lastUpdate": "17.04.26 20:01",
   "teams": [
     {
       "id": 63401,
@@ -174,12 +174,12 @@ var CLUB_DATA = {
       {
         "pos": 7,
         "team": "TTC Elizza Praha G",
-        "z": 21,
+        "z": 22,
         "w": 8,
         "d": 3,
-        "l": 10,
-        "sf": 144,
-        "sa": 169,
+        "l": 11,
+        "sf": 147,
+        "sa": 179,
         "pts": 27,
         "highlight": false,
         "zone": "neutral"
@@ -212,6 +212,19 @@ var CLUB_DATA = {
       },
       {
         "pos": 10,
+        "team": "TJ Slavoj Praha B",
+        "z": 22,
+        "w": 6,
+        "d": 2,
+        "l": 14,
+        "sf": 140,
+        "sa": 179,
+        "pts": 20,
+        "highlight": false,
+        "zone": "neutral"
+      },
+      {
+        "pos": 11,
         "team": "SK OAZA Praha A",
         "z": 22,
         "w": 6,
@@ -220,19 +233,6 @@ var CLUB_DATA = {
         "sf": 135,
         "sa": 196,
         "pts": 18,
-        "highlight": false,
-        "zone": "neutral"
-      },
-      {
-        "pos": 11,
-        "team": "TJ Slavoj Praha B",
-        "z": 21,
-        "w": 5,
-        "d": 2,
-        "l": 14,
-        "sf": 130,
-        "sa": 176,
-        "pts": 17,
         "highlight": false,
         "zone": "neutral"
       },
@@ -292,6 +292,19 @@ var CLUB_DATA = {
       },
       {
         "pos": 4,
+        "team": "TJ Pankrác C",
+        "z": 22,
+        "w": 12,
+        "d": 2,
+        "l": 8,
+        "sf": 178,
+        "sa": 151,
+        "pts": 38,
+        "highlight": false,
+        "zone": "neutral"
+      },
+      {
+        "pos": 5,
         "team": "TJ AVIA Čakovice D",
         "z": 22,
         "w": 13,
@@ -300,19 +313,6 @@ var CLUB_DATA = {
         "sf": 163,
         "sa": 145,
         "pts": 36,
-        "highlight": false,
-        "zone": "neutral"
-      },
-      {
-        "pos": 5,
-        "team": "TJ Pankrác C",
-        "z": 21,
-        "w": 11,
-        "d": 2,
-        "l": 8,
-        "sf": 168,
-        "sa": 145,
-        "pts": 35,
         "highlight": false,
         "zone": "neutral"
       },
@@ -397,12 +397,12 @@ var CLUB_DATA = {
       {
         "pos": 12,
         "team": "TJ Slavoj Praha D",
-        "z": 21,
+        "z": 22,
         "w": 1,
         "d": 2,
-        "l": 18,
-        "sf": 88,
-        "sa": 198,
+        "l": 19,
+        "sf": 94,
+        "sa": 208,
         "pts": 5,
         "highlight": false,
         "zone": "relegation"
@@ -727,6 +727,19 @@ var CLUB_DATA = {
     "63405": [
       {
         "pos": 1,
+        "team": "TJ Sokol Stodůlky F",
+        "z": 22,
+        "w": 18,
+        "d": 2,
+        "l": 2,
+        "sf": 211,
+        "sa": 97,
+        "pts": 56,
+        "highlight": false,
+        "zone": "promotion"
+      },
+      {
+        "pos": 2,
         "team": "TJ Lokomotiva Vršovice F",
         "z": 22,
         "w": 18,
@@ -735,19 +748,6 @@ var CLUB_DATA = {
         "sf": 208,
         "sa": 113,
         "pts": 55,
-        "highlight": false,
-        "zone": "promotion"
-      },
-      {
-        "pos": 2,
-        "team": "TJ Sokol Stodůlky F",
-        "z": 21,
-        "w": 17,
-        "d": 2,
-        "l": 2,
-        "sf": 201,
-        "sa": 91,
-        "pts": 53,
         "highlight": false,
         "zone": "promotion"
       },
@@ -858,12 +858,12 @@ var CLUB_DATA = {
       {
         "pos": 11,
         "team": "TJ Sokol Petrovice D",
-        "z": 21,
+        "z": 22,
         "w": 5,
         "d": 2,
-        "l": 14,
-        "sf": 120,
-        "sa": 187,
+        "l": 15,
+        "sf": 126,
+        "sa": 197,
         "pts": 17,
         "highlight": false,
         "zone": "neutral"
