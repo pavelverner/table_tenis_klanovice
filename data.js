@@ -1,4 +1,4 @@
-// TTC Klánovice – data.js (19. 4. 2026)
+// TTC Klánovice – data.js (20. 4. 2026)
 // Zdroj: https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025
 
 var CLUB_DATA = {
@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "19.04.26 21:52",
+  "lastUpdate": "20.04.26 10:59",
   "teams": [
     {
       "id": 63401,
@@ -55965,7 +55965,7 @@ var CLUB_DATA = {
     },
     "Bláha Pavel": {
       "club": "TJ Sokol Michle D",
-      "str": -1,
+      "str": 1,
       "teamMatches": 8,
       "wins": 0,
       "losses": 19,
