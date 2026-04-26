@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "26.04.26 13:59",
+  "lastUpdate": "26.04.26 17:31",
   "teams": [
     {
       "id": 63401,
@@ -26786,7 +26786,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1486,
-          "oppStr": 1480,
+          "oppStr": 1474,
           "setScores": [
             [
               4,
@@ -26988,7 +26988,7 @@ var CLUB_DATA = {
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1569,
-          "oppStr": 1480,
+          "oppStr": 1474,
           "setScores": [
             [
               10,
@@ -27086,7 +27086,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1408,
-          "oppStr": 1480,
+          "oppStr": 1474,
           "setScores": [
             [
               11,
@@ -27164,7 +27164,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1469,
-          "oppStr": 1480,
+          "oppStr": 1474,
           "setScores": [
             [
               11,
@@ -54853,7 +54853,7 @@ var CLUB_DATA = {
     },
     "Simandl Patrik": {
       "club": "TTC Elizza Praha I",
-      "str": 1480,
+      "str": 1474,
       "teamMatches": 19,
       "wins": 36,
       "losses": 28,
