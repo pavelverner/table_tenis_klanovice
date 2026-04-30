@@ -1,4 +1,4 @@
-// TTC Klánovice – data.js (29. 4. 2026)
+// TTC Klánovice – data.js (30. 4. 2026)
 // Zdroj: https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025
 
 var CLUB_DATA = {
@@ -8,7 +8,7 @@ var CLUB_DATA = {
   "stisUrl": "https://stis.ping-pong.cz/oddil-420109007/svaz-420101/rocnik-2025",
   "rocnik": 2025,
   "season": "2025/26",
-  "lastUpdate": "29.04.26 20:52",
+  "lastUpdate": "30.04.26 7:23",
   "teams": [
     {
       "id": 63401,
@@ -3710,7 +3710,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": true,
           "ourStr": 0,
-          "oppStr": 1616,
+          "oppStr": 1613,
           "setScores": null
         },
         {
@@ -3723,7 +3723,7 @@ var CLUB_DATA = {
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1838,
-          "oppStr": 1755,
+          "oppStr": 1761,
           "setScores": [
             [
               6,
@@ -3757,7 +3757,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1702,
-          "oppStr": 1769,
+          "oppStr": 1765,
           "setScores": [
             [
               9,
@@ -3783,7 +3783,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1680,
-          "oppStr": 1616,
+          "oppStr": 1613,
           "setScores": [
             [
               12,
@@ -3826,7 +3826,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1702,
-          "oppStr": 1755,
+          "oppStr": 1761,
           "setScores": [
             [
               11,
@@ -3856,7 +3856,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1680,
-          "oppStr": 1769,
+          "oppStr": 1765,
           "setScores": null
         },
         {
@@ -3869,7 +3869,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1758,
-          "oppStr": 1616,
+          "oppStr": 1613,
           "setScores": [
             [
               11,
@@ -3908,7 +3908,7 @@ var CLUB_DATA = {
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1680,
-          "oppStr": 1755,
+          "oppStr": 1761,
           "setScores": [
             [
               11,
@@ -3942,7 +3942,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1758,
-          "oppStr": 1769,
+          "oppStr": 1765,
           "setScores": [
             [
               11,
@@ -3968,7 +3968,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1838,
-          "oppStr": 1616,
+          "oppStr": 1613,
           "setScores": [
             [
               13,
@@ -8690,7 +8690,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1838,
-          "oppStr": 1755,
+          "oppStr": 1761,
           "setScores": [
             [
               4,
@@ -8716,7 +8716,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1733,
-          "oppStr": 1616,
+          "oppStr": 1613,
           "setScores": [
             [
               3,
@@ -8750,7 +8750,7 @@ var CLUB_DATA = {
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1758,
-          "oppStr": 1614,
+          "oppStr": 1612,
           "setScores": [
             [
               7,
@@ -8784,7 +8784,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1702,
-          "oppStr": 1769,
+          "oppStr": 1765,
           "setScores": [
             [
               5,
@@ -8818,7 +8818,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1838,
-          "oppStr": 1616,
+          "oppStr": 1613,
           "setScores": [
             [
               8,
@@ -8844,7 +8844,7 @@ var CLUB_DATA = {
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1733,
-          "oppStr": 1614,
+          "oppStr": 1612,
           "setScores": [
             [
               11,
@@ -8878,7 +8878,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1758,
-          "oppStr": 1536,
+          "oppStr": 1535,
           "setScores": [
             [
               8,
@@ -8904,7 +8904,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1702,
-          "oppStr": 1755,
+          "oppStr": 1761,
           "setScores": [
             [
               5,
@@ -8938,7 +8938,7 @@ var CLUB_DATA = {
           "setsLost": 1,
           "isDoubles": false,
           "ourStr": 1838,
-          "oppStr": 1614,
+          "oppStr": 1612,
           "setScores": [
             [
               5,
@@ -8968,7 +8968,7 @@ var CLUB_DATA = {
           "setsLost": 0,
           "isDoubles": false,
           "ourStr": 1733,
-          "oppStr": 1536,
+          "oppStr": 1535,
           "setScores": [
             [
               3,
@@ -8994,7 +8994,7 @@ var CLUB_DATA = {
           "setsLost": 3,
           "isDoubles": false,
           "ourStr": 1758,
-          "oppStr": 1755,
+          "oppStr": 1761,
           "setScores": [
             [
               11,
@@ -9024,7 +9024,7 @@ var CLUB_DATA = {
           "setsLost": 2,
           "isDoubles": false,
           "ourStr": 1702,
-          "oppStr": 1616,
+          "oppStr": 1613,
           "setScores": [
             [
               7,
@@ -53389,7 +53389,7 @@ var CLUB_DATA = {
     },
     "Gruber Josef": {
       "club": "SK OAZA Praha A",
-      "str": 1769,
+      "str": 1765,
       "teamMatches": 19,
       "wins": 43,
       "losses": 21,
@@ -53461,7 +53461,7 @@ var CLUB_DATA = {
     },
     "Řepík Jaroslav": {
       "club": "SK OAZA Praha A",
-      "str": 1755,
+      "str": 1761,
       "teamMatches": 18,
       "wins": 34,
       "losses": 23,
@@ -53653,7 +53653,7 @@ var CLUB_DATA = {
     },
     "Liška Marek": {
       "club": "SK OAZA Praha A",
-      "str": 1616,
+      "str": 1613,
       "teamMatches": 20,
       "wins": 17,
       "losses": 44,
@@ -53669,7 +53669,7 @@ var CLUB_DATA = {
     },
     "Barcal Petr": {
       "club": "SK OAZA Praha A",
-      "str": 1614,
+      "str": 1612,
       "teamMatches": 18,
       "wins": 16,
       "losses": 43,
@@ -53965,7 +53965,7 @@ var CLUB_DATA = {
     },
     "Kubera František": {
       "club": "SK OAZA Praha A",
-      "str": 1536,
+      "str": 1535,
       "teamMatches": 7,
       "wins": 2,
       "losses": 14,
